@@ -205,26 +205,43 @@ display:flex;justify-content:space-between;gap:7px;align-items:center
 }
 .price{color:var(--green);font-size:12px;font-weight:700}
 .delivery{color:#929da1;font-size:9px}
-.story{
-display:grid;grid-template-columns:1fr 1fr;
-min-height:390px;background:#f1f7f8
+.gem-stories{
+overflow:hidden;padding:66px 0 72px;background:linear-gradient(180deg,#f7fcfd 0%,#eaf5f8 100%);
+border-top:1px solid #e5f0f3;border-bottom:1px solid #e5f0f3
 }
-.story-image{position:relative;min-height:390px;background:#e4f0f3}
-.story-image img{
-position:absolute;inset:0;width:100%;height:100%;object-fit:contain
+.gem-stories-head{text-align:center;padding:0 20px 34px}
+.gem-stories-head h2{
+font-family:var(--serif);font-size:clamp(30px,4vw,43px);font-weight:400;
+line-height:1.2;margin:12px 0;color:var(--ink)
 }
-.story-copy{
-padding:60px clamp(28px,7vw,95px);
-display:flex;flex-direction:column;align-items:flex-start;justify-content:center
+.gem-stories-head p{font-size:12px;color:#718087;line-height:1.9;margin:0}
+.gem-story-window{overflow:hidden;width:100%;direction:ltr}
+.gem-story-track{
+display:flex;gap:20px;width:max-content;padding:4px 10px 18px;
+animation:gemStoryTravel 52s linear infinite;will-change:transform
 }
-.story-copy h2{
-font-family:var(--serif);font-size:clamp(32px,4vw,45px);
-font-weight:400;line-height:1.2;margin:14px 0
+.gem-story-window:hover .gem-story-track{animation-play-state:paused}
+.gem-story-card{
+width:290px;flex:0 0 290px;overflow:hidden;border:1px solid #dcebef;
+border-radius:18px;background:rgba(255,255,255,.92);
+box-shadow:0 12px 32px rgba(48,105,125,.08)
 }
-.story-copy p{
-max-width:480px;color:#718087;font-size:12px;line-height:2.1;margin:0
+.gem-story-photo{
+height:190px;background:linear-gradient(145deg,#f8fdff,#e4f2f6);
+display:flex;align-items:center;justify-content:center;padding:12px
 }
-.story-copy .btn{margin-top:24px}
+.gem-story-photo img{width:100%;height:100%;object-fit:contain;display:block}
+.gem-story-copy{padding:19px 20px 22px;text-align:left}
+.gem-story-era{
+display:block;color:#5792a8;font-size:9px;letter-spacing:1.7px;
+font-weight:700;margin-bottom:9px
+}
+.gem-story-copy h3{
+font-family:var(--serif);font-size:22px;font-weight:400;margin:0 0 9px;color:var(--ink)
+}
+.gem-story-copy p{font-size:11px;line-height:1.9;color:#718087;margin:0}
+@keyframes gemStoryTravel{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.gem-story-track{animation:none;transform:none}}
 .values{
 display:grid;grid-template-columns:repeat(3,1fr);
 gap:25px;text-align:center
@@ -414,10 +431,6 @@ animation:gemRise 4.8s cubic-bezier(.18,.72,.22,1) infinite
 .product-name{font-size:12px}
 .price{font-size:11px}
 .delivery{font-size:8px}
-.story{grid-template-columns:1fr}
-.story-image{min-height:275px}
-.story-copy{padding:40px 23px}
-.story-copy h2{font-size:33px}
 .values{grid-template-columns:1fr;gap:22px}
 .contact{padding:43px 16px}
 .contact h2{font-size:27px}
@@ -543,13 +556,23 @@ animation:gemRise 4.8s cubic-bezier(.18,.72,.22,1) infinite
  </div>
 </section>
 
-<section class="story" id="story">
- <div class="story-image"><img decoding="async" src="images/1000074156.jpg" alt="Natural agate pendant in silver" loading="lazy"></div>
- <div class="story-copy">
-  <span class="kicker" data-en="THE BLUE WHALE GEMS APPROACH" data-ar="فلسفة BLUE WHALE GEMS">THE BLUE WHALE GEMS APPROACH</span>
-  <h2 data-en="A natural beauty, never quite repeated." data-ar="جمال طبيعي لا يتكرر بالطريقة نفسها.">A natural beauty, never quite repeated.</h2>
-  <p data-en="We are drawn to the individuality of natural gemstones: their colours, formations and textures. Our selection celebrates the character already present in each stone, bringing together pieces that feel personal, distinctive and easy to make your own." data-ar="يجذبنا التفرد الذي تحمله الأحجار الطبيعية؛ ألوانها وتكويناتها وملمسها. نختار قطعاً تحتفي بطابع كل حجر كما هو، لتكون مميزة وقريبة من ذوقك، دون تكلّف أو مبالغة.">We are drawn to the individuality of natural gemstones: their colours, formations and textures. Our selection celebrates the character already present in each stone, bringing together pieces that feel personal, distinctive and easy to make your own.</p>
-  <a class="btn" href="#contact" data-en="GET TO KNOW US" data-ar="تواصل معنا">GET TO KNOW US</a>
+<section class="gem-stories" id="story">
+ <div class="gem-stories-head">
+  <span class="kicker" data-en="THE STORIES WITHIN" data-ar="حكايات من قلب الطبيعة">THE STORIES WITHIN</span>
+  <h2 data-en="Every stone has a story." data-ar="لكل حجر حكاية.">Every stone has a story.</h2>
+  <p data-en="A journey through the origins, history and timeless beauty of natural gemstones." data-ar="رحلة بين أصول الأحجار الطبيعية وتاريخها وجمالها الذي لا يزول.">A journey through the origins, history and timeless beauty of natural gemstones.</p>
+ </div>
+ <div class="gem-story-window">
+  <div class="gem-story-track">
+   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/1000057411.jpg" alt="Amethyst gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="ANCIENT GREECE & EGYPT" data-ar="اليونان ومصر القديمة">ANCIENT GREECE & EGYPT</span><h3>Amethyst</h3><p data-en="Admired for its violet colour, amethyst appeared in ancient jewellery and treasured objects across the Mediterranean world." data-ar="بلونه البنفسجي الآسر، ظهر الجمشت في الحلي والقطع الثمينة لدى حضارات قديمة حول البحر المتوسط.">Admired for its violet colour, amethyst appeared in ancient jewellery and treasured objects across the Mediterranean world.</p></div></article>
+   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/1000078469.jpg" alt="Lapis lazuli gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="ANCIENT CIVILISATIONS" data-ar="حضارات العالم القديم">ANCIENT CIVILISATIONS</span><h3>Lapis Lazuli</h3><p data-en="For thousands of years, this deep-blue stone travelled along trade routes and was prized in royal ornaments, carvings and ancient art." data-ar="لآلاف السنين، سافر هذا الحجر الأزرق العميق عبر طرق التجارة، وزيّن الحلي الملكية والمنحوتات والفنون القديمة.">For thousands of years, this deep-blue stone travelled along trade routes and was prized in royal ornaments, carvings and ancient art.</p></div></article>
+   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/1000079541.jpg" alt="Baltic amber gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="MILLIONS OF YEARS IN THE MAKING" data-ar="حكاية عمرها ملايين السنين">MILLIONS OF YEARS IN THE MAKING</span><h3>Amber</h3><p data-en="Amber begins as tree resin. Over millions of years, it can harden into a warm golden material that sometimes preserves traces of ancient life." data-ar="يبدأ الكهرمان راتنجاً من الأشجار، ومع مرور ملايين السنين يتحول إلى مادة ذهبية دافئة قد تحتفظ أحياناً بآثار من حياة قديمة.">Amber begins as tree resin. Over millions of years, it can harden into a warm golden material that sometimes preserves traces of ancient life.</p></div></article>
+   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/1000084081.jpg" alt="Natural coral" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="A GIFT FROM THE SEA" data-ar="هدية من أعماق البحر">A GIFT FROM THE SEA</span><h3>Natural Coral</h3><p data-en="Formed by tiny marine animals over generations, coral has been shaped into adornment and treasured across many coastal cultures." data-ar="تتكوّن الشعاب المرجانية بفضل كائنات بحرية صغيرة عبر أجيال، وقد استُخدم المرجان في الزينة وتقديره في ثقافات ساحلية كثيرة.">Formed by tiny marine animals over generations, coral has been shaped into adornment and treasured across many coastal cultures.</p></div></article>
+   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/1000057411.jpg" alt="Amethyst gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="ANCIENT GREECE & EGYPT" data-ar="اليونان ومصر القديمة">ANCIENT GREECE & EGYPT</span><h3>Amethyst</h3><p data-en="Admired for its violet colour, amethyst appeared in ancient jewellery and treasured objects across the Mediterranean world." data-ar="بلونه البنفسجي الآسر، ظهر الجمشت في الحلي والقطع الثمينة لدى حضارات قديمة حول البحر المتوسط.">Admired for its violet colour, amethyst appeared in ancient jewellery and treasured objects across the Mediterranean world.</p></div></article>
+   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/1000078469.jpg" alt="Lapis lazuli gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="ANCIENT CIVILISATIONS" data-ar="حضارات العالم القديم">ANCIENT CIVILISATIONS</span><h3>Lapis Lazuli</h3><p data-en="For thousands of years, this deep-blue stone travelled along trade routes and was prized in royal ornaments, carvings and ancient art." data-ar="لآلاف السنين، سافر هذا الحجر الأزرق العميق عبر طرق التجارة، وزيّن الحلي الملكية والمنحوتات والفنون القديمة.">For thousands of years, this deep-blue stone travelled along trade routes and was prized in royal ornaments, carvings and ancient art.</p></div></article>
+   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/1000079541.jpg" alt="Baltic amber gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="MILLIONS OF YEARS IN THE MAKING" data-ar="حكاية عمرها ملايين السنين">MILLIONS OF YEARS IN THE MAKING</span><h3>Amber</h3><p data-en="Amber begins as tree resin. Over millions of years, it can harden into a warm golden material that sometimes preserves traces of ancient life." data-ar="يبدأ الكهرمان راتنجاً من الأشجار، ومع مرور ملايين السنين يتحول إلى مادة ذهبية دافئة قد تحتفظ أحياناً بآثار من حياة قديمة.">Amber begins as tree resin. Over millions of years, it can harden into a warm golden material that sometimes preserves traces of ancient life.</p></div></article>
+   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/1000084081.jpg" alt="Natural coral" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="A GIFT FROM THE SEA" data-ar="هدية من أعماق البحر">A GIFT FROM THE SEA</span><h3>Natural Coral</h3><p data-en="Formed by tiny marine animals over generations, coral has been shaped into adornment and treasured across many coastal cultures." data-ar="تتكوّن الشعاب المرجانية بفضل كائنات بحرية صغيرة عبر أجيال، وقد استُخدم المرجان في الزينة وتقديره في ثقافات ساحلية كثيرة.">Formed by tiny marine animals over generations, coral has been shaped into adornment and treasured across many coastal cultures.</p></div></article>
+  </div>
  </div>
 </section>
 
