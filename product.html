@@ -176,7 +176,7 @@ if(!name||!validPrice||!validImage||!validDelivery){
   const customerPhone=document.getElementById("customerPhone").value.trim();
   const customerAddress=document.getElementById("customerAddress").value.trim();
   if(!customerName||!customerPhone||!customerAddress){this.reportValidity();return;}
-  const message="طلب شراء جديد – BLUE WHALE GEMS\\n\\nمرحباً، أود إتمام عملية شراء من متجركم.\\n\\nمعلومات الحريف:\\nالإسم الكريم: "+customerName+"\\nرقم الهاتف: "+customerPhone+"\\nالعنوان بالتفصيل: "+customerAddress+"\\n\\nتفاصيل الطلب:\\nالمنتج: "+name+"\\nالسعر: "+productAmount+" دينار تونسي\\nالتوصيل: "+deliveryAmount+" دينار تونسي\\nالكمية: "+quantity+"\\nالإجمالي: "+total+" دينار تونسي\\n\\nبانتظار تأكيد الطلب، شكراً لكم.";
+  const message="طلب جديد | BLUE WHALE GEMS\\n\\nالسلام عليكم، أرغب في تأكيد طلبي التالي:\\n\\n01 — معلومات الحريف\\nالاسم: "+customerName+"\\nالهاتف: "+customerPhone+"\\nالعنوان: "+customerAddress+"\\n\\n02 — تفاصيل الطلب\\nالمنتج: "+name+"\\nالسعر: "+productAmount+" د.ت\\nالتوصيل: "+deliveryAmount+" د.ت\\nالكمية: "+quantity+"\\n\\nالمبلغ الجملي: "+total+" د.ت\\n\\nشكراً لكم.";
   window.location.href="https://wa.me/21655733020?text="+encodeURIComponent(message);
  });
 }
