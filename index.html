@@ -405,25 +405,103 @@ animation:chakraProgress 35s linear infinite
 
 
 
-/* Gem Stories — full-image literary cards */
-.gem-stories{padding:clamp(58px,8vw,104px) 0;background:#f7fafb;overflow:hidden}
-.gem-stories-inner{width:min(1240px,calc(100% - 40px));margin:auto}
-.gem-stories-head{text-align:center;margin:0 auto 30px;max-width:720px}
+/* Gem Stories — refined editorial gallery; scoped exclusively to this section */
+.gem-stories{
+ padding:clamp(58px,7vw,92px) 0;
+ background:linear-gradient(180deg,#f7fafb 0%,#fff 100%);
+ overflow:hidden;
+}
+.gem-stories-inner{width:min(1240px,calc(100% - 48px));margin:0 auto}
+.gem-stories-head{text-align:center;margin:0 auto 38px;max-width:720px}
 .gem-stories-head .kicker{display:block}
-.gem-stories-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,5vw,58px);line-height:1.05;margin:10px 0;color:var(--ink)}
-.gem-stories-head p{color:var(--muted);font-size:13px;line-height:1.8;margin:0}
-.gem-stories-track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);grid-auto-columns:calc((100% - 28px)/3);gap:14px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#b9d2da transparent;padding:0 0 14px}
-.gem-story-card{position:relative;isolation:isolate;min-height:540px;aspect-ratio:3/4;border-radius:5px;overflow:hidden;scroll-snap-align:start;background:#22353b}
-.gem-story-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
-.gem-story-card:hover img{transform:scale(1.045)}
-.gem-story-card:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,24,29,.04) 10%,rgba(12,24,29,.12) 35%,rgba(10,22,27,.84) 100%)}
-.gem-story-copy{position:absolute;left:0;right:0;bottom:0;padding:clamp(20px,3vw,34px);color:#fff;text-align:right;direction:rtl}
-.gem-story-index{display:inline-block;font-family:var(--sans);font-size:10px;letter-spacing:2px;color:#e0edf0;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:8px;margin-bottom:12px}
-.gem-story-copy h3{font-family:var(--serif);font-size:clamp(29px,3vw,39px);font-weight:500;line-height:1;margin:0 0 13px;color:#fff}
-.gem-story-copy p{font-family:"Cairo",Arial,sans-serif;font-size:clamp(12px,1.1vw,14px);line-height:1.95;margin:0;color:rgba(255,255,255,.94);text-shadow:0 1px 10px rgba(0,0,0,.25)}
-.gem-stories-hint{text-align:center;color:#829399;font-size:10px;letter-spacing:1.5px;margin-top:8px}
-@media(max-width:800px){.gem-stories-track{grid-auto-columns:82%;gap:12px}.gem-story-card{min-height:570px;aspect-ratio:4/5}.gem-story-copy{padding:24px}.gem-story-copy h3{font-size:36px}.gem-story-copy p{font-size:13px;line-height:1.9}}
-@media(max-width:420px){.gem-story-card{min-height:520px}.gem-story-copy{padding:19px}.gem-story-copy p{font-size:12px}}
+.gem-stories-head h2{
+ font-family:var(--serif);font-weight:500;font-size:clamp(38px,5vw,58px);
+ line-height:1.05;margin:10px 0;color:var(--ink)
+}
+.gem-stories-head p{color:var(--muted);font-size:13px;line-height:1.9;margin:0}
+.gem-stories-track{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;
+ align-items:stretch;overflow:visible;padding:4px 2px 18px;
+}
+.gem-story-card{
+ min-width:0;display:flex;flex-direction:column;overflow:hidden;
+ border:1px solid #e8eff1;border-radius:18px;background:#fff;
+ box-shadow:0 12px 34px rgba(46,83,94,.075);
+ transition:transform .35s ease,box-shadow .35s ease;
+}
+.gem-story-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(46,83,94,.12)}
+.gem-story-media{
+ height:clamp(210px,22vw,290px);padding:15px;
+ display:flex;align-items:center;justify-content:center;
+ background:radial-gradient(ellipse at 50% 45%,#fff 0%,#f3f8fa 68%,#eaf3f6 100%);
+ border-bottom:1px solid #edf2f3;
+}
+.gem-story-card img{
+ display:block;width:100%;height:100%;object-fit:contain;
+ border-radius:10px;transition:transform .7s cubic-bezier(.2,.7,.2,1)
+}
+.gem-story-card:hover img{transform:scale(1.025)}
+.gem-story-copy{
+ position:relative;display:flex;flex:1;flex-direction:column;
+ padding:25px 24px 29px;text-align:right;direction:rtl;
+ background:linear-gradient(180deg,#fff 0%,#fbfdfe 100%);
+}
+.gem-story-index{
+ align-self:flex-start;direction:ltr;display:inline-block;
+ font-family:var(--sans);font-size:9px;letter-spacing:1.8px;
+ color:#7899a6;border-bottom:1px solid #dce9ed;
+ padding-bottom:8px;margin-bottom:13px
+}
+.gem-story-copy h3{
+ font-family:var(--serif);font-size:clamp(27px,2.5vw,34px);
+ font-weight:500;line-height:1.1;margin:0 0 14px;color:#26383e;
+ text-align:right;direction:ltr;
+}
+.gem-story-copy p{
+ font-family:"Cairo",Arial,sans-serif;font-size:13px;
+ line-height:2.05;margin:0;color:#586b72;
+ overflow:visible;display:block;max-height:none;
+}
+.gem-stories-navigation{
+ display:none;align-items:center;justify-content:center;gap:10px;margin:10px auto 0;
+}
+.gem-stories-dot{
+ width:7px;height:7px;padding:0;border:0;border-radius:20px;
+ background:#cbdde2;transition:width .25s ease,background .25s ease;
+}
+.gem-stories-dot[aria-current="true"]{width:23px;background:#628d9d}
+.gem-stories-hint{text-align:center;color:#829399;font-size:9px;letter-spacing:1.3px;margin-top:15px}
+body[dir="rtl"] .gem-story-copy{text-align:right}
+@media(max-width:800px){
+ .gem-stories-inner{width:min(100% - 30px,560px)}
+ .gem-stories-head{margin-bottom:26px}
+ .gem-stories-track{
+  display:flex;gap:17px;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;padding:4px 1px 15px;
+ }
+ .gem-stories-track::-webkit-scrollbar{display:none}
+ .gem-story-card{
+  flex:0 0 100%;width:100%;scroll-snap-align:center;scroll-snap-stop:always;
+  border-radius:17px;
+ }
+ .gem-story-media{height:clamp(210px,62vw,310px);padding:13px}
+ .gem-story-copy{padding:23px 22px 27px}
+ .gem-story-copy h3{font-size:32px}
+ .gem-story-copy p{font-size:13px;line-height:2.05}
+ .gem-stories-navigation{display:flex}
+ .gem-stories-hint{margin-top:12px}
+}
+@media(max-width:380px){
+ .gem-stories-inner{width:calc(100% - 24px)}
+ .gem-story-copy{padding:20px 18px 24px}
+ .gem-story-copy p{font-size:12px;line-height:2}
+}
+@media(prefers-reduced-motion:reduce){
+ .gem-story-card,.gem-story-card img,.gem-stories-dot{transition:none}
+ .gem-stories-track{scroll-behavior:auto}
+}
 
 </style>
 </head>
@@ -542,31 +620,36 @@ animation:chakraProgress 35s linear infinite
    <h2>Gem Stories</h2>
    <p>حكاياتٌ من ذاكرة الأحجار، حيث يلتقي جمال الطبيعة بأثر العصور.</p>
   </div>
-  <div class="gem-stories-track" aria-label="Gemstone stories">
-   <article class="gem-story-card">
-    <img src="images/429f9ad335b19790158a5b7cf7687dda.jpg" alt="Lapis Lazuli gemstone" loading="lazy" decoding="async">
+  <div class="gem-stories-track" id="gemStoriesTrack" aria-label="Gemstone stories">
+   <article class="gem-story-card" id="gemStory1">
+    <div class="gem-story-media"><img src="images/429f9ad335b19790158a5b7cf7687dda.jpg" alt="Lapis Lazuli gemstone" loading="lazy" decoding="async"></div>
     <div class="gem-story-copy">
      <span class="gem-story-index">01 · LAPIS LAZULI</span>
      <h3>Lapis Lazuli</h3>
      <p>في خزائن ملوك مصر القديمة، كان للازورد مقامٌ لا يُمنح إلا للأحجار النفيسة. استخرجوه من أعماق الجبال البعيدة، وجلبوه عبر القوافل إلى ضفاف النيل، ثم صاغت منه أيدي الصاغة حُليّ الملوك وقلائدهم وخرز التيجان. وقد بلغ من قيمة هذا الحجر أن زيّن قناع الملك توت عنخ آمون، فامتزجت زرقتُه بذهب الفراعنة، وبقي شاهداً على ذوق حضارةٍ جعلت من الجمال إرثاً لا يفنى.</p>
     </div>
    </article>
-   <article class="gem-story-card">
-    <img src="images/5b2b2edd0c5f7c337bae690266a18b8f.jpg" alt="Tiger's Eye gemstone" loading="lazy" decoding="async">
+   <article class="gem-story-card" id="gemStory2">
+    <div class="gem-story-media"><img src="images/5b2b2edd0c5f7c337bae690266a18b8f.jpg" alt="Tiger's Eye gemstone" loading="lazy" decoding="async"></div>
     <div class="gem-story-copy">
      <span class="gem-story-index">02 · TIGER'S EYE</span>
      <h3>Tiger's Eye</h3>
      <p>كان حجرُ عين النمر يُعرف ببريقه الذي يشبه نظرةَ الوحش في عتمة الغابة؛ تتعاقب على سطحه خيوطٌ من الذهب والبنيّ، كلما دار الحجر تبدّل ضوؤه كأنّ في داخله عيناً لا تنام. وقد حمله المحاربون والمسافرون في العصور القديمة، وجعلوه رمزاً للشجاعة واليقظة والحماية، لما يوحي به من قوّةٍ وثبات. ولم يكن سحره في لونه وحده، بل في ذلك الوميض الغامض الذي جعل اسمه باقياً بين الأحجار ذات الهيبة.</p>
     </div>
    </article>
-   <article class="gem-story-card">
-    <img src="images/b695789ae82ee0293d2da13d32ecf0a3.jpg" alt="Amethyst gemstone" loading="lazy" decoding="async">
+   <article class="gem-story-card" id="gemStory3">
+    <div class="gem-story-media"><img src="images/b695789ae82ee0293d2da13d32ecf0a3.jpg" alt="Amethyst gemstone" loading="lazy" decoding="async"></div>
     <div class="gem-story-copy">
      <span class="gem-story-index">03 · AMETHYST</span>
      <h3>Amethyst</h3>
      <p>كان الملوكُ ينتقون من حجر الأماتيست أصفى ألوانه، فيرصّعون به تيجانهم وخواتمهم، اعتقاداً منهم أنّ في بُنيانه البنفسجي سرّاً من أسرار الحكمة والوقار. وكانوا يرون فيه زينةً تليق بمن يجلس على العرش، ورمزاً لرجاحة العقل وصفاء الرأي؛ فكأنّما أرادوا أن يجمعوا في تيجانهم بين بهاء السلطان وحكمة الملوك.</p>
     </div>
    </article>
+  </div>
+  <div class="gem-stories-navigation" aria-label="Choose a gemstone story">
+   <button class="gem-stories-dot" type="button" aria-label="Story 1" aria-current="true" onclick="goToGemStory(0)"></button>
+   <button class="gem-stories-dot" type="button" aria-label="Story 2" aria-current="false" onclick="goToGemStory(1)"></button>
+   <button class="gem-stories-dot" type="button" aria-label="Story 3" aria-current="false" onclick="goToGemStory(2)"></button>
   </div>
   <div class="gem-stories-hint">SWIPE TO DISCOVER · اسحب لاكتشاف الحكايات</div>
  </div>
@@ -647,6 +730,35 @@ function toggleDrawer(){
 }
 applyLanguage(localStorage.getItem("bwg-language")||"en");
 
+function goToGemStory(index){
+ const track=document.getElementById("gemStoriesTrack");
+ const cards=track?track.querySelectorAll(".gem-story-card"):[];
+ if(!cards[index])return;
+ cards[index].scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});
+}
+function setupGemStories(){
+ const track=document.getElementById("gemStoriesTrack");
+ const cards=track?Array.from(track.querySelectorAll(".gem-story-card")):[];
+ const dots=Array.from(document.querySelectorAll(".gem-stories-dot"));
+ if(!track||!cards.length||!dots.length)return;
+ if(!("IntersectionObserver" in window)){
+  track.addEventListener("scroll",()=>{
+   const index=Math.round(track.scrollLeft/(cards[0].getBoundingClientRect().width+17));
+   dots.forEach((dot,i)=>dot.setAttribute("aria-current",String(i===index)));
+  },{passive:true});
+  return;
+ }
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+   if(entry.isIntersecting&&entry.intersectionRatio>=0.6){
+    const index=cards.indexOf(entry.target);
+    dots.forEach((dot,i)=>dot.setAttribute("aria-current",String(i===index)));
+   }
+  });
+ },{root:track,threshold:[0.6,0.8]});
+ cards.forEach(card=>observer.observe(card));
+}
+setupGemStories();
 async function loadFeaturedProducts(){
  const grid=document.getElementById("featuredProducts");
  try{
