@@ -85,7 +85,8 @@ async function loadProducts(){
   title.textContent=group.en;
   description.dataset.en=group.descEn;
   description.dataset.ar=group.descAr;
-  products.filter(p=>p.category===category).forEach(p=>{
+  const categoryProducts=products.filter(p=>p.category===category);
+  categoryProducts.forEach((p,index)=>{
    const imagePath=String(p.image||"").replace(/^\/+/, "");
    const params=new URLSearchParams({name:p.name,price:String(p.price),image:imagePath,delivery:String(p.delivery??8),stock:String(p.stock??1),category:p.category});
    const card=document.createElement("article");
@@ -98,7 +99,7 @@ async function loadProducts(){
    const originalImageUrl="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/"+imagePath;
    const optimizedImageUrl="https://wsrv.nl/?url="+encodeURIComponent(originalImageUrl)+"&w=640&output=webp&q=82&maxage=1y";
    img.alt=p.name;
-   img.loading=products.filter(item=>item.category===category).indexOf(p)<(window.matchMedia("(max-width:700px)").matches?2:4)?"eager":"lazy";
+   img.loading=index<(window.matchMedia("(max-width:700px)").matches?2:4)?"eager":"lazy";
    img.decoding="async";
    img.fetchPriority=img.loading==="eager"?"high":"low";
    img.src=optimizedImageUrl;
