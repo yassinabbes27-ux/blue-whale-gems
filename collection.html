@@ -60,40 +60,6 @@ body[dir="rtl"] .eyebrow,body[dir="rtl"] .back{letter-spacing:0}
 </main>
 <footer><strong>BLUE WHALE GEMS</strong><span data-en="NATURAL GEMSTONES · TUNISIA" data-ar="أحجار طبيعية · تونس">NATURAL GEMSTONES · TUNISIA</span></footer>
 <script>
-const products=[
-{c:"bracelets",n:"Aquamarine + Amethyst + Labradorite Bracelet",p:70,i:"20261018_184933.jpg"},
-{c:"bracelets",n:"Labradorite, Amethyst, Rose Quartz & Chips Bracelet",p:68,i:"1000088300.jpg"},
-{c:"bracelets",n:"Coral & Agate Bracelet",p:45,i:"1000088312.jpg"},
-{c:"bracelets",n:"Obsidian + Clear Quartz Bracelet",p:70,i:"1000088313.jpg"},
-{c:"bracelets",n:"Moss Quartz Bracelet",p:60,i:"1000088296.jpg"},
-{c:"bracelets",n:"Pink Tourmaline & Natural Pearl Bracelet",p:79,i:"1000088281.jpg"},
-{c:"bracelets",n:"Red Carnelian Chip Bracelet",p:50,i:"1000088295.jpg"},
-{c:"bracelets",n:"Citrine Chip Bracelet",p:50,i:"1000088297.jpg"},
-{c:"bracelets",n:"Rutilated Quartz & Tiger's Eye Chip Bracelet",p:55,i:"1000088299.jpg"},
-{c:"bracelets",n:"Falcon's Eye & Flower Agate Bracelet",p:69,i:"1000088279.jpg"},
-{c:"bracelets",n:"Aquamarine, Labradorite & Coral Bracelet",p:80,i:"1000088265.jpg"},
-{c:"bracelets",n:"Seven Chakras Bracelet",p:77,i:"1000088268.jpg"},
-{c:"bracelets",n:"Red Jasper Bracelet",p:60,i:"1000088278.jpg"},
-{c:"bracelets",n:"Amethyst & Rose Quartz Bracelet",p:66,i:"1000088290.jpg"},
-{c:"bracelets",n:"Amethyst Bracelet",p:70,i:"1000057411.jpg"},
-{c:"bracelets",n:"Tiger's Eye Bracelet",p:60,i:"1000063564.jpg"},
-{c:"bracelets",n:"Multi-Color Tourmaline Bracelet",p:65,i:"1000063590.jpg"},
-{c:"bracelets",n:"Lapis Lazuli Bracelet",p:80,i:"1000078469.jpg"},
-{c:"bracelets",n:"Baltic Amber Bracelet",p:190,i:"1000079541.jpg"},
-{c:"bracelets",n:"Natural Coral Bracelet",p:39,i:"1000084081.jpg"},
-{c:"bracelets",n:"Natural Coral & Pearl Bracelet",p:89,i:"1000085232.jpg"},
-{c:"necklaces",n:"Coral & Pearl Pendant Necklace",p:45,i:"1000032282.jpg"},
-{c:"necklaces",n:"Amber Pendant Necklace",p:50,i:"1000052346.jpg"},
-{c:"necklaces",n:"Yemeni Scenic Agate Pendant Necklace — 925 Sterling Silver",p:220,i:"1000074156.jpg"},
-{c:"necklaces",n:"Natural Coral Necklace",p:200,i:"1000081614.jpg"},
-{c:"necklaces",n:"Suleimani Agate Pendant Necklace",p:150,i:"1000082002.jpg"},
-{c:"necklaces",n:"Egyptian Ankh & Coral Pendant Necklace",p:79,i:"1000085314.jpg"},
-{c:"rings",n:"Red Agate Ring — 925 Sterling Silver",p:100,i:"1000085897.jpg"},
-{c:"rings",n:"Pyrite Ring — 925 Sterling Silver",p:120,i:"1000074444.jpg"},
-{c:"raw-gems",n:"Raw Apatite",p:37,i:"1000082268.jpg"},
-{c:"raw-gems",n:"Raw Carnelian",p:29,i:"1000082265.jpg"},
-{c:"raw-gems",n:"Raw Green Aventurine",p:34,i:"1000082266.jpg"}
-];
 const groups={
 bracelets:{en:"Bracelets",ar:"الأساور",descEn:"A collection of natural gemstone bracelets.",descAr:"مجموعة من الأساور المصنوعة من الأحجار الطبيعية."},
 necklaces:{en:"Necklaces",ar:"القلائد",descEn:"Pendants and necklaces shaped by nature.",descAr:"قلائد وقطع تتزيّن بجمال الأحجار الطبيعية."},
@@ -105,41 +71,47 @@ const group=groups[category];
 const title=document.getElementById("collectionTitle");
 const description=document.getElementById("collectionDescription");
 const grid=document.getElementById("productsGrid");
-if(!group){
- title.textContent="Collection not found";
- description.textContent="Please return to the collections page.";
-}else{
- title.textContent=group.en;
- description.dataset.en=group.descEn;
- description.dataset.ar=group.descAr;
- products.filter(p=>p.c===category).forEach(p=>{
-  const params=new URLSearchParams({name:p.n,price:String(p.p),image:"images/"+p.i,delivery:"8",stock:"1",category:category});
-  const card=document.createElement("article");
-  card.className="product";
-  const link=document.createElement("a");
-  link.href="product.html?"+params.toString();
-  const frame=document.createElement("div");
-  frame.className="product-image";
-  const img=document.createElement("img");
-  img.src="images/"+p.i;
-  img.alt=p.n;
-  img.loading="lazy";
-  img.onerror=()=>{frame.innerHTML='<div class="unavailable">Image unavailable</div>'};
-  frame.appendChild(img);
-  const name=document.createElement("h2");
-  name.textContent=p.n;
-  const price=document.createElement("div");
-  price.className="price";
-  price.textContent=p.p+" TND";
-  const delivery=document.createElement("span");
-  delivery.className="delivery";
-  delivery.dataset.en="Delivery · 8 TND";
-  delivery.dataset.ar="التوصيل · 8 د.ت";
-  delivery.textContent="Delivery · 8 TND";
-  link.append(frame,name,price,delivery);
-  card.appendChild(link);
-  grid.appendChild(card);
- });
+async function loadProducts(){
+ const response=await fetch("data/products.json",{cache:"no-store"});
+ if(!response.ok)throw new Error("Could not load product catalogue");
+ const products=await response.json();
+ if(!group){
+  title.textContent="Collection not found";
+  description.textContent="Please return to the collections page.";
+ }else{
+  title.textContent=group.en;
+  description.dataset.en=group.descEn;
+  description.dataset.ar=group.descAr;
+  products.filter(p=>p.category===category).forEach(p=>{
+   const imagePath=String(p.image||"").replace(/^\\/+/, "");
+   const params=new URLSearchParams({name:p.name,price:String(p.price),image:imagePath,delivery:String(p.delivery??8),stock:String(p.stock??1),category:p.category});
+   const card=document.createElement("article");
+   card.className="product";
+   const link=document.createElement("a");
+   link.href="product.html?"+params.toString();
+   const frame=document.createElement("div");
+   frame.className="product-image";
+   const img=document.createElement("img");
+   img.src=imagePath;
+   img.alt=p.name;
+   img.loading="lazy";
+   img.onerror=()=>{frame.innerHTML='<div class="unavailable">Image unavailable</div>'};
+   frame.appendChild(img);
+   const name=document.createElement("h2");
+   name.textContent=p.name;
+   const price=document.createElement("div");
+   price.className="price";
+   price.textContent=p.price+" TND";
+   const delivery=document.createElement("span");
+   delivery.className="delivery";
+   delivery.dataset.en="Delivery · "+p.delivery+" TND";
+   delivery.dataset.ar="التوصيل · "+p.delivery+" د.ت";
+   delivery.textContent=delivery.dataset.en;
+   link.append(frame,name,price,delivery);
+   card.appendChild(link);
+   grid.appendChild(card);
+  });
+ }
 }
 function applyLanguage(lang){
  localStorage.setItem("bwg-language",lang);
@@ -156,6 +128,7 @@ function applyLanguage(lang){
 function toggleLanguage(){applyLanguage((localStorage.getItem("bwg-language")||"en")==="en"?"ar":"en")}
 applyLanguage(localStorage.getItem("bwg-language")||"en");
 if(group)document.title=group.en+" | BLUE WHALE GEMS";
+loadProducts().then(()=>applyLanguage(localStorage.getItem("bwg-language")||"en")).catch(()=>{title.textContent="Collection unavailable";description.textContent="Please refresh the page in a moment.";});
 </script>
 </body>
 </html>
