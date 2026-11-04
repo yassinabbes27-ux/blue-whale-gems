@@ -527,7 +527,31 @@ body[dir="rtl"] .gem-story-copy{text-align:right}
 @media(prefers-reduced-motion:reduce){
  .gem-story-card,.gem-story-card img,.gem-stories-dot{transition:none}
  .gem-stories-track{scroll-behavior:auto}
-}</style>
+}
+.welcome-note{
+ padding:clamp(54px,7vw,82px) 24px;
+ background:linear-gradient(145deg,#f3f8fa 0%,#ffffff 52%,#f5fafb 100%);
+ text-align:center;
+ border-top:1px solid #edf3f5;
+ border-bottom:1px solid #edf3f5;
+}
+.welcome-note-inner{max-width:790px;margin:0 auto}
+.welcome-note .kicker{display:block;margin-bottom:17px}
+.welcome-note h2{
+ font-family:var(--serif);font-size:clamp(27px,4vw,38px);
+ line-height:1.35;font-weight:400;color:var(--ink);
+ margin:0 0 18px;
+}
+.welcome-note p{
+ max-width:730px;margin:0 auto;color:var(--muted);
+ font-size:14px;line-height:2.15;
+}
+@media(max-width:600px){
+ .welcome-note{padding:48px 21px}
+ .welcome-note p{font-size:13px;line-height:2}
+}
+
+</style>
 </head>
 <body>
 <div class="announcement" data-en="NATURAL GEMSTONES · DISTINCTIVE PIECES · TUNISIA" data-ar="أحجار طبيعية · قطع مميزة · تونس">NATURAL GEMSTONES · DISTINCTIVE PIECES · TUNISIA</div>
@@ -698,17 +722,13 @@ body[dir="rtl"] .gem-story-copy{text-align:right}
  </div>
 </section>
 
-<section class="section">
- <div class="section-head">
-  <span class="kicker" data-en="A THOUGHTFUL WAY TO SHOP" data-ar="تجربة تسوق واضحة">A THOUGHTFUL WAY TO SHOP</span>
-  <h2 data-en="The details matter." data-ar="التفاصيل تصنع الفرق.">The details matter.</h2>
- </div>
- <div class="values">
-  <div class="value"><div class="value-icon">◇</div><h3 data-en="Natural character" data-ar="طابع طبيعي">Natural character</h3><p data-en="Every gemstone has its own variations in colour, pattern and texture." data-ar="لكل حجر اختلافاته الخاصة في اللون والنقوش والملمس.">Every gemstone has its own variations in colour, pattern and texture.</p></div>
-  <div class="value"><div class="value-icon">⌂</div><h3 data-en="Clear details" data-ar="تفاصيل واضحة">Clear details</h3><p data-en="Product prices and delivery information are shown before you place an order." data-ar="نعرض أسعار المنتجات ومعلومات التوصيل بوضوح قبل تأكيد الطلب.">Product prices and delivery information are shown before you place an order.</p></div>
-  <div class="value"><div class="value-icon">♡</div><h3 data-en="Personal assistance" data-ar="مرافقة شخصية">Personal assistance</h3><p data-en="Contact us directly if you need help choosing a piece or completing an order." data-ar="يمكنك التواصل معنا مباشرة للمساعدة في اختيار القطعة أو إتمام الطلب.">Contact us directly if you need help choosing a piece or completing an order.</p></div>
- </div>
-</section>
+<section class="welcome-note">
+  <div class="welcome-note-inner">
+   <span class="kicker" data-en="WELCOME TO BLUE WHALE GEMS" data-ar="أهلاً بك في BLUE WHALE GEMS">WELCOME TO BLUE WHALE GEMS</span>
+   <h2 data-en="A gemstone for every reason." data-ar="لكل اختيارٍ سببه، ولكل حجرٍ سحره.">A gemstone for every reason.</h2>
+   <p data-en="Whatever brings you to gemstones — an interest in your zodiac sign, a personal search for comfort, balance and positive energy, or simply a love of wearing them as fine jewellery — we are here to offer pieces that speak to your taste and your purpose. Thank you for being here. We hope you enjoy discovering our world. 🩵🙏" data-ar="مهما كان سبب اقتنائك للأحجار الكريمة، سواء أكان اختيارك مرتبطاً ببرجك الفلكي، أو رغبةً في تعزيز شعورك بالراحة والتوازن والطاقة الإيجابية، أو حباً لجمالها حين تتألّق كقطعة مجوهرات فاخرة؛ ستجد هنا ما تبحث عنه، وما يليق بذوقك. شكراً لزيارتك، ونتمنى لك وقتاً ممتعاً في اكتشاف عالمنا. 🩵🙏">Whatever brings you to gemstones — an interest in your zodiac sign, a personal search for comfort, balance and positive energy, or simply a love of wearing them as fine jewellery — we are here to offer pieces that speak to your taste and your purpose. Thank you for being here. We hope you enjoy discovering our world. 🩵🙏</p>
+  </div>
+ </section>
 
 <section class="contact" id="contact">
  <h2 data-en="A piece worth discovering." data-ar="قطعة تستحق أن تكتشفها.">A piece worth discovering.</h2>
