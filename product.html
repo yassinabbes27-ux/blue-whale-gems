@@ -1,443 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 <title>Product | BLUE WHALE GEMS</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
- --white:#fff;
- --paper:#f7fafb;
- --blue:#b9dceb;
- --blue-dark:#7895a3;
- --green:#245344;
- --whatsapp:#a9e8c5;
- --ink:#25363d;
- --muted:#7b898e;
- --line:#e9eef0;
-}
+:root{--blue:#b9dceb;--blue-dark:#7895a3;--green:#245344;--whatsapp:#a9e8c5;--ink:#25363d;--muted:#7b898e;--line:#e9eef0}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
- margin:0;
- background:var(--white);
- color:var(--ink);
- font-family:"DM Sans",Arial,sans-serif;
-}
+body{margin:0;background:#fff;color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
+body[dir="rtl"]{font-family:"Cairo",Arial,sans-serif}
 a{color:inherit;text-decoration:none}
-header{
- border-bottom:1px solid var(--line);
- text-align:center;
- padding:19px 15px;
- background:#fff;
-}
-.logo{
- font-family:"Playfair Display",Georgia,serif;
- font-size:16px;
- font-weight:500;
- letter-spacing:2px;
-}
-.logo small{
- display:block;
- font-family:"DM Sans",sans-serif;
- font-size:9px;
- font-weight:400;
- letter-spacing:4px;
- color:var(--blue-dark);
- margin-top:5px;
-}
-main{
- max-width:1050px;
- margin:0 auto;
- padding:35px 22px 0;
-}
-.back{
- display:inline-block;
- margin-bottom:28px;
- color:var(--blue-dark);
- font-size:9px;
- letter-spacing:2px;
- text-transform:uppercase;
-}
-.product{
- display:grid;
- grid-template-columns:1.08fr .92fr;
- gap:55px;
- align-items:start;
-}
-.photo{
- background:transparent;
- padding:0;
- border:0;
- box-shadow:none;
- overflow:hidden;
-}
-.photo img{
- display:block;
- width:100%;
- height:auto;
- max-height:620px;
- object-fit:contain;
- border-radius:3px;
- box-shadow:none;
-}
+header{border-bottom:1px solid var(--line);padding:15px 22px;background:#fff}
+.header-inner{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-family:"Playfair Display",serif;font-size:16px;font-weight:500;letter-spacing:2px;text-align:center}
+.logo small{display:block;font-family:"DM Sans",sans-serif;font-size:9px;font-weight:400;letter-spacing:4px;color:var(--blue-dark);margin-top:5px}
+.lang{border:1px solid #dce8ec;background:white;color:var(--green);padding:8px 12px;border-radius:2px;font-size:11px;cursor:pointer}
+main{max-width:1050px;margin:0 auto;padding:35px 22px 0}
+.back{display:inline-block;margin-bottom:28px;color:var(--blue-dark);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+.product{display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:start}
+.photo{background:transparent;padding:0;border:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-height:620px;object-fit:contain;border-radius:3px;box-shadow:none}
 .details{padding:15px 0 0}
-.eyebrow{
- font-size:9px;
- letter-spacing:3.5px;
- color:var(--blue-dark);
- font-weight:600;
- text-transform:uppercase;
-}
-h1{
- margin:20px 0 16px;
- font-family:"Playfair Display",Georgia,serif;
- font-size:clamp(30px,4vw,43px);
- line-height:1.3;
- font-weight:400;
- letter-spacing:-.3px;
-}
-.price{
- margin:22px 0;
- font-size:22px;
- color:var(--green);
- font-weight:500;
- letter-spacing:.4px;
-}
-.description{
- color:#718087;
- font-size:13px;
- line-height:2;
-}
-.info{
- background:#f7fafb;
- border:1px solid #edf2f4;
- border-radius:3px;
- padding:20px 22px;
- margin:27px 0;
-}
-.info div{
- display:flex;
- justify-content:space-between;
- gap:12px;
- border-bottom:1px solid #e8eff2;
- padding:12px 0;
- font-size:12px;
- line-height:1.6;
-}
+.eyebrow{font-size:9px;letter-spacing:3px;color:var(--blue-dark);font-weight:600;text-transform:uppercase}
+h1{margin:20px 0 16px;font-family:"Playfair Display",serif;font-size:clamp(30px,4vw,43px);line-height:1.3;font-weight:400}
+body[dir="rtl"] h1,body[dir="rtl"] h2{font-family:"Cairo",sans-serif}
+.price{margin:22px 0;font-size:22px;color:var(--green);font-weight:500}
+.description{color:#718087;font-size:13px;line-height:2}
+.info{background:#f7fafb;border:1px solid #edf2f4;border-radius:3px;padding:20px 22px;margin:27px 0}
+.info div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #e8eff2;padding:12px 0;font-size:12px;line-height:1.6}
 .info div:last-child{border-bottom:0}
 .info span{color:#78888e}
-.info strong{
- color:var(--ink);
- font-weight:600;
- text-align:right;
-}
-.info .total strong{
- color:var(--green);
- font-size:16px;
-}
-.stock{
- display:flex;
- align-items:center;
- gap:9px;
- margin:20px 0;
- color:#527b65;
- font-size:11px;
- letter-spacing:.4px;
-}
-.stock-dot{
- width:7px;
- height:7px;
- border-radius:50%;
- background:#78b38e;
-}
-.order{
- display:block;
- width:100%;
- text-align:center;
- background:var(--whatsapp);
- color:#174b35;
- padding:18px 15px;
- border-radius:3px;
- font-size:10px;
- font-weight:600;
- letter-spacing:1.7px;
- transition:background .2s,transform .2s;
-}
-.order:hover{
- background:#8bd9ae;
- transform:translateY(-2px);
-}
-.note{
- margin-top:13px;
- color:#89979d;
- font-size:10px;
- line-height:1.8;
- text-align:center;
-}
-.editorial{
- margin-top:75px;
- padding:55px 20px;
- background:#f7fafb;
- text-align:center;
-}
-.editorial h2{
- margin:16px 0;
- font-family:"Playfair Display",Georgia,serif;
- font-size:34px;
- font-weight:400;
-}
-.editorial p{
- max-width:540px;
- margin:0 auto;
- color:#718087;
- font-size:13px;
- line-height:2;
-}
-.details-contact{
- padding:48px 15px;
- text-align:center;
-}
-.details-contact h2{
- font-family:"Playfair Display",Georgia,serif;
- font-size:27px;
- font-weight:400;
-}
-.details-contact p{
- color:var(--muted);
- font-size:12px;
- line-height:1.8;
-}
-.details-contact a{
- color:var(--green);
- font-size:10px;
- letter-spacing:1.5px;
- border-bottom:1px solid var(--blue);
- padding-bottom:5px;
-}
-footer{
- border-top:1px solid var(--line);
- text-align:center;
- padding:29px 15px;
- color:#89979d;
- font-size:9px;
- letter-spacing:1.5px;
-}
-footer strong{
- display:block;
- color:var(--ink);
- font-family:"Playfair Display",Georgia,serif;
- font-size:15px;
- font-weight:400;
- letter-spacing:2px;
- margin-bottom:8px;
-}
-@media(max-width:700px){
- main{padding:23px 14px 0}
- .product{
-  grid-template-columns:1fr;
-  gap:25px;
- }
- .photo img{max-height:470px}
- .details{padding:0 3px}
- h1{font-size:32px;margin:15px 0}
- .price{font-size:21px}
- .info{padding:15px 17px}
- .editorial{margin-top:55px;padding:45px 18px}
- .editorial h2{font-size:29px}
-}
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{
-  animation:none!important;
-  transition:none!important;
-  scroll-behavior:auto!important;
- }
-}
+.info strong{color:var(--ink);font-weight:600;text-align:right}
+.info .total strong{color:var(--green);font-size:16px}
+.stock{display:flex;align-items:center;gap:9px;margin:20px 0;color:#527b65;font-size:11px}
+.stock-dot{width:7px;height:7px;border-radius:50%;background:#78b38e;flex:none}
+.order{display:block;width:100%;text-align:center;background:var(--whatsapp);color:#174b35;padding:18px 15px;border-radius:3px;font-size:10px;font-weight:600;letter-spacing:1.5px;transition:.2s}
+.order:hover{background:#8bd9ae;transform:translateY(-2px)}
+.note{margin-top:13px;color:#89979d;font-size:10px;line-height:1.8;text-align:center}
+.editorial{margin-top:75px;padding:55px 20px;background:#f7fafb;text-align:center}
+.editorial h2{margin:16px 0;font-family:"Playfair Display",serif;font-size:34px;font-weight:400}
+.editorial p{max-width:540px;margin:0 auto;color:#718087;font-size:13px;line-height:2}
+.details-contact{padding:48px 15px;text-align:center}
+.details-contact h2{font-family:"Playfair Display",serif;font-size:27px;font-weight:400}
+.details-contact p{color:var(--muted);font-size:12px;line-height:1.8}
+.details-contact a{color:var(--green);font-size:10px;letter-spacing:1.5px;border-bottom:1px solid var(--blue);padding-bottom:5px}
+footer{border-top:1px solid var(--line);text-align:center;padding:29px 15px;color:#89979d;font-size:9px;letter-spacing:1.5px}
+footer strong{display:block;color:var(--ink);font-family:"Playfair Display",serif;font-size:15px;font-weight:400;letter-spacing:2px;margin-bottom:8px}
+body[dir="rtl"] .eyebrow,body[dir="rtl"] .back,body[dir="rtl"] .order,body[dir="rtl"] footer{letter-spacing:0}
+@media(max-width:700px){header{padding:13px}.logo{font-size:12px}main{padding:23px 14px 0}.product{grid-template-columns:1fr;gap:25px}.photo img{max-height:470px}.details{padding:0 3px}h1{font-size:32px;margin:15px 0}.price{font-size:21px}.info{padding:15px 17px}.editorial{margin-top:55px;padding:45px 18px}.editorial h2{font-size:29px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
 </style>
 </head>
-
 <body>
-
 <header>
- <a class="logo" href="index.html">
-  BLUE WHALE GEMS
-  <small>NATURAL BEAUTY</small>
- </a>
+ <div class="header-inner">
+  <a class="logo" href="index.html">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a>
+  <button class="lang" type="button" onclick="toggleLanguage()">العربية</button>
+ </div>
 </header>
 
 <main>
- <a class="back" href="index.html#collections">← Return to collections</a>
-
+ <a class="back" id="backLink" href="index.html#collections">← Return to collections</a>
  <div class="product">
   <div class="photo">
    <img id="productImage" src="" alt="Natural gemstone product">
   </div>
-
   <div class="details">
    <div class="eyebrow">BLUE WHALE GEMS · SELECTED PIECE</div>
-
    <h1 id="productName">Product</h1>
-
    <div class="price" id="productPrice"></div>
-
-   <p class="description">
-    قطعة من الأحجار الطبيعية، اختيرت لجمال ألوانها وتفاصيلها.
-    لكل حجر طابعه الخاص، ولكل قطعة حضورها المختلف.
-   </p>
+   <p class="description" data-en="A natural gemstone piece, selected for the beauty of its colours and details. Every stone has its own character, and every piece has a presence of its own." data-ar="قطعة من الأحجار الطبيعية، اختيرت لجمال ألوانها وتفاصيلها. لكل حجر طابعه الخاص، ولكل قطعة حضورها المختلف.">A natural gemstone piece, selected for the beauty of its colours and details. Every stone has its own character, and every piece has a presence of its own.</p>
 
    <div class="stock">
     <span class="stock-dot"></span>
-    <span>ONE PIECE AVAILABLE</span>
+    <span id="stockText">ONE PIECE AVAILABLE</span>
    </div>
 
    <div class="info">
-    <div>
-     <span>Product price</span>
-     <strong id="infoPrice"></strong>
-    </div>
-
-    <div>
-     <span>Delivery</span>
-     <strong id="deliveryPrice"></strong>
-    </div>
-
-    <div>
-     <span>Available quantity</span>
-     <strong>1 piece</strong>
-    </div>
-
-    <div class="total">
-     <span>Total</span>
-     <strong id="totalPrice"></strong>
-    </div>
+    <div><span data-en="Product price" data-ar="سعر المنتج">Product price</span><strong id="infoPrice"></strong></div>
+    <div><span data-en="Delivery" data-ar="التوصيل">Delivery</span><strong id="deliveryPrice"></strong></div>
+    <div><span data-en="Available quantity" data-ar="الكمية المتوفرة">Available quantity</span><strong id="quantityText">1 piece</strong></div>
+    <div class="total"><span data-en="Total" data-ar="المجموع">Total</span><strong id="totalPrice"></strong></div>
    </div>
 
-   <a class="order" id="orderButton" href="#">
-    ORDER VIA WHATSAPP
-   </a>
-
-   <p class="note">
-    ستُفتح محادثة واتساب برسالة تحتوي على تفاصيل المنتج والطلب.
-   </p>
+   <a class="order" id="orderButton" href="#" data-en="ORDER VIA WHATSAPP" data-ar="اطلب عبر واتساب">ORDER VIA WHATSAPP</a>
+   <p class="note" data-en="WhatsApp will open with a message containing the product and order details." data-ar="ستُفتح محادثة واتساب برسالة تحتوي على تفاصيل المنتج والطلب.">WhatsApp will open with a message containing the product and order details.</p>
   </div>
  </div>
 </main>
 
 <section class="editorial">
- <div class="eyebrow">THE NATURAL COLLECTION</div>
- <h2>Beauty has its own character.</h2>
- <p>
-  الأحجار الطبيعية تختلف في ألوانها وتكويناتها وملمسها.
-  نترك جمالها يتحدث عن نفسه، دون مبالغة.
- </p>
+ <div class="eyebrow" data-en="THE NATURAL COLLECTION" data-ar="مجموعة الطبيعة">THE NATURAL COLLECTION</div>
+ <h2 data-en="Beauty has its own character." data-ar="لكل حجر جماله الخاص.">Beauty has its own character.</h2>
+ <p data-en="Natural gemstones differ in their colours, formations and textures. We let their beauty speak for itself, without exaggeration." data-ar="تختلف الأحجار الطبيعية في ألوانها وتكويناتها وملمسها. نترك جمالها يتحدث عن نفسه، دون مبالغة.">Natural gemstones differ in their colours, formations and textures. We let their beauty speak for itself, without exaggeration.</p>
 </section>
 
 <section class="details-contact">
- <h2>A question about this piece?</h2>
- <p>يسعدنا الإجابة عن استفساراتك ومساعدتك في طلبك.</p>
- <a href="https://wa.me/21655733020" target="_blank" rel="noopener">
-  CONTACT BLUE WHALE GEMS
- </a>
+ <h2 data-en="A question about this piece?" data-ar="لديك سؤال حول هذه القطعة؟">A question about this piece?</h2>
+ <p data-en="We would be pleased to answer your questions and help with your order." data-ar="يسعدنا الإجابة عن استفساراتك ومساعدتك في طلبك.">We would be pleased to answer your questions and help with your order.</p>
+ <a href="https://wa.me/21655733020" target="_blank" rel="noopener" data-en="CONTACT BLUE WHALE GEMS" data-ar="تواصل مع BLUE WHALE GEMS">CONTACT BLUE WHALE GEMS</a>
 </section>
 
-<footer>
- <strong>BLUE WHALE GEMS</strong>
- NATURAL GEMSTONES · TUNISIA
-</footer>
+<footer><strong>BLUE WHALE GEMS</strong><span data-en="NATURAL GEMSTONES · TUNISIA" data-ar="أحجار طبيعية · تونس">NATURAL GEMSTONES · TUNISIA</span></footer>
 
 <script>
-const params=new URLSearchParams(window.location.search);
-
+const params=new URLSearchParams(location.search);
 const name=params.get("name");
 const price=params.get("price");
 const image=params.get("image");
 const delivery=params.get("delivery")||"8";
 const stock=params.get("stock")||"1";
+const category=params.get("category");
+const validImage=image&&image.startsWith("images/")&&!image.includes("..");
+const validPrice=price!==null&&Number.isFinite(Number(price))&&Number(price)>=0;
+const validDelivery=Number.isFinite(Number(delivery))&&Number(delivery)>=0;
 
-const validImage=
- image &&
- image.startsWith("images/") &&
- !image.includes("..");
+if(category&&["bracelets","necklaces","rings","raw-gems"].includes(category)){
+ document.getElementById("backLink").href="collection.html?category="+encodeURIComponent(category);
+}
 
-const validPrice=
- price!==null &&
- Number.isFinite(Number(price)) &&
- Number(price)>=0;
-
-const validDelivery=
- Number.isFinite(Number(delivery)) &&
- Number(delivery)>=0;
-
-if(!name || !validPrice || !validImage || !validDelivery){
-
+if(!name||!validPrice||!validImage||!validDelivery){
  document.getElementById("productName").textContent="Product not found";
  document.getElementById("productPrice").textContent="";
  document.getElementById("infoPrice").textContent="";
  document.getElementById("deliveryPrice").textContent="";
  document.getElementById("totalPrice").textContent="";
-
- document.querySelector(".description").textContent=
- "لم نتمكن من العثور على هذا المنتج. ارجع إلى المجموعة واختر المنتج من جديد.";
-
+ document.querySelector(".description").dataset.en="We could not find this product. Return to the collection and choose a product again.";
+ document.querySelector(".description").dataset.ar="لم نتمكن من العثور على هذا المنتج. ارجع إلى المجموعة واختر المنتج من جديد.";
  document.querySelector(".stock").style.display="none";
  document.querySelector(".info").style.display="none";
  document.getElementById("orderButton").style.display="none";
  document.getElementById("productImage").style.display="none";
-
 }else{
-
  const productAmount=Number(price);
  const deliveryAmount=Number(delivery);
  const quantity=1;
  const total=productAmount+deliveryAmount;
+ const availableStock=Math.max(0,Number(stock)||1);
 
  document.title=name+" | BLUE WHALE GEMS";
-
  document.getElementById("productName").textContent=name;
  document.getElementById("productPrice").textContent=productAmount+" TND";
-
- document.getElementById("infoPrice").textContent=
-  productAmount+" TND";
-
- document.getElementById("deliveryPrice").textContent=
-  deliveryAmount+" TND";
-
- document.getElementById("totalPrice").textContent=
-  total+" TND";
-
+ document.getElementById("infoPrice").textContent=productAmount+" TND";
+ document.getElementById("deliveryPrice").textContent=deliveryAmount+" TND";
+ document.getElementById("totalPrice").textContent=total+" TND";
  document.getElementById("productImage").src=image;
  document.getElementById("productImage").alt=name;
 
- const availableStock=Math.max(0,Number(stock)||1);
+ document.getElementById("stockText").dataset.en=availableStock>0?"ONLY "+availableStock+" PIECE"+(availableStock>1?"S":"")+" AVAILABLE":"CURRENTLY UNAVAILABLE";
+ document.getElementById("stockText").dataset.ar=availableStock>0?"متوفر: "+availableStock+" قطعة":"غير متوفر حالياً";
+ document.getElementById("quantityText").dataset.en=availableStock+" piece"+(availableStock>1?"s":"");
+ document.getElementById("quantityText").dataset.ar=availableStock+" قطعة";
 
- document.querySelector(".stock span:last-child").textContent=
-  availableStock>0
-   ? "ONLY "+availableStock+" PIECE"+(availableStock>1?"S":"")+" AVAILABLE"
-   : "CURRENTLY UNAVAILABLE";
+ if(availableStock<1)document.getElementById("orderButton").style.display="none";
 
- if(availableStock<1){
-  document.getElementById("orderButton").style.display="none";
- }
-
- const message=
-  "Hello BLUE WHALE GEMS,\n\n"+
-  "I would like to order:\n"+
-  "Product: "+name+"\n"+
-  "Price: "+productAmount+" TND\n"+
-  "Delivery: "+deliveryAmount+" TND\n"+
-  "Quantity: "+quantity+"\n"+
-  "Total: "+total+" TND";
-
- document.getElementById("orderButton").href=
-  "https://wa.me/21655733020?text="+encodeURIComponent(message);
+ const message="Hello BLUE WHALE GEMS,\n\nI would like to order:\nProduct: "+name+"\nPrice: "+productAmount+" TND\nDelivery: "+deliveryAmount+" TND\nQuantity: "+quantity+"\nTotal: "+total+" TND";
+ document.getElementById("orderButton").href="https://wa.me/21655733020?text="+encodeURIComponent(message);
 }
-</script>
 
+function applyLanguage(lang){
+ localStorage.setItem("bwg-language",lang);
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ document.body.dir=lang==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=el.dataset[lang]);
+ document.querySelector(".lang").textContent=lang==="ar"?"English":"العربية";
+ document.getElementById("backLink").textContent=lang==="ar"?"→ العودة إلى المجموعة":"← Return to collection";
+}
+function toggleLanguage(){applyLanguage((localStorage.getItem("bwg-language")||"en")==="en"?"ar":"en")}
+applyLanguage(localStorage.getItem("bwg-language")||"en");
+</script>
 </body>
 </html>
