@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,27 +6,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 <title>BLUE WHALE GEMS | Natural Gemstones</title>
-<meta name="description" content="Discover natural gemstones, bracelets, necklaces and silver jewelry at BLUE WHALE GEMS.">
+<meta name="description" content="Discover natural gemstone jewelry and unique pieces at BLUE WHALE GEMS.">
 <style>
-:root{--blue:#b9dceb;--pale:#f3f9fc;--green:#245344;--ink:#20333b;--muted:#71828a}
+:root{
+ --blue:#b9dceb;
+ --pale:#f3f9fc;
+ --green:#245344;
+ --whatsapp:#a9e8c5;
+ --ink:#20333b;
+ --muted:#71828a;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:#fff;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
 a{color:inherit;text-decoration:none}
-header{position:sticky;top:0;z-index:20;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid #edf1f3}
-.nav{max-width:1160px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+header{
+ position:sticky;top:0;z-index:20;
+ background:#ffffffed;backdrop-filter:blur(12px);
+ border-bottom:1px solid #edf1f3
+}
+.nav{
+ max-width:1160px;margin:auto;padding:15px 20px;
+ display:flex;align-items:center;justify-content:space-between;gap:15px
+}
 .logo{font-size:16px;font-weight:800;letter-spacing:2px}
 .logo small{display:block;font-size:9px;font-weight:normal;letter-spacing:4px;color:#7795a3;margin-top:4px}
 nav{display:flex;gap:20px;font-size:12px;color:#586a72}
 nav a:hover{color:var(--green)}
-.hero{background:linear-gradient(120deg,#f7fbfd,#dceef5);text-align:center;padding:75px 20px 68px}
+.hero{
+ background:linear-gradient(120deg,#f7fbfd,#dceef5);
+ text-align:center;padding:75px 20px 68px
+}
 .eyebrow{font-size:10px;letter-spacing:3px;color:#6d94a5;font-weight:bold}
-.hero h1{font:normal clamp(36px,7vw,61px)/1.13 Georgia,serif;max-width:760px;margin:19px auto 15px}
+.hero h1{
+ font:normal clamp(36px,7vw,61px)/1.13 Georgia,serif;
+ max-width:760px;margin:19px auto 15px
+}
 .hero p{max-width:490px;margin:0 auto;color:#637780;font-size:14px;line-height:1.9}
-.btn{display:inline-block;background:var(--green);color:#fff;padding:15px 25px;border-radius:7px;font-size:12px;margin-top:24px;transition:.2s}
-.btn:hover{transform:translateY(-2px);background:#183e32}
-.category-nav{max-width:1100px;margin:28px auto 0;padding:0 18px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.category-nav a{background:var(--pale);padding:17px 8px;text-align:center;border-radius:11px;font-size:12px;font-weight:bold;transition:.2s}
+.btn{
+ display:inline-block;background:var(--green);color:#fff;
+ padding:15px 25px;border-radius:8px;font-size:12px;
+ margin-top:24px;transition:.2s
+}
+.btn:hover{transform:translateY(-2px)}
+.category-nav{
+ max-width:1100px;margin:28px auto 0;padding:0 18px;
+ display:grid;grid-template-columns:repeat(4,1fr);gap:12px
+}
+.category-nav a{
+ background:var(--pale);padding:17px 8px;text-align:center;
+ border-radius:11px;font-size:12px;font-weight:bold;transition:.2s
+}
 .category-nav a:hover{background:#e5f2f7;transform:translateY(-2px)}
 .section{max-width:1160px;margin:55px auto;padding:0 18px;scroll-margin-top:90px}
 .section-head{text-align:center;margin-bottom:25px}
@@ -33,20 +64,38 @@ nav a:hover{color:var(--green)}
 .section-head p{font-size:13px;color:var(--muted);line-height:1.7}
 .products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 16px}
 .product{min-width:0;animation:fade .5s ease both}
-.product-image{aspect-ratio:1/1.12;background:#f3f7f9;border-radius:14px;overflow:hidden}
-.product-image img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .4s}
-.product a:hover img{transform:scale(1.045)}
+.product-image{
+ aspect-ratio:1/1.12;background:#f3f7f9;
+ border-radius:14px;overflow:hidden;padding:8px
+}
+.product-image img{
+ width:100%;height:100%;display:block;
+ object-fit:contain;border-radius:9px;transition:transform .35s
+}
+.product a:hover img{transform:scale(1.035)}
 .product h3{font-size:13px;line-height:1.5;margin:11px 0 6px;font-weight:600}
 .product .price{font-size:13px;color:var(--green);font-weight:bold}
-.empty{color:var(--muted);text-align:center}
+.empty{color:var(--muted);text-align:center;font-size:12px}
 .about{background:#f3f9fb;text-align:center;padding:52px 22px;margin-top:65px}
 .about h2{font:normal 30px Georgia,serif}
 .about p{max-width:550px;margin:auto;color:#687b83;font-size:14px;line-height:1.9}
 .contact{text-align:center;padding:45px 20px}
 .contact p{font-size:13px;color:var(--muted);line-height:1.8}
-footer{text-align:center;border-top:1px solid #edf1f3;padding:28px 15px;color:#809099;font-size:10px;letter-spacing:1px}
+.whatsapp-btn{
+ display:inline-block;background:var(--whatsapp);color:#174b35;
+ padding:16px 27px;border-radius:9px;font-size:13px;
+ font-weight:bold;margin-top:15px;transition:.2s
+}
+.whatsapp-btn:hover{background:#8bd9ae;transform:translateY(-2px)}
+footer{
+ text-align:center;border-top:1px solid #edf1f3;
+ padding:28px 15px;color:#809099;font-size:10px;letter-spacing:1px
+}
 footer strong{display:block;color:var(--ink);font-size:13px;margin-bottom:8px}
-@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fade{
+ from{opacity:0;transform:translateY(10px)}
+ to{opacity:1;transform:translateY(0)}
+}
 @media(max-width:700px){
  .nav{padding:13px 14px}
  .logo{font-size:13px}
@@ -62,9 +111,12 @@ footer strong{display:block;color:var(--ink);font-size:13px;margin-bottom:8px}
 </style>
 </head>
 <body>
+
 <header>
  <div class="nav">
-  <a class="logo" href="#home">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a>
+  <a class="logo" href="#home">BLUE WHALE GEMS
+   <small>NATURAL BEAUTY</small>
+  </a>
   <nav>
    <a href="#home">Home</a>
    <a href="#bracelets">Bracelets</a>
@@ -101,7 +153,11 @@ footer strong{display:block;color:var(--ink);font-size:13px;margin-bottom:8px}
  <div class="eyebrow">GET IN TOUCH</div>
  <h2>Have a question?</h2>
  <p>للطلب أو الاستفسار، تواصل معنا مباشرة عبر واتساب.</p>
- <a class="btn" href="https://wa.me/21655733020" target="_blank">Contact on WhatsApp</a>
+ <a class="whatsapp-btn"
+ href="https://wa.me/message/RHFJOGTPA2UXC1"
+ target="_blank" rel="noopener">
+ Contact on WhatsApp
+ </a>
 </section>
 </main>
 
@@ -134,17 +190,14 @@ const products=[
 {c:"bracelets",n:"Baltic Amber Bracelet",p:190,i:"1000079541.jpg"},
 {c:"bracelets",n:"Natural Coral Bracelet",p:39,i:"1000084081.jpg"},
 {c:"bracelets",n:"Natural Coral & Pearl Bracelet",p:89,i:"1000085232.jpg"},
-
 {c:"necklaces",n:"Coral & Pearl Pendant Necklace",p:45,i:"1000032282.jpg"},
 {c:"necklaces",n:"Amber Pendant Necklace",p:50,i:"1000052346.jpg"},
 {c:"necklaces",n:"Yemeni Scenic Agate Pendant Necklace — 925 Sterling Silver",p:220,i:"1000074156.jpg"},
 {c:"necklaces",n:"Natural Coral Necklace",p:200,i:"1000081614.jpg"},
 {c:"necklaces",n:"Suleimani Agate Pendant Necklace",p:150,i:"1000082002.jpg"},
 {c:"necklaces",n:"Egyptian Ankh & Coral Pendant Necklace",p:79,i:"1000085314.jpg"},
-
 {c:"rings",n:"Red Agate Ring — 925 Sterling Silver",p:100,i:"1000085897.jpg"},
 {c:"rings",n:"Pyrite Ring — 925 Sterling Silver",p:120,i:"1000074444.jpg"},
-
 {c:"raw-gems",n:"Raw Apatite",p:37,i:"1000082268.jpg"},
 {c:"raw-gems",n:"Raw Carnelian",p:29,i:"1000082265.jpg"},
 {c:"raw-gems",n:"Raw Green Aventurine",p:34,i:"1000082266.jpg"}
@@ -158,49 +211,75 @@ const groups=[
 ];
 
 const root=document.getElementById("catalog");
+
 groups.forEach(group=>{
  const section=document.createElement("section");
  section.className="section";
  section.id=group.id;
+
  const head=document.createElement("div");
  head.className="section-head";
+
  const eyebrow=document.createElement("div");
  eyebrow.className="eyebrow";
  eyebrow.textContent="BLUE WHALE GEMS COLLECTION";
+
  const title=document.createElement("h2");
  title.textContent=group.title;
+
  const desc=document.createElement("p");
  desc.textContent=group.desc;
+
  head.append(eyebrow,title,desc);
+
  const grid=document.createElement("div");
  grid.className="products";
+
  products.filter(p=>p.c===group.id).forEach(p=>{
   const card=document.createElement("article");
   card.className="product";
+
   const link=document.createElement("a");
-  const params=new URLSearchParams({name:p.n,price:p.p,image:"images/"+p.i});
-  if(p.d!==undefined)params.set("delivery",p.d);
+  const params=new URLSearchParams({
+   name:p.n,
+   price:String(p.p),
+   image:"images/"+p.i
+  });
+
+  if(p.d!==undefined)params.set("delivery",String(p.d));
+
   link.href="product.html?"+params.toString();
+
   const frame=document.createElement("div");
   frame.className="product-image";
+
   const img=document.createElement("img");
   img.src="images/"+p.i;
   img.alt=p.n;
   img.loading="lazy";
-  img.onerror=()=>{frame.innerHTML='<span class="empty">Image unavailable</span>';};
+
+  img.onerror=()=>{
+   frame.innerHTML='<span class="empty">Image unavailable</span>';
+  };
+
   frame.appendChild(img);
+
   const name=document.createElement("h3");
   name.textContent=p.n;
+
   const price=document.createElement("div");
   price.className="price";
   price.textContent=p.p+" TND";
+
   link.append(frame,name,price);
   card.appendChild(link);
   grid.appendChild(card);
  });
+
  section.append(head,grid);
  root.appendChild(section);
 });
 </script>
+
 </body>
 </html>
