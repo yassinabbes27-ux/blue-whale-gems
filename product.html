@@ -38,7 +38,14 @@ body[dir="rtl"] h1,body[dir="rtl"] h2{font-family:"Cairo",sans-serif}
 .stock{display:flex;align-items:center;gap:9px;margin:20px 0;color:#527b65;font-size:11px}
 .stock-dot{width:7px;height:7px;border-radius:50%;background:#78b38e;flex:none}
 .order{display:block;width:100%;text-align:center;background:var(--green);color:#fff;padding:17px 15px;border-radius:3px;font-size:13px;font-weight:600;letter-spacing:0;transition:.2s}.order span{display:block;font-size:14px;font-weight:700;line-height:1.7}.order small{display:block;margin-top:2px;font-size:10px;font-weight:400;opacity:.9;line-height:1.6}.order:hover{background:#193f34;transform:translateY(-2px)}
-
+.order-form{margin-top:24px;display:grid;gap:13px}
+.order-heading{margin:0 0 3px;color:var(--green);font-family:"Cairo",sans-serif;font-size:17px;font-weight:700;text-align:right}
+.order-field{display:grid;gap:7px;text-align:right}
+.order-field label{font-size:12px;color:#52646b;font-weight:600}
+.order-field input,.order-field textarea{width:100%;border:1px solid #dfe8eb;border-radius:4px;background:#fff;padding:13px 14px;color:var(--ink);font:inherit;font-size:13px;outline:none;transition:border-color .2s}
+.order-field input:focus,.order-field textarea:focus{border-color:var(--blue-dark)}
+.order-field textarea{min-height:88px;resize:vertical;line-height:1.8}
+.order-form .order{font-family:inherit;cursor:pointer;border:0}
 .note{margin-top:13px;color:#89979d;font-size:10px;line-height:1.8;text-align:center}
 .editorial{margin-top:75px;padding:55px 20px;background:#f7fafb;text-align:center}
 .editorial h2{margin:16px 0;font-family:"Playfair Display",serif;font-size:34px;font-weight:400}
@@ -86,7 +93,13 @@ body[dir="rtl"] .eyebrow,body[dir="rtl"] .back,body[dir="rtl"] .order,body[dir="
     <div class="total"><span data-en="Total" data-ar="المجموع">Total</span><strong id="totalPrice"></strong></div>
    </div>
 
-   <a class="order" id="orderButton" href="#"><span>COMPLETE YOUR PURCHASE</span><small>VIA WHATSAPP</small></a>
+   <form class="order-form" id="orderForm">
+    <h2 class="order-heading" data-en="Customer information" data-ar="معلومات الحريف">معلومات الحريف</h2>
+    <div class="order-field"><label for="customerName" data-en="Full name" data-ar="الإسم الكريم :">الإسم الكريم :</label><input id="customerName" name="customerName" type="text" autocomplete="name" placeholder="اكتب الإسم الكريم" required></div>
+    <div class="order-field"><label for="customerPhone" data-en="Phone number" data-ar="رقم الهاتف :">رقم الهاتف :</label><input id="customerPhone" name="customerPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="اكتب رقم الهاتف" required></div>
+    <div class="order-field"><label for="customerAddress" data-en="Exact address" data-ar="العنوان بالتفصيل :">العنوان بالتفصيل :</label><textarea id="customerAddress" name="customerAddress" autocomplete="street-address" placeholder="المدينة، المنطقة، الشارع، رقم المنزل وأي تفاصيل تساعد على الوصول إليك" required></textarea></div>
+    <button class="order" id="orderButton" type="submit"><span>أتمم عملية الشراء الآن</span><small>عبر واتساب</small></button>
+   </form>
    <p class="note" data-en="WhatsApp will open with a message containing the product and order details." data-ar="ستُفتح محادثة واتساب برسالة تحتوي على تفاصيل المنتج والطلب.">WhatsApp will open with a message containing the product and order details.</p>
   </div>
  </div>
@@ -132,7 +145,7 @@ if(!name||!validPrice||!validImage||!validDelivery){
  document.querySelector(".description").dataset.ar="لم نتمكن من العثور على هذا المنتج. ارجع إلى المجموعة واختر المنتج من جديد.";
  document.querySelector(".stock").style.display="none";
  document.querySelector(".info").style.display="none";
- document.getElementById("orderButton").style.display="none";
+ document.getElementById("orderForm").style.display="none";
  document.getElementById("productImage").style.display="none";
 }else{
  const productAmount=Number(price);
@@ -155,10 +168,17 @@ if(!name||!validPrice||!validImage||!validDelivery){
  document.getElementById("quantityText").dataset.en=availableStock+" piece"+(availableStock>1?"s":"");
  document.getElementById("quantityText").dataset.ar=availableStock+" قطعة";
 
- if(availableStock<1)document.getElementById("orderButton").style.display="none";
+ if(availableStock<1)document.getElementById("orderForm").style.display="none";
 
- const message="Hello BLUE WHALE GEMS,\n\nI would like to order:\nProduct: "+name+"\nPrice: "+productAmount+" TND\nDelivery: "+deliveryAmount+" TND\nQuantity: "+quantity+"\nTotal: "+total+" TND";
- document.getElementById("orderButton").href="https://wa.me/21655733020?text="+encodeURIComponent(message);
+ document.getElementById("orderForm").addEventListener("submit",function(event){
+  event.preventDefault();
+  const customerName=document.getElementById("customerName").value.trim();
+  const customerPhone=document.getElementById("customerPhone").value.trim();
+  const customerAddress=document.getElementById("customerAddress").value.trim();
+  if(!customerName||!customerPhone||!customerAddress){this.reportValidity();return;}
+  const message="طلب شراء جديد – BLUE WHALE GEMS\\n\\nمرحباً، أود إتمام عملية شراء من متجركم.\\n\\nمعلومات الحريف:\\nالإسم الكريم: "+customerName+"\\nرقم الهاتف: "+customerPhone+"\\nالعنوان بالتفصيل: "+customerAddress+"\\n\\nتفاصيل الطلب:\\nالمنتج: "+name+"\\nالسعر: "+productAmount+" دينار تونسي\\nالتوصيل: "+deliveryAmount+" دينار تونسي\\nالكمية: "+quantity+"\\nالإجمالي: "+total+" دينار تونسي\\n\\nبانتظار تأكيد الطلب، شكراً لكم.";
+  window.location.href="https://wa.me/21655733020?text="+encodeURIComponent(message);
+ });
 }
 
 function applyLanguage(lang){
@@ -167,6 +187,9 @@ function applyLanguage(lang){
  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
  document.body.dir=lang==="ar"?"rtl":"ltr";
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=el.dataset[lang]);
+ document.getElementById("customerName").placeholder=lang==="ar"?"اكتب الإسم الكريم":"Enter your full name";
+ document.getElementById("customerPhone").placeholder=lang==="ar"?"اكتب رقم الهاتف":"Enter your phone number";
+ document.getElementById("customerAddress").placeholder=lang==="ar"?"المدينة، المنطقة، الشارع، رقم المنزل وأي تفاصيل تساعد على الوصول إليك":"City, area, street, house number and any helpful delivery details";
  const orderButton=document.getElementById("orderButton");
  orderButton.innerHTML=lang==="ar"?'<span>أتمم عملية الشراء الآن</span><small>عبر واتساب</small>':'<span>COMPLETE YOUR PURCHASE</span><small>VIA WHATSAPP</small>';
  document.querySelector(".lang").textContent=lang==="ar"?"English":"العربية";
