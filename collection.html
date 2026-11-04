@@ -39,7 +39,7 @@ body[dir="rtl"] h1{font-family:"Cairo",sans-serif}
 footer{border-top:1px solid var(--line);text-align:center;padding:29px 15px;color:#89979d;font-size:9px;letter-spacing:1.5px}
 footer strong{display:block;color:var(--ink);font-family:"Playfair Display",serif;font-size:15px;font-weight:400;letter-spacing:2px;margin-bottom:8px}
 body[dir="rtl"] .eyebrow,body[dir="rtl"] .back{letter-spacing:0}
-@media(max-width:700px){.nav{padding:13px}.logo{font-size:12px}main{padding:23px 13px 50px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 12px}.product h2{font-size:13px}h1{font-size:32px}}
+body.cinema-ready .cinema-reveal{opacity:0;transform:translateY(14px);transition:opacity .72s ease,transform .72s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--reveal-order,0)*75ms)}\nbody.cinema-ready .cinema-reveal.is-visible{opacity:1;transform:translateY(0)}\n.product-image img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}\nbody.cinema-ready .product-image img{transform:scale(.985)}\nbody.cinema-ready .product.is-visible .product-image img{transform:scale(1)}\n@media(prefers-reduced-motion:reduce){.cinema-reveal,.product-image img{transition:none!important;transform:none!important;opacity:1!important}}\n@media(max-width:700px){.nav{padding:13px}.logo{font-size:12px}main{padding:23px 13px 50px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 12px}.product h2{font-size:13px}h1{font-size:32px}}
 </style>
 </head>
 <body>
@@ -113,7 +113,7 @@ async function loadProducts(){
   });
  }
 }
-function applyLanguage(lang){
+function setupReveal(){\n if(!("IntersectionObserver" in window)||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;\n document.body.classList.add("cinema-ready");\n const items=document.querySelectorAll(".heading > *, .product");\n const observer=new IntersectionObserver((entries,activeObserver)=>{\n  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");activeObserver.unobserve(entry.target);}});\n },{rootMargin:"0px 0px 180px 0px",threshold:0.04});\n items.forEach((item,index)=>{item.classList.add("cinema-reveal");item.style.setProperty("--reveal-order",index%4);observer.observe(item);});\n}\nfunction applyLanguage(lang){
  localStorage.setItem("bwg-language",lang);
  document.documentElement.lang=lang;
  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
@@ -128,7 +128,7 @@ function applyLanguage(lang){
 function toggleLanguage(){applyLanguage((localStorage.getItem("bwg-language")||"en")==="en"?"ar":"en")}
 applyLanguage(localStorage.getItem("bwg-language")||"en");
 if(group)document.title=group.en+" | BLUE WHALE GEMS";
-loadProducts().then(()=>applyLanguage(localStorage.getItem("bwg-language")||"en")).catch(()=>{title.textContent="Collection unavailable";description.textContent="Please refresh the page in a moment.";});
+loadProducts().then(()=>{applyLanguage(localStorage.getItem("bwg-language")||"en");setupReveal();}).catch(()=>{title.textContent="Collection unavailable";description.textContent="Please refresh the page in a moment.";});
 </script>
 </body>
 </html>
