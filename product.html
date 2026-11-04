@@ -1,129 +1,168 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<title>BLUE WHALE GEMS | Product</title>
+<title>Product | BLUE WHALE GEMS</title>
 <style>
+:root{
+ --blue:#b9dceb;
+ --pale:#f3f9fc;
+ --green:#245344;
+ --whatsapp:#a9e8c5;
+ --ink:#20333b;
+ --muted:#71828a;
+}
 *{box-sizing:border-box}
-body{margin:0;background:#fff;color:#20333b;font-family:Arial,Helvetica,sans-serif}
-header{padding:20px;border-bottom:1px solid #edf1f3;text-align:center}
-.logo{color:#20333b;text-decoration:none;font-weight:bold;letter-spacing:3px;font-size:17px}
-.logo small{display:block;font-size:9px;letter-spacing:5px;color:#7795a3;margin-top:5px}
-main{max-width:1050px;margin:35px auto;padding:0 20px}
-.back{font-size:12px;color:#71828a;text-decoration:none}
-.details{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center;margin-top:30px}
-.photo{background:#f3f9fc;border-radius:16px;padding:12px;overflow:hidden}
-.photo img{width:100%;display:block;aspect-ratio:1/1;object-fit:contain;border-radius:10px}
+body{
+ margin:0;background:#fff;color:var(--ink);
+ font-family:Arial,Helvetica,sans-serif
+}
+a{text-decoration:none;color:inherit}
+header{
+ padding:17px 20px;border-bottom:1px solid #edf1f3;
+ text-align:center;background:#fff
+}
+.logo{font-size:15px;font-weight:800;letter-spacing:2px}
+.logo small{
+ display:block;font-size:9px;font-weight:normal;
+ letter-spacing:4px;color:#7795a3;margin-top:4px
+}
+main{max-width:1000px;margin:35px auto;padding:0 18px}
+.back{font-size:12px;color:#71828a;display:inline-block;margin-bottom:22px}
+.product{
+ display:grid;grid-template-columns:1.1fr .9fr;
+ gap:42px;align-items:center
+}
+.photo{
+ background:#f3f7f9;border-radius:18px;padding:15px;
+ overflow:hidden
+}
+.photo img{
+ display:block;width:100%;height:auto;max-height:570px;
+ object-fit:contain;border-radius:11px
+}
+.details{padding:10px 0}
 .eyebrow{font-size:10px;letter-spacing:3px;color:#7795a3;font-weight:bold}
-h1{font:normal 30px/1.4 Georgia,serif;margin:16px 0}
+h1{
+ font:normal clamp(27px,4vw,39px)/1.3 Georgia,serif;
+ margin:15px 0
+}
+.price{font-size:23px;font-weight:bold;color:var(--green);margin:20px 0}
 .description{font-size:14px;line-height:1.9;color:#71828a}
-.price{font-size:25px;font-weight:bold;color:#245344;margin:22px 0}
-.shipping{background:#f3f9fc;padding:18px;border-radius:10px;font-size:14px;line-height:2;color:#536a73}
-.total{border-top:1px solid #dceaf0;margin-top:8px;padding-top:8px;font-weight:bold;color:#20333b}
-.order{display:block;background:#a9e8c5;color:#174b35;text-align:center;text-decoration:none;padding:17px 14px;border-radius:9px;margin-top:22px;font-size:13px;font-weight:bold;letter-spacing:1px;transition:.2s}
+.info{
+ background:var(--pale);padding:16px;border-radius:10px;
+ margin:22px 0;font-size:13px;line-height:2
+}
+.order{
+ display:block;text-align:center;background:var(--whatsapp);
+ color:#174b35;padding:17px 15px;border-radius:9px;
+ font-size:13px;font-weight:bold;transition:.2s
+}
 .order:hover{background:#8bd9ae;transform:translateY(-2px)}
-.note{font-size:12px;line-height:1.8;color:#71828a;margin-top:13px}
-footer{text-align:center;border-top:1px solid #edf1f3;margin-top:65px;padding:25px;font-size:10px;letter-spacing:2px;color:#809099}
+.note{font-size:11px;color:#87949a;line-height:1.7;margin-top:12px}
+footer{
+ text-align:center;padding:30px 15px;margin-top:55px;
+ border-top:1px solid #edf1f3;color:#809099;font-size:10px
+}
+footer strong{display:block;color:var(--ink);font-size:13px;margin-bottom:8px}
 @media(max-width:700px){
- main{margin:25px auto;padding:0 15px}
- .details{grid-template-columns:1fr;gap:24px}
- h1{font-size:25px}
+ main{margin:20px auto;padding:0 14px}
+ .product{grid-template-columns:1fr;gap:23px}
+ .photo{padding:10px}
+ .photo img{max-height:430px}
+ .details{padding:0 4px}
+ h1{font-size:29px}
 }
 </style>
 </head>
 <body>
-
 <header>
-<a href="index.html" class="logo">BLUE WHALE GEMS
-<small>NATURAL BEAUTY</small></a>
+ <a class="logo" href="index.html">
+  BLUE WHALE GEMS
+  <small>NATURAL BEAUTY</small>
+ </a>
 </header>
 
 <main>
-<a href="index.html" class="back">← BACK TO COLLECTION</a>
+ <a class="back" href="index.html">← Back to collection</a>
 
-<div class="details">
-<div class="photo" id="photo"></div>
+ <div class="product">
+  <div class="photo">
+   <img id="productImage" src="" alt="Natural gemstone product">
+  </div>
 
-<div>
-<div class="eyebrow">BLUE WHALE GEMS · COLLECTION</div>
-<h1 id="name"></h1>
-<p class="description" id="description"></p>
-<div class="price" id="price"></div>
-<div class="shipping" id="shipping"></div>
+  <div class="details">
+   <div class="eyebrow">BLUE WHALE GEMS COLLECTION</div>
+   <h1 id="productName">Product</h1>
+   <div class="price" id="productPrice"></div>
 
-<a class="order" id="order"
-href="https://wa.me/message/RHFJOGTPA2UXC1"
-target="_blank" rel="noopener">
-ORDER VIA WHATSAPP
-</a>
+   <p class="description">
+    قطعة مختارة من الأحجار الطبيعية، تتميز بألوانها وتفاصيلها الخاصة.
+    يمكنك التواصل معنا لمعرفة المزيد وإتمام طلبك.
+   </p>
 
-<p class="note" id="note">
-لإتمام الطلب، أرسل لنا اسم القطعة الظاهر في هذه الصفحة عبر واتساب.
-</p>
-</div>
-</div>
+   <div class="info">
+    <div>Price: <strong id="infoPrice"></strong></div>
+    <div id="deliveryRow">Delivery: <strong id="deliveryPrice"></strong></div>
+    <div>Currency: Tunisian Dinar (TND)</div>
+   </div>
+
+   <a class="order"
+      href="https://wa.me/message/RHFJOGTPA2UXC1"
+      target="_blank" rel="noopener">
+    ORDER VIA WHATSAPP
+   </a>
+
+   <p class="note">
+    عند فتح واتساب، أرسل لنا اسم المنتج الذي اخترته لتأكيد الطلب.
+   </p>
+  </div>
+ </div>
 </main>
 
 <footer>
-BLUE WHALE GEMS · NATURAL GEMSTONES · TUNISIA
+ <strong>BLUE WHALE GEMS</strong>
+ NATURAL GEMSTONES · TUNISIA
 </footer>
 
 <script>
-const params = new URLSearchParams(window.location.search);
+const params=new URLSearchParams(window.location.search);
 
-const name = params.get("name") || "BLUE WHALE GEMS Product";
-const priceValue = Number(params.get("price"));
-const hasPrice = params.has("price") && Number.isFinite(priceValue);
-const image = params.get("image") || "";
-const deliveryValue = Number(params.get("delivery"));
-const hasDelivery = params.has("delivery") &&
-Number.isFinite(deliveryValue) && deliveryValue >= 0;
+const name=params.get("name");
+const price=params.get("price");
+const image=params.get("image");
+const delivery=params.get("delivery");
 
-document.title = name + " | BLUE WHALE GEMS";
+const validImage=image &&
+ image.startsWith("images/") &&
+ !image.includes("..");
 
-document.getElementById("name").textContent = name;
-document.getElementById("description").textContent =
-"قطعة مختارة من BLUE WHALE GEMS، تتميز بجمال الحجر الطبيعي وألوانه وتفاصيله الخاصة.";
+if(!name || !price || !image || !validImage || !Number.isFinite(Number(price))){
+ document.getElementById("productName").textContent="Product not found";
+ document.getElementById("productPrice").textContent="";
+ document.getElementById("infoPrice").textContent="";
+ document.getElementById("deliveryRow").style.display="none";
+ document.querySelector(".description").textContent=
+ "لم نتمكن من العثور على هذا المنتج. ارجع إلى المجموعة واختر المنتج من جديد.";
+ document.querySelector(".order").style.display="none";
+ document.getElementById("productImage").style.display="none";
+}else{
+ document.title=name+" | BLUE WHALE GEMS";
+ document.getElementById("productName").textContent=name;
+ document.getElementById("productPrice").textContent=price+" TND";
+ document.getElementById("infoPrice").textContent=price+" TND";
+ document.getElementById("productImage").src=image;
+ document.getElementById("productImage").alt=name;
 
-document.getElementById("price").textContent =
-hasPrice ? priceValue + " TND" : "Price on request";
-
-const photo = document.getElementById("photo");
-
-if (image.startsWith("images/")) {
- const img = document.createElement("img");
- img.src = image;
- img.alt = name;
- img.onerror = function(){
-  photo.textContent = "Image unavailable";
-  photo.style.padding = "50px 15px";
-  photo.style.textAlign = "center";
- };
- photo.appendChild(img);
-} else {
- photo.textContent = "Product image unavailable";
- photo.style.padding = "50px 15px";
-}
-
-const shipping = document.getElementById("shipping");
-
-if (hasPrice && hasDelivery) {
- shipping.innerHTML =
- "Product price: " + priceValue + " TND<br>" +
- "Delivery: " + deliveryValue + " TND" +
- '<div class="total">TOTAL: ' +
- (priceValue + deliveryValue) + " TND</div>";
-} else if (hasPrice) {
- shipping.textContent =
- "Product price: " + priceValue +
- " TND. Delivery fee will be confirmed when ordering.";
-} else {
- shipping.textContent =
- "Contact us for product price and delivery details.";
+ if(delivery!==null && Number.isFinite(Number(delivery))){
+  document.getElementById("deliveryPrice").textContent=delivery+" TND";
+ }else{
+  document.getElementById("deliveryRow").style.display="none";
+ }
 }
 </script>
-
 </body>
 </html>
