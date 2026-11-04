@@ -37,8 +37,8 @@ body[dir="rtl"] h1,body[dir="rtl"] h2{font-family:"Cairo",sans-serif}
 .info .total strong{color:var(--green);font-size:16px}
 .stock{display:flex;align-items:center;gap:9px;margin:20px 0;color:#527b65;font-size:11px}
 .stock-dot{width:7px;height:7px;border-radius:50%;background:#78b38e;flex:none}
-.order{display:block;width:100%;text-align:center;background:var(--whatsapp);color:#174b35;padding:18px 15px;border-radius:3px;font-size:10px;font-weight:600;letter-spacing:1.5px;transition:.2s}
-.order:hover{background:#8bd9ae;transform:translateY(-2px)}
+.order{display:block;width:100%;text-align:center;background:var(--green);color:#fff;padding:17px 15px;border-radius:3px;font-size:13px;font-weight:600;letter-spacing:0;transition:.2s}.order span{display:block;font-size:14px;font-weight:700;line-height:1.7}.order small{display:block;margin-top:2px;font-size:10px;font-weight:400;opacity:.9;line-height:1.6}.order:hover{background:#193f34;transform:translateY(-2px)}
+
 .note{margin-top:13px;color:#89979d;font-size:10px;line-height:1.8;text-align:center}
 .editorial{margin-top:75px;padding:55px 20px;background:#f7fafb;text-align:center}
 .editorial h2{margin:16px 0;font-family:"Playfair Display",serif;font-size:34px;font-weight:400}
@@ -86,7 +86,7 @@ body[dir="rtl"] .eyebrow,body[dir="rtl"] .back,body[dir="rtl"] .order,body[dir="
     <div class="total"><span data-en="Total" data-ar="المجموع">Total</span><strong id="totalPrice"></strong></div>
    </div>
 
-   <a class="order" id="orderButton" href="#" data-en="ORDER VIA WHATSAPP" data-ar="اطلب عبر واتساب">ORDER VIA WHATSAPP</a>
+   <a class="order" id="orderButton" href="#"><span>COMPLETE YOUR PURCHASE</span><small>VIA WHATSAPP</small></a>
    <p class="note" data-en="WhatsApp will open with a message containing the product and order details." data-ar="ستُفتح محادثة واتساب برسالة تحتوي على تفاصيل المنتج والطلب.">WhatsApp will open with a message containing the product and order details.</p>
   </div>
  </div>
@@ -167,6 +167,8 @@ function applyLanguage(lang){
  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
  document.body.dir=lang==="ar"?"rtl":"ltr";
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=el.dataset[lang]);
+ const orderButton=document.getElementById("orderButton");
+ orderButton.innerHTML=lang==="ar"?'<span>أتمم عملية الشراء الآن</span><small>عبر واتساب</small>':'<span>COMPLETE YOUR PURCHASE</span><small>VIA WHATSAPP</small>';
  document.querySelector(".lang").textContent=lang==="ar"?"English":"العربية";
  document.getElementById("backLink").textContent=lang==="ar"?"→ العودة إلى المجموعة":"← Return to collection";
 }
