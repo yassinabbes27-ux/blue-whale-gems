@@ -173,16 +173,25 @@ font-size:25px;font-weight:400
 font-size:9px;letter-spacing:1px;
 border-bottom:1px solid rgba(255,255,255,.8);padding-bottom:4px
 }
-.gem-care{padding:30px 20px 34px;background:#fff}
-.gem-care-card{position:relative;max-width:920px;margin:0 auto;padding:24px 30px 22px;text-align:center;overflow:hidden;border:1px solid #e5eef0;border-radius:15px;background:linear-gradient(115deg,#fbfdfe,#f2f8fa);box-shadow:0 8px 24px rgba(45,82,92,.045);animation:gemCareFloat 6s ease-in-out infinite}
-.gem-care-card:before{content:"";position:absolute;top:-55px;right:-35px;width:150px;height:150px;border:1px solid rgba(127,177,190,.16);border-radius:50%;pointer-events:none}
-.gem-care-kicker{display:block;margin-bottom:7px;color:#78939b;font-size:8px;letter-spacing:2px}
-.gem-care-card h2{margin:0 0 10px;color:#294b55;font-family:var(--serif);font-size:clamp(23px,3vw,30px);font-weight:400}
-.gem-care-card p{position:relative;max-width:760px;margin:7px auto;color:#65777c;font-size:11px;line-height:1.85}
-.gem-care-card .gem-care-intro{color:#405d65}
-.gem-care-card .gem-care-note{margin-top:10px;color:#315d60;font-weight:600}
-@keyframes gemCareFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-@media(max-width:600px){.gem-care{padding:22px 15px 26px}.gem-care-card{padding:21px 18px 19px;border-radius:12px}.gem-care-card p{font-size:10px;line-height:1.8}}
+.gem-care{padding:42px 20px 48px;background:#fff}
+.gem-care-card{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0, .92fr) minmax(0, 1.08fr);max-width:1040px;min-height:310px;margin:0 auto;overflow:hidden;border:1px solid #203b4b;border-radius:18px;background:#102b3b;box-shadow:0 20px 48px rgba(18,43,58,.16)}
+.gem-care-visual{position:relative;min-height:310px;overflow:hidden;background:#132f40}
+.gem-care-visual img{display:block;width:100%;height:100%;min-height:310px;object-fit:cover;object-position:center 48%;filter:saturate(.82) brightness(.78)}
+.gem-care-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,27,40,.05),rgba(10,27,40,.28)),linear-gradient(0deg,rgba(8,25,37,.48),transparent 48%)}
+.gem-care-visual-label{position:absolute;z-index:1;left:24px;bottom:22px;color:#fff;font-family:var(--serif);font-size:clamp(20px,2.5vw,29px);letter-spacing:.3px}
+.gem-care-content{position:relative;display:flex;flex-direction:column;justify-content:center;padding:34px clamp(24px,4vw,48px);color:#f4f8f9;background:radial-gradient(ellipse at 100% 0%,rgba(105,151,169,.19),transparent 48%),linear-gradient(135deg,#17394a,#102b3b 72%)}
+.gem-care-content:after{content:"";position:absolute;right:-55px;top:-72px;width:210px;height:210px;border:1px solid rgba(197,222,230,.12);border-radius:50%;box-shadow:0 0 0 18px rgba(197,222,230,.025),0 0 0 38px rgba(197,222,230,.02);pointer-events:none}
+.gem-care-kicker{position:relative;z-index:1;display:block;margin-bottom:9px;color:#a9cbd5;font-size:8px;letter-spacing:2.4px}
+.gem-care-content h2{position:relative;z-index:1;margin:0 0 9px;color:#fff;font-family:var(--serif);font-size:clamp(29px,3.4vw,40px);font-weight:400;line-height:1.05}
+.gem-care-content p{position:relative;z-index:1;max-width:490px;margin:0;color:#c1d0d5;font-size:11px;line-height:1.85}
+.gem-care-methods{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.gem-care-method{display:flex;align-items:center;gap:10px;min-width:0;padding:10px 11px;border:1px solid rgba(206,230,237,.19);border-radius:10px;background:rgba(255,255,255,.045)}
+.gem-care-symbol{flex:0 0 30px;width:30px;height:30px;display:grid;place-items:center;border:1px solid rgba(190,222,232,.28);border-radius:50%;color:#d7edf2;font-family:var(--serif);font-size:17px}
+.gem-care-method strong{display:block;color:#f5f8f9;font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.1}
+.gem-care-method small{display:block;margin-top:4px;color:#a9c0c8;font-size:8px;line-height:1.4}
+.gem-care-note{position:relative;z-index:1;margin-top:15px!important;color:#a9cbd5!important;font-size:9px!important}
+@media(max-width:680px){.gem-care{padding:28px 14px 34px}.gem-care-card{grid-template-columns:1fr;min-height:0;border-radius:15px}.gem-care-visual{min-height:190px;height:190px}.gem-care-visual img{min-height:190px}.gem-care-visual-label{left:18px;bottom:15px;font-size:23px}.gem-care-content{padding:25px 19px 23px}.gem-care-content h2{font-size:32px}.gem-care-methods{gap:8px;margin-top:17px}.gem-care-method{gap:7px;padding:9px 8px}.gem-care-method strong{font-size:13px}.gem-care-method small{font-size:7px}.gem-care-note{font-size:8px!important}}
+@media(max-width:370px){.gem-care-methods{grid-template-columns:1fr}.gem-care-method{padding:9px 11px}}
 @media(prefers-reduced-motion:reduce){.gem-care-card{animation:none}}
 .featured{background:#f8fbfc}
 .featured-inner{max-width:1240px;margin:auto;padding:75px 25px}
@@ -630,11 +639,20 @@ body[dir="rtl"] .gem-story-copy{text-align:right}
 
 <section class="gem-care" id="gem-care" aria-label="Gem Care">
  <div class="gem-care-card">
-  <span class="gem-care-kicker" data-en="A LITTLE CARE FOR YOUR GEMS" data-ar="عناية صغيرة لأحجارك">A LITTLE CARE FOR YOUR GEMS</span>
-  <h2 data-en="Gem Care" data-ar="العناية بالأحجار">Gem Care</h2>
-  <p class="gem-care-intro" data-en="Keep your gemstones away from water and direct sunlight for extended periods." data-ar="للاعتناء بالأحجار، يمكنك الاحتفاظ بها بعيداً عن الماء وأشعة الشمس لفترة مطوّلة.">للاعتناء بالأحجار، يمكنك الاحتفاظ بها بعيداً عن الماء وأشعة الشمس لفترة مطوّلة.</p>
-  <p data-en="For energetic cleansing, you may gently pass them through natural incense smoke, place them under the light of a full moon, or wipe them with a cloth slightly dampened with rose water." data-ar="وبالنسبة لتنظيفها الطاقي، يمكنك تبخيرها ببخور طبيعي، أو وضعها تحت ضوء القمر المكتمل، أو مسحها بقطعة قماش مبللة قليلاً بماء الورد.">وبالنسبة لتنظيفها الطاقي، يمكنك تبخيرها ببخور طبيعي، أو وضعها تحت ضوء القمر المكتمل، أو مسحها بقطعة قماش مبللة قليلاً بماء الورد.</p>
-  <p class="gem-care-note" data-en="Every gemstone has its own needs. Please consult us before choosing a care method." data-ar="المهم ألا تنسى استشارتنا في الطريقة، لأن لكل حجر طريقته الخاصة.">المهم ألا تنسى استشارتنا في الطريقة، لأن لكل حجر طريقته الخاصة.</p>
+  <div class="gem-care-visual">
+   <img src="images/429f9ad335b19790158a5b7cf7687dda.jpg" alt="Natural lapis lazuli gemstone in deep blue tones" loading="lazy" decoding="async">
+   <span class="gem-care-visual-label" data-en="A ritual of care" data-ar="طقوس من العناية">A ritual of care</span>
+  </div>
+  <div class="gem-care-content">
+   <span class="gem-care-kicker" data-en="THE ART OF GEM CARE" data-ar="فن العناية بالأحجار">THE ART OF GEM CARE</span>
+   <h2 data-en="Every Gem Has Its Own Way." data-ar="لكل حجر طريقته الخاصة.">Every Gem Has Its Own Way.</h2>
+   <p data-en="Keep your gemstones away from water and prolonged direct sunlight. For a gentle personal ritual, discover two traditional ways of caring for them." data-ar="احتفظ بأحجارك بعيداً عن الماء وأشعة الشمس المباشرة لفترات طويلة. ولطقس عناية لطيف، تعرّف على طريقتين تقليديتين للاهتمام بها.">Keep your gemstones away from water and prolonged direct sunlight. For a gentle personal ritual, discover two traditional ways of caring for them.</p>
+   <div class="gem-care-methods">
+    <div class="gem-care-method"><span class="gem-care-symbol" aria-hidden="true">〰</span><span><strong data-en="Natural Incense" data-ar="البخور الطبيعي">Natural Incense</strong><small data-en="A gentle aromatic ritual" data-ar="طقس عطري لطيف">A gentle aromatic ritual</small></span></div>
+    <div class="gem-care-method"><span class="gem-care-symbol" aria-hidden="true">☾</span><span><strong data-en="Full Moonlight" data-ar="ضوء القمر المكتمل">Full Moonlight</strong><small data-en="A quiet moment beneath the moon" data-ar="لحظة هادئة تحت ضوء القمر">A quiet moment beneath the moon</small></span></div>
+   </div>
+   <p class="gem-care-note" data-en="Care methods vary by stone. Ask us before treating a delicate gemstone." data-ar="تختلف طرق العناية باختلاف الحجر؛ استشرنا قبل التعامل مع الأحجار الحساسة.">Care methods vary by stone. Ask us before treating a delicate gemstone.</p>
+  </div>
  </div>
 </section>
 
