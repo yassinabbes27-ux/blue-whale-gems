@@ -1,918 +1,120 @@
-
-<!DOCTYPE html>
-<html lang="en">
+١٠<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 <title>BLUE WHALE GEMS | Natural Gemstones</title>
-<meta name="description" content="Discover a refined collection of natural gemstones and jewelry at BLUE WHALE GEMS.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
- --white:#fff;
- --paper:#f6fafc;
- --blue:#b9dceb;
- --ocean:#77b7d0;
- --deep:#174b68;
- --ink:#203847;
- --muted:#778a94;
- --green:#245344;
- --line:#e5edf1;
-}
+:root{--white:#fff;--paper:#f5fafc;--blue:#b9dceb;--blue-dark:#7895a3;--green:#245344;--ink:#25363d;--muted:#7b898e;--line:#e9eef0}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
- margin:0;
- background:var(--white);
- color:var(--ink);
- font-family:"DM Sans",Arial,sans-serif;
-}
+body{margin:0;background:var(--white);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
+body[dir="rtl"]{font-family:"Cairo",Arial,sans-serif}
 a{color:inherit;text-decoration:none}
-header{
- position:sticky;
- top:0;
- z-index:20;
- background:rgba(255,255,255,.94);
- backdrop-filter:blur(14px);
- border-bottom:1px solid var(--line);
-}
-.nav{
- max-width:1160px;
- margin:auto;
- padding:16px 22px;
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:15px;
-}
-.logo{
- font-family:"Playfair Display",Georgia,serif;
- font-size:17px;
- letter-spacing:2px;
- font-weight:500;
-}
-.logo small{
- display:block;
- font-family:"DM Sans",sans-serif;
- font-size:9px;
- letter-spacing:4px;
- color:#719cb0;
- margin-top:5px;
-}
-nav{
- display:flex;
- gap:23px;
- font-size:10px;
- letter-spacing:1.2px;
- color:#617681;
-}
-nav a:hover{color:var(--deep)}
-
-/* OCEAN EDITORIAL HERO */
-.hero{
- position:relative;
- min-height:520px;
- overflow:hidden;
- isolation:isolate;
- display:flex;
- align-items:center;
- background:
-  radial-gradient(ellipse at 78% 24%,rgba(255,255,255,.9),transparent 24%),
-  linear-gradient(180deg,#eaf7fc 0%,#c7e7f2 38%,#8cc7dd 65%,#e7f5f9 100%);
-}
-.hero::before{
- content:"";
- position:absolute;
- inset:0;
- z-index:-1;
- opacity:.55;
- background:
-  radial-gradient(ellipse at 15% 20%,#fff 0%,transparent 36%),
-  linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);
-}
-.hero-art{
- position:absolute;
- inset:0;
- z-index:-1;
- width:100%;
- height:100%;
- pointer-events:none;
-}
-.hero-content{
- width:100%;
- max-width:1160px;
- margin:auto;
- padding:85px 24px 100px;
- position:relative;
- z-index:2;
-}
-.hero-copy{max-width:540px}
-.eyebrow{
- font-size:9px;
- letter-spacing:3.5px;
- color:#527e94;
- font-weight:600;
- text-transform:uppercase;
-}
-.hero h1{
- font-family:"Playfair Display",Georgia,serif;
- font-size:clamp(43px,7vw,76px);
- font-weight:400;
- line-height:1.08;
- letter-spacing:-1.5px;
- margin:24px 0 17px;
- color:#153b55;
-}
-.hero h1 span{display:block}
-.hero-copy p{
- max-width:440px;
- font-family:"Playfair Display",Georgia,serif;
- font-size:17px;
- font-style:italic;
- line-height:1.7;
- color:#315e76;
-}
-.hero-btn{
- display:inline-block;
- margin-top:23px;
- padding:15px 24px;
- background:#174b68;
- color:white;
- border-radius:2px;
- font-size:10px;
- letter-spacing:1.8px;
- text-transform:uppercase;
- transition:.3s;
-}
-.hero-btn:hover{
- background:#245f7c;
- transform:translateY(-2px);
-}
-.hero-rule{
- display:flex;
- align-items:center;
- gap:12px;
- width:260px;
- margin-top:25px;
- color:#367895;
-}
-.hero-rule::before,.hero-rule::after{
- content:"";
- height:1px;
- background:#6ca9c0;
- flex:1;
-}
-
-/* COLLECTIONS */
-.collections{
- max-width:1160px;
- margin:auto;
- padding:62px 20px 55px;
-}
-.collections-heading{
- text-align:center;
- margin-bottom:35px;
-}
-.collections-heading h2{
- font-family:"Playfair Display",Georgia,serif;
- font-size:36px;
- font-weight:400;
- margin:13px 0 8px;
-}
-.collections-heading p{
- color:var(--muted);
- font-family:"Playfair Display",Georgia,serif;
- font-style:italic;
- font-size:14px;
-}
-.category-grid{
- display:grid;
- grid-template-columns:repeat(4,minmax(0,1fr));
- gap:16px;
-}
-.category-card{
- position:relative;
- min-width:0;
- overflow:hidden;
- display:flex;
- flex-direction:column;
- align-items:center;
- text-align:center;
- padding:19px 12px 24px;
- background:linear-gradient(180deg,#f4fafc,#eaf5f9);
- border:1px solid #dcebf1;
- border-radius:4px;
- transition:transform .35s,border-color .35s,background .35s;
-}
-.category-card:hover{
- transform:translateY(-5px);
- border-color:#a9d0df;
- background:#edf8fb;
-}
-.category-art{
- width:100%;
- height:145px;
- display:flex;
- justify-content:center;
- align-items:center;
-}
-.category-art svg{
- width:100%;
- height:100%;
- max-width:190px;
- overflow:visible;
-}
-.category-number{
- font-family:"Playfair Display",Georgia,serif;
- font-size:11px;
- color:#7297a8;
- letter-spacing:2px;
- margin:9px 0 10px;
-}
-.category-card h3{
- margin:0;
- font-family:"Playfair Display",Georgia,serif;
- font-size:23px;
- font-weight:400;
-}
-.category-card p{
- margin:9px 0 0;
- font-size:9px;
- letter-spacing:1.6px;
- line-height:1.8;
- color:#78909b;
- text-transform:uppercase;
-}
-.explore{
- margin-top:18px;
- font-size:9px;
- letter-spacing:1.8px;
- color:#285b74;
- text-transform:uppercase;
-}
-
-/* PRODUCT SECTIONS */
-.section{
- max-width:1160px;
- margin:0 auto;
- padding:30px 20px 60px;
- scroll-margin-top:90px;
-}
-.section[hidden]{display:none}
-.back-collections{
- display:inline-block;
- margin-bottom:28px;
- color:#668fa2;
- font-size:9px;
- letter-spacing:2px;
- text-transform:uppercase;
-}
-.section-head{
- text-align:center;
- margin-bottom:35px;
-}
-.section-head h2{
- font-family:"Playfair Display",Georgia,serif;
- font-size:39px;
- font-weight:400;
- margin:13px 0 9px;
-}
-.section-head p{
- font-size:12px;
- color:var(--muted);
- line-height:1.8;
-}
-.products{
- display:grid;
- grid-template-columns:repeat(4,minmax(0,1fr));
- gap:35px 19px;
-}
-.product{min-width:0}
-.product a{display:block}
-.product-image{
- aspect-ratio:1/1.12;
- background:#fff;
- overflow:hidden;
- border-radius:4px;
- box-shadow:none;
-}
-.product-image img{
- display:block;
- width:100%;
- height:100%;
- object-fit:contain;
- border-radius:4px;
- box-shadow:none;
- transition:transform .5s cubic-bezier(.2,.7,.2,1);
-}
-.product a:hover .product-image img{transform:scale(1.045)}
-.product a:active .product-image img{transform:scale(.96)}
-.product h3{
- margin:14px 0 8px;
- font-family:"Playfair Display",Georgia,serif;
- font-size:15px;
- line-height:1.55;
- font-weight:400;
-}
-.price{
- color:var(--green);
- font-size:13px;
- font-weight:600;
-}
-.delivery-label{
- display:block;
- margin-top:7px;
- color:#89979d;
- font-size:10px;
-}
-
-/* ABOUT */
-.about{
- position:relative;
- overflow:hidden;
- text-align:center;
- padding:75px 22px;
- background:linear-gradient(180deg,#f8fcfd,#eaf6fa);
-}
-.about::before,.about::after{
- content:"";
- position:absolute;
- width:230px;
- height:230px;
- border:1px solid rgba(111,177,203,.18);
- border-radius:50%;
-}
-.about::before{left:-100px;top:30px}
-.about::after{right:-100px;bottom:-100px}
-.about h2{
- font-family:"Playfair Display",Georgia,serif;
- font-size:36px;
- font-weight:400;
- margin:16px 0;
-}
-.about p{
- max-width:550px;
- margin:auto;
- color:#6f858f;
- font-family:"Playfair Display",Georgia,serif;
- font-size:15px;
- font-style:italic;
- line-height:2;
-}
-
-/* CONTACT */
-.contact{
- text-align:center;
- padding:65px 20px;
-}
-.contact h2{
- font-family:"Playfair Display",Georgia,serif;
- font-size:34px;
- font-weight:400;
- margin:14px 0;
-}
-.contact p{
- font-size:12px;
- color:var(--muted);
- line-height:1.9;
-}
-.whatsapp-btn{
- display:inline-block;
- margin-top:18px;
- padding:16px 28px;
- background:#a9e8c5;
- color:#174b35;
- border-radius:3px;
- font-size:10px;
- font-weight:600;
- letter-spacing:1.5px;
- transition:.2s;
-}
-.whatsapp-btn:hover{
- background:#8bd9ae;
- transform:translateY(-2px);
-}
-footer{
- border-top:1px solid var(--line);
- text-align:center;
- padding:30px 15px;
- color:#8a989d;
- font-size:9px;
- letter-spacing:1.5px;
-}
-footer strong{
- display:block;
- color:var(--ink);
- font-family:"Playfair Display",Georgia,serif;
- font-size:16px;
- font-weight:400;
- letter-spacing:2px;
- margin-bottom:9px;
-}
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1160px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-family:"Playfair Display",Georgia,serif;font-size:16px;letter-spacing:2px;font-weight:500}
+.logo small{display:block;font-family:"DM Sans",sans-serif;font-size:9px;letter-spacing:4px;color:var(--blue-dark);margin-top:5px}
+.nav-right{display:flex;align-items:center;gap:22px}
+nav{display:flex;gap:22px;font-size:11px;letter-spacing:1px;color:#68777d}
+nav a:hover{color:var(--green)}
+.lang{border:1px solid #dce8ec;background:white;color:var(--green);padding:8px 12px;border-radius:2px;font-size:11px;cursor:pointer}
+.hero{position:relative;overflow:hidden;text-align:center;padding:94px 20px 86px;background:linear-gradient(145deg,#fbfdfe 5%,#edf6f9 55%,#e3f1f5 100%)}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(120,149,163,.18);border-radius:50%;pointer-events:none}
+.hero:before{width:430px;height:430px;left:-180px;top:-230px}
+.hero:after{width:360px;height:360px;right:-130px;bottom:-230px}
+.eyebrow{font-size:9px;letter-spacing:3.5px;color:var(--blue-dark);font-weight:600;text-transform:uppercase}
+.hero h1{max-width:760px;margin:23px auto 18px;font-family:"Playfair Display",Georgia,serif;font-size:clamp(39px,7vw,68px);line-height:1.13;font-weight:400;letter-spacing:-1px}
+body[dir="rtl"] .hero h1,body[dir="rtl"] h2,body[dir="rtl"] .category-card h3{font-family:"Cairo",sans-serif}
+.hero p{max-width:510px;margin:0 auto;color:#718087;font-size:13px;line-height:2}
+.hero .btn{display:inline-block;margin-top:30px;padding:14px 27px;border:1px solid #c8dce4;border-radius:2px;color:var(--green);font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.25s}
+.hero .btn:hover{background:var(--green);color:white}
+.collections{max-width:1120px;margin:auto;padding:66px 20px 75px}
+.collections-heading{text-align:center;margin-bottom:36px}
+.collections-heading h2{margin:13px 0 0;font-family:"Playfair Display",Georgia,serif;font-size:34px;font-weight:400}
+.category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.category-card{position:relative;overflow:hidden;min-height:205px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px 12px;background:linear-gradient(155deg,#f9fcfd,#edf6f9);border:1px solid #e8f0f3;border-radius:4px;transition:background .3s,border-color .3s,transform .3s}
+.category-card:after{content:"";position:absolute;width:170px;height:170px;border:1px solid rgba(120,149,163,.18);border-radius:50%;bottom:-120px;right:-70px;transition:transform .4s}
+.category-card:hover{background:#eaf5f8;border-color:#d3e5eb;transform:translateY(-4px)}
+.category-card:hover:after{transform:scale(1.35)}
+.category-number{font-family:"Playfair Display",serif;font-size:12px;color:#91a9b3;margin-bottom:17px}
+.category-card h3{margin:0;font-family:"Playfair Display",Georgia,serif;font-size:clamp(19px,2.4vw,25px);font-weight:400}
+.category-card p{margin:10px 0 0;color:#84949a;font-size:9px;letter-spacing:1.2px;text-transform:uppercase}
+.category-card .explore{margin-top:19px;font-size:9px;letter-spacing:2px;color:var(--green);text-transform:uppercase}
+.about{background:#f6fafb;text-align:center;padding:68px 22px}
+.about h2,.contact h2{margin:15px 0;font-family:"Playfair Display",Georgia,serif;font-size:35px;font-weight:400}
+.about p{max-width:550px;margin:auto;color:#718087;font-size:13px;line-height:2}
+.contact{text-align:center;padding:65px 20px}
+.contact p{color:var(--muted);font-size:12px;line-height:1.9}
+.whatsapp-btn{display:inline-block;margin-top:18px;padding:16px 28px;background:#a9e8c5;color:#174b35;border-radius:3px;font-size:10px;font-weight:600;letter-spacing:1.5px}
+footer{border-top:1px solid var(--line);text-align:center;padding:30px 15px;color:#8a989d;font-size:9px;letter-spacing:1.5px}
+footer strong{display:block;color:var(--ink);font-family:"Playfair Display",serif;font-size:16px;font-weight:400;letter-spacing:2px;margin-bottom:9px}
 footer p{margin-top:14px}
-
-@media(max-width:700px){
- .nav{padding:14px}
- .logo{font-size:13px}
- nav{gap:12px;font-size:9px;letter-spacing:.5px}
- .hero{min-height:490px}
- .hero-content{padding:65px 19px 90px}
- .hero-copy{max-width:350px}
- .hero h1{font-size:48px}
- .hero-copy p{font-size:15px;max-width:300px}
- .hero-art{opacity:.8}
- .collections{padding:45px 13px}
- .collections-heading h2{font-size:30px}
- .category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
- .category-card{padding:13px 8px 19px}
- .category-art{height:125px}
- .category-card h3{font-size:21px}
- .category-card p{font-size:8px}
- .section{padding:25px 13px 45px}
- .section-head h2{font-size:33px}
- .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 12px}
- .product h3{font-size:13px}
- .about{padding:58px 20px}
- .about h2{font-size:30px}
- .contact{padding:52px 18px}
-}
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{
-  animation:none!important;
-  transition:none!important;
-  scroll-behavior:auto!important;
- }
-}
+body[dir="rtl"] .eyebrow,body[dir="rtl"] nav,body[dir="rtl"] .category-card p,body[dir="rtl"] .explore{letter-spacing:0}
+@media(max-width:700px){.nav{padding:13px}.logo{font-size:12px}.nav-right{gap:12px}nav{gap:11px;font-size:9px}.lang{padding:7px 9px}.hero{padding:68px 18px 60px}.hero h1{font-size:42px}.hero p{font-size:12px}.collections{padding:48px 14px 55px}.collections-heading h2{font-size:29px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.category-card{min-height:165px;padding:19px 8px}.category-card h3{font-size:20px}.about{padding:52px 20px}.about h2,.contact h2{font-size:29px}.contact{padding:52px 18px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
-
 <body>
-
 <header>
  <div class="nav">
-  <a class="logo" href="#home">
-   BLUE WHALE GEMS
-   <small>NATURAL BEAUTY</small>
-  </a>
-  <nav>
-   <a href="#home">Home</a>
-   <a href="#collections">Collections</a>
-   <a href="#contact">Contact</a>
-  </nav>
+  <a class="logo" href="index.html">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a>
+  <div class="nav-right">
+   <nav>
+    <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+    <a href="#collections" data-en="Collections" data-ar="المجموعات">Collections</a>
+    <a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+   </nav>
+   <button class="lang" type="button" onclick="toggleLanguage()">العربية</button>
+  </div>
  </div>
 </header>
-
 <main>
-
 <section class="hero" id="home">
-
-<!-- Original ocean and gemstone illustration, drawn in SVG -->
-<svg class="hero-art" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<defs>
- <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
-  <stop offset="0" stop-color="#dff3fa"/>
-  <stop offset=".45" stop-color="#91c9df"/>
-  <stop offset="1" stop-color="#3c88ad"/>
- </linearGradient>
- <linearGradient id="crystal" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
-  <stop offset=".4" stop-color="#a8dce9" stop-opacity=".9"/>
-  <stop offset="1" stop-color="#468cae" stop-opacity=".8"/>
- </linearGradient>
- <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0" stop-color="#eee4fa"/>
-  <stop offset=".5" stop-color="#a99bd5"/>
-  <stop offset="1" stop-color="#655c9b"/>
- </linearGradient>
- <linearGradient id="aqua" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0" stop-color="#e7fbff"/>
-  <stop offset=".5" stop-color="#79c9df"/>
-  <stop offset="1" stop-color="#3884a9"/>
- </linearGradient>
- <filter id="soft">
-  <feGaussianBlur stdDeviation="15"/>
- </filter>
-</defs>
-
-<!-- distant sea -->
-<path d="M0 290 Q170 245 330 285 T680 270 T1030 280 T1440 255 L1440 620 L0 620Z" fill="url(#sea)" opacity=".72"/>
-<path d="M0 340 Q180 305 340 335 T680 320 T1030 345 T1440 310" fill="none" stroke="#fff" stroke-width="5" opacity=".5"/>
-<path d="M0 390 Q200 355 380 390 T740 370 T1120 395 T1440 360" fill="none" stroke="#e9fbff" stroke-width="3" opacity=".65"/>
-<path d="M0 455 Q180 420 370 455 T760 430 T1150 460 T1440 425" fill="none" stroke="#fff" stroke-width="4" opacity=".38"/>
-
-<!-- soft sunlight -->
-<ellipse cx="1120" cy="130" rx="250" ry="100" fill="#fff" opacity=".35" filter="url(#soft)"/>
-<g stroke="#fff" stroke-width="2" opacity=".5">
- <path d="M950 30 L1080 240"/>
- <path d="M1110 0 L1160 240"/>
- <path d="M1270 30 L1240 240"/>
-</g>
-
-<!-- gemstone island -->
-<path d="M660 525 Q850 445 1040 495 Q1240 430 1440 500 L1440 620 L600 620Z" fill="#e8f5f8" opacity=".82"/>
-
-<!-- large aqua crystal -->
-<g transform="translate(920 280)">
- <path d="M-95 150 L-65 -5 L15 -100 L105 -12 L130 135 L30 205Z" fill="url(#crystal)" stroke="#fff" stroke-width="3" opacity=".96"/>
- <path d="M-65 -5 L15 -100 L15 92 L-95 150Z" fill="#d9f4fa" opacity=".8"/>
- <path d="M15 -100 L105 -12 L15 92Z" fill="#8ac9df" opacity=".8"/>
- <path d="M15 92 L130 135 L30 205Z" fill="#4f99ba" opacity=".65"/>
- <path d="M-95 150 L15 92 L30 205Z" fill="#bce9f2" opacity=".85"/>
- <path d="M-65 -5 L15 92 L105 -12" fill="none" stroke="#fff" stroke-width="2" opacity=".75"/>
-</g>
-
-<!-- amethyst cluster -->
-<g transform="translate(1190 390)">
- <path d="M-135 130 L-100 -35 L-45 -130 L5 -25 L50 -160 L92 -15 L145 100 L75 160Z" fill="url(#violet)" stroke="#fff" stroke-width="2"/>
- <path d="M-100 -35 L-45 -130 L-28 60 L-135 130Z" fill="#e4d8f7" opacity=".8"/>
- <path d="M-45 -130 L5 -25 L-28 60Z" fill="#b2a0d7"/>
- <path d="M5 -25 L50 -160 L60 65 L-28 60Z" fill="#d8d1f2"/>
- <path d="M50 -160 L92 -15 L60 65Z" fill="#887cb9"/>
- <path d="M92 -15 L145 100 L75 160 L60 65Z" fill="#a89bd0"/>
- <path d="M-28 60 L60 65 L75 160Z" fill="#73689f"/>
- <path d="M-100 -35 L-45 -130 M5 -25 L50 -160" stroke="#fff" stroke-width="3" opacity=".65"/>
-</g>
-
-<!-- small loose crystals -->
-<g transform="translate(760 490)">
- <path d="M-55 35 L-35 -45 L10 -80 L45 -15 L40 55Z" fill="url(#aqua)" stroke="#fff" stroke-width="2"/>
- <path d="M-35 -45 L10 -80 L5 15 L-55 35Z" fill="#e4fbff" opacity=".8"/>
- <path d="M10 -80 L45 -15 L5 15Z" fill="#5ba9c8"/>
- <path d="M5 15 L40 55 L-55 35Z" fill="#a6dce9"/>
-</g>
-
-<g transform="translate(1360 510)">
- <path d="M-50 30 L-20 -35 L20 -70 L55 0 L35 50Z" fill="url(#crystal)" stroke="#fff" stroke-width="2"/>
- <path d="M-20 -35 L20 -70 L5 10 L-50 30Z" fill="#fff" opacity=".65"/>
- <path d="M20 -70 L55 0 L5 10Z" fill="#5cabc8"/>
-</g>
-
-<!-- tiny water sparkles -->
-<g fill="#fff" opacity=".85">
- <circle cx="840" cy="170" r="3"/>
- <circle cx="1030" cy="225" r="4"/>
- <circle cx="1320" cy="220" r="3"/>
- <circle cx="1120" cy="490" r="3"/>
- <circle cx="970" cy="560" r="4"/>
- <circle cx="760" cy="390" r="3"/>
- <circle cx="1250" cy="575" r="3"/>
-</g>
-</svg>
-
-<div class="hero-content">
- <div class="hero-copy">
-  <div class="eyebrow">A STUDY IN NATURAL BEAUTY</div>
-  <h1>Nature,<span>in its own form.</span></h1>
-  <p>
-   Discover the quiet beauty of natural gemstones.
-   Each colour, texture and formation tells its own story.
-  </p>
-  <div class="hero-rule"></div>
-  <a class="hero-btn" href="#collections">Discover the collections →</a>
- </div>
-</div>
+ <div class="eyebrow" data-en="A STUDY IN NATURAL BEAUTY" data-ar="تأمل في جمال الطبيعة">A STUDY IN NATURAL BEAUTY</div>
+ <h1 data-en="Nature, in its own form." data-ar="للطبيعة جمالها كما خُلقت.">Nature, in its own form.</h1>
+ <p data-en="A considered collection of natural gemstones and distinctive pieces. Each one carries its own colour, character and quiet beauty." data-ar="مجموعة مختارة من الأحجار الطبيعية والقطع المميزة. لكل حجر لونه وشخصيته وجماله الهادئ الذي لا يشبه غيره.">A considered collection of natural gemstones and distinctive pieces. Each one carries its own colour, character and quiet beauty.</p>
+ <a class="btn" href="#collections" data-en="Discover the collections" data-ar="اكتشف المجموعات">Discover the collections</a>
 </section>
-
 <section class="collections" id="collections">
  <div class="collections-heading">
-  <div class="eyebrow">THE COLLECTIONS</div>
-  <h2>Explore the world of natural stones</h2>
-  <p>Four expressions of nature, each with its own character.</p>
+  <div class="eyebrow" data-en="THE COLLECTIONS" data-ar="مجموعاتنا">THE COLLECTIONS</div>
+  <h2 data-en="Explore by collection" data-ar="اختر مجموعتك">Explore by collection</h2>
  </div>
-
  <div class="category-grid">
-
-  <!-- BRACELETS: natural mineral beads -->
-  <a class="category-card" href="#bracelets" data-category="bracelets">
-   <div class="category-art">
-    <svg viewBox="0 0 190 145" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-     <defs>
-      <radialGradient id="beadA" cx="30%" cy="25%">
-       <stop offset="0" stop-color="#e4fbff"/>
-       <stop offset=".45" stop-color="#65b6d0"/>
-       <stop offset="1" stop-color="#246887"/>
-      </radialGradient>
-      <radialGradient id="beadB" cx="30%" cy="25%">
-       <stop offset="0" stop-color="#eee6ff"/>
-       <stop offset=".5" stop-color="#a69acb"/>
-       <stop offset="1" stop-color="#5e578a"/>
-      </radialGradient>
-     </defs>
-     <ellipse cx="95" cy="74" rx="63" ry="45" fill="none" stroke="#9bc9d9" stroke-width="1.5" stroke-dasharray="2 4"/>
-     <g stroke="#d9f4fa" stroke-width="1">
-      <circle cx="95" cy="29" r="12" fill="url(#beadA)"/>
-      <circle cx="125" cy="40" r="12" fill="url(#beadB)"/>
-      <circle cx="148" cy="64" r="12" fill="url(#beadA)"/>
-      <circle cx="151" cy="91" r="12" fill="url(#beadB)"/>
-      <circle cx="128" cy="111" r="12" fill="url(#beadA)"/>
-      <circle cx="96" cy="119" r="12" fill="url(#beadB)"/>
-      <circle cx="64" cy="110" r="12" fill="url(#beadA)"/>
-      <circle cx="40" cy="88" r="12" fill="url(#beadB)"/>
-      <circle cx="43" cy="59" r="12" fill="url(#beadA)"/>
-      <circle cx="65" cy="38" r="12" fill="url(#beadB)"/>
-     </g>
-     <g fill="#fff" opacity=".7">
-      <circle cx="91" cy="25" r="3"/>
-      <circle cx="121" cy="36" r="3"/>
-      <circle cx="144" cy="60" r="3"/>
-      <circle cx="60" cy="34" r="3"/>
-     </g>
-    </svg>
-   </div>
-   <span class="category-number">I</span>
-   <h3>Bracelets</h3>
-   <p>Natural forms, worn close</p>
-   <span class="explore">Explore collection →</span>
-  </a>
-
-  <!-- NECKLACES: natural crystal formation -->
-  <a class="category-card" href="#necklaces" data-category="necklaces">
-   <div class="category-art">
-    <svg viewBox="0 0 190 145" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-     <defs>
-      <linearGradient id="neckCrystal" x1="0" y1="0" x2="1" y2="1">
-       <stop stop-color="#f3fdff"/>
-       <stop offset=".5" stop-color="#91d0e2"/>
-       <stop offset="1" stop-color="#3b8aaa"/>
-      </linearGradient>
-     </defs>
-     <path d="M30 23 Q95 108 160 23" fill="none" stroke="#a3c9d8" stroke-width="2" stroke-dasharray="3 4"/>
-     <path d="M75 65 L95 25 L115 65 L108 105 L95 126 L82 105Z" fill="url(#neckCrystal)" stroke="#fff" stroke-width="2"/>
-     <path d="M95 25 L95 126 L75 65Z" fill="#eafaff" opacity=".85"/>
-     <path d="M95 25 L115 65 L95 126Z" fill="#4d9dbb" opacity=".8"/>
-     <path d="M75 65 L115 65 L95 126Z" fill="#bce8f2" opacity=".8"/>
-     <path d="M89 28 L95 17 L101 28" fill="none" stroke="#7caec1" stroke-width="2"/>
-     <g fill="#fff">
-      <circle cx="95" cy="48" r="3"/>
-      <circle cx="86" cy="73" r="2"/>
-     </g>
-    </svg>
-   </div>
-   <span class="category-number">II</span>
-   <h3>Necklaces</h3>
-   <p>Nature's quiet details</p>
-   <span class="explore">Explore collection →</span>
-  </a>
-
-  <!-- RINGS: gemstone mineral facets -->
-  <a class="category-card" href="#rings" data-category="rings">
-   <div class="category-art">
-    <svg viewBox="0 0 190 145" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-     <defs>
-      <linearGradient id="ringStone" x1="0" y1="0" x2="1" y2="1">
-       <stop stop-color="#e7faff"/>
-       <stop offset=".45" stop-color="#6ebbd6"/>
-       <stop offset="1" stop-color="#225e83"/>
-      </linearGradient>
-     </defs>
-     <path d="M48 91 Q95 145 142 91" fill="none" stroke="#a8cbd8" stroke-width="8"/>
-     <path d="M48 91 Q95 132 142 91" fill="none" stroke="#eaf7fa" stroke-width="2"/>
-     <path d="M67 73 L95 26 L123 73 L111 91 L79 91Z" fill="url(#ringStone)" stroke="#fff" stroke-width="2"/>
-     <path d="M95 26 L95 91 L67 73Z" fill="#e8faff" opacity=".85"/>
-     <path d="M95 26 L123 73 L95 91Z" fill="#3986a9" opacity=".8"/>
-     <path d="M67 73 L123 73 L95 91Z" fill="#a9e0ed" opacity=".7"/>
-     <g fill="#fff" opacity=".8">
-      <circle cx="89" cy="43" r="3"/>
-      <circle cx="104" cy="61" r="2"/>
-     </g>
-    </svg>
-   </div>
-   <span class="category-number">III</span>
-   <h3>Rings</h3>
-   <p>Nature's rare formations</p>
-   <span class="explore">Explore collection →</span>
-  </a>
-
-  <!-- RAW GEMS: crystal cluster -->
-  <a class="category-card" href="#raw-gems" data-category="raw-gems">
-   <div class="category-art">
-    <svg viewBox="0 0 190 145" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-     <defs>
-      <linearGradient id="rawA" x1="0" y1="0" x2="1" y2="1">
-       <stop stop-color="#f0fbff"/>
-       <stop offset=".45" stop-color="#82c5dc"/>
-       <stop offset="1" stop-color="#367b9f"/>
-      </linearGradient>
-      <linearGradient id="rawB" x1="0" y1="0" x2="1" y2="1">
-       <stop stop-color="#f0eaff"/>
-       <stop offset=".5" stop-color="#b0a2d3"/>
-       <stop offset="1" stop-color="#6d609d"/>
-      </linearGradient>
-     </defs>
-     <path d="M35 117 L45 54 L69 21 L86 80 L104 39 L128 14 L145 88 L155 119Z" fill="url(#rawA)" stroke="#fff" stroke-width="2"/>
-     <path d="M45 54 L69 21 L68 97 L35 117Z" fill="#dff6fb"/>
-     <path d="M69 21 L86 80 L68 97Z" fill="#71b9d3"/>
-     <path d="M86 80 L104 39 L113 105 L68 97Z" fill="#c7eaf2"/>
-     <path d="M104 39 L128 14 L130 95 L113 105Z" fill="url(#rawB)"/>
-     <path d="M128 14 L145 88 L130 95Z" fill="#8c7cb8"/>
-     <path d="M68 97 L113 105 L155 119 L35 117Z" fill="#9ccfe0"/>
-     <path d="M69 21 L86 80 M104 39 L113 105" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/>
-    </svg>
-   </div>
-   <span class="category-number">IV</span>
-   <h3>Raw Gems</h3>
-   <p>Nature, unaltered</p>
-   <span class="explore">Explore collection →</span>
-  </a>
-
+  <a class="category-card" href="collection.html?category=bracelets"><span class="category-number">I</span><h3>Bracelets</h3><p data-en="Natural forms, worn close" data-ar="أحجار طبيعية ترافقك">Natural forms, worn close</p><span class="explore" data-en="Explore collection ↗" data-ar="اكتشف المجموعة ↗">Explore collection ↗</span></a>
+  <a class="category-card" href="collection.html?category=necklaces"><span class="category-number">II</span><h3>Necklaces</h3><p data-en="Details with distinction" data-ar="تفاصيل لها حضورها">Details with distinction</p><span class="explore" data-en="Explore collection ↗" data-ar="اكتشف المجموعة ↗">Explore collection ↗</span></a>
+  <a class="category-card" href="collection.html?category=rings"><span class="category-number">III</span><h3>Rings</h3><p data-en="Small works of nature" data-ar="لمسات من جمال الطبيعة">Small works of nature</p><span class="explore" data-en="Explore collection ↗" data-ar="اكتشف المجموعة ↗">Explore collection ↗</span></a>
+  <a class="category-card" href="collection.html?category=raw-gems"><span class="category-number">IV</span><h3>Raw Gems</h3><p data-en="Nature, unaltered" data-ar="الأحجار في شكلها الطبيعي">Nature, unaltered</p><span class="explore" data-en="Explore collection ↗" data-ar="اكتشف المجموعة ↗">Explore collection ↗</span></a>
  </div>
 </section>
-
-<div id="catalog"></div>
-
 <section class="about">
- <div class="eyebrow">ABOUT THE HOUSE</div>
- <h2>Beauty in its natural state.</h2>
- <p>
-  We are drawn to the individuality of natural gemstones:
-  their colours, textures and subtle differences.
-  Discover a piece that feels distinctly yours.
- </p>
+ <div class="eyebrow" data-en="ABOUT THE HOUSE" data-ar="عن العلامة">ABOUT THE HOUSE</div>
+ <h2 data-en="Beauty in its natural state." data-ar="جمال الطبيعة كما هو.">Beauty in its natural state.</h2>
+ <p data-en="We are drawn to the individuality of natural gemstones: their colours, textures and subtle differences. Discover a piece that feels distinctly yours." data-ar="ما يجذبنا في الأحجار الطبيعية هو اختلافها؛ ألوانها وتكويناتها وتفاصيلها الصغيرة. اختر قطعة تشبه ذوقك وتعبّر عن حضورك.">We are drawn to the individuality of natural gemstones: their colours, textures and subtle differences. Discover a piece that feels distinctly yours.</p>
 </section>
-
 <section class="contact" id="contact">
- <div class="eyebrow">CORRESPONDENCE</div>
- <h2>We would be pleased to hear from you.</h2>
- <p>للطلب أو الاستفسار، يسعدنا التواصل معك عبر واتساب.</p>
- <a class="whatsapp-btn" href="https://wa.me/21655733020" target="_blank" rel="noopener">
-  CONTACT VIA WHATSAPP
- </a>
+ <div class="eyebrow" data-en="CORRESPONDENCE" data-ar="تواصل معنا">CORRESPONDENCE</div>
+ <h2 data-en="We would be pleased to hear from you." data-ar="يسعدنا أن نسمع منك.">We would be pleased to hear from you.</h2>
+ <p data-en="For orders and enquiries, contact us directly on WhatsApp." data-ar="للطلب أو الاستفسار، يسعدنا التواصل معك عبر واتساب.">For orders and enquiries, contact us directly on WhatsApp.</p>
+ <a class="whatsapp-btn" href="https://wa.me/21655733020" target="_blank" rel="noopener" data-en="CONTACT VIA WHATSAPP" data-ar="تواصل عبر واتساب">CONTACT VIA WHATSAPP</a>
 </section>
-
 </main>
-
-<footer>
- <strong>BLUE WHALE GEMS</strong>
- NATURAL GEMSTONES · TUNISIA
- <p>© 2026 BLUE WHALE GEMS</p>
-</footer>
-
+<footer><strong>BLUE WHALE GEMS</strong><span data-en="NATURAL GEMSTONES · TUNISIA" data-ar="أحجار طبيعية · تونس">NATURAL GEMSTONES · TUNISIA</span><p>© 2026 BLUE WHALE GEMS</p></footer>
 <script>
-const products=[
-{c:"bracelets",n:"Aquamarine + Amethyst + Labradorite Bracelet",p:70,i:"20261018_184933.jpg"},
-{c:"bracelets",n:"Labradorite, Amethyst, Rose Quartz & Chips Bracelet",p:68,i:"1000088300.jpg"},
-{c:"bracelets",n:"Coral & Agate Bracelet",p:45,i:"1000088312.jpg"},
-{c:"bracelets",n:"Obsidian + Clear Quartz Bracelet",p:70,i:"1000088313.jpg"},
-{c:"bracelets",n:"Moss Quartz Bracelet",p:60,i:"1000088296.jpg"},
-{c:"bracelets",n:"Pink Tourmaline & Natural Pearl Bracelet",p:79,i:"1000088281.jpg"},
-{c:"bracelets",n:"Red Carnelian Chip Bracelet",p:50,i:"1000088295.jpg"},
-{c:"bracelets",n:"Citrine Chip Bracelet",p:50,i:"1000088297.jpg"},
-{c:"bracelets",n:"Rutilated Quartz & Tiger's Eye Chip Bracelet",p:55,i:"1000088299.jpg"},
-{c:"bracelets",n:"Falcon's Eye & Flower Agate Bracelet",p:69,i:"1000088279.jpg"},
-{c:"bracelets",n:"Aquamarine, Labradorite & Coral Bracelet",p:80,i:"1000088265.jpg"},
-{c:"bracelets",n:"Seven Chakras Bracelet",p:77,i:"1000088268.jpg"},
-{c:"bracelets",n:"Red Jasper Bracelet",p:60,i:"1000088278.jpg"},
-{c:"bracelets",n:"Amethyst & Rose Quartz Bracelet",p:66,i:"1000088290.jpg"},
-{c:"bracelets",n:"Amethyst Bracelet",p:70,i:"1000057411.jpg"},
-{c:"bracelets",n:"Tiger's Eye Bracelet",p:60,i:"1000063564.jpg"},
-{c:"bracelets",n:"Multi-Color Tourmaline Bracelet",p:65,i:"1000063590.jpg"},
-{c:"bracelets",n:"Lapis Lazuli Bracelet",p:80,i:"1000078469.jpg"},
-{c:"bracelets",n:"Baltic Amber Bracelet",p:190,i:"1000079541.jpg"},
-{c:"bracelets",n:"Natural Coral Bracelet",p:39,i:"1000084081.jpg"},
-{c:"bracelets",n:"Natural Coral & Pearl Bracelet",p:89,i:"1000085232.jpg"},
-
-{c:"necklaces",n:"Coral & Pearl Pendant Necklace",p:45,i:"1000032282.jpg"},
-{c:"necklaces",n:"Amber Pendant Necklace",p:50,i:"1000052346.jpg"},
-{c:"necklaces",n:"Yemeni Scenic Agate Pendant Necklace — 925 Sterling Silver",p:220,i:"1000074156.jpg"},
-{c:"necklaces",n:"Natural Coral Necklace",p:200,i:"1000081614.jpg"},
-{c:"necklaces",n:"Suleimani Agate Pendant Necklace",p:150,i:"1000082002.jpg"},
-{c:"necklaces",n:"Egyptian Ankh & Coral Pendant Necklace",p:79,i:"1000085314.jpg"},
-
-{c:"rings",n:"Red Agate Ring — 925 Sterling Silver",p:100,i:"1000085897.jpg"},
-{c:"rings",n:"Pyrite Ring — 925 Sterling Silver",p:120,i:"1000074444.jpg"},
-
-{c:"raw-gems",n:"Raw Apatite",p:37,i:"1000082268.jpg"},
-{c:"raw-gems",n:"Raw Carnelian",p:29,i:"1000082265.jpg"},
-{c:"raw-gems",n:"Raw Green Aventurine",p:34,i:"1000082266.jpg"}
-];
-
-const groups=[
- {id:"bracelets",title:"Bracelets",desc:"A collection of natural gemstone bracelets."},
- {id:"necklaces",title:"Necklaces",desc:"Pendants and necklaces shaped by nature."},
- {id:"rings",title:"Rings",desc:"Gemstone rings set in sterling silver."},
- {id:"raw-gems",title:"Raw Gems Collection",desc:"Natural stones in their original form."}
-];
-
-const catalog=document.getElementById("catalog");
-
-groups.forEach(group=>{
- const section=document.createElement("section");
- section.className="section";
- section.id=group.id;
- section.hidden=true;
-
- const back=document.createElement("a");
- back.href="#collections";
- back.className="back-collections";
- back.textContent="← All collections";
-
- const head=document.createElement("div");
- head.className="section-head";
-
- const eyebrow=document.createElement("div");
- eyebrow.className="eyebrow";
- eyebrow.textContent="BLUE WHALE GEMS · THE COLLECTION";
-
- const title=document.createElement("h2");
- title.textContent=group.title;
-
- const desc=document.createElement("p");
- desc.textContent=group.desc;
-
- head.append(eyebrow,title,desc);
-
- const grid=document.createElement("div");
- grid.className="products";
-
- products.filter(p=>p.c===group.id).forEach(p=>{
-  const card=document.createElement("article");
-  card.className="product";
-
-  const link=document.createElement("a");
-  const params=new URLSearchParams({
-   name:p.n,
-   price:String(p.p),
-   image:"images/"+p.i,
-   delivery:"8",
-   stock:"1"
-  });
-  link.href="product.html?"+params.toString();
-
-  const frame=document.createElement("div");
-  frame.className="product-image";
-
-  const img=document.createElement("img");
-  img.src="images/"+p.i;
-  img.alt=p.n;
-  img.loading="lazy";
-
-  img.onerror=()=>{
-   frame.innerHTML="";
-   const unavailable=document.createElement("div");
-   unavailable.className="image-unavailable";
-   unavailable.textContent="Image unavailable";
-   frame.appendChild(unavailable);
-  };
-
-  frame.appendChild(img);
-
-  const name=document.createElement("h3");
-  name.textContent=p.n;
-
-  const price=document.createElement("div");
-  price.className="price";
-  price.textContent=p.p+" TND";
-
-  const delivery=document.createElement("span");
-  delivery.className="delivery-label";
-  delivery.textContent="Delivery · 8 TND";
-
-  link.append(frame,name,price,delivery);
-  card.appendChild(link);
-  grid.appendChild(card);
- });
-
- back.addEventListener("click",event=>{
-  event.preventDefault();
-  showCollections();
- });
-
- section.append(back,head,grid);
- catalog.appendChild(section);
-});
-
-function showCollections(){
- document.querySelectorAll("#catalog .section").forEach(section=>{
-  section.hidden=true;
- });
- document.getElementById("collections").scrollIntoView({
-  behavior:"smooth",
-  block:"start"
- });
+function applyLanguage(lang){
+ localStorage.setItem("bwg-language",lang);
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ document.body.dir=lang==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=el.dataset[lang]);
+ document.querySelector(".lang").textContent=lang==="ar"?"English":"العربية";
 }
-
-document.querySelectorAll(".category-card").forEach(card=>{
- card.addEventListener("click",event=>{
-  event.preventDefault();
-
-  const id=card.dataset.category;
-
-  document.querySelectorAll("#catalog .section").forEach(section=>{
-   section.hidden=section.id!==id;
-  });
-
-  document.getElementById(id).scrollIntoView({
-   behavior:"smooth",
-   block:"start"
-  });
- });
-});
+function toggleLanguage(){applyLanguage((localStorage.getItem("bwg-language")||"en")==="en"?"ar":"en")}
+applyLanguage(localStorage.getItem("bwg-language")||"en");
 </script>
-
 </body>
 </html>
