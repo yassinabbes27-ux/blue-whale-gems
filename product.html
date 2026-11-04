@@ -2,68 +2,116 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aquamarine Bracelet | BLUE WHALE GEMS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Details | BLUE WHALE GEMS</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f8fcfd;color:#173b4b;font-family:Georgia,serif}
-header{padding:23px 7%;background:white}
-header a{color:#173b4b;text-decoration:none;font-size:20px;letter-spacing:3px;font-weight:bold}
-.container{max-width:1000px;margin:55px auto;padding:0 22px}
-.back{font-family:Arial;color:#78929c;text-decoration:none;font-size:14px}
+body{margin:0;background:#f8fcfd;color:#183d4c;font-family:Georgia,serif}
+header{background:white;padding:22px 7%}
+header a{font-size:19px;letter-spacing:3px;font-weight:bold;color:#183d4c;text-decoration:none}
+main{max-width:1000px;margin:45px auto;padding:0 22px}
+.back{font:13px Arial;color:#66818b;text-decoration:none}
 .details{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center;margin-top:30px}
-.photo{background:white;padding:12px;border-radius:25px;box-shadow:0 12px 35px #173b4b12}
-.photo img{width:100%;display:block;border-radius:18px}
+.photo{background:#eaf4f6;border-radius:24px;padding:10px;overflow:hidden}
+.photo img{width:100%;display:block;border-radius:17px}
+.photo .placeholder{height:340px;display:flex;align-items:center;justify-content:center;color:#829da6;font:13px Arial;letter-spacing:2px}
+.label{font:11px Arial;letter-spacing:3px;color:#a18a60}
 h1{font-size:30px;line-height:1.4;font-weight:normal}
-.price{font-family:Arial;font-size:27px;color:#997b4b;font-weight:bold;margin:22px 0}
-.description{font-family:Arial;color:#718995;line-height:1.8;font-size:15px}
-.shipping{margin-top:25px;padding:18px;background:#edf6f8;border-radius:15px;font-family:Arial;line-height:2}
-.total{font-weight:bold;color:#173b4b}
-.order{display:block;text-align:center;background:#173f50;color:white;padding:16px;border-radius:30px;text-decoration:none;margin-top:25px;font-family:Arial}
-footer{text-align:center;padding:30px;color:#78929c;font-family:Arial;font-size:12px}
-@media(max-width:700px){.details{grid-template-columns:1fr;gap:20px}.container{margin:30px auto}h1{font-size:25px}}
+.description{font:15px/1.9 Arial;color:#718995}
+.price{font:bold 26px Arial;color:#997b4b;margin:20px 0}
+.shipping{background:#edf5f7;border-radius:15px;padding:18px;font:14px/2 Arial;margin-top:25px}
+.total{font-weight:bold;color:#183d4c;border-top:1px solid #d5e5e9;margin-top:8px;padding-top:8px}
+.order{display:block;text-align:center;background:#173f50;color:white;text-decoration:none;padding:15px;border-radius:30px;margin-top:25px;font:12px Arial;letter-spacing:1px}
+footer{text-align:center;padding:30px;color:#78929c;font:11px Arial;letter-spacing:2px}
+@media(max-width:700px){.details{grid-template-columns:1fr;gap:22px}main{margin:28px auto}h1{font-size:25px}}
 </style>
 </head>
 <body>
+<header><a href="index.html">BLUE WHALE GEMS</a></header>
 
-<header>
-<a href="index.html">BLUE WHALE GEMS</a>
-</header>
-
-<main class="container">
-<a class="back" href="index.html">← Back to collection</a>
+<main>
+<a class="back" href="index.html">← Back to Collection</a>
 
 <div class="details">
-  <div class="photo">
-    <img src="images/20261018_184933.jpg"
-    alt="Aquamarine Amethyst Labradorite Bracelet">
-  </div>
-
-  <div>
-    <p style="color:#91aeb8;font-family:Arial;letter-spacing:2px">BLUE WHALE GEMS</p>
-
-    <h1>Aquamarine + Amethyst + Labradorite Bracelet</h1>
-
-    <div class="price">70 TND</div>
-
-    <p class="description">
-      A beautiful bracelet combining three gemstones:
-      Aquamarine, Amethyst and Labradorite.
-      A distinctive natural gemstone combination.
-    </p>
-
-    <div class="shipping">
-      Product price: 70 TND<br>
-      Delivery: 8 TND
-      <div class="total">Total: 78 TND</div>
-    </div>
-
-    <a class="order" href="index.html">Back to collection</a>
-  </div>
+<div class="photo" id="photo"></div>
+<div>
+<div class="label">BLUE WHALE GEMS</div>
+<h1 id="name">Product</h1>
+<div class="price" id="price"></div>
+<p class="description" id="description"></p>
+<div class="shipping" id="shipping"></div>
+<a class="order" href="index.html">BACK TO COLLECTION</a>
+</div>
 </div>
 </main>
 
-<footer>BLUE WHALE GEMS</footer>
+<footer>BLUE WHALE GEMS · THE BEAUTY OF NATURE</footer>
 
+<script>
+const products = {
+ tiger:{
+  name:"Tiger's Eye",
+  price:null,
+  description:"Discover the natural beauty of Tiger's Eye.",
+  image:null
+ },
+ amethyst:{
+  name:"Amethyst",
+  price:null,
+  description:"Discover the natural beauty of Amethyst.",
+  image:null
+ },
+ turquoise:{
+  name:"Turquoise",
+  price:null,
+  description:"Discover the natural beauty of Turquoise.",
+  image:null
+ },
+ coral:{
+  name:"Natural Coral",
+  price:null,
+  description:"Discover the natural beauty of Natural Coral.",
+  image:null
+ },
+ bracelet:{
+  name:"Aquamarine + Amethyst + Labradorite Bracelet",
+  price:70,
+  description:"A bracelet combining Aquamarine, Amethyst and Labradorite gemstones.",
+  image:"images/20261018_184933.jpg",
+  delivery:8
+ }
+};
+
+const id=new URLSearchParams(location.search).get("id") || "bracelet";
+const p=products[id] || products.bracelet;
+
+document.title=p.name+" | BLUE WHALE GEMS";
+document.getElementById("name").textContent=p.name;
+document.getElementById("description").textContent=p.description;
+document.getElementById("price").textContent=p.price===null?"Price to be added":p.price+" TND";
+
+const photo=document.getElementById("photo");
+if(p.image){
+ const img=document.createElement("img");
+ img.src=p.image;
+ img.alt=p.name;
+ photo.appendChild(img);
+}else{
+ const placeholder=document.createElement("div");
+ placeholder.className="placeholder";
+ placeholder.textContent=p.name.toUpperCase();
+ photo.appendChild(placeholder);
+}
+
+const shipping=document.getElementById("shipping");
+if(p.price!==null && p.delivery!==undefined){
+ shipping.innerHTML=
+ "Product price: "+p.price+" TND<br>"+
+ "Delivery: "+p.delivery+" TND"+
+ '<div class="total">Total: '+(p.price+p.delivery)+' TND</div>';
+}else{
+ shipping.textContent="Price and delivery details will be announced.";
+}
+</script>
 </body>
 </html>
