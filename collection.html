@@ -83,7 +83,7 @@ async function loadProducts(){
   description.dataset.en=group.descEn;
   description.dataset.ar=group.descAr;
   products.filter(p=>p.category===category).forEach(p=>{
-   const imagePath=String(p.image||"").replace(/^\\/+/, "");
+   const imagePath=String(p.image||"").replace(/^\/+/, "");
    const params=new URLSearchParams({name:p.name,price:String(p.price),image:imagePath,delivery:String(p.delivery??8),stock:String(p.stock??1),category:p.category});
    const card=document.createElement("article");
    card.className="product";
