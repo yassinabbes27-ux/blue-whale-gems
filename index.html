@@ -559,6 +559,20 @@ animation:chakraProgress 35s linear infinite
   .gem-story-copy h3{font-size:29px;margin:0 0 7px}
   .gem-story-copy p{font-size:14px;line-height:1.65;margin:0}
 }
+
+/* Final mobile gesture and image-background correction for Gem Stories */
+.gem-stories{overflow:visible;background:#fff}
+.gem-story-window{
+ overflow-x:auto;overflow-y:visible;
+ touch-action:pan-y pinch-zoom;
+ overscroll-behavior-x:contain;
+}
+.gem-story-photo img{mix-blend-mode:multiply}
+@media(max-width:640px){
+ .gem-stories{overflow:visible;background:#fff}
+ .gem-story-window{touch-action:pan-y pinch-zoom}
+}
+
 </style>
 </head>
 <body>
@@ -797,26 +811,30 @@ function setupReveal(){
 }
 loadFeaturedProducts().then(()=>setupReveal());
 
-/* Pointer dragging for desktop; native horizontal swipe remains enabled on touch. */
+/* Gem Stories: vertical page scroll stays native; horizontal swipes move only the story gallery. */
 (()=>{
  const viewport=document.querySelector(".gem-story-window");
  if(!viewport)return;
- let down=false,startX=0,startScroll=0,moved=false;
- viewport.addEventListener("pointerdown",e=>{
-  if(e.pointerType==="touch")return;
-  down=true;moved=false;startX=e.clientX;startScroll=viewport.scrollLeft;
-  viewport.setPointerCapture(e.pointerId);
- });
- viewport.addEventListener("pointermove",e=>{
-  if(!down)return;
-  const dx=e.clientX-startX;
-  if(Math.abs(dx)>4)moved=true;
-  if(moved)viewport.scrollLeft=startScroll-dx;
- });
- const stop=()=>{down=false;};
- viewport.addEventListener("pointerup",stop);
- viewport.addEventListener("pointercancel",stop);
- viewport.addEventListener("lostpointercapture",stop);
+ let startX=0,startY=0,startScroll=0,axis=null;
+ viewport.addEventListener("touchstart",e=>{
+  if(!e.touches||e.touches.length!==1)return;
+  startX=e.touches[0].clientX;
+  startY=e.touches[0].clientY;
+  startScroll=viewport.scrollLeft;
+  axis=null;
+ },{passive:true});
+ viewport.addEventListener("touchmove",e=>{
+  if(!e.touches||e.touches.length!==1)return;
+  const dx=e.touches[0].clientX-startX;
+  const dy=e.touches[0].clientY-startY;
+  if(axis===null && (Math.abs(dx)>8 || Math.abs(dy)>8)){
+   axis=Math.abs(dx)>Math.abs(dy)*1.2?"x":"y";
+  }
+  if(axis==="x"){
+   e.preventDefault();
+   viewport.scrollLeft=startScroll-dx;
+  }
+ },{passive:false});
 })();
 
 </script>
