@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>Collection | BLUE WHALE GEMS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#b9dceb;--blue-dark:#7895a3;--green:#245344;--ink:#25363d;--muted:#7b898e;--line:#e9eef0}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
+body[dir="rtl"]{font-family:"Cairo",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1160px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-family:"Playfair Display",serif;font-size:16px;letter-spacing:2px;font-weight:500}
+.logo small{display:block;font-family:"DM Sans",sans-serif;font-size:9px;letter-spacing:4px;color:var(--blue-dark);margin-top:5px}
+.lang{border:1px solid #dce8ec;background:white;color:var(--green);padding:8px 12px;border-radius:2px;font-size:11px;cursor:pointer}
+main{max-width:1160px;margin:auto;padding:32px 20px 70px}
+.back{display:inline-block;margin-bottom:28px;color:var(--blue-dark);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+.heading{text-align:center;margin:5px 0 38px}
+.eyebrow{font-size:9px;letter-spacing:3px;color:var(--blue-dark);font-weight:600;text-transform:uppercase}
+h1{margin:14px 0 10px;font-family:"Playfair Display",serif;font-size:clamp(32px,5vw,45px);font-weight:400}
+body[dir="rtl"] h1{font-family:"Cairo",sans-serif}
+.heading p{color:var(--muted);font-size:12px;line-height:1.9}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:35px 19px}
+.product{min-width:0}
+.product a{display:block}
+.product-image{aspect-ratio:1/1.12;background:#fff;overflow:hidden;border-radius:4px}
+.product-image img{width:100%;height:100%;display:block;object-fit:contain;border-radius:4px;box-shadow:none;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.product a:hover img{transform:scale(1.045)}
+.product a:active img{transform:scale(.96)}
+.product h2{margin:14px 0 8px;font-family:"Playfair Display",serif;font-size:15px;line-height:1.55;font-weight:400}
+.product .price{color:var(--green);font-size:13px;font-weight:600}
+.delivery{display:block;margin-top:7px;color:#89979d;font-size:10px}
+.unavailable{height:100%;display:flex;align-items:center;justify-content:center;color:#89979d;font-size:11px}
+footer{border-top:1px solid var(--line);text-align:center;padding:29px 15px;color:#89979d;font-size:9px;letter-spacing:1.5px}
+footer strong{display:block;color:var(--ink);font-family:"Playfair Display",serif;font-size:15px;font-weight:400;letter-spacing:2px;margin-bottom:8px}
+body[dir="rtl"] .eyebrow,body[dir="rtl"] .back{letter-spacing:0}
+@media(max-width:700px){.nav{padding:13px}.logo{font-size:12px}main{padding:23px 13px 50px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 12px}.product h2{font-size:13px}h1{font-size:32px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="nav">
+  <a class="logo" href="index.html">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a>
+  <button class="lang" type="button" onclick="toggleLanguage()">العربية</button>
+ </div>
+</header>
+<main>
+ <a class="back" href="index.html#collections" data-en="← All collections" data-ar="→ جميع المجموعات">← All collections</a>
+ <div class="heading">
+  <div class="eyebrow">BLUE WHALE GEMS · THE COLLECTION</div>
+  <h1 id="collectionTitle">Collection</h1>
+  <p id="collectionDescription"></p>
+ </div>
+ <div class="products" id="productsGrid"></div>
+</main>
+<footer><strong>BLUE WHALE GEMS</strong><span data-en="NATURAL GEMSTONES · TUNISIA" data-ar="أحجار طبيعية · تونس">NATURAL GEMSTONES · TUNISIA</span></footer>
+<script>
+const products=[
+{c:"bracelets",n:"Aquamarine + Amethyst + Labradorite Bracelet",p:70,i:"20261018_184933.jpg"},
+{c:"bracelets",n:"Labradorite, Amethyst, Rose Quartz & Chips Bracelet",p:68,i:"1000088300.jpg"},
+{c:"bracelets",n:"Coral & Agate Bracelet",p:45,i:"1000088312.jpg"},
+{c:"bracelets",n:"Obsidian + Clear Quartz Bracelet",p:70,i:"1000088313.jpg"},
+{c:"bracelets",n:"Moss Quartz Bracelet",p:60,i:"1000088296.jpg"},
+{c:"bracelets",n:"Pink Tourmaline & Natural Pearl Bracelet",p:79,i:"1000088281.jpg"},
+{c:"bracelets",n:"Red Carnelian Chip Bracelet",p:50,i:"1000088295.jpg"},
+{c:"bracelets",n:"Citrine Chip Bracelet",p:50,i:"1000088297.jpg"},
+{c:"bracelets",n:"Rutilated Quartz & Tiger's Eye Chip Bracelet",p:55,i:"1000088299.jpg"},
+{c:"bracelets",n:"Falcon's Eye & Flower Agate Bracelet",p:69,i:"1000088279.jpg"},
+{c:"bracelets",n:"Aquamarine, Labradorite & Coral Bracelet",p:80,i:"1000088265.jpg"},
+{c:"bracelets",n:"Seven Chakras Bracelet",p:77,i:"1000088268.jpg"},
+{c:"bracelets",n:"Red Jasper Bracelet",p:60,i:"1000088278.jpg"},
+{c:"bracelets",n:"Amethyst & Rose Quartz Bracelet",p:66,i:"1000088290.jpg"},
+{c:"bracelets",n:"Amethyst Bracelet",p:70,i:"1000057411.jpg"},
+{c:"bracelets",n:"Tiger's Eye Bracelet",p:60,i:"1000063564.jpg"},
+{c:"bracelets",n:"Multi-Color Tourmaline Bracelet",p:65,i:"1000063590.jpg"},
+{c:"bracelets",n:"Lapis Lazuli Bracelet",p:80,i:"1000078469.jpg"},
+{c:"bracelets",n:"Baltic Amber Bracelet",p:190,i:"1000079541.jpg"},
+{c:"bracelets",n:"Natural Coral Bracelet",p:39,i:"1000084081.jpg"},
+{c:"bracelets",n:"Natural Coral & Pearl Bracelet",p:89,i:"1000085232.jpg"},
+{c:"necklaces",n:"Coral & Pearl Pendant Necklace",p:45,i:"1000032282.jpg"},
+{c:"necklaces",n:"Amber Pendant Necklace",p:50,i:"1000052346.jpg"},
+{c:"necklaces",n:"Yemeni Scenic Agate Pendant Necklace — 925 Sterling Silver",p:220,i:"1000074156.jpg"},
+{c:"necklaces",n:"Natural Coral Necklace",p:200,i:"1000081614.jpg"},
+{c:"necklaces",n:"Suleimani Agate Pendant Necklace",p:150,i:"1000082002.jpg"},
+{c:"necklaces",n:"Egyptian Ankh & Coral Pendant Necklace",p:79,i:"1000085314.jpg"},
+{c:"rings",n:"Red Agate Ring — 925 Sterling Silver",p:100,i:"1000085897.jpg"},
+{c:"rings",n:"Pyrite Ring — 925 Sterling Silver",p:120,i:"1000074444.jpg"},
+{c:"raw-gems",n:"Raw Apatite",p:37,i:"1000082268.jpg"},
+{c:"raw-gems",n:"Raw Carnelian",p:29,i:"1000082265.jpg"},
+{c:"raw-gems",n:"Raw Green Aventurine",p:34,i:"1000082266.jpg"}
+];
+const groups={
+bracelets:{en:"Bracelets",ar:"الأساور",descEn:"A collection of natural gemstone bracelets.",descAr:"مجموعة من الأساور المصنوعة من الأحجار الطبيعية."},
+necklaces:{en:"Necklaces",ar:"القلائد",descEn:"Pendants and necklaces shaped by nature.",descAr:"قلائد وقطع تتزيّن بجمال الأحجار الطبيعية."},
+rings:{en:"Rings",ar:"الخواتم",descEn:"Gemstone rings set in sterling silver.",descAr:"خواتم من الأحجار الطبيعية والفضة."},
+"raw-gems":{en:"Raw Gems Collection",ar:"الأحجار الخام",descEn:"Natural stones in their original form.",descAr:"أحجار طبيعية في هيئتها الأصلية."}
+};
+const category=new URLSearchParams(location.search).get("category");
+const group=groups[category];
+const title=document.getElementById("collectionTitle");
+const description=document.getElementById("collectionDescription");
+const grid=document.getElementById("productsGrid");
+if(!group){
+ title.textContent="Collection not found";
+ description.textContent="Please return to the collections page.";
+}else{
+ title.textContent=group.en;
+ description.dataset.en=group.descEn;
+ description.dataset.ar=group.descAr;
+ products.filter(p=>p.c===category).forEach(p=>{
+  const params=new URLSearchParams({name:p.n,price:String(p.p),image:"images/"+p.i,delivery:"8",stock:"1",category:category});
+  const card=document.createElement("article");
+  card.className="product";
+  const link=document.createElement("a");
+  link.href="product.html?"+params.toString();
+  const frame=document.createElement("div");
+  frame.className="product-image";
+  const img=document.createElement("img");
+  img.src="images/"+p.i;
+  img.alt=p.n;
+  img.loading="lazy";
+  img.onerror=()=>{frame.innerHTML='<div class="unavailable">Image unavailable</div>'};
+  frame.appendChild(img);
+  const name=document.createElement("h2");
+  name.textContent=p.n;
+  const price=document.createElement("div");
+  price.className="price";
+  price.textContent=p.p+" TND";
+  const delivery=document.createElement("span");
+  delivery.className="delivery";
+  delivery.dataset.en="Delivery · 8 TND";
+  delivery.dataset.ar="التوصيل · 8 د.ت";
+  delivery.textContent="Delivery · 8 TND";
+  link.append(frame,name,price,delivery);
+  card.appendChild(link);
+  grid.appendChild(card);
+ });
+}
+function applyLanguage(lang){
+ localStorage.setItem("bwg-language",lang);
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ document.body.dir=lang==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=el.dataset[lang]);
+ document.querySelector(".lang").textContent=lang==="ar"?"English":"العربية";
+ if(group){
+  title.textContent=group[lang];
+  description.textContent=lang==="ar"?group.descAr:group.descEn;
+ }
+}
+function toggleLanguage(){applyLanguage((localStorage.getItem("bwg-language")||"en")==="en"?"ar":"en")}
+applyLanguage(localStorage.getItem("bwg-language")||"en");
+if(group)document.title=group.en+" | BLUE WHALE GEMS";
+</script>
+</body>
+</html>
