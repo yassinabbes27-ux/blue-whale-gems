@@ -1,0 +1,58 @@
+media:
+  - name: product_images
+    label: Product images
+    input: images
+    output: /images
+    rename: false
+    extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: products
+    label: Products
+    type: file
+    path: data/products.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Product name
+        type: string
+        required: true
+      - name: category
+        label: Collection
+        type: select
+        required: true
+        options:
+          values:
+            - name: bracelets
+              label: Bracelets
+            - name: necklaces
+              label: Necklaces
+            - name: rings
+              label: Rings
+            - name: raw-gems
+              label: Raw Gems
+      - name: price
+        label: Price (TND)
+        type: number
+        required: true
+        options:
+          min: 0
+      - name: image
+        label: Product image
+        type: image
+        required: true
+        options:
+          media: product_images
+          path: images
+          extensions: [jpg, jpeg, png, webp]
+      - name: delivery
+        label: Delivery (TND)
+        type: number
+        options:
+          min: 0
+      - name: stock
+        label: Available quantity
+        type: number
+        options:
+          min: 0
