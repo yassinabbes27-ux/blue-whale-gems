@@ -1,250 +1,206 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
 <title>BLUE WHALE GEMS | Natural Gemstones</title>
-<meta name="description" content="Discover natural gemstones and handmade gemstone jewelry at BLUE WHALE GEMS.">
+<meta name="description" content="Discover natural gemstones, bracelets, necklaces and silver jewelry at BLUE WHALE GEMS.">
 <style>
-:root{
-  --blue:#b9dceB;
-  --pale:#f2f9fc;
-  --green:#245344;
-  --ink:#172b35;
-  --muted:#71828a;
-  --white:#fff;
-}
+:root{--blue:#b9dceb;--pale:#f3f9fc;--green:#245344;--ink:#20333b;--muted:#71828a}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;background:#fff;color:var(--ink);
-  font-family:Arial,Helvetica,sans-serif;
-}
-a{text-decoration:none;color:inherit}
-header{
-  position:sticky;top:0;z-index:20;background:#ffffffed;
-  backdrop-filter:blur(12px);border-bottom:1px solid #edf1f3;
-}
-.nav{
-  max-width:1180px;margin:auto;padding:15px 20px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.logo{font-size:17px;font-weight:800;letter-spacing:2px}
-.logo span{display:block;font-size:9px;letter-spacing:4px;color:#7896a5;margin-top:4px}
-nav{display:flex;gap:22px;font-size:13px;color:#52636c}
+body{margin:0;background:#fff;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:20;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid #edf1f3}
+.nav{max-width:1160px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-size:16px;font-weight:800;letter-spacing:2px}
+.logo small{display:block;font-size:9px;font-weight:normal;letter-spacing:4px;color:#7795a3;margin-top:4px}
+nav{display:flex;gap:20px;font-size:12px;color:#586a72}
 nav a:hover{color:var(--green)}
-.hero{
-  background:linear-gradient(115deg,#f5fbfd,#dceef5);
-  padding:65px 22px 58px;text-align:center;
-}
-.hero small{letter-spacing:3px;color:#64899a;font-size:10px;font-weight:bold}
-.hero h1{
-  font-family:Georgia,serif;font-weight:normal;
-  font-size:clamp(34px,7vw,58px);line-height:1.12;
-  margin:18px auto 14px;max-width:700px;
-}
-.hero p{color:#61747d;font-size:14px;line-height:1.8;max-width:480px;margin:0 auto 25px}
-.btn{
-  display:inline-block;background:var(--green);color:white;
-  padding:14px 25px;border-radius:7px;font-size:13px;
-  transition:.25s;
-}
-.btn:hover{transform:translateY(-2px);background:#193f33}
-.categories{
-  max-width:1100px;margin:35px auto 10px;padding:0 18px;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
-}
-.cat{
-  text-align:center;padding:17px 6px;background:var(--pale);
-  border-radius:12px;font-size:12px;font-weight:bold;
-  transition:.2s;
-}
-.cat:hover{background:#e4f2f7;transform:translateY(-3px)}
-.section{max-width:1100px;margin:55px auto;padding:0 18px}
+.hero{background:linear-gradient(120deg,#f7fbfd,#dceef5);text-align:center;padding:75px 20px 68px}
+.eyebrow{font-size:10px;letter-spacing:3px;color:#6d94a5;font-weight:bold}
+.hero h1{font:normal clamp(36px,7vw,61px)/1.13 Georgia,serif;max-width:760px;margin:19px auto 15px}
+.hero p{max-width:490px;margin:0 auto;color:#637780;font-size:14px;line-height:1.9}
+.btn{display:inline-block;background:var(--green);color:#fff;padding:15px 25px;border-radius:7px;font-size:12px;margin-top:24px;transition:.2s}
+.btn:hover{transform:translateY(-2px);background:#183e32}
+.category-nav{max-width:1100px;margin:28px auto 0;padding:0 18px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.category-nav a{background:var(--pale);padding:17px 8px;text-align:center;border-radius:11px;font-size:12px;font-weight:bold;transition:.2s}
+.category-nav a:hover{background:#e5f2f7;transform:translateY(-2px)}
+.section{max-width:1160px;margin:55px auto;padding:0 18px;scroll-margin-top:90px}
 .section-head{text-align:center;margin-bottom:25px}
-.section-head small{color:#7398a8;letter-spacing:3px;font-size:10px}
-.section-head h2{font:normal 32px Georgia,serif;margin:9px 0}
-.section-head p{color:var(--muted);font-size:13px}
-.products{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px;
-}
-.product{min-width:0;animation:appear .7s ease both}
-.product a{display:block}
-.product-image{
-  background:#f3f8fa;border-radius:13px;overflow:hidden;
-  aspect-ratio:1/1.12;
-}
-.product-image img{
-  width:100%;height:100%;object-fit:cover;display:block;
-  transition:transform .45s ease;
-}
+.section-head h2{font:normal 32px Georgia,serif;margin:10px 0}
+.section-head p{font-size:13px;color:var(--muted);line-height:1.7}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 16px}
+.product{min-width:0;animation:fade .5s ease both}
+.product-image{aspect-ratio:1/1.12;background:#f3f7f9;border-radius:14px;overflow:hidden}
+.product-image img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .4s}
 .product a:hover img{transform:scale(1.045)}
-.product h3{font-size:13px;line-height:1.5;margin:11px 0 5px}
-.price{font-size:13px;color:var(--green);font-weight:bold}
-.more{text-align:center;margin-top:28px}
-.about{
-  background:#f3f9fb;text-align:center;padding:48px 22px;
-  margin-top:65px;
-}
-.about h2{font:normal 30px Georgia,serif;margin:0 0 13px}
-.about p{max-width:530px;margin:auto;color:#687b83;font-size:14px;line-height:1.9}
-footer{
-  background:#fff;text-align:center;padding:28px 15px;
-  color:#809099;font-size:11px;letter-spacing:1px;
-}
-footer strong{color:var(--ink);display:block;margin-bottom:8px}
-@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.product h3{font-size:13px;line-height:1.5;margin:11px 0 6px;font-weight:600}
+.product .price{font-size:13px;color:var(--green);font-weight:bold}
+.empty{color:var(--muted);text-align:center}
+.about{background:#f3f9fb;text-align:center;padding:52px 22px;margin-top:65px}
+.about h2{font:normal 30px Georgia,serif}
+.about p{max-width:550px;margin:auto;color:#687b83;font-size:14px;line-height:1.9}
+.contact{text-align:center;padding:45px 20px}
+.contact p{font-size:13px;color:var(--muted);line-height:1.8}
+footer{text-align:center;border-top:1px solid #edf1f3;padding:28px 15px;color:#809099;font-size:10px;letter-spacing:1px}
+footer strong{display:block;color:var(--ink);font-size:13px;margin-bottom:8px}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:700px){
-  .nav{padding:13px 15px}
-  .logo{font-size:14px}
-  nav{gap:12px;font-size:11px}
-  nav a:nth-child(3){display:none}
-  .hero{padding:55px 18px 48px}
-  .categories{grid-template-columns:repeat(2,1fr);gap:9px;margin-top:22px}
-  .section{margin:42px auto}
-  .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 12px}
-  .product h3{font-size:12px}
-  .section-head h2{font-size:28px}
+ .nav{padding:13px 14px}
+ .logo{font-size:13px}
+ nav{gap:11px;font-size:10px}
+ nav a{white-space:nowrap}
+ .hero{padding:55px 18px 48px}
+ .category-nav{grid-template-columns:repeat(2,1fr);gap:9px;margin-top:20px}
+ .section{margin:43px auto;padding:0 13px}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 11px}
+ .product h3{font-size:12px}
+ .section-head h2{font-size:28px}
 }
 </style>
 </head>
 <body>
-
 <header>
-  <div class="nav">
-    <a class="logo" href="index.html">BLUE WHALE GEMS<span>NATURAL BEAUTY</span></a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#collections">Collections</a>
-      <a href="#about">About</a>
-      <a href="mailto:">Contact</a>
-    </nav>
-  </div>
+ <div class="nav">
+  <a class="logo" href="#home">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a>
+  <nav>
+   <a href="#home">Home</a>
+   <a href="#bracelets">Bracelets</a>
+   <a href="#necklaces">Necklaces</a>
+   <a href="#contact">Contact</a>
+  </nav>
+ </div>
 </header>
 
 <main>
 <section class="hero" id="home">
-  <small>THE BEAUTY OF NATURAL STONES</small>
-  <h1>Nature, Made to Be Worn.</h1>
-  <p>Discover natural gemstones and carefully selected pieces, each with its own colours, character and beauty.</p>
-  <a class="btn" href="#collections">Explore Collection</a>
+ <div class="eyebrow">NATURAL GEMSTONES & JEWELRY</div>
+ <h1>Nature, Made to Be Worn.</h1>
+ <p>اكتشف جمال الأحجار الطبيعية وتنوّع ألوانها. قطع مختارة بعناية لتجد ما يناسب ذوقك وأسلوبك.</p>
+ <a class="btn" href="#collections">Explore Collection</a>
 </section>
 
-<div class="categories" id="collections">
-  <a class="cat" href="#bracelets">Bracelets</a>
-  <a class="cat" href="#necklaces">Necklaces</a>
-  <a class="cat" href="#rings">Rings</a>
-  <a class="cat" href="#raw-gems">Raw Gems Collection</a>
+<div class="category-nav" id="collections">
+ <a href="#bracelets">Bracelets</a>
+ <a href="#necklaces">Necklaces</a>
+ <a href="#rings">Rings</a>
+ <a href="#raw-gems">Raw Gems Collection</a>
 </div>
 
-<section class="section" id="bracelets">
-  <div class="section-head">
-    <small>HANDPICKED PIECES</small>
-    <h2>Bracelets</h2>
-    <p>Natural stones, made part of your everyday style.</p>
-  </div>
-  <div class="products">
-    <article class="product">
-      <a href="product.html?name=Aquamarine%20%2B%20Amethyst%20%2B%20Labradorite%20Bracelet&price=70&image=images%2F20261018_184933.jpg">
-        <div class="product-image"><img src="images/20261018_184933.jpg" alt="Aquamarine Amethyst Labradorite Bracelet"></div>
-        <h3>Aquamarine + Amethyst + Labradorite Bracelet</h3>
-        <div class="price">70 TND</div>
-      </a>
-    </article>
-    <article class="product">
-      <a href="product.html?name=Natural%20Coral%20Bracelet&price=39&image=images%2F1000084081.jpg">
-        <div class="product-image"><img src="images/1000084081.jpg" alt="Natural Coral Bracelet"></div>
-        <h3>Natural Coral Bracelet</h3>
-        <div class="price">39 TND</div>
-      </a>
-    </article>
-  </div>
+<div id="catalog"></div>
+
+<section class="about">
+ <div class="eyebrow">ABOUT BLUE WHALE GEMS</div>
+ <h2>جمال طبيعي، وتفاصيل مختلفة</h2>
+ <p>نختار الأحجار والقطع التي تلفت الانتباه بألوانها وتكويناتها الطبيعية. تصفّح مجموعتنا واكتشف القطعة التي تناسبك.</p>
 </section>
 
-<section class="section" id="necklaces">
-  <div class="section-head">
-    <small>TIMELESS DETAILS</small>
-    <h2>Necklaces</h2>
-    <p>Distinctive pendants and natural stone designs.</p>
-  </div>
-  <div class="products">
-    <article class="product">
-      <a href="product.html?name=Coral%20%26%20Pearl%20Pendant%20Necklace&price=45&image=images%2F1000032282.jpg">
-        <div class="product-image"><img src="images/1000032282.jpg" alt="Coral and Pearl Pendant Necklace"></div>
-        <h3>Coral &amp; Pearl Pendant Necklace</h3>
-        <div class="price">45 TND</div>
-      </a>
-    </article>
-    <article class="product">
-      <a href="product.html?name=Yemeni%20Scenic%20Agate%20Pendant%20Necklace&price=220&image=images%2F1000074156.jpg">
-        <div class="product-image"><img src="images/1000074156.jpg" alt="Yemeni Scenic Agate Pendant Necklace"></div>
-        <h3>Yemeni Scenic Agate Pendant Necklace</h3>
-        <div class="price">220 TND</div>
-      </a>
-    </article>
-  </div>
-</section>
-
-<section class="section" id="rings">
-  <div class="section-head">
-    <small>MADE TO STAND OUT</small>
-    <h2>Rings</h2>
-    <p>Natural gemstones set in silver.</p>
-  </div>
-  <div class="products">
-    <article class="product">
-      <a href="product.html?name=Red%20Agate%20Ring%20%E2%80%94%20925%20Sterling%20Silver&price=100&image=images%2F1000085897.jpg">
-        <div class="product-image"><img src="images/1000085897.jpg" alt="Red Agate Silver Ring"></div>
-        <h3>Red Agate Ring — 925 Sterling Silver</h3>
-        <div class="price">100 TND</div>
-      </a>
-    </article>
-    <article class="product">
-      <a href="product.html?name=Pyrite%20Ring%20%E2%80%94%20925%20Sterling%20Silver&price=120&image=images%2F1000074444.jpg">
-        <div class="product-image"><img src="images/1000074444.jpg" alt="Pyrite Silver Ring"></div>
-        <h3>Pyrite Ring — 925 Sterling Silver</h3>
-        <div class="price">120 TND</div>
-      </a>
-    </article>
-  </div>
-</section>
-
-<section class="section" id="raw-gems">
-  <div class="section-head">
-    <small>AS NATURE CREATED THEM</small>
-    <h2>Raw Gems Collection</h2>
-    <p>Natural gemstones in their raw form.</p>
-  </div>
-  <div class="products">
-    <article class="product">
-      <a href="product.html?name=Raw%20Apatite&price=37&image=images%2F1000082268.jpg">
-        <div class="product-image"><img src="images/1000082268.jpg" alt="Raw Apatite"></div>
-        <h3>Raw Apatite</h3>
-        <div class="price">37 TND</div>
-      </a>
-    </article>
-    <article class="product">
-      <a href="product.html?name=Raw%20Carnelian&price=29&image=images%2F1000082265.jpg">
-        <div class="product-image"><img src="images/1000082265.jpg" alt="Raw Carnelian"></div>
-        <h3>Raw Carnelian</h3>
-        <div class="price">29 TND</div>
-      </a>
-    </article>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <h2>BLUE WHALE GEMS</h2>
-  <p>We bring together natural gemstones and thoughtfully selected designs. Discover pieces that feel personal, distinctive and close to nature.</p>
+<section class="contact" id="contact">
+ <div class="eyebrow">GET IN TOUCH</div>
+ <h2>Have a question?</h2>
+ <p>للطلب أو الاستفسار، تواصل معنا مباشرة عبر واتساب.</p>
+ <a class="btn" href="https://wa.me/21655733020" target="_blank">Contact on WhatsApp</a>
 </section>
 </main>
 
 <footer>
-  <strong>BLUE WHALE GEMS</strong>
-  NATURAL GEMSTONES · TUNISIA
-  <p>© 2026 BLUE WHALE GEMS</p>
+ <strong>BLUE WHALE GEMS</strong>
+ NATURAL GEMSTONES · TUNISIA
+ <p>© 2026 BLUE WHALE GEMS</p>
 </footer>
 
+<script>
+const products=[
+{c:"bracelets",n:"Aquamarine + Amethyst + Labradorite Bracelet",p:70,i:"20261018_184933.jpg",d:8},
+{c:"bracelets",n:"Labradorite, Amethyst, Rose Quartz & Chips Bracelet",p:68,i:"1000088300.jpg"},
+{c:"bracelets",n:"Coral & Agate Bracelet",p:45,i:"1000088312.jpg"},
+{c:"bracelets",n:"Obsidian + Clear Quartz Bracelet",p:70,i:"1000088313.jpg"},
+{c:"bracelets",n:"Moss Quartz Bracelet",p:60,i:"1000088296.jpg"},
+{c:"bracelets",n:"Pink Tourmaline & Natural Pearl Bracelet",p:79,i:"1000088281.jpg"},
+{c:"bracelets",n:"Red Carnelian Chip Bracelet",p:50,i:"1000088295.jpg"},
+{c:"bracelets",n:"Citrine Chip Bracelet",p:50,i:"1000088297.jpg"},
+{c:"bracelets",n:"Rutilated Quartz & Tiger's Eye Chip Bracelet",p:55,i:"1000088299.jpg"},
+{c:"bracelets",n:"Falcon's Eye & Flower Agate Bracelet",p:69,i:"1000088279.jpg"},
+{c:"bracelets",n:"Aquamarine, Labradorite & Coral Bracelet",p:80,i:"1000088265.jpg"},
+{c:"bracelets",n:"Seven Chakras Bracelet",p:77,i:"1000088268.jpg"},
+{c:"bracelets",n:"Red Jasper Bracelet",p:60,i:"1000088278.jpg"},
+{c:"bracelets",n:"Amethyst & Rose Quartz Bracelet",p:66,i:"1000088290.jpg"},
+{c:"bracelets",n:"Amethyst Bracelet",p:70,i:"1000057411.jpg"},
+{c:"bracelets",n:"Tiger's Eye Bracelet",p:60,i:"1000063564.jpg"},
+{c:"bracelets",n:"Multi-Color Tourmaline Bracelet",p:65,i:"1000063590.jpg"},
+{c:"bracelets",n:"Lapis Lazuli Bracelet",p:80,i:"1000078469.jpg"},
+{c:"bracelets",n:"Baltic Amber Bracelet",p:190,i:"1000079541.jpg"},
+{c:"bracelets",n:"Natural Coral Bracelet",p:39,i:"1000084081.jpg"},
+{c:"bracelets",n:"Natural Coral & Pearl Bracelet",p:89,i:"1000085232.jpg"},
+
+{c:"necklaces",n:"Coral & Pearl Pendant Necklace",p:45,i:"1000032282.jpg"},
+{c:"necklaces",n:"Amber Pendant Necklace",p:50,i:"1000052346.jpg"},
+{c:"necklaces",n:"Yemeni Scenic Agate Pendant Necklace — 925 Sterling Silver",p:220,i:"1000074156.jpg"},
+{c:"necklaces",n:"Natural Coral Necklace",p:200,i:"1000081614.jpg"},
+{c:"necklaces",n:"Suleimani Agate Pendant Necklace",p:150,i:"1000082002.jpg"},
+{c:"necklaces",n:"Egyptian Ankh & Coral Pendant Necklace",p:79,i:"1000085314.jpg"},
+
+{c:"rings",n:"Red Agate Ring — 925 Sterling Silver",p:100,i:"1000085897.jpg"},
+{c:"rings",n:"Pyrite Ring — 925 Sterling Silver",p:120,i:"1000074444.jpg"},
+
+{c:"raw-gems",n:"Raw Apatite",p:37,i:"1000082268.jpg"},
+{c:"raw-gems",n:"Raw Carnelian",p:29,i:"1000082265.jpg"},
+{c:"raw-gems",n:"Raw Green Aventurine",p:34,i:"1000082266.jpg"}
+];
+
+const groups=[
+{id:"bracelets",title:"Bracelets",desc:"Natural stone bracelets and distinctive combinations."},
+{id:"necklaces",title:"Necklaces",desc:"Pendants and natural gemstone necklaces."},
+{id:"rings",title:"Rings",desc:"Gemstone rings set in silver."},
+{id:"raw-gems",title:"Raw Gems Collection",desc:"Natural gemstones in their raw form."}
+];
+
+const root=document.getElementById("catalog");
+groups.forEach(group=>{
+ const section=document.createElement("section");
+ section.className="section";
+ section.id=group.id;
+ const head=document.createElement("div");
+ head.className="section-head";
+ const eyebrow=document.createElement("div");
+ eyebrow.className="eyebrow";
+ eyebrow.textContent="BLUE WHALE GEMS COLLECTION";
+ const title=document.createElement("h2");
+ title.textContent=group.title;
+ const desc=document.createElement("p");
+ desc.textContent=group.desc;
+ head.append(eyebrow,title,desc);
+ const grid=document.createElement("div");
+ grid.className="products";
+ products.filter(p=>p.c===group.id).forEach(p=>{
+  const card=document.createElement("article");
+  card.className="product";
+  const link=document.createElement("a");
+  const params=new URLSearchParams({name:p.n,price:p.p,image:"images/"+p.i});
+  if(p.d!==undefined)params.set("delivery",p.d);
+  link.href="product.html?"+params.toString();
+  const frame=document.createElement("div");
+  frame.className="product-image";
+  const img=document.createElement("img");
+  img.src="images/"+p.i;
+  img.alt=p.n;
+  img.loading="lazy";
+  img.onerror=()=>{frame.innerHTML='<span class="empty">Image unavailable</span>';};
+  frame.appendChild(img);
+  const name=document.createElement("h3");
+  name.textContent=p.n;
+  const price=document.createElement("div");
+  price.className="price";
+  price.textContent=p.p+" TND";
+  link.append(frame,name,price);
+  card.appendChild(link);
+  grid.appendChild(card);
+ });
+ section.append(head,grid);
+ root.appendChild(section);
+});
+</script>
 </body>
 </html>
