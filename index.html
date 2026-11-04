@@ -571,19 +571,19 @@ body[dir="rtl"] .gem-story-copy{text-align:right}
  </div>
  <div class="categories">
   <a class="category" href="collection.html?category=bracelets">
-   <img decoding="async" src="images/1000088300.jpg" alt="Gemstone bracelets" loading="lazy">
+   <img decoding="async" fetchpriority="low" src="images/1000088300.jpg" alt="Gemstone bracelets" loading="lazy">
    <div class="category-content"><small>01 / COLLECTION</small><h3>Bracelets</h3><span data-en="DISCOVER BRACELETS ↗" data-ar="اكتشف الأساور ↗">DISCOVER BRACELETS ↗</span></div>
   </a>
   <a class="category" href="collection.html?category=necklaces">
-   <img decoding="async" src="images/1000032282.jpg" alt="Gemstone necklaces" loading="lazy">
+   <img decoding="async" fetchpriority="low" src="images/1000032282.jpg" alt="Gemstone necklaces" loading="lazy">
    <div class="category-content"><small>02 / COLLECTION</small><h3>Necklaces</h3><span data-en="DISCOVER NECKLACES ↗" data-ar="اكتشف القلائد ↗">DISCOVER NECKLACES ↗</span></div>
   </a>
   <a class="category" href="collection.html?category=rings">
-   <img decoding="async" src="images/1000085897.jpg" alt="Gemstone rings" loading="lazy">
+   <img decoding="async" fetchpriority="low" src="images/1000085897.jpg" alt="Gemstone rings" loading="lazy">
    <div class="category-content"><small>03 / COLLECTION</small><h3>Rings</h3><span data-en="DISCOVER RINGS ↗" data-ar="اكتشف الخواتم ↗">DISCOVER RINGS ↗</span></div>
   </a>
   <a class="category" href="collection.html?category=raw-gems">
-   <img decoding="async" src="images/1000082268.jpg" alt="Raw natural gemstones" loading="lazy">
+   <img decoding="async" fetchpriority="low" src="images/1000082268.jpg" alt="Raw natural gemstones" loading="lazy">
    <div class="category-content"><small>04 / COLLECTION</small><h3>Raw Gems</h3><span data-en="DISCOVER RAW GEMS ↗" data-ar="اكتشف الأحجار الخام ↗">DISCOVER RAW GEMS ↗</span></div>
   </a>
  </div>
@@ -647,7 +647,7 @@ body[dir="rtl"] .gem-story-copy{text-align:right}
   </div>
   <div class="gem-stories-track" id="gemStoriesTrack" aria-label="Gemstone stories">
    <article class="gem-story-card" id="gemStory1">
-    <div class="gem-story-media"><img src="images/429f9ad335b19790158a5b7cf7687dda.jpg" alt="Lapis Lazuli gemstone" loading="lazy" decoding="async"></div>
+    <div class="gem-story-media"><img src="images/429f9ad335b19790158a5b7cf7687dda.jpg" alt="Lapis Lazuli gemstone" loading="lazy" decoding="async" fetchpriority="low"></div>
     <div class="gem-story-copy">
      <span class="gem-story-index">01 · LAPIS LAZULI</span>
      <h3>Lapis Lazuli</h3>
@@ -777,7 +777,7 @@ setupGemStories();
 async function loadFeaturedProducts(){
  const grid=document.getElementById("featuredProducts");
  try{
-  const response=await fetch("data/products.json",{cache:"no-store"});
+  const response=await fetch("data/products.json");
   if(!response.ok)throw new Error("Catalogue unavailable");
   const products=await response.json();
   products.filter(p=>p.category==="bracelets").slice(0,4).forEach(p=>{
@@ -789,7 +789,7 @@ async function loadFeaturedProducts(){
    imageLink.className="product-image";
    imageLink.href="product.html?"+params.toString();
    const img=document.createElement("img");
-   img.src=imagePath;img.alt=p.name;img.loading="lazy";img.decoding="async";
+   img.alt=p.name;img.loading="lazy";img.decoding="async";img.fetchPriority="low";img.src=imagePath;
    imageLink.appendChild(img);
    const name=document.createElement("a");
    name.className="product-name";name.href=imageLink.href;name.textContent=p.name;
