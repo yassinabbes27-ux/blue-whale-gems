@@ -78,7 +78,7 @@ const title=document.getElementById("collectionTitle");
 const description=document.getElementById("collectionDescription");
 const grid=document.getElementById("productsGrid");
 async function loadProducts(){
- const response=await fetch("data/products.json",{cache:"no-store"});
+ const response=await fetch("data/products.json");
  if(!response.ok)throw new Error("Could not load product catalogue");
  const products=await response.json();
  if(!group){
@@ -101,6 +101,8 @@ async function loadProducts(){
    img.src=imagePath;
    img.alt=p.name;
    img.loading="lazy";
+   img.decoding="async";
+   img.fetchPriority="low";
    img.onerror=()=>{frame.innerHTML='<div class="unavailable">Image unavailable</div>'};
    frame.appendChild(img);
    const name=document.createElement("h2");
