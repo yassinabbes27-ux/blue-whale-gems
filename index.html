@@ -3,62 +3,130 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BLUE WHALE GEMS</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Georgia,serif;background:#f8fcfd;color:#173b4b}
-header{padding:24px 7%;display:flex;justify-content:space-between;align-items:center;background:white}
-.logo{font-size:21px;letter-spacing:3px;font-weight:bold}
-nav a{color:#315b6a;text-decoration:none;margin-left:18px;font-family:Arial}
-.hero{text-align:center;padding:85px 20px;background:linear-gradient(140deg,#e8f6fa,#fff)}
-.hero h1{font-size:38px;letter-spacing:4px;margin:0 0 15px}
-.hero p{color:#63818c;font-family:Arial;letter-spacing:1px}
-.section{padding:55px 7%;max-width:1100px;margin:auto}
-.section h2{text-align:center;font-size:29px;font-weight:normal}
-.product{max-width:340px;margin:35px auto;background:white;border-radius:22px;overflow:hidden;box-shadow:0 12px 35px #173b4b12;transition:.25s}
-.product:hover{transform:translateY(-5px)}
-.product a{text-decoration:none;color:inherit;display:block}
-.product img{width:100%;height:300px;object-fit:cover;display:block}
-.product-info{padding:22px;text-align:center}
-.product-info h3{font-size:19px;font-weight:normal;line-height:1.5}
-.price{font-family:Arial;font-size:20px;color:#997b4b;font-weight:bold}
-.view{display:inline-block;margin-top:15px;padding:12px 24px;background:#173f50;color:white;border-radius:30px;font-family:Arial;font-size:13px}
-footer{text-align:center;padding:30px;background:#eaf5f8;color:#68828c;font-family:Arial;font-size:12px;letter-spacing:2px}
-@media(max-width:600px){header{padding:20px;flex-direction:column;gap:15px}.hero h1{font-size:28px}}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f8fcfd;color:#183d4c;font-family:Georgia,serif}
+header{background:#fff;padding:22px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5;box-shadow:0 3px 15px #173b4b08}
+.logo{font-size:20px;letter-spacing:3px;font-weight:bold}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{font:12px Arial;color:#496b78;text-decoration:none;letter-spacing:1px}
+.hero{text-align:center;padding:90px 20px 85px;background:linear-gradient(135deg,#e7f5f8,#fff 65%,#eaf5f7)}
+.hero small{letter-spacing:4px;color:#8b9fa5}
+.hero h1{font-size:clamp(30px,6vw,48px);font-weight:normal;letter-spacing:4px;margin:20px 0}
+.hero p{font:14px Arial;color:#718d98;letter-spacing:1px}
+.hero a{display:inline-block;margin-top:22px;background:#173f50;color:white;padding:14px 28px;border-radius:30px;text-decoration:none;font:12px Arial;letter-spacing:1px}
+.section{padding:65px 7%;max-width:1200px;margin:auto}
+.heading{text-align:center;margin-bottom:35px}
+.heading small{color:#9b865f;letter-spacing:3px;font:11px Arial}
+.heading h2{font-weight:normal;font-size:30px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px #183d4c0d;transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 35px #183d4c17}
+.card a{text-decoration:none;color:inherit;display:block;height:100%}
+.photo{height:260px;background:linear-gradient(145deg,#e6f3f6,#f8fbfc);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.placeholder{font:12px Arial;letter-spacing:2px;color:#8ba5ae;text-align:center;padding:15px}
+.info{text-align:center;padding:22px 16px 25px}
+.info h3{font-size:17px;font-weight:normal;line-height:1.5;min-height:48px;margin:0 0 12px}
+.price{font: bold 17px Arial;color:#9b8051}
+.view{display:inline-block;margin-top:17px;border:1px solid #c5d9df;border-radius:25px;padding:10px 21px;font:11px Arial;letter-spacing:1px;color:#315c6c}
+.about{background:#edf6f8;text-align:center;padding:65px 10%}
+.about h2{font-weight:normal;font-size:30px}
+.about p{max-width:650px;margin:15px auto;color:#66818b;font:15px/1.9 Arial}
+.contact{text-align:center;padding:60px 20px}
+.contact p{font:14px Arial;color:#718d98;line-height:1.8}
+.contact a{display:inline-block;margin-top:12px;color:#fff;background:#173f50;text-decoration:none;padding:14px 28px;border-radius:30px;font:12px Arial}
+footer{background:#eaf4f6;text-align:center;padding:27px 15px;color:#718d98;font:11px Arial;letter-spacing:2px}
+@media(max-width:750px){header{flex-direction:column;gap:16px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.photo{height:190px}.info{padding:16px 9px}.info h3{font-size:14px}.section{padding:45px 4%}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.photo{height:250px}}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">BLUE WHALE GEMS</div>
-  <nav><a href="#collection">COLLECTION</a></nav>
+<div class="logo">BLUE WHALE GEMS</div>
+<nav>
+<a href="#home">HOME</a>
+<a href="#collection">COLLECTION</a>
+<a href="#about">ABOUT</a>
+<a href="#contact">CONTACT</a>
+</nav>
 </header>
 
-<section class="hero">
-  <h1>THE BEAUTY OF NATURE</h1>
-  <p>Natural gemstones · Timeless elegance</p>
+<section class="hero" id="home">
+<small>BLUE WHALE GEMS</small>
+<h1>THE BEAUTY OF NATURE</h1>
+<p>Natural Gemstones · Timeless Elegance</p>
+<a href="#collection">EXPLORE COLLECTION</a>
 </section>
 
 <section class="section" id="collection">
-  <h2>Our Collection</h2>
+<div class="heading">
+<small>DISCOVER OUR WORLD</small>
+<h2>Our Collection</h2>
+</div>
 
-  <div class="product">
-    <a href="product.html">
-      <img src="images/20261018_184933.jpg"
-      alt="Aquamarine Amethyst Labradorite Bracelet">
-      <div class="product-info">
-        <h3>Aquamarine + Amethyst + Labradorite Bracelet</h3>
-        <div class="price">70 TND</div>
-        <span class="view">VIEW DETAILS</span>
-      </div>
-    </a>
-  </div>
+<div class="grid">
+
+<div class="card">
+<a href="product.html?id=tiger">
+<div class="photo"><div class="placeholder">TIGER'S EYE</div></div>
+<div class="info"><h3>Tiger's Eye</h3><div class="price">Price to be added</div><span class="view">VIEW DETAILS</span></div>
+</a>
+</div>
+
+<div class="card">
+<a href="product.html?id=amethyst">
+<div class="photo"><div class="placeholder">AMETHYST</div></div>
+<div class="info"><h3>Amethyst</h3><div class="price">Price to be added</div><span class="view">VIEW DETAILS</span></div>
+</a>
+</div>
+
+<div class="card">
+<a href="product.html?id=turquoise">
+<div class="photo"><div class="placeholder">TURQUOISE</div></div>
+<div class="info"><h3>Turquoise</h3><div class="price">Price to be added</div><span class="view">VIEW DETAILS</span></div>
+</a>
+</div>
+
+<div class="card">
+<a href="product.html?id=coral">
+<div class="photo"><div class="placeholder">NATURAL CORAL</div></div>
+<div class="info"><h3>Natural Coral</h3><div class="price">Price to be added</div><span class="view">VIEW DETAILS</span></div>
+</a>
+</div>
+
+<div class="card">
+<a href="product.html?id=bracelet">
+<div class="photo">
+<img src="images/20261018_184933.jpg" alt="Aquamarine Amethyst Labradorite Bracelet">
+</div>
+<div class="info">
+<h3>Aquamarine + Amethyst + Labradorite Bracelet</h3>
+<div class="price">70 TND</div>
+<span class="view">VIEW DETAILS</span>
+</div>
+</a>
+</div>
+
+</div>
 </section>
 
-<footer>
-  BLUE WHALE GEMS · THE WORLD OF NATURAL BEAUTY
-</footer>
+<section class="about" id="about">
+<small>OUR STORY</small>
+<h2>About BLUE WHALE GEMS</h2>
+<p>A world inspired by the beauty of gemstones and the elegance of nature. Discover unique pieces selected with appreciation for their natural beauty.</p>
+</section>
 
+<section class="contact" id="contact">
+<h2 style="font-weight:normal">Get in Touch</h2>
+<p>For product inquiries and orders, contact BLUE WHALE GEMS.</p>
+<p>WhatsApp ordering will be activated once the business number is added.</p>
+</section>
+
+<footer>BLUE WHALE GEMS · THE BEAUTY OF NATURE</footer>
 </body>
 </html>
