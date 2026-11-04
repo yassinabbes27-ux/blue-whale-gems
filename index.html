@@ -299,98 +299,103 @@ body[dir="rtl"] h3,body[dir="rtl"] .product-name{font-family:"Cairo",sans-serif}
 body[dir="rtl"] .kicker,body[dir="rtl"] .nav,
 body[dir="rtl"] .btn,body[dir="rtl"] .text-link{letter-spacing:0}
 
-/* BLUE WHALE GEMS — animated whale and gemstone scene */
+/* BLUE WHALE GEMS — CSS 3D meditation and seven gemstone scene */
 .whale-scene{
-position:relative;isolation:isolate;overflow:hidden;min-height:410px;
+position:relative;isolation:isolate;overflow:hidden;min-height:500px;
 display:grid;place-items:center;
-background:linear-gradient(180deg,#f4fbff 0%,#dceef6 48%,#83bdd8 100%);
+background:radial-gradient(ellipse at 50% 43%,rgba(255,255,255,.98) 0%,rgba(241,250,253,.9) 35%,transparent 72%),linear-gradient(145deg,#f7fcff 0%,#e2f2f8 48%,#c6e4ef 100%);
+perspective:1200px
 }
 .whale-scene:before{
-content:"";position:absolute;inset:7% 8%;border:1px solid rgba(255,255,255,.92);
-border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.62),rgba(197,229,242,.2));
-box-shadow:0 22px 55px rgba(45,105,135,.12),inset 0 1px 0 rgba(255,255,255,.95);z-index:-1
+content:"";position:absolute;inset:5% 7%;border:1px solid rgba(255,255,255,.95);
+border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.68),rgba(197,229,242,.18));
+box-shadow:0 22px 55px rgba(45,105,135,.1),inset 0 1px 0 rgba(255,255,255,.95);z-index:-1
 }
-.whale-scene-inner{position:relative;width:min(820px,92vw);height:370px;display:grid;place-items:center}
+.whale-scene:after{
+content:"";position:absolute;width:min(520px,80vw);height:90px;bottom:7%;
+border-radius:50%;background:radial-gradient(ellipse,rgba(87,151,178,.18),transparent 70%);
+filter:blur(9px)
+}
+.whale-scene-inner{position:relative;width:min(820px,94vw);height:455px;display:grid;place-items:center;transform-style:preserve-3d}
 .whale-scene-caption{
-position:absolute;z-index:5;top:25px;left:0;right:0;text-align:center;
+position:absolute;z-index:8;top:24px;left:0;right:0;text-align:center;
 font-family:var(--serif);font-size:clamp(22px,3vw,30px);font-weight:400;
 letter-spacing:.5px;color:#477f9a
 }
 .whale-scene-caption small{display:block;margin-top:7px;font-family:var(--sans);font-size:8px;letter-spacing:3px;color:#709caf}
-.whale-art{
-position:absolute;z-index:2;width:min(560px,82vw);height:auto;left:50%;top:56%;
-transform:translate(-50%,-50%);overflow:visible;
-filter:drop-shadow(0 20px 20px rgba(29,82,112,.23));
-animation:whaleLeap 4.8s cubic-bezier(.4,0,.2,1) infinite
+.meditation-figure{
+position:absolute;top:53%;left:50%;width:300px;height:330px;
+transform:translate(-50%,-50%);transform-style:preserve-3d;
+animation:figureFloat 6s ease-in-out infinite;filter:drop-shadow(0 22px 22px rgba(43,91,113,.16))
 }
-.whale-water{
-position:absolute;z-index:3;left:-4%;right:-4%;bottom:19px;height:94px;overflow:hidden;
-border-top:1px solid rgba(255,255,255,.96);
-background:linear-gradient(180deg,rgba(197,229,242,.48),rgba(71,127,173,.18));
+.figure-head{
+position:absolute;z-index:5;left:126px;top:28px;width:49px;height:62px;border-radius:48% 48% 45% 45%;
+background:radial-gradient(ellipse at 34% 24%,#f5e5d9 0%,#d7b8a9 42%,#9d7d78 100%);
+box-shadow:inset -7px -3px 9px rgba(75,57,60,.2),inset 4px 2px 7px rgba(255,255,255,.65);
+transform:translateZ(20px)
 }
-.whale-water:before,.whale-water:after{
-content:"";position:absolute;left:-10%;width:120%;height:58px;top:-34px;border-radius:50%;
-border-top:3px solid rgba(255,255,255,.9);animation:seaWave 4.8s ease-in-out infinite
+.figure-hair{
+position:absolute;left:124px;top:22px;width:53px;height:35px;border-radius:55% 55% 25% 25%;
+background:linear-gradient(120deg,#263e50,#101e2a 70%);z-index:6;
+box-shadow:inset 5px 2px 5px rgba(255,255,255,.14)
 }
-.whale-water:after{top:-24px;left:-4%;border-top:2px solid rgba(71,127,173,.3);animation-delay:-1.2s}
-.whale-ripple{
-position:absolute;z-index:4;bottom:76px;left:50%;width:250px;height:30px;
-border:2px solid rgba(255,255,255,.9);border-radius:50%;
-transform:translateX(-50%);opacity:0;animation:whaleRipple 4.8s ease-out infinite
+.figure-neck{position:absolute;z-index:3;left:141px;top:78px;width:20px;height:34px;background:linear-gradient(90deg,#a98278,#e3c6b6 45%,#99766e);border-radius:8px}
+.figure-torso{
+position:absolute;z-index:2;left:91px;top:96px;width:120px;height:120px;
+border-radius:48% 48% 30% 30%;
+background:linear-gradient(100deg,#142d40 0%,#315a70 32%,#547f91 52%,#203d51 100%);
+clip-path:polygon(22% 0,78% 0,100% 25%,86% 100%,14% 100%,0 25%);
+box-shadow:inset 12px 0 15px rgba(255,255,255,.13),inset -13px 0 18px rgba(4,23,37,.36);
+transform:translateZ(10px)
 }
-.whale-spray{position:absolute;z-index:4;left:50%;top:49%;width:6px;height:6px;border-radius:50%;
-background:#fff;box-shadow:-115px 26px 0 1px rgba(255,255,255,.9),-88px -15px 0 0 #fff,-58px 19px 0 1px rgba(255,255,255,.85),72px 16px 0 1px #fff,105px -13px 0 0 rgba(255,255,255,.9),128px 28px 0 1px rgba(255,255,255,.8);
-opacity:0;animation:whaleSpray 4.8s ease-out infinite
+.figure-arm{
+position:absolute;z-index:3;top:112px;width:35px;height:104px;border-radius:22px;
+background:linear-gradient(90deg,#9b7e79,#e4c5b5 48%,#98746e);
+box-shadow:inset 4px 0 6px rgba(255,255,255,.35),inset -5px 0 8px rgba(55,40,43,.2)
 }
-.whale-gem{
-position:absolute;z-index:4;width:22px;height:28px;opacity:0;
-clip-path:polygon(50% 0,92% 28%,78% 88%,50% 100%,17% 84%,5% 28%);
-filter:drop-shadow(0 5px 7px rgba(26,68,91,.22));
-animation:gemRise 4.8s cubic-bezier(.18,.72,.22,1) infinite
+.figure-arm.left{left:78px;transform:rotate(-38deg) translateZ(16px)}
+.figure-arm.right{right:78px;transform:rotate(38deg) translateZ(16px)}
+.figure-leg{
+position:absolute;z-index:1;top:208px;width:155px;height:67px;border-radius:55% 45% 50% 50%;
+background:linear-gradient(180deg,#31576a,#18364b 72%,#102b3c);
+box-shadow:inset 0 8px 12px rgba(255,255,255,.12),inset 0 -8px 12px rgba(0,0,0,.22)
 }
-.whale-gem:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.75),transparent 42%,rgba(255,255,255,.25) 43%,transparent 70%)}
-.whale-gem.ruby{left:34%;top:58%;background:linear-gradient(135deg,#ff9a9a,#c51f4b 58%,#74152f);animation-delay:1.55s}
-.whale-gem.aqua{left:44%;top:60%;background:linear-gradient(135deg,#e4ffff,#65c7d9 55%,#277b9a);animation-delay:1.68s}
-.whale-gem.amethyst{left:55%;top:58%;background:linear-gradient(135deg,#e9d7ff,#9864c8 55%,#54317f);animation-delay:1.82s}
-.whale-gem.emerald{left:65%;top:61%;background:linear-gradient(135deg,#c8ffdf,#2ca66d 55%,#126044);animation-delay:1.95s}
-@keyframes whaleLeap{
-0%,8%{opacity:0;transform:translate(-50%,45%) rotate(8deg) scale(.78)}
-18%{opacity:1;transform:translate(-50%,-8%) rotate(-7deg) scale(1.02)}
-36%{opacity:1;transform:translate(-50%,-24%) rotate(-3deg) scale(1.06)}
-52%{opacity:1;transform:translate(-50%,-12%) rotate(4deg) scale(1.02)}
-68%{opacity:1;transform:translate(-50%,10%) rotate(8deg) scale(.98)}
-82%,100%{opacity:0;transform:translate(-50%,48%) rotate(11deg) scale(.8)}
+.figure-leg.left{left:8px;transform:rotate(13deg) translateZ(12px)}
+.figure-leg.right{right:8px;transform:scaleX(-1) rotate(13deg) translateZ(8px)}
+.figure-hand{position:absolute;z-index:4;top:187px;width:43px;height:25px;border-radius:50%;background:linear-gradient(90deg,#a27f76,#e4c5b5 50%,#98746e)}
+.figure-hand.left{left:62px;transform:rotate(18deg)}
+.figure-hand.right{right:62px;transform:rotate(-18deg)}
+.chakra-gem{
+position:absolute;z-index:7;left:50%;width:24px;height:29px;
+transform:translateX(-50%) rotate(45deg);border-radius:5px 5px 8px 5px;
+clip-path:polygon(50% 0,94% 25%,82% 86%,50% 100%,15% 84%,5% 25%);
+box-shadow:0 0 18px currentColor,0 5px 12px rgba(20,58,78,.2);
+animation:chakraPulse 3.4s ease-in-out infinite
 }
-@keyframes whaleRipple{
-0%,36%,100%{opacity:0;transform:translateX(-50%) scale(.45)}
-53%{opacity:.9;transform:translateX(-50%) scale(1)}
-75%{opacity:.15;transform:translateX(-50%) scale(1.55)}
+.chakra-gem:before{content:"";position:absolute;inset:0;background:linear-gradient(125deg,rgba(255,255,255,.95),transparent 33%,rgba(255,255,255,.22) 52%,transparent 72%)}
+.chakra-gem.crown{top:12px;background:linear-gradient(135deg,#f0dfff,#a86bda 50%,#54277f);color:#b879e6}
+.chakra-gem.third-eye{top:69px;background:linear-gradient(135deg,#d9d4ff,#5553bd 52%,#25265e);color:#7775d8;animation-delay:.2s}
+.chakra-gem.throat{top:111px;background:linear-gradient(135deg,#e1ffff,#69c9e1 52%,#26718d);color:#70cfe7;animation-delay:.4s}
+.chakra-gem.heart{top:151px;background:linear-gradient(135deg,#d8ffe6,#4fbd83 52%,#17613e);color:#59c98d;animation-delay:.6s}
+.chakra-gem.solar{top:190px;background:linear-gradient(135deg,#fff7c8,#edb83e 52%,#a76b17);color:#efc34d;animation-delay:.8s}
+.chakra-gem.sacral{top:226px;background:linear-gradient(135deg,#ffe1c5,#ed873c 52%,#a9441b);color:#f09550;animation-delay:1s}
+.chakra-gem.root{top:262px;background:linear-gradient(135deg,#ffd7d7,#d94c56 52%,#7f1e35);color:#e35c66;animation-delay:1.2s}
+.chakra-label{
+position:absolute;z-index:7;left:calc(50% + 28px);font-size:8px;letter-spacing:1.4px;
+color:#668b9c;text-transform:uppercase;white-space:nowrap;text-shadow:0 1px 5px white
 }
-@keyframes whaleSpray{
-0%,20%,100%{opacity:0;transform:translate(-50%,32px) scale(.35)}
-37%{opacity:.95;transform:translate(-50%,-22px) scale(1.15)}
-57%{opacity:.2;transform:translate(-50%,24px) scale(.7)}
-}
-@keyframes gemRise{
-0%,30%,100%{opacity:0;transform:translateY(35px) rotate(-25deg) scale(.35)}
-43%{opacity:1;transform:translateY(-24px) rotate(12deg) scale(1.12)}
-61%{opacity:.9;transform:translateY(-68px) rotate(32deg) scale(1)}
-78%{opacity:0;transform:translateY(-105px) rotate(55deg) scale(.65)}
-}
-@keyframes seaWave{0%,100%{transform:translateX(-2%) scaleX(1)}50%{transform:translateX(2%) scaleX(.96)}}
+.chakra-label.crown{top:22px}.chakra-label.third-eye{top:78px}.chakra-label.throat{top:120px}
+.chakra-label.heart{top:160px}.chakra-label.solar{top:199px}.chakra-label.sacral{top:235px}.chakra-label.root{top:271px}
+@keyframes figureFloat{0%,100%{transform:translate(-50%,-50%) rotateY(-5deg) translateY(0)}50%{transform:translate(-50%,-53%) rotateY(5deg) translateY(-8px)}}
+@keyframes chakraPulse{0%,100%{filter:brightness(.96) drop-shadow(0 0 5px currentColor);scale:.94}50%{filter:brightness(1.22) drop-shadow(0 0 13px currentColor);scale:1.08}}
 @media(max-width:640px){
-.whale-scene{min-height:330px}
-.whale-scene-inner{height:300px}
-.whale-scene-caption{top:19px}
-.whale-water{bottom:15px;height:75px}
-.whale-ripple{bottom:60px;width:175px}
-.whale-gem{width:17px;height:22px}
+.whale-scene{min-height:410px}
+.whale-scene-inner{height:385px;transform:scale(.88)}
+.whale-scene-caption{top:18px}
+.chakra-label{font-size:7px;letter-spacing:.8px;left:calc(50% + 24px)}
 }
 @media(prefers-reduced-motion:reduce){
-.whale-art,.whale-ripple,.whale-spray,.whale-gem,.whale-water:before,.whale-water:after{animation:none}
-.whale-art{opacity:1;transform:translate(-50%,-50%)}
-.whale-ripple{opacity:.45;transform:translateX(-50%)}
-.whale-spray,.whale-gem{opacity:.45}
+.meditation-figure,.chakra-gem{animation:none}
 }
 @media(max-width:900px){
 .categories{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -515,34 +520,25 @@ animation:gemRise 4.8s cubic-bezier(.18,.72,.22,1) infinite
 </section>
 
 
-<section class="whale-scene" aria-label="A gentle animated whale rising from the sea">
+<section class="whale-scene" aria-label="Three-dimensional meditation figure with seven gemstone chakras">
  <div class="whale-scene-inner">
-  <div class="whale-scene-caption">A quiet moment from the sea<small>BLUE WHALE GEMS · NATURAL BEAUTY</small></div>
-  <svg class="whale-art" viewBox="0 0 600 300" role="img" aria-label="Elegant blue whale leaping above the water">
-   <defs>
-    <linearGradient id="bwgWhaleBody" x1="0" y1="0" x2="1" y2="1">
-     <stop offset="0" stop-color="#9fcbd6"/><stop offset=".48" stop-color="#5f9eaf"/><stop offset="1" stop-color="#356f83"/>
-    </linearGradient>
-    <linearGradient id="bwgWhaleLight" x1="0" y1="0" x2="0" y2="1">
-     <stop offset="0" stop-color="#f9ffff"/><stop offset="1" stop-color="#cce8ed"/>
-    </linearGradient>
-   </defs>
-   <path d="M94 158 C124 98 218 69 334 91 C393 102 437 127 467 151 C495 140 517 115 546 111 C535 143 515 164 489 176 C516 185 536 205 549 230 C512 219 484 202 461 184 C411 222 340 240 257 229 C177 218 122 195 94 158Z" fill="url(#bwgWhaleBody)" stroke="#4f8798" stroke-width="2"/>
-   <path d="M112 163 C174 194 247 207 324 199 C385 193 428 174 461 157 C431 207 368 232 287 232 C205 232 145 206 112 163Z" fill="url(#bwgWhaleLight)" opacity=".9"/>
-   <path d="M272 96 C293 78 318 67 344 68 C332 85 319 100 302 111Z" fill="#4b8799" opacity=".9"/>
-   <path d="M209 204 C226 222 247 241 267 252 C250 254 226 247 210 234 C197 225 192 214 191 205Z" fill="#4d8799"/>
-   <path d="M450 157 Q470 147 488 132" fill="none" stroke="#d9f0f3" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-   <circle cx="155" cy="151" r="4" fill="#244f60"/>
-   <path d="M126 174 Q147 184 166 181" fill="none" stroke="#d8f0f3" stroke-width="3" stroke-linecap="round" opacity=".75"/>
-   <path d="M177 116 Q250 81 337 105" fill="none" stroke="#e8f8fa" stroke-width="5" stroke-linecap="round" opacity=".45"/>
-  </svg>
-  <span class="whale-gem ruby" aria-hidden="true"></span>
-  <span class="whale-gem aqua" aria-hidden="true"></span>
-  <span class="whale-gem amethyst" aria-hidden="true"></span>
-  <span class="whale-gem emerald" aria-hidden="true"></span>
-  <div class="whale-spray" aria-hidden="true"></div>
-  <div class="whale-ripple" aria-hidden="true"></div>
-  <div class="whale-water" aria-hidden="true"></div>
+  <div class="whale-scene-caption">A moment of inner balance<small>BLUE WHALE GEMS · SEVEN GEMSTONES</small></div>
+  <div class="meditation-figure" role="img" aria-label="Stylised three-dimensional figure seated in meditation">
+   <div class="figure-hair"></div><div class="figure-head"></div><div class="figure-neck"></div>
+   <div class="figure-torso"></div><div class="figure-arm left"></div><div class="figure-arm right"></div>
+   <div class="figure-leg left"></div><div class="figure-leg right"></div>
+   <div class="figure-hand left"></div><div class="figure-hand right"></div>
+   <span class="chakra-gem crown"></span><span class="chakra-gem third-eye"></span>
+   <span class="chakra-gem throat"></span><span class="chakra-gem heart"></span>
+   <span class="chakra-gem solar"></span><span class="chakra-gem sacral"></span><span class="chakra-gem root"></span>
+   <span class="chakra-label crown">Crown · Amethyst</span>
+   <span class="chakra-label third-eye">Third Eye · Lapis</span>
+   <span class="chakra-label throat">Throat · Aquamarine</span>
+   <span class="chakra-label heart">Heart · Emerald</span>
+   <span class="chakra-label solar">Solar Plexus · Citrine</span>
+   <span class="chakra-label sacral">Sacral · Carnelian</span>
+   <span class="chakra-label root">Root · Red Jasper</span>
+  </div>
  </div>
 </section>
 
