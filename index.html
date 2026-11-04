@@ -4,309 +4,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f8fbfc">
-<title>BLUE WHALE GEMS | The Art of Natural Beauty</title>
-<meta name="description" content="Discover exceptional natural gemstones and thoughtfully crafted jewelry at BLUE WHALE GEMS.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+<title>BLUE WHALE GEMS | Natural Beauty</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy:#153d50;
-  --blue:#527d91;
-  --pale:#eaf2f5;
-  --cream:#faf9f6;
-  --gold:#b69b6d;
-  --ink:#263a43;
-  --muted:#788991;
-}
+:root{--navy:#153d50;--blue:#7198a9;--gold:#b69b6d;--pale:#edf4f6;--ink:#293d46}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff}
+body{font-family:'DM Sans',sans-serif;color:var(--ink)}
 a{text-decoration:none;color:inherit}
-button{font:inherit;cursor:pointer}
-.topline{height:4px;background:linear-gradient(90deg,#153d50,#9bbbc7,#b69b6d)}
-header{
-  height:82px;padding:0 7%;display:flex;align-items:center;
-  justify-content:space-between;background:#fff;
-  border-bottom:1px solid #edf0ef;
-}
-.brand{font-family:'Cormorant Garamond',serif;font-size:27px;
-  letter-spacing:2px;color:var(--navy);white-space:nowrap}
-.brand span{display:block;font:9px 'DM Sans',sans-serif;
-  letter-spacing:4px;text-align:center;color:var(--gold);margin-top:3px}
-nav{display:flex;gap:30px;align-items:center}
-nav a{font-size:11px;letter-spacing:1.5px;color:#536872}
-nav a:hover{color:var(--gold)}
-.nav-contact{border:1px solid #b69b6d;padding:12px 18px}
-.hero{
-  min-height:590px;display:flex;align-items:center;
-  background:linear-gradient(90deg,rgba(10,36,49,.78),rgba(10,36,49,.12)),
-  url('https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=2000&q=85') center/cover;
-  color:white;padding:90px 10%;
-}
-.hero-content{max-width:620px}
-.eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#d9c49e}
-.hero h1{font:500 clamp(48px,8vw,82px)/.98 'Cormorant Garamond',serif;
-  margin:25px 0;letter-spacing:1px}
-.hero p{font-size:14px;line-height:2;max-width:470px;color:#e3eaeb}
-.hero-btn{display:inline-block;margin-top:32px;padding:16px 27px;
-  background:#fff;color:var(--navy);font-size:10px;letter-spacing:2px}
-.hero-btn:hover{background:#e5eef1}
-.intro{padding:85px 8%;text-align:center;background:var(--cream)}
-.intro .eyebrow{color:var(--gold)}
-h2{font:500 clamp(34px,5vw,49px) 'Cormorant Garamond',serif;color:var(--navy)}
-.intro h2{margin:15px 0}
-.intro p{max-width:620px;margin:auto;color:var(--muted);
-  font-size:13px;line-height:2}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #edf0f0}
+.brand{font:26px 'Cormorant Garamond',serif;letter-spacing:2px;color:var(--navy)}
+.brand small{display:block;text-align:center;font:9px 'DM Sans';letter-spacing:4px;color:var(--gold);margin-top:4px}
+nav{display:flex;gap:25px;font-size:10px;letter-spacing:1px}
+.hero{min-height:560px;padding:100px 10%;display:flex;align-items:center;color:white;background:linear-gradient(90deg,#102f3edc,#102f3e22),url('https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{max-width:600px}
+.eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold)}
+h1{font:clamp(55px,8vw,85px)/.98 'Cormorant Garamond',serif;margin:25px 0}
+.hero p{font-size:13px;line-height:2;max-width:430px;color:#e1e9eb}
+.btn{display:inline-block;margin-top:30px;padding:15px 25px;background:white;color:var(--navy);font-size:10px;letter-spacing:2px}
+.intro{text-align:center;background:#faf9f6;padding:80px 8%}
+h2{font:48px 'Cormorant Garamond',serif;color:var(--navy);margin:14px 0}
+.intro p,.section-head p{font-size:12px;line-height:2;color:#788991;max-width:620px;margin:auto}
 .collection{padding:85px 7%}
 .section-head{text-align:center;margin-bottom:40px}
-.section-head .eyebrow{color:var(--gold)}
-.section-head h2{margin:12px 0}
-.section-head p{font-size:12px;color:var(--muted)}
-.filters{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:35px}
-.filter{
-  border:1px solid #dce5e8;background:#fff;color:#647780;
-  padding:10px 18px;font-size:10px;letter-spacing:1px
-}
-.filter.active,.filter:hover{background:var(--navy);color:white;border-color:var(--navy)}
+.filters{display:flex;justify-content:center;gap:12px;margin-bottom:35px;flex-wrap:wrap}
+.filter{padding:10px 17px;border:1px solid #dce5e8;background:white;color:#536872;font-size:10px}
+.filter.active{background:var(--navy);color:white}
 .products{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.product{min-width:0}
-.product-image{height:330px;overflow:hidden;background:var(--pale)}
-.product-image img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
-.product:hover img{transform:scale(1.05)}
-.product-info{padding:18px 4px}
-.product-info small{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
-.product-info h3{font:500 25px 'Cormorant Garamond',serif;color:var(--navy);margin:7px 0}
-.product-info p{font-size:11px;color:var(--muted);line-height:1.8}
-.product-info a{display:inline-block;margin-top:14px;font-size:9px;
-  letter-spacing:1.5px;color:var(--navy);border-bottom:1px solid var(--gold);padding-bottom:5px}
-.story{display:grid;grid-template-columns:1fr 1fr;background:#f1f6f7}
-.story-image{min-height:440px;background:
-url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1200&q=85') center/cover}
-.story-copy{padding:75px 12%;display:flex;flex-direction:column;justify-content:center}
-.story-copy .eyebrow{color:var(--gold)}
-.story-copy h2{margin:17px 0}
-.story-copy p{font-size:12px;line-height:2.1;color:#687c84}
-.story-copy a{margin-top:25px;font-size:10px;letter-spacing:2px;color:var(--navy)}
-.values{padding:75px 7%;display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:35px}
-.value{padding:10px}
-.value .symbol{font:32px 'Cormorant Garamond',serif;color:var(--gold)}
-.value h3{font:23px 'Cormorant Garamond',serif;color:var(--navy);margin:12px}
-.value p{font-size:11px;line-height:1.9;color:var(--muted)}
-.contact{padding:85px 7%;text-align:center;background:var(--navy);color:#fff}
-.contact .eyebrow{color:#d4bd94}
-.contact h2{color:#fff;margin:15px 0}
-.contact p{font-size:12px;color:#d0dce0;line-height:2}
-.contact a{display:inline-block;margin-top:25px;padding:15px 25px;
-  background:#fff;color:var(--navy);font-size:10px;letter-spacing:2px}
-footer{padding:35px 7%;text-align:center;background:#102f3e;color:#c5d2d6}
-footer .brand{color:white;font-size:24px}
-footer p{font-size:10px;margin-top:15px;line-height:2;color:#a9bdc4}
-@media(max-width:800px){
- header{height:auto;min-height:75px;padding:17px 5%;flex-direction:column;gap:16px}
- nav{gap:17px;flex-wrap:wrap;justify-content:center}
- nav a{font-size:9px}
- .hero{min-height:510px;padding:75px 7%;background-position:60% center}
- .products{grid-template-columns:repeat(2,1fr);gap:15px}
- .product-image{height:240px}
- .story{grid-template-columns:1fr}
- .story-image{min-height:300px}
- .story-copy{padding:55px 8%}
-}
-@media(max-width:480px){
- .brand{font-size:24px}
- nav{gap:12px}
- .hero{min-height:470px}
- .products{grid-template-columns:1fr 1fr;gap:12px}
- .product-image{height:185px}
- .product-info h3{font-size:21px}
- .product-info p{font-size:10px}
- .values{grid-template-columns:1fr;gap:25px;padding:55px 10%}
+.product-image{height:320px;background:var(--pale);overflow:hidden}
+.product-image img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.product:hover img{transform:scale(1.04)}
+.product-info{padding:18px 3px}
+.product-info small{color:var(--gold);font-size:9px;letter-spacing:2px}
+.product-info h3{font:27px 'Cormorant Garamond',serif;color:var(--navy);margin:7px 0}
+.product-info p{font-size:11px;line-height:1.8;color:#788991}
+.product-info a{display:inline-block;margin-top:14px;font-size:9px;letter-spacing:1px;border-bottom:1px solid var(--gold);padding-bottom:5px}
+.story{display:grid;grid-template-columns:1fr 1fr;background:var(--pale)}
+.story-image{min-height:420px;background:url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1200&q=85') center/cover}
+.story-copy{padding:70px 12%;align-self:center}
+.story-copy p{font-size:12px;line-height:2.1;color:#647780}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding:75px 8%;text-align:center}
+.value b{font:32px 'Cormorant Garamond';color:var(--gold)}
+.value h3{font:24px 'Cormorant Garamond';color:var(--navy);margin:12px}
+.value p{font-size:11px;line-height:1.9;color:#788991}
+.contact{padding:85px 7%;text-align:center;background:var(--navy);color:white}
+.contact h2{color:white}
+.contact p{font-size:12px;line-height:2;color:#d0dce0}
+footer{text-align:center;padding:35px;background:#102f3e;color:#bdcbd0;font-size:10px;line-height:2}
+footer strong{font:24px 'Cormorant Garamond';letter-spacing:2px;color:white}
+@media(max-width:750px){
+header{flex-direction:column;gap:17px}
+nav{gap:15px;flex-wrap:wrap;justify-content:center}
+.hero{min-height:480px;padding:75px 7%}
+.products{grid-template-columns:repeat(2,1fr);gap:14px}
+.product-image{height:210px}
+.story{grid-template-columns:1fr}
+.story-image{min-height:300px}
+.story-copy{padding:50px 8%}
+.values{grid-template-columns:1fr}
+h2{font-size:39px}
 }
 </style>
 </head>
-
 <body>
-<div class="topline"></div>
 
 <header>
-  <a class="brand" href="#home">
-    BLUE WHALE GEMS
-    <span>THE ART OF NATURAL BEAUTY</span>
-  </a>
-  <nav>
-    <a href="#home">HOME</a>
-    <a href="#collection">COLLECTION</a>
-    <a href="#story">OUR STORY</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
+<a class="brand" href="#home">BLUE WHALE GEMS<small>THE ART OF NATURAL BEAUTY</small></a>
+<nav>
+<a href="#home">HOME</a>
+<a href="#collection">COLLECTION</a>
+<a href="#story">OUR STORY</a>
+<a href="#contact">CONTACT</a>
+</nav>
 </header>
 
-<main>
 <section class="hero" id="home">
-  <div class="hero-content">
-    <div class="eyebrow">A WORLD SHAPED BY NATURE</div>
-    <h1>Beauty Beyond<br>the Ordinary.</h1>
-    <p>Discover the character of natural gemstones. Rare colours, distinctive textures and timeless pieces inspired by the art of nature.</p>
-    <a class="hero-btn" href="#collection">DISCOVER THE COLLECTION</a>
-  </div>
+<div class="hero-content">
+<div class="eyebrow">A WORLD SHAPED BY NATURE</div>
+<h1>Beauty Beyond<br>the Ordinary.</h1>
+<p>Discover the character of natural gemstones. Distinctive colours, unique textures and timeless pieces inspired by nature.</p>
+<a class="btn" href="#collection">DISCOVER THE COLLECTION</a>
+</div>
 </section>
 
 <section class="intro">
-  <div class="eyebrow">BLUE WHALE GEMS</div>
-  <h2>Nature, in Its Finest Form.</h2>
-  <p>Every gemstone carries its own colours, patterns and individuality. We bring together natural beauty and thoughtful craftsmanship to present pieces worth discovering.</p>
+<div class="eyebrow">BLUE WHALE GEMS</div>
+<h2>Nature, in Its Finest Form.</h2>
+<p>Every gemstone has its own character. We bring together natural beauty and thoughtful craftsmanship to present pieces worth discovering.</p>
 </section>
 
 <section class="collection" id="collection">
-  <div class="section-head">
-    <div class="eyebrow">EXPLORE OUR WORLD</div>
-    <h2>The Collection</h2>
-    <p>Discover the beauty of natural materials.</p>
-  </div>
+<div class="section-head">
+<div class="eyebrow">EXPLORE OUR WORLD</div>
+<h2>The Collection</h2>
+<p>Discover the beauty of natural materials.</p>
+</div>
 
-  <div class="filters">
-    <button class="filter active" data-filter="all">ALL PIECES</button>
-    <button class="filter" data-filter="gemstones">GEMSTONES</button>
-    <button class="filter" data-filter="jewelry">JEWELRY</button>
-  </div>
+<div class="filters">
+<button class="filter active" data-filter="all">ALL PIECES</button>
+<button class="filter" data-filter="gemstones">GEMSTONES</button>
+<button class="filter" data-filter="jewelry">JEWELRY</button>
+</div>
 
-  <div class="products">
-    <article class="product" data-category="gemstones">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="Natural gemstone jewelry">
-      </div>
-      <div class="product-info">
-        <small>Natural Gemstone</small>
-        <h3>Tiger's Eye</h3>
-        <p>Warm golden tones with a distinctive natural character.</p>
-        <a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a>
-      </div>
-    </article>
+<div class="products">
+<article class="product" data-category="gemstones">
+<div class="product-image"><img src="images/20261018_184933.jpg" alt="Natural gemstone"></div>
+<div class="product-info"><small>Natural Gemstone</small><h3>Amethyst</h3><p>A distinctive natural gemstone with beautiful character.</p><a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a></div>
+</article>
 
-    <article class="product" data-category="gemstones">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=80" alt="Amethyst inspired jewelry">
-      </div>
-      <div class="product-info">
-        <small>Natural Gemstone</small>
-        <h3>Amethyst</h3>
-        <p>Beautiful violet tones, each with its own individuality.</p>
-        <a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a>
-      </div>
-    </article>
+<article class="product" data-category="gemstones">
+<div class="product-image"><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=80" alt="Gemstone jewelry"></div>
+<div class="product-info"><small>Natural Gemstone</small><h3>Tiger's Eye</h3><p>Warm golden tones and distinctive natural patterns.</p><a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a></div>
+</article>
 
-    <article class="product" data-category="jewelry">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80" alt="Turquoise inspired jewelry">
-      </div>
-      <div class="product-info">
-        <small>Gemstone Jewelry</small>
-        <h3>Turquoise</h3>
-        <p>A striking blue presence inspired by natural landscapes.</p>
-        <a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a>
-      </div>
-    </article>
+<article class="product" data-category="jewelry">
+<div class="product-image"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80" alt="Silver jewelry"></div>
+<div class="product-info"><small>Gemstone Jewelry</small><h3>Turquoise</h3><p>A striking blue presence inspired by nature.</p><a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a></div>
+</article>
 
-    <article class="product" data-category="jewelry">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="Coral inspired jewelry">
-      </div>
-      <div class="product-info">
-        <small>Natural Material</small>
-        <h3>Natural Coral</h3>
-        <p>Distinctive colour and organic beauty from the sea.</p>
-        <a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a>
-      </div>
-    </article>
+<article class="product" data-category="jewelry">
+<div class="product-image"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="Jewelry"></div>
+<div class="product-info"><small>Natural Material</small><h3>Natural Coral</h3><p>Organic beauty with distinctive colour.</p><a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a></div>
+</article>
 
-    <article class="product" data-category="gemstones">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=80" alt="Natural gemstone collection">
-      </div>
-      <div class="product-info">
-        <small>Natural Gemstone</small>
-        <h3>Selected Stones</h3>
-        <p>Explore a world of colour, texture and natural forms.</p>
-        <a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a>
-      </div>
-    </article>
+<article class="product" data-category="gemstones">
+<div class="product-image"><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=80" alt="Natural stones"></div>
+<div class="product-info"><small>Natural Gemstone</small><h3>Selected Stones</h3><p>Explore colours, textures and natural forms.</p><a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a></div>
+</article>
 
-    <article class="product" data-category="jewelry">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80" alt="Silver jewelry collection">
-      </div>
-      <div class="product-info">
-        <small>Silver Jewelry</small>
-        <h3>Timeless Pieces</h3>
-        <p>Thoughtfully presented jewelry with a natural spirit.</p>
-        <a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a>
-      </div>
-    </article>
-  </div>
+<article class="product" data-category="jewelry">
+<div class="product-image"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80" alt="Silver collection"></div>
+<div class="product-info"><small>Silver Jewelry</small><h3>Timeless Pieces</h3><p>Jewelry inspired by the beauty of natural materials.</p><a href="#contact">ENQUIRE ABOUT THIS PIECE ↗</a></div>
+</article>
+</div>
 </section>
 
 <section class="story" id="story">
-  <div class="story-image"></div>
-  <div class="story-copy">
-    <div class="eyebrow">THE SPIRIT OF OUR BRAND</div>
-    <h2>Inspired by Nature.<br>Chosen with Care.</h2>
-    <p>At BLUE WHALE GEMS, we believe that true beauty does not need to be created. It already exists in nature. Our passion is to discover the character of gemstones and present their individuality through carefully selected collections.</p>
-    <a href="#collection">EXPLORE OUR COLLECTION →</a>
-  </div>
+<div class="story-image"></div>
+<div class="story-copy">
+<div class="eyebrow">THE SPIRIT OF OUR BRAND</div>
+<h2>Inspired by Nature.</h2>
+<p>At BLUE WHALE GEMS, we believe that true beauty already exists in nature. Our passion is to discover the individuality of gemstones and present their character through carefully selected collections.</p>
+</div>
 </section>
 
 <section class="values">
-  <div class="value">
-    <div class="symbol">01</div>
-    <h3>Natural Character</h3>
-    <p>Celebrating the colours, patterns and individuality found in nature.</p>
-  </div>
-  <div class="value">
-    <div class="symbol">02</div>
-    <h3>Thoughtful Selection</h3>
-    <p>Every piece deserves attention to its details and distinctive character.</p>
-  </div>
-  <div class="value">
-    <div class="symbol">03</div>
-    <h3>Timeless Beauty</h3>
-    <p>Pieces inspired by nature, beyond seasons and passing trends.</p>
-  </div>
+<div class="value"><b>01</b><h3>Natural Character</h3><p>Celebrating the colours and individuality found in nature.</p></div>
+<div class="value"><b>02</b><h3>Thoughtful Selection</h3><p>Every piece deserves attention to its distinctive details.</p></div>
+<div class="value"><b>03</b><h3>Timeless Beauty</h3><p>Pieces inspired by nature, beyond passing trends.</p></div>
 </section>
 
 <section class="contact" id="contact">
-  <div class="eyebrow">A PERSONAL CONNECTION</div>
-  <h2>Find a Piece That Speaks to You.</h2>
-  <p>For product enquiries, availability and further details,<br>we would be delighted to hear from you.</p>
-  <a href="https://wa.me/YOUR_NUMBER">CONTACT BLUE WHALE GEMS</a>
+<div class="eyebrow">A PERSONAL CONNECTION</div>
+<h2>Find a Piece That Speaks to You.</h2>
+<p>For product enquiries and further details,<br>we would be delighted to hear from you.</p>
+<a class="btn" href="https://wa.me/YOUR_NUMBER">CONTACT BLUE WHALE GEMS</a>
 </section>
-</main>
 
 <footer>
-  <div class="brand">BLUE WHALE GEMS</div>
-  <p>THE ART OF NATURAL BEAUTY<br>
-  Natural Gemstones · Distinctive Jewelry<br>
-  © 2026 BLUE WHALE GEMS. ALL RIGHTS RESERVED.</p>
+<strong>BLUE WHALE GEMS</strong>
+<p>THE ART OF NATURAL BEAUTY<br>Natural Gemstones · Distinctive Jewelry<br>© 2026 BLUE WHALE GEMS. ALL RIGHTS RESERVED.</p>
 </footer>
 
 <script>
 const filters=document.querySelectorAll('.filter');
 const products=document.querySelectorAll('.product');
-
 filters.forEach(button=>{
-  button.addEventListener('click',()=>{
-    filters.forEach(item=>item.classList.remove('active'));
-    button.classList.add('active');
-    const selected=button.dataset.filter;
-    products.forEach(product=>{
-      product.style.display=
-        selected==='all'||product.dataset.category===selected
-        ?'':'none';
-    });
-  });
+button.addEventListener('click',()=>{
+filters.forEach(item=>item.classList.remove('active'));
+button.classList.add('active');
+const selected=button.dataset.filter;
+products.forEach(product=>{
+product.style.display=selected==='all'||product.dataset.category===selected?'':'none';
+});
+});
 });
 </script>
 </body>
