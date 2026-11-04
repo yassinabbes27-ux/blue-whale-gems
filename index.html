@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +6,14 @@
 <meta name="theme-color" content="#ffffff">
 <title>BLUE WHALE GEMS | Natural Gemstones</title>
 <meta name="description" content="A curated collection of natural gemstones and jewelry by BLUE WHALE GEMS.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
- --white:#ffffff;
- --paper:#f8fafb;
+ --white:#fff;
+ --paper:#f7fafb;
  --blue:#b9dceb;
  --blue-dark:#7895a3;
  --green:#245344;
@@ -34,6 +32,7 @@ body{
 }
 a{color:inherit;text-decoration:none}
 button{font:inherit}
+
 header{
  position:sticky;
  top:0;
@@ -77,10 +76,23 @@ nav{
 nav a{transition:color .2s}
 nav a:hover{color:var(--green)}
 
+/* HERO */
 .hero{
- background:linear-gradient(135deg,#fbfdfe 0%,#edf6f9 100%);
+ position:relative;
+ isolation:isolate;
+ overflow:hidden;
  text-align:center;
- padding:88px 20px 82px;
+ padding:100px 20px 92px;
+ background:
+ linear-gradient(180deg,rgba(242,250,252,.70),rgba(255,255,255,.88)),
+ url("images/1000082268.jpg") center 45%/cover no-repeat;
+}
+.hero:before{
+ content:"";
+ position:absolute;
+ z-index:-1;
+ inset:0;
+ background:linear-gradient(120deg,rgba(215,238,246,.25),rgba(255,255,255,.25));
 }
 .eyebrow{
  font-size:9px;
@@ -101,7 +113,7 @@ nav a:hover{color:var(--green)}
 .hero p{
  max-width:490px;
  margin:0 auto;
- color:#718087;
+ color:#536b75;
  font-size:13px;
  line-height:2;
 }
@@ -110,8 +122,9 @@ nav a:hover{color:var(--green)}
  margin-top:30px;
  padding:14px 27px;
  border:1px solid #c8dce4;
- border-radius:2px;
+ border-radius:3px;
  color:var(--green);
+ background:rgba(255,255,255,.65);
  font-size:10px;
  letter-spacing:2px;
  text-transform:uppercase;
@@ -122,6 +135,7 @@ nav a:hover{color:var(--green)}
  color:white;
 }
 
+/* COLLECTIONS */
 .collections{
  max-width:1120px;
  margin:0 auto;
@@ -143,16 +157,15 @@ nav a:hover{color:var(--green)}
  gap:14px;
 }
 .category-card{
- min-height:175px;
+ min-width:0;
  display:flex;
  flex-direction:column;
  align-items:center;
- justify-content:center;
  text-align:center;
- padding:24px 12px;
- background:#f7fafb;
+ padding:15px 12px 21px;
+ background:#f8fbfc;
  border:1px solid #edf2f4;
- border-radius:3px;
+ border-radius:7px;
  transition:background .3s,border-color .3s,transform .3s;
 }
 .category-card:hover{
@@ -160,11 +173,29 @@ nav a:hover{color:var(--green)}
  border-color:#d9e9ef;
  transform:translateY(-3px);
 }
+.category-photo{
+ width:100%;
+ height:145px;
+ overflow:hidden;
+ border-radius:5px;
+ background:#eaf3f6;
+ margin-bottom:17px;
+}
+.category-photo img{
+ width:100%;
+ height:100%;
+ display:block;
+ object-fit:cover;
+ transition:transform .5s;
+}
+.category-card:hover .category-photo img{
+ transform:scale(1.045);
+}
 .category-number{
  font-family:"Playfair Display",Georgia,serif;
- font-size:12px;
+ font-size:11px;
  color:#91a9b3;
- margin-bottom:15px;
+ margin-bottom:9px;
 }
 .category-card h3{
  margin:0;
@@ -174,20 +205,21 @@ nav a:hover{color:var(--green)}
  letter-spacing:.2px;
 }
 .category-card p{
- margin:10px 0 0;
+ margin:9px 0 0;
  color:#8a989d;
  font-size:9px;
- letter-spacing:1.5px;
+ letter-spacing:1.2px;
  text-transform:uppercase;
 }
 .category-card .explore{
- margin-top:17px;
+ margin-top:15px;
  font-size:9px;
- letter-spacing:2px;
+ letter-spacing:1.7px;
  color:var(--green);
  text-transform:uppercase;
 }
 
+/* PRODUCT SECTIONS */
 .section{
  max-width:1160px;
  margin:0 auto;
@@ -230,24 +262,18 @@ nav a:hover{color:var(--green)}
  aspect-ratio:1/1.12;
  background:#fff;
  overflow:hidden;
- border-radius:3px;
- box-shadow:none;
+ border-radius:6px;
 }
 .product-image img{
  width:100%;
  height:100%;
  display:block;
  object-fit:contain;
- border-radius:3px;
- box-shadow:none;
+ border-radius:6px;
  transition:transform .5s cubic-bezier(.2,.7,.2,1);
 }
-.product a:hover .product-image img{
- transform:scale(1.045);
-}
-.product a:active .product-image img{
- transform:scale(.96);
-}
+.product a:hover .product-image img{transform:scale(1.045)}
+.product a:active .product-image img{transform:scale(.96)}
 .product h3{
  margin:14px 0 8px;
  font-family:"Playfair Display",Georgia,serif;
@@ -279,8 +305,9 @@ nav a:hover{color:var(--green)}
  font-size:11px;
 }
 
+/* ABOUT & CONTACT */
 .about{
- background:#f6fafb;
+ background:#f3f9fb;
  text-align:center;
  padding:68px 22px;
  margin-top:35px;
@@ -319,7 +346,7 @@ nav a:hover{color:var(--green)}
  padding:16px 28px;
  background:var(--whatsapp);
  color:#174b35;
- border-radius:3px;
+ border-radius:4px;
  font-size:10px;
  font-weight:600;
  letter-spacing:1.5px;
@@ -348,17 +375,22 @@ footer strong{
 }
 footer p{margin-top:14px}
 
+/* MOBILE */
 @media(max-width:700px){
  .nav{padding:14px}
  .logo{font-size:13px}
  nav{gap:12px;font-size:9px;letter-spacing:.5px}
- .hero{padding:65px 18px 58px}
+ .hero{
+  padding:68px 18px 62px;
+  background-position:center;
+ }
  .hero h1{font-size:43px}
  .hero p{font-size:12px}
  .collections{padding:45px 14px 20px}
  .collections-heading h2{font-size:29px}
  .category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
- .category-card{min-height:155px;padding:19px 8px}
+ .category-card{padding:11px 8px 17px}
+ .category-photo{height:125px;margin-bottom:13px}
  .category-card h3{font-size:20px}
  .section{padding:25px 13px 45px}
  .section-head{margin-bottom:25px}
@@ -395,75 +427,89 @@ footer p{margin-top:14px}
 </header>
 
 <main>
- <section class="hero" id="home">
-  <div class="eyebrow">A STUDY IN NATURAL BEAUTY</div>
-  <h1>Nature, in its own form.</h1>
-  <p>
-   A considered collection of natural gemstones and distinctive pieces.
-   Each one carries its own colour, character and quiet beauty.
-  </p>
-  <a class="btn" href="#collections">Discover the collections</a>
- </section>
+<section class="hero" id="home">
+ <div class="eyebrow">A STUDY IN NATURAL BEAUTY</div>
+ <h1>Nature, in its own form.</h1>
+ <p>
+  A considered collection of natural gemstones and distinctive pieces.
+  Each one carries its own colour, character and quiet beauty.
+ </p>
+ <a class="btn" href="#collections">Discover the collections</a>
+</section>
 
- <section class="collections" id="collections">
-  <div class="collections-heading">
-   <div class="eyebrow">THE COLLECTIONS</div>
-   <h2>Explore by collection</h2>
-  </div>
+<section class="collections" id="collections">
+ <div class="collections-heading">
+  <div class="eyebrow">THE COLLECTIONS</div>
+  <h2>Explore by collection</h2>
+ </div>
 
-  <div class="category-grid">
-   <a class="category-card" href="#bracelets" data-category="bracelets">
-    <span class="category-number">I</span>
-    <h3>Bracelets</h3>
-    <p>Natural forms, worn close</p>
-    <span class="explore">Explore collection ↗</span>
-   </a>
+ <div class="category-grid">
 
-   <a class="category-card" href="#necklaces" data-category="necklaces">
-    <span class="category-number">II</span>
-    <h3>Necklaces</h3>
-    <p>Details with distinction</p>
-    <span class="explore">Explore collection ↗</span>
-   </a>
-
-   <a class="category-card" href="#rings" data-category="rings">
-    <span class="category-number">III</span>
-    <h3>Rings</h3>
-    <p>Small works of nature</p>
-    <span class="explore">Explore collection ↗</span>
-   </a>
-
-   <a class="category-card" href="#raw-gems" data-category="raw-gems">
-    <span class="category-number">IV</span>
-    <h3>Raw Gems</h3>
-    <p>Nature, unaltered</p>
-    <span class="explore">Explore collection ↗</span>
-   </a>
-  </div>
- </section>
-
- <div id="catalog"></div>
-
- <section class="about">
-  <div class="eyebrow">ABOUT THE HOUSE</div>
-  <h2>Beauty in its natural state.</h2>
-  <p>
-   We are drawn to the individuality of natural gemstones:
-   their colours, textures and subtle differences.
-   Discover a piece that feels distinctly yours.
-  </p>
- </section>
-
- <section class="contact" id="contact">
-  <div class="eyebrow">CORRESPONDENCE</div>
-  <h2>We would be pleased to hear from you.</h2>
-  <p>للطلب أو الاستفسار، يسعدنا التواصل معك عبر واتساب.</p>
-  <a class="whatsapp-btn"
-     href="https://wa.me/21655733020"
-     target="_blank" rel="noopener">
-   CONTACT VIA WHATSAPP
+  <a class="category-card" href="#bracelets" data-category="bracelets">
+   <div class="category-photo">
+    <img src="images/1000082268.jpg" alt="Natural blue gemstone">
+   </div>
+   <span class="category-number">I</span>
+   <h3>Bracelets</h3>
+   <p>Natural forms, worn close</p>
+   <span class="explore">Explore collection ↗</span>
   </a>
- </section>
+
+  <a class="category-card" href="#necklaces" data-category="necklaces">
+   <div class="category-photo">
+    <img src="images/1000082265.jpg" alt="Natural carnelian gemstone">
+   </div>
+   <span class="category-number">II</span>
+   <h3>Necklaces</h3>
+   <p>Details with distinction</p>
+   <span class="explore">Explore collection ↗</span>
+  </a>
+
+  <a class="category-card" href="#rings" data-category="rings">
+   <div class="category-photo">
+    <img src="images/1000082266.jpg" alt="Natural green aventurine gemstone">
+   </div>
+   <span class="category-number">III</span>
+   <h3>Rings</h3>
+   <p>Small works of nature</p>
+   <span class="explore">Explore collection ↗</span>
+  </a>
+
+  <a class="category-card" href="#raw-gems" data-category="raw-gems">
+   <div class="category-photo">
+    <img src="images/1000082268.jpg" alt="Raw natural gemstone">
+   </div>
+   <span class="category-number">IV</span>
+   <h3>Raw Gems</h3>
+   <p>Nature, unaltered</p>
+   <span class="explore">Explore collection ↗</span>
+  </a>
+
+ </div>
+</section>
+
+<div id="catalog"></div>
+
+<section class="about">
+ <div class="eyebrow">ABOUT THE HOUSE</div>
+ <h2>Beauty in its natural state.</h2>
+ <p>
+  We are drawn to the individuality of natural gemstones:
+  their colours, textures and subtle differences.
+  Discover a piece that feels distinctly yours.
+ </p>
+</section>
+
+<section class="contact" id="contact">
+ <div class="eyebrow">CORRESPONDENCE</div>
+ <h2>We would be pleased to hear from you.</h2>
+ <p>للطلب أو الاستفسار، يسعدنا التواصل معك عبر واتساب.</p>
+ <a class="whatsapp-btn"
+    href="https://wa.me/21655733020"
+    target="_blank" rel="noopener">
+  CONTACT VIA WHATSAPP
+ </a>
+</section>
 </main>
 
 <footer>
@@ -635,4 +681,3 @@ document.querySelectorAll(".category-card").forEach(card=>{
 </script>
 </body>
 </html>
-
