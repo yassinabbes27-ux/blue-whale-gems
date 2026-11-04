@@ -4,129 +4,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BLUE WHALE GEMS</title>
+<title>BLUE WHALE GEMS | Natural Gemstones</title>
+<meta name="description" content="Discover natural gemstones and distinctive jewelry at BLUE WHALE GEMS.">
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#f8fcfd;color:#183d4c;font-family:Georgia,serif}
-header{background:#fff;padding:22px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5;box-shadow:0 3px 15px #173b4b08}
-.logo{font-size:20px;letter-spacing:3px;font-weight:bold}
-nav{display:flex;gap:20px;flex-wrap:wrap}
-nav a{font:12px Arial;color:#496b78;text-decoration:none;letter-spacing:1px}
-.hero{text-align:center;padding:90px 20px 85px;background:linear-gradient(135deg,#e7f5f8,#fff 65%,#eaf5f7)}
-.hero small{letter-spacing:4px;color:#8b9fa5}
-.hero h1{font-size:clamp(30px,6vw,48px);font-weight:normal;letter-spacing:4px;margin:20px 0}
-.hero p{font:14px Arial;color:#718d98;letter-spacing:1px}
-.hero a{display:inline-block;margin-top:22px;background:#173f50;color:white;padding:14px 28px;border-radius:30px;text-decoration:none;font:12px Arial;letter-spacing:1px}
-.section{padding:65px 7%;max-width:1200px;margin:auto}
-.heading{text-align:center;margin-bottom:35px}
-.heading small{color:#9b865f;letter-spacing:3px;font:11px Arial}
-.heading h2{font-weight:normal;font-size:30px;margin:12px 0}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
-.card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px #183d4c0d;transition:.25s}
-.card:hover{transform:translateY(-5px);box-shadow:0 14px 35px #183d4c17}
-.card a{text-decoration:none;color:inherit;display:block;height:100%}
-.photo{height:260px;background:linear-gradient(145deg,#e6f3f6,#f8fbfc);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:cover}
-.placeholder{font:12px Arial;letter-spacing:2px;color:#8ba5ae;text-align:center;padding:15px}
-.info{text-align:center;padding:22px 16px 25px}
-.info h3{font-size:17px;font-weight:normal;line-height:1.5;min-height:48px;margin:0 0 12px}
-.price{font: bold 17px Arial;color:#9b8051}
-.view{display:inline-block;margin-top:17px;border:1px solid #c5d9df;border-radius:25px;padding:10px 21px;font:11px Arial;letter-spacing:1px;color:#315c6c}
-.about{background:#edf6f8;text-align:center;padding:65px 10%}
-.about h2{font-weight:normal;font-size:30px}
-.about p{max-width:650px;margin:15px auto;color:#66818b;font:15px/1.9 Arial}
-.contact{text-align:center;padding:60px 20px}
-.contact p{font:14px Arial;color:#718d98;line-height:1.8}
-.contact a{display:inline-block;margin-top:12px;color:#fff;background:#173f50;text-decoration:none;padding:14px 28px;border-radius:30px;font:12px Arial}
-footer{background:#eaf4f6;text-align:center;padding:27px 15px;color:#718d98;font:11px Arial;letter-spacing:2px}
-@media(max-width:750px){header{flex-direction:column;gap:16px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.photo{height:190px}.info{padding:16px 9px}.info h3{font-size:14px}.section{padding:45px 4%}}
-@media(max-width:390px){.grid{grid-template-columns:1fr}.photo{height:250px}}
+body{margin:0;background:#fff;color:#263c39;font-family:Georgia,serif}
+:root{--gold:#ad9569;--green:#254c42;--muted:#858780;--cream:#f8f7f3}
+header{height:82px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #eeeae2;position:sticky;top:0;z-index:10}
+.logo{text-decoration:none;color:#263c39;display:flex;flex-direction:column;align-items:center;gap:4px}
+.logo strong{font-size:21px;letter-spacing:4px;font-weight:normal}
+.logo small{font:9px Arial;letter-spacing:5px;color:var(--gold)}
+nav{display:flex;gap:23px}
+nav a{font:11px Arial;letter-spacing:1px;color:#555;text-decoration:none}
+nav a:hover{color:var(--gold)}
+.hero{padding:85px 20px 90px;text-align:center;background:linear-gradient(#fff,#faf9f6)}
+.eyebrow{font:10px Arial;letter-spacing:4px;color:var(--gold)}
+.hero h1{font-size:clamp(31px,6vw,51px);font-weight:normal;line-height:1.3;margin:24px auto 18px;max-width:750px;color:#263c39}
+.hero p{max-width:590px;margin:0 auto;color:#777970;font:15px/2 Arial}
+.button{display:inline-block;background:var(--green);color:white;padding:15px 30px;border-radius:3px;text-decoration:none;font:11px Arial;letter-spacing:1.5px;margin-top:28px;transition:.2s}
+.button:hover{background:#17372f}
+.intro{max-width:850px;margin:auto;padding:65px 25px;text-align:center}
+.intro h2,.section-title h2{font-size:30px;font-weight:normal;margin:12px 0 18px}
+.intro p{font:15px/2.1 Arial;color:#777970;max-width:700px;margin:auto}
+.section{padding:65px 7%;max-width:1250px;margin:auto}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title p{font:13px/1.8 Arial;color:var(--muted);max-width:550px;margin:0 auto}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.category{min-height:175px;background:var(--cream);border:1px solid #eeeae2;padding:30px 20px;text-decoration:none;color:#263c39;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;transition:.25s}
+.category:hover{border-color:var(--gold);background:#fff}
+.category .number{font:10px Arial;color:var(--gold);letter-spacing:2px}
+.category h3{font-size:23px;font-weight:normal;margin:13px 0 8px}
+.category p{font:12px Arial;color:#858780;margin:0;line-height:1.8}
+.featured{background:#faf9f6;padding:65px 7%}
+.featured-inner{max-width:950px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.product-photo{background:#fff;border:1px solid #eeeae2;padding:12px}
+.product-photo img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+.featured-copy .eyebrow{letter-spacing:3px}
+.featured-copy h2{font-size:29px;line-height:1.5;font-weight:normal}
+.featured-copy p{font:14px/2 Arial;color:#777970}
+.price{font:bold 19px Arial;color:var(--gold)}
+.text-link{display:inline-block;color:var(--green);font:12px Arial;letter-spacing:1px;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:7px;margin-top:20px}
+.story{padding:80px 20px;text-align:center;max-width:850px;margin:auto}
+.story h2{font-size:29px;font-weight:normal}
+.story p{font:14px/2.1 Arial;color:#777970}
+.values{background:#faf9f6;padding:55px 7%;display:grid;grid-template-columns:repeat(3,1fr);gap:25px;text-align:center}
+.values h3{font-size:18px;font-weight:normal}
+.values p{font:12px/1.9 Arial;color:#858780}
+.contact{text-align:center;padding:70px 20px}
+.contact h2{font-size:29px;font-weight:normal}
+.contact p{font:14px/2 Arial;color:#777970}
+footer{border-top:1px solid #eeeae2;text-align:center;padding:35px 15px;color:#858780}
+footer strong{display:block;letter-spacing:3px;font-weight:normal;color:#263c39;margin-bottom:10px}
+footer small{font:10px Arial;letter-spacing:1px}
+@media(max-width:700px){
+ header{height:auto;min-height:75px;padding:15px 4%;flex-direction:column;gap:15px}
+ nav{gap:15px;justify-content:center;flex-wrap:wrap}
+ nav a{font-size:10px}
+ .hero{padding:65px 20px}
+ .section{padding:50px 5%}
+ .categories{grid-template-columns:repeat(2,1fr);gap:10px}
+ .category{min-height:155px;padding:20px 10px}
+ .category h3{font-size:19px}
+ .featured-inner{grid-template-columns:1fr;gap:25px}
+ .featured-copy{text-align:center}
+ .values{grid-template-columns:1fr;gap:15px}
+}
 </style>
 </head>
 <body>
 
 <header>
-<div class="logo">BLUE WHALE GEMS</div>
+<a class="logo" href="#home">
+<strong>BLUE WHALE</strong>
+<small>G E M S</small>
+</a>
 <nav>
 <a href="#home">HOME</a>
-<a href="#collection">COLLECTION</a>
-<a href="#about">ABOUT</a>
+<a href="#collections">COLLECTIONS</a>
+<a href="#story">OUR STORY</a>
 <a href="#contact">CONTACT</a>
 </nav>
 </header>
 
 <section class="hero" id="home">
-<small>BLUE WHALE GEMS</small>
-<h1>THE BEAUTY OF NATURE</h1>
-<p>Natural Gemstones · Timeless Elegance</p>
-<a href="#collection">EXPLORE COLLECTION</a>
+<div class="eyebrow">NATURAL GEMSTONES & JEWELRY</div>
+<h1>للأحجار الكريمة سحرها الخاص.</h1>
+<p>
+مرحباً بك في BLUE WHALE GEMS.
+هنا تجد ألواناً طبيعية وتفاصيل مختلفة وقطعاً اخترناها لأن جمالها يستحق أن يُكتشف.
+</p>
+<a class="button" href="#collections">EXPLORE THE COLLECTION</a>
 </section>
 
-<section class="section" id="collection">
-<div class="heading">
-<small>DISCOVER OUR WORLD</small>
-<h2>Our Collection</h2>
+<section class="intro">
+<div class="eyebrow">A WORLD OF GEMSTONES</div>
+<h2>اختَر ما يشبه ذوقك</h2>
+<p>
+من سوار بسيط ترافقك تفاصيله كل يوم، إلى حجر كريم تحتفظ به لجمال لونه وتكوينه؛ نحب القطع التي تلفت النظر دون أن تحتاج إلى مبالغة.
+تصفّح مجموعتنا واكتشف ما يناسب أسلوبك.
+</p>
+</section>
+
+<section class="section" id="collections">
+<div class="section-title">
+<div class="eyebrow">EXPLORE</div>
+<h2>Our Collections</h2>
+<p>تصفّح مجموعاتنا واختر النوع الذي تبحث عنه.</p>
 </div>
 
-<div class="grid">
-
-<div class="card">
-<a href="product.html?id=tiger">
-<div class="photo"><div class="placeholder">TIGER'S EYE</div></div>
-<div class="info"><h3>Tiger's Eye</h3><div class="price">Price to be added</div><span class="view">VIEW DETAILS</span></div>
+<div class="categories">
+<a class="category" href="#bracelets">
+<span class="number">01</span>
+<h3>Bracelets</h3>
+<p>البرسلايات والأساور</p>
+</a>
+<a class="category" href="#necklaces">
+<span class="number">02</span>
+<h3>Necklaces</h3>
+<p>السلاسل والقلادات</p>
+</a>
+<a class="category" href="#rings">
+<span class="number">03</span>
+<h3>Rings</h3>
+<p>الخواتم</p>
+</a>
+<a class="category" href="#loose">
+<span class="number">04</span>
+<h3>Loose Gemstones</h3>
+<p>الأحجار الكريمة الحرة</p>
+</a>
+<a class="category" href="#other">
+<span class="number">05</span>
+<h3>Other Pieces</h3>
+<p>قطع وإكسسوارات أخرى</p>
 </a>
 </div>
+</section>
 
-<div class="card">
-<a href="product.html?id=amethyst">
-<div class="photo"><div class="placeholder">AMETHYST</div></div>
-<div class="info"><h3>Amethyst</h3><div class="price">Price to be added</div><span class="view">VIEW DETAILS</span></div>
-</a>
-</div>
-
-<div class="card">
-<a href="product.html?id=turquoise">
-<div class="photo"><div class="placeholder">TURQUOISE</div></div>
-<div class="info"><h3>Turquoise</h3><div class="price">Price to be added</div><span class="view">VIEW DETAILS</span></div>
-</a>
-</div>
-
-<div class="card">
-<a href="product.html?id=coral">
-<div class="photo"><div class="placeholder">NATURAL CORAL</div></div>
-<div class="info"><h3>Natural Coral</h3><div class="price">Price to be added</div><span class="view">VIEW DETAILS</span></div>
-</a>
-</div>
-
-<div class="card">
-<a href="product.html?id=bracelet">
-<div class="photo">
+<section class="featured" id="bracelets">
+<div class="featured-inner">
+<div class="product-photo">
 <img src="images/20261018_184933.jpg" alt="Aquamarine Amethyst Labradorite Bracelet">
 </div>
-<div class="info">
-<h3>Aquamarine + Amethyst + Labradorite Bracelet</h3>
+<div class="featured-copy">
+<div class="eyebrow">FEATURED PIECE</div>
+<h2>Aquamarine + Amethyst + Labradorite Bracelet</h2>
+<p>
+ثلاثة أحجار مختلفة في اللون والتفاصيل، اجتمعت في سوار واحد. اختيار جميل لمن يحب تنسيق الألوان الطبيعية في إطلالته.
+</p>
 <div class="price">70 TND</div>
-<span class="view">VIEW DETAILS</span>
+<a class="text-link" href="product.html?id=bracelet">VIEW PRODUCT DETAILS →</a>
 </div>
-</a>
-</div>
-
 </div>
 </section>
 
-<section class="about" id="about">
-<small>OUR STORY</small>
-<h2>About BLUE WHALE GEMS</h2>
-<p>A world inspired by the beauty of gemstones and the elegance of nature. Discover unique pieces selected with appreciation for their natural beauty.</p>
+<section class="section" id="necklaces">
+<div class="section-title">
+<div class="eyebrow">NECKLACES</div>
+<h2>السلاسل والقلادات</h2>
+<p>قطع تضيف تفصيلاً جميلاً إلى إطلالتك اليومية أو مناسباتك الخاصة.</p>
+</div>
+</section>
+
+<section class="section" id="rings">
+<div class="section-title">
+<div class="eyebrow">RINGS</div>
+<h2>الخواتم</h2>
+<p>أحجار وتفاصيل مختلفة، لكل قطعة طابعها الخاص.</p>
+</div>
+</section>
+
+<section class="section" id="loose">
+<div class="section-title">
+<div class="eyebrow">LOOSE GEMSTONES</div>
+<h2>الأحجار الحرة</h2>
+<p>لمن يحب اقتناء الأحجار كما هي، والتأمل في ألوانها وتكويناتها الطبيعية.</p>
+</div>
+</section>
+
+<section class="section" id="other">
+<div class="section-title">
+<div class="eyebrow">MORE TO DISCOVER</div>
+<h2>قطع أخرى</h2>
+<p>اكتشف المزيد من اختيارات BLUE WHALE GEMS.</p>
+</div>
+</section>
+
+<section class="story" id="story">
+<div class="eyebrow">ABOUT US</div>
+<h2>عن BLUE WHALE GEMS</h2>
+<p>
+بدأ اهتمامنا من حب الأحجار الكريمة، من اختلاف ألوانها وتكويناتها، ومن التفاصيل التي تجعل كل حجر مختلفاً عن الآخر.
+في BLUE WHALE GEMS نشارككم هذا الاهتمام من خلال مجموعة من الأحجار والقطع التي نحب جمالها وتنوّعها.
+</p>
+</section>
+
+<section class="values">
+<div>
+<h3>Natural Beauty</h3>
+<p>جمال الأحجار في ألوانها وتفاصيلها.</p>
+</div>
+<div>
+<h3>Personal Style</h3>
+<p>اختر القطع التي تعبّر عن ذوقك.</p>
+</div>
+<div>
+<h3>Made to Be Admired</h3>
+<p>تفاصيل صغيرة تصنع فرقاً في الإطلالة.</p>
+</div>
 </section>
 
 <section class="contact" id="contact">
-<h2 style="font-weight:normal">Get in Touch</h2>
-<p>For product inquiries and orders, contact BLUE WHALE GEMS.</p>
-<p>WhatsApp ordering will be activated once the business number is added.</p>
+<div class="eyebrow">GET IN TOUCH</div>
+<h2>هل وجدت القطعة التي تبحث عنها؟</h2>
+<p>يسعدنا استقبال استفساراتك حول المنتجات والطلبات.</p>
 </section>
 
-<footer>BLUE WHALE GEMS · THE BEAUTY OF NATURE</footer>
+<footer>
+<strong>BLUE WHALE GEMS</strong>
+<small>THE BEAUTY OF NATURAL GEMSTONES</small>
+</footer>
+
 </body>
 </html>
