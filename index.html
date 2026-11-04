@@ -510,7 +510,7 @@ async function loadFeaturedProducts(){
  }catch(error){grid.textContent="";}
 }
 function setupReveal(){
- const revealItems=document.querySelectorAll(".category,.product,.story-image");
+ const revealItems=document.querySelectorAll(".hero-copy > *, .category,.product,.story-image,.section-head > *, .featured-top > *, .story-copy > *, .value,.contact > *, .footer-col,.trust-item");
  if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
   document.body.classList.add("cinema-ready");
   const revealObserver=new IntersectionObserver((entries,observer)=>{
