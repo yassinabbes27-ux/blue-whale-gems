@@ -1,120 +1,107 @@
-١٠<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<title>BLUE WHALE GEMS | Natural Gemstones</title>
+<title>Product | BLUE WHALE GEMS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--white:#fff;--paper:#f5fafc;--blue:#b9dceb;--blue-dark:#7895a3;--green:#245344;--ink:#25363d;--muted:#7b898e;--line:#e9eef0}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--white);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
-body[dir="rtl"]{font-family:"Cairo",Arial,sans-serif}
-a{color:inherit;text-decoration:none}
-header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{max-width:1160px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.logo{font-family:"Playfair Display",Georgia,serif;font-size:16px;letter-spacing:2px;font-weight:500}
-.logo small{display:block;font-family:"DM Sans",sans-serif;font-size:9px;letter-spacing:4px;color:var(--blue-dark);margin-top:5px}
-.nav-right{display:flex;align-items:center;gap:22px}
-nav{display:flex;gap:22px;font-size:11px;letter-spacing:1px;color:#68777d}
-nav a:hover{color:var(--green)}
-.lang{border:1px solid #dce8ec;background:white;color:var(--green);padding:8px 12px;border-radius:2px;font-size:11px;cursor:pointer}
-.hero{position:relative;overflow:hidden;text-align:center;padding:94px 20px 86px;background:linear-gradient(145deg,#fbfdfe 5%,#edf6f9 55%,#e3f1f5 100%)}
-.hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(120,149,163,.18);border-radius:50%;pointer-events:none}
-.hero:before{width:430px;height:430px;left:-180px;top:-230px}
-.hero:after{width:360px;height:360px;right:-130px;bottom:-230px}
-.eyebrow{font-size:9px;letter-spacing:3.5px;color:var(--blue-dark);font-weight:600;text-transform:uppercase}
-.hero h1{max-width:760px;margin:23px auto 18px;font-family:"Playfair Display",Georgia,serif;font-size:clamp(39px,7vw,68px);line-height:1.13;font-weight:400;letter-spacing:-1px}
-body[dir="rtl"] .hero h1,body[dir="rtl"] h2,body[dir="rtl"] .category-card h3{font-family:"Cairo",sans-serif}
-.hero p{max-width:510px;margin:0 auto;color:#718087;font-size:13px;line-height:2}
-.hero .btn{display:inline-block;margin-top:30px;padding:14px 27px;border:1px solid #c8dce4;border-radius:2px;color:var(--green);font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.25s}
-.hero .btn:hover{background:var(--green);color:white}
-.collections{max-width:1120px;margin:auto;padding:66px 20px 75px}
-.collections-heading{text-align:center;margin-bottom:36px}
-.collections-heading h2{margin:13px 0 0;font-family:"Playfair Display",Georgia,serif;font-size:34px;font-weight:400}
-.category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.category-card{position:relative;overflow:hidden;min-height:205px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px 12px;background:linear-gradient(155deg,#f9fcfd,#edf6f9);border:1px solid #e8f0f3;border-radius:4px;transition:background .3s,border-color .3s,transform .3s}
-.category-card:after{content:"";position:absolute;width:170px;height:170px;border:1px solid rgba(120,149,163,.18);border-radius:50%;bottom:-120px;right:-70px;transition:transform .4s}
-.category-card:hover{background:#eaf5f8;border-color:#d3e5eb;transform:translateY(-4px)}
-.category-card:hover:after{transform:scale(1.35)}
-.category-number{font-family:"Playfair Display",serif;font-size:12px;color:#91a9b3;margin-bottom:17px}
-.category-card h3{margin:0;font-family:"Playfair Display",Georgia,serif;font-size:clamp(19px,2.4vw,25px);font-weight:400}
-.category-card p{margin:10px 0 0;color:#84949a;font-size:9px;letter-spacing:1.2px;text-transform:uppercase}
-.category-card .explore{margin-top:19px;font-size:9px;letter-spacing:2px;color:var(--green);text-transform:uppercase}
-.about{background:#f6fafb;text-align:center;padding:68px 22px}
-.about h2,.contact h2{margin:15px 0;font-family:"Playfair Display",Georgia,serif;font-size:35px;font-weight:400}
-.about p{max-width:550px;margin:auto;color:#718087;font-size:13px;line-height:2}
-.contact{text-align:center;padding:65px 20px}
-.contact p{color:var(--muted);font-size:12px;line-height:1.9}
-.whatsapp-btn{display:inline-block;margin-top:18px;padding:16px 28px;background:#a9e8c5;color:#174b35;border-radius:3px;font-size:10px;font-weight:600;letter-spacing:1.5px}
-footer{border-top:1px solid var(--line);text-align:center;padding:30px 15px;color:#8a989d;font-size:9px;letter-spacing:1.5px}
-footer strong{display:block;color:var(--ink);font-family:"Playfair Display",serif;font-size:16px;font-weight:400;letter-spacing:2px;margin-bottom:9px}
-footer p{margin-top:14px}
-body[dir="rtl"] .eyebrow,body[dir="rtl"] nav,body[dir="rtl"] .category-card p,body[dir="rtl"] .explore{letter-spacing:0}
-@media(max-width:700px){.nav{padding:13px}.logo{font-size:12px}.nav-right{gap:12px}nav{gap:11px;font-size:9px}.lang{padding:7px 9px}.hero{padding:68px 18px 60px}.hero h1{font-size:42px}.hero p{font-size:12px}.collections{padding:48px 14px 55px}.collections-heading h2{font-size:29px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.category-card{min-height:165px;padding:19px 8px}.category-card h3{font-size:20px}.about{padding:52px 20px}.about h2,.contact h2{font-size:29px}.contact{padding:52px 18px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+:root{--white:#fff;--paper:#f8faf8;--blue:#dceaf0;--blue-dark:#91aeba;--green:#174b3b;--mint:#e7f2e9;--gold:#a78a56;--ink:#252e2c;--muted:#7c8782;--line:#e9eeea;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}body[dir="rtl"]{font-family:"Cairo",Arial,sans-serif}a{color:inherit;text-decoration:none}
+header{border-bottom:1px solid var(--line);background:#fff}.nav{max-width:1190px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}.logo{font-family:var(--serif);font-size:15px;font-weight:500;letter-spacing:2px}.logo small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:3.5px;color:var(--blue-dark);margin-top:5px}.lang{border:1px solid #e1e8e3;background:#fff;color:var(--green);padding:9px 13px;border-radius:2px;font-size:10px;cursor:pointer}
+main{max-width:1120px;margin:0 auto;padding:34px 22px 0}.back{display:inline-block;margin-bottom:30px;color:var(--green);font-size:9px;letter-spacing:1.5px;font-weight:700;text-transform:uppercase}.product{display:grid;grid-template-columns:1.03fr .97fr;gap:62px;align-items:start}.photo{background:#fafbf9;overflow:hidden;border-radius:3px;min-height:360px}.photo img{display:block;width:100%;height:auto;max-height:680px;object-fit:contain;border-radius:3px;box-shadow:none}.details{padding:16px 0 0}.eyebrow{font-size:9px;letter-spacing:3px;color:var(--blue-dark);font-weight:700;text-transform:uppercase}.product-name{margin:19px 0 14px;font-family:var(--serif);font-size:clamp(29px,4vw,42px);line-height:1.3;font-weight:400;letter-spacing:-.3px;direction:ltr;text-align:left}.price{margin:20px 0;color:var(--green);font-size:22px;font-weight:700;letter-spacing:.3px}.description{color:#758079;font-size:13px;line-height:2}.info{background:#fafbf9;border:1px solid #edf1ed;border-radius:3px;padding:17px 21px;margin:25px 0}.info-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #e9eeea;padding:12px 0;font-size:12px;line-height:1.6}.info-row:last-child{border-bottom:0}.info-row span{color:#78847e}.info-row strong{color:var(--ink);font-weight:700;text-align:right}.info-row.total strong{color:var(--green);font-size:16px}.stock{display:flex;align-items:center;gap:9px;margin:20px 0;color:#527b65;font-size:10px;letter-spacing:.5px}.stock-dot{width:7px;height:7px;border-radius:50%;background:#78b38e;flex:0 0 auto}.order{display:block;width:100%;text-align:center;background:var(--mint);color:var(--green);border:1px solid #d8e9dc;padding:17px 15px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:1.5px;transition:background .2s}.order:hover{background:#d9ecdf}.note{margin-top:12px;color:#89958f;font-size:10px;line-height:1.8;text-align:center}
+.editorial{margin-top:80px;padding:57px 20px;background:#fbfcfb;text-align:center;border-top:1px solid #f0f3f0;border-bottom:1px solid #f0f3f0}.editorial h2{margin:15px 0;font-family:var(--serif);font-size:34px;font-weight:400}.editorial p{max-width:560px;margin:0 auto;color:#718078;font-size:13px;line-height:2}.details-contact{padding:54px 15px;text-align:center}.details-contact h2{font-family:var(--serif);font-size:28px;font-weight:400}.details-contact p{color:var(--muted);font-size:12px;line-height:1.8}.details-contact a{display:inline-block;margin-top:8px;padding:12px 18px;color:var(--green);border:1px solid #dce8df;font-size:9px;font-weight:700;letter-spacing:1.3px}
+footer{border-top:1px solid var(--line);text-align:center;padding:29px 15px;color:#929b96;font-size:9px;letter-spacing:1.4px}footer strong{display:block;color:var(--ink);font-family:var(--serif);font-size:15px;font-weight:400;letter-spacing:2px;margin-bottom:8px}
+body[dir="rtl"] .eyebrow,body[dir="rtl"] .back,body[dir="rtl"] .order,body[dir="rtl"] .details-contact a{letter-spacing:0}body[dir="rtl"] .details{text-align:right}
+@media(max-width:720px){.nav{padding:13px 14px}.logo{font-size:12px}main{padding:23px 14px 0}.product{grid-template-columns:1fr;gap:25px}.photo{min-height:0}.photo img{max-height:470px}.details{padding:0 3px}.product-name{font-size:31px;margin:15px 0}.price{font-size:21px}.info{padding:14px 16px}.editorial{margin-top:58px;padding:45px 18px}.editorial h2{font-size:29px}.details-contact{padding:43px 14px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-<header>
- <div class="nav">
-  <a class="logo" href="index.html">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a>
-  <div class="nav-right">
-   <nav>
-    <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
-    <a href="#collections" data-en="Collections" data-ar="المجموعات">Collections</a>
-    <a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-   </nav>
-   <button class="lang" type="button" onclick="toggleLanguage()">العربية</button>
+<header><div class="nav"><a class="logo" href="index.html">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a><button class="lang" type="button" onclick="toggleLanguage()">العربية</button></div></header>
+<main>
+ <a class="back" id="backLink" href="index.html#collections" data-en="← Return to collections" data-ar="→ العودة إلى المجموعات">← Return to collections</a>
+ <div class="product">
+  <div class="photo"><img id="productImage" src="" alt="Natural gemstone product"></div>
+  <div class="details">
+   <div class="eyebrow" data-en="BLUE WHALE GEMS · SELECTED PIECE" data-ar="بلو ويل جيمز · قطعة مختارة">BLUE WHALE GEMS · SELECTED PIECE</div>
+   <h1 class="product-name" id="productName">Product</h1>
+   <div class="price" id="productPrice"></div>
+   <p class="description" data-en="A natural gemstone piece selected for its colours, textures and individual details. Every stone has its own character, giving each piece a presence of its own." data-ar="قطعة من الأحجار الطبيعية اختيرت لألوانها وتكويناتها وتفاصيلها الخاصة. لكل حجر طابعه المختلف، ولكل قطعة حضورها الذي يميزها.">A natural gemstone piece selected for its colours, textures and individual details. Every stone has its own character, giving each piece a presence of its own.</p>
+   <div class="stock"><span class="stock-dot"></span><span id="stockText">ONE PIECE AVAILABLE</span></div>
+   <div class="info">
+    <div class="info-row"><span data-en="Product price" data-ar="سعر المنتج">Product price</span><strong id="infoPrice"></strong></div>
+    <div class="info-row"><span data-en="Delivery" data-ar="التوصيل">Delivery</span><strong id="deliveryPrice"></strong></div>
+    <div class="info-row"><span data-en="Available quantity" data-ar="الكمية المتوفرة">Available quantity</span><strong id="quantityText">1 piece</strong></div>
+    <div class="info-row total"><span data-en="Total" data-ar="المجموع">Total</span><strong id="totalPrice"></strong></div>
+   </div>
+   <a class="order" id="orderButton" href="#" target="_blank" rel="noopener" data-en="ORDER VIA WHATSAPP" data-ar="اطلب عبر واتساب">ORDER VIA WHATSAPP</a>
+   <p class="note" data-en="WhatsApp will open with your product and order details ready." data-ar="ستُفتح محادثة واتساب وبها تفاصيل المنتج والطلب جاهزة.">WhatsApp will open with your product and order details ready.</p>
   </div>
  </div>
-</header>
-<main>
-<section class="hero" id="home">
- <div class="eyebrow" data-en="A STUDY IN NATURAL BEAUTY" data-ar="تأمل في جمال الطبيعة">A STUDY IN NATURAL BEAUTY</div>
- <h1 data-en="Nature, in its own form." data-ar="للطبيعة جمالها كما خُلقت.">Nature, in its own form.</h1>
- <p data-en="A considered collection of natural gemstones and distinctive pieces. Each one carries its own colour, character and quiet beauty." data-ar="مجموعة مختارة من الأحجار الطبيعية والقطع المميزة. لكل حجر لونه وشخصيته وجماله الهادئ الذي لا يشبه غيره.">A considered collection of natural gemstones and distinctive pieces. Each one carries its own colour, character and quiet beauty.</p>
- <a class="btn" href="#collections" data-en="Discover the collections" data-ar="اكتشف المجموعات">Discover the collections</a>
-</section>
-<section class="collections" id="collections">
- <div class="collections-heading">
-  <div class="eyebrow" data-en="THE COLLECTIONS" data-ar="مجموعاتنا">THE COLLECTIONS</div>
-  <h2 data-en="Explore by collection" data-ar="اختر مجموعتك">Explore by collection</h2>
- </div>
- <div class="category-grid">
-  <a class="category-card" href="collection.html?category=bracelets"><span class="category-number">I</span><h3>Bracelets</h3><p data-en="Natural forms, worn close" data-ar="أحجار طبيعية ترافقك">Natural forms, worn close</p><span class="explore" data-en="Explore collection ↗" data-ar="اكتشف المجموعة ↗">Explore collection ↗</span></a>
-  <a class="category-card" href="collection.html?category=necklaces"><span class="category-number">II</span><h3>Necklaces</h3><p data-en="Details with distinction" data-ar="تفاصيل لها حضورها">Details with distinction</p><span class="explore" data-en="Explore collection ↗" data-ar="اكتشف المجموعة ↗">Explore collection ↗</span></a>
-  <a class="category-card" href="collection.html?category=rings"><span class="category-number">III</span><h3>Rings</h3><p data-en="Small works of nature" data-ar="لمسات من جمال الطبيعة">Small works of nature</p><span class="explore" data-en="Explore collection ↗" data-ar="اكتشف المجموعة ↗">Explore collection ↗</span></a>
-  <a class="category-card" href="collection.html?category=raw-gems"><span class="category-number">IV</span><h3>Raw Gems</h3><p data-en="Nature, unaltered" data-ar="الأحجار في شكلها الطبيعي">Nature, unaltered</p><span class="explore" data-en="Explore collection ↗" data-ar="اكتشف المجموعة ↗">Explore collection ↗</span></a>
- </div>
-</section>
-<section class="about">
- <div class="eyebrow" data-en="ABOUT THE HOUSE" data-ar="عن العلامة">ABOUT THE HOUSE</div>
- <h2 data-en="Beauty in its natural state." data-ar="جمال الطبيعة كما هو.">Beauty in its natural state.</h2>
- <p data-en="We are drawn to the individuality of natural gemstones: their colours, textures and subtle differences. Discover a piece that feels distinctly yours." data-ar="ما يجذبنا في الأحجار الطبيعية هو اختلافها؛ ألوانها وتكويناتها وتفاصيلها الصغيرة. اختر قطعة تشبه ذوقك وتعبّر عن حضورك.">We are drawn to the individuality of natural gemstones: their colours, textures and subtle differences. Discover a piece that feels distinctly yours.</p>
-</section>
-<section class="contact" id="contact">
- <div class="eyebrow" data-en="CORRESPONDENCE" data-ar="تواصل معنا">CORRESPONDENCE</div>
- <h2 data-en="We would be pleased to hear from you." data-ar="يسعدنا أن نسمع منك.">We would be pleased to hear from you.</h2>
- <p data-en="For orders and enquiries, contact us directly on WhatsApp." data-ar="للطلب أو الاستفسار، يسعدنا التواصل معك عبر واتساب.">For orders and enquiries, contact us directly on WhatsApp.</p>
- <a class="whatsapp-btn" href="https://wa.me/21655733020" target="_blank" rel="noopener" data-en="CONTACT VIA WHATSAPP" data-ar="تواصل عبر واتساب">CONTACT VIA WHATSAPP</a>
-</section>
 </main>
-<footer><strong>BLUE WHALE GEMS</strong><span data-en="NATURAL GEMSTONES · TUNISIA" data-ar="أحجار طبيعية · تونس">NATURAL GEMSTONES · TUNISIA</span><p>© 2026 BLUE WHALE GEMS</p></footer>
+<section class="editorial"><div class="eyebrow" data-en="THE NATURAL COLLECTION" data-ar="من مجموعة الأحجار الطبيعية">THE NATURAL COLLECTION</div><h2 data-en="Beauty has its own character." data-ar="لكل حجر شخصيته الخاصة.">Beauty has its own character.</h2><p data-en="Natural gemstones differ in colour, formation and texture. We let their details speak for themselves, without exaggeration." data-ar="تختلف الأحجار الطبيعية في ألوانها وتكويناتها وملمسها. نترك تفاصيلها وجمالها يتحدثان عن نفسيهما دون مبالغة.">Natural gemstones differ in colour, formation and texture. We let their details speak for themselves, without exaggeration.</p></section>
+<section class="details-contact"><h2 data-en="A question about this piece?" data-ar="لديك سؤال عن هذه القطعة؟">A question about this piece?</h2><p data-en="We would be pleased to answer your questions and help with your order." data-ar="يسعدنا الإجابة عن استفساراتك ومساعدتك في طلبك.">We would be pleased to answer your questions and help with your order.</p><a href="https://wa.me/21655733020" target="_blank" rel="noopener" data-en="CONTACT BLUE WHALE GEMS" data-ar="تواصل مع BLUE WHALE GEMS">CONTACT BLUE WHALE GEMS</a></section>
+<footer><strong>BLUE WHALE GEMS</strong><span data-en="NATURAL GEMSTONES · TUNISIA" data-ar="أحجار طبيعية · تونس">NATURAL GEMSTONES · TUNISIA</span></footer>
 <script>
-function applyLanguage(lang){
- localStorage.setItem("bwg-language",lang);
- document.documentElement.lang=lang;
- document.documentElement.dir=lang==="ar"?"rtl":"ltr";
- document.body.dir=lang==="ar"?"rtl":"ltr";
- document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=el.dataset[lang]);
- document.querySelector(".lang").textContent=lang==="ar"?"English":"العربية";
+const params=new URLSearchParams(window.location.search);
+const name=params.get("name");
+const price=params.get("price");
+const image=params.get("image");
+const delivery=params.get("delivery")||"8";
+const stock=params.get("stock")||"1";
+const category=params.get("category");
+const validImage=Boolean(image&&image.startsWith("images/")&&!image.includes(".."));
+const validPrice=price!==null&&Number.isFinite(Number(price))&&Number(price)>=0;
+const validDelivery=Number.isFinite(Number(delivery))&&Number(delivery)>=0;
+const validStock=Number.isFinite(Number(stock))&&Number(stock)>=0;
+const imageElement=document.getElementById("productImage");
+function showInvalidProduct(){
+ document.getElementById("productName").textContent="Product not found";
+ document.getElementById("productPrice").textContent="";
+ document.querySelector(".description").textContent="We could not find this product. Please return to the collection and select it again.";
+ document.querySelector(".stock").style.display="none";
+ document.querySelector(".info").style.display="none";
+ document.getElementById("orderButton").style.display="none";
+ imageElement.style.display="none";
 }
-function toggleLanguage(){applyLanguage((localStorage.getItem("bwg-language")||"en")==="en"?"ar":"en")}
-applyLanguage(localStorage.getItem("bwg-language")||"en");
+if(!name||!validPrice||!validImage||!validDelivery||!validStock){
+ showInvalidProduct();
+}else{
+ const productAmount=Number(price),deliveryAmount=Number(delivery),availableStock=Math.floor(Number(stock)),total=productAmount+deliveryAmount;
+ document.title=name+" | BLUE WHALE GEMS";
+ document.getElementById("productName").textContent=name;
+ document.getElementById("productPrice").textContent=productAmount+" TND";
+ document.getElementById("infoPrice").textContent=productAmount+" TND";
+ document.getElementById("deliveryPrice").textContent=deliveryAmount+" TND";
+ document.getElementById("totalPrice").textContent=total+" TND";
+ document.getElementById("quantityText").textContent=availableStock+" "+(availableStock===1?"piece":"pieces");
+ imageElement.src=image;imageElement.alt=name;
+ imageElement.onerror=()=>{imageElement.style.display="none";document.querySelector(".photo").style.display="none"};
+ const lang=(()=>{try{return localStorage.getItem("bwg-language")||"en"}catch(e){return "en"}})();
+ document.getElementById("stockText").textContent=availableStock>0?(lang==="ar"?"متوفر · "+availableStock+" قطعة":"ONLY "+availableStock+" PIECE"+(availableStock>1?"S":"")+" AVAILABLE"):(lang==="ar"?"غير متوفر حالياً":"CURRENTLY UNAVAILABLE");
+ if(availableStock<1)document.getElementById("orderButton").style.display="none";
+ const message="Hello BLUE WHALE GEMS,\n\nI would like to order:\nProduct: "+name+"\nPrice: "+productAmount+" TND\nDelivery: "+deliveryAmount+" TND\nQuantity: 1\nTotal: "+total+" TND";
+ document.getElementById("orderButton").href="https://wa.me/21655733020?text="+encodeURIComponent(message);
+ if(category&&["bracelets","necklaces","rings","raw-gems"].includes(category))document.getElementById("backLink").href="collection.html?category="+encodeURIComponent(category);
+}
+function applyLanguage(lang){
+ const safeLang=lang==="ar"?"ar":"en";
+ try{localStorage.setItem("bwg-language",safeLang)}catch(e){}
+ document.documentElement.lang=safeLang;document.documentElement.dir=safeLang==="ar"?"rtl":"ltr";document.body.dir=safeLang==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-en][data-ar]").forEach(el=>{el.textContent=el.dataset[safeLang]});
+ document.querySelector(".lang").textContent=safeLang==="ar"?"English":"العربية";
+ if(name&&validPrice&&validImage&&validDelivery&&validStock){
+  const quantity=Math.floor(Number(stock));
+  document.getElementById("stockText").textContent=quantity>0?(safeLang==="ar"?"متوفر · "+quantity+" قطعة":"ONLY "+quantity+" PIECE"+(quantity>1?"S":"")+" AVAILABLE"):(safeLang==="ar"?"غير متوفر حالياً":"CURRENTLY UNAVAILABLE");
+  document.getElementById("quantityText").textContent=quantity+" "+(safeLang==="ar"?(quantity===1?"قطعة":"قطع"):(quantity===1?"piece":"pieces"));
+ }
+}
+function toggleLanguage(){let current="en";try{current=localStorage.getItem("bwg-language")||"en"}catch(e){}applyLanguage(current==="en"?"ar":"en")}
+let savedLanguage="en";try{savedLanguage=localStorage.getItem("bwg-language")||"en"}catch(e){}applyLanguage(savedLanguage);
 </script>
 </body>
 </html>
