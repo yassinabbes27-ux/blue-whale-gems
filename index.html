@@ -281,6 +281,85 @@ body[dir="rtl"] .hero h1,body[dir="rtl"] h2,
 body[dir="rtl"] h3,body[dir="rtl"] .product-name{font-family:"Cairo",sans-serif}
 body[dir="rtl"] .kicker,body[dir="rtl"] .nav,
 body[dir="rtl"] .btn,body[dir="rtl"] .text-link{letter-spacing:0}
+
+/* BLUE WHALE GEMS — quiet animated whale scene */
+.whale-scene{
+position:relative;isolation:isolate;overflow:hidden;
+min-height:360px;display:grid;place-items:center;
+background:linear-gradient(180deg,#fbfdfe 0%,#eff8fa 48%,#dceff3 100%);
+}
+.whale-scene:before{
+content:"";position:absolute;inset:12% 9%;border:1px solid rgba(255,255,255,.9);
+border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.5),rgba(220,241,246,.2));
+box-shadow:0 20px 50px rgba(47,105,121,.08),inset 0 1px 0 rgba(255,255,255,.9);
+z-index:-1
+}
+.whale-scene-inner{position:relative;width:min(760px,88vw);height:320px;display:grid;place-items:center}
+.whale-scene-caption{
+position:absolute;top:30px;left:0;right:0;text-align:center;
+font-family:var(--serif);font-size:clamp(22px,3vw,30px);font-weight:400;
+letter-spacing:.5px;color:#557783
+}
+.whale-scene-caption small{
+display:block;margin-top:7px;font-family:var(--sans);font-size:8px;
+letter-spacing:3px;color:#91aeb7
+}
+.whale-art{
+position:absolute;width:min(470px,72vw);height:auto;left:50%;top:49%;
+transform:translate(-50%,-50%);overflow:visible;
+filter:drop-shadow(0 18px 18px rgba(53,111,128,.16));
+animation:whaleLeap 9.5s ease-in-out infinite
+}
+.whale-water{
+position:absolute;left:0;right:0;bottom:25px;height:76px;overflow:hidden;
+border-top:1px solid rgba(255,255,255,.95);
+background:linear-gradient(180deg,rgba(190,225,234,.42),rgba(211,239,244,.08));
+}
+.whale-water:before,.whale-water:after{
+content:"";position:absolute;left:-10%;width:120%;height:55px;top:-31px;
+border-radius:50%;border-top:2px solid rgba(255,255,255,.92);
+}
+.whale-water:after{top:-22px;left:-4%;border-top-color:rgba(119,178,193,.24);transform:scaleX(.82)}
+.whale-ripple{
+position:absolute;bottom:63px;left:50%;width:210px;height:24px;
+border:1px solid rgba(255,255,255,.95);border-radius:50%;
+transform:translateX(-50%);animation:whaleRipple 9.5s ease-out infinite;
+}
+.whale-spray{position:absolute;left:50%;top:48%;width:5px;height:5px;border-radius:50%;
+background:rgba(255,255,255,.95);box-shadow: -88px 24px 0 1px rgba(255,255,255,.8),-65px -6px 0 0 rgba(255,255,255,.9),72px 13px 0 1px rgba(255,255,255,.8),95px -10px 0 0 rgba(255,255,255,.9);
+opacity:0;animation:whaleSpray 9.5s ease-out infinite}
+@keyframes whaleLeap{
+0%,9%{opacity:0;transform:translate(-50%,35%) rotate(9deg) scale(.78)}
+18%{opacity:1;transform:translate(-50%,-15%) rotate(-7deg) scale(1)}
+38%{opacity:1;transform:translate(-50%,-27%) rotate(-3deg) scale(1.02)}
+55%{opacity:1;transform:translate(-50%,-5%) rotate(5deg) scale(.99)}
+68%,100%{opacity:0;transform:translate(-50%,38%) rotate(10deg) scale(.82)}
+}
+@keyframes whaleRipple{
+0%,16%,100%{opacity:0;transform:translateX(-50%) scale(.55)}
+34%{opacity:.8;transform:translateX(-50%) scale(1)}
+64%{opacity:.18;transform:translateX(-50%) scale(1.45)}
+}
+@keyframes whaleSpray{
+0%,17%,100%{opacity:0;transform:translate(-50%,25px) scale(.4)}
+29%{opacity:.9;transform:translate(-50%,-16px) scale(1)}
+48%{opacity:.2;transform:translate(-50%,22px) scale(.7)}
+}
+@media(max-width:640px){
+.whale-scene{min-height:300px}
+.whale-scene-inner{height:275px}
+.whale-scene-caption{top:22px}
+.whale-water{bottom:17px;height:62px}
+.whale-ripple{bottom:51px;width:155px}
+.whale-spray{top:50%}
+}
+@media(prefers-reduced-motion:reduce){
+.whale-art,.whale-ripple,.whale-spray{animation:none}
+.whale-art{opacity:1;transform:translate(-50%,-50%)}
+.whale-ripple{opacity:.45;transform:translateX(-50%)}
+.whale-spray{opacity:.35}
+}
+
 @media(max-width:900px){
 .categories{grid-template-columns:repeat(2,minmax(0,1fr))}
 .products{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:25px}
@@ -404,6 +483,34 @@ body[dir="rtl"] .btn,body[dir="rtl"] .text-link{letter-spacing:0}
    <img decoding="async" src="images/1000082268.jpg" alt="Raw natural gemstones" loading="lazy">
    <div class="category-content"><small>04 / COLLECTION</small><h3>Raw Gems</h3><span data-en="DISCOVER RAW GEMS ↗" data-ar="اكتشف الأحجار الخام ↗">DISCOVER RAW GEMS ↗</span></div>
   </a>
+ </div>
+</section>
+
+
+<section class="whale-scene" aria-label="A gentle animated whale rising from the sea">
+ <div class="whale-scene-inner">
+  <div class="whale-scene-caption">A quiet moment from the sea<small>BLUE WHALE GEMS · NATURAL BEAUTY</small></div>
+  <svg class="whale-art" viewBox="0 0 600 300" role="img" aria-label="Elegant blue whale leaping above the water">
+   <defs>
+    <linearGradient id="bwgWhaleBody" x1="0" y1="0" x2="1" y2="1">
+     <stop offset="0" stop-color="#9fcbd6"/><stop offset=".48" stop-color="#5f9eaf"/><stop offset="1" stop-color="#356f83"/>
+    </linearGradient>
+    <linearGradient id="bwgWhaleLight" x1="0" y1="0" x2="0" y2="1">
+     <stop offset="0" stop-color="#f9ffff"/><stop offset="1" stop-color="#cce8ed"/>
+    </linearGradient>
+   </defs>
+   <path d="M94 158 C124 98 218 69 334 91 C393 102 437 127 467 151 C495 140 517 115 546 111 C535 143 515 164 489 176 C516 185 536 205 549 230 C512 219 484 202 461 184 C411 222 340 240 257 229 C177 218 122 195 94 158Z" fill="url(#bwgWhaleBody)" stroke="#4f8798" stroke-width="2"/>
+   <path d="M112 163 C174 194 247 207 324 199 C385 193 428 174 461 157 C431 207 368 232 287 232 C205 232 145 206 112 163Z" fill="url(#bwgWhaleLight)" opacity=".9"/>
+   <path d="M272 96 C293 78 318 67 344 68 C332 85 319 100 302 111Z" fill="#4b8799" opacity=".9"/>
+   <path d="M209 204 C226 222 247 241 267 252 C250 254 226 247 210 234 C197 225 192 214 191 205Z" fill="#4d8799"/>
+   <path d="M450 157 Q470 147 488 132" fill="none" stroke="#d9f0f3" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+   <circle cx="155" cy="151" r="4" fill="#244f60"/>
+   <path d="M126 174 Q147 184 166 181" fill="none" stroke="#d8f0f3" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+   <path d="M177 116 Q250 81 337 105" fill="none" stroke="#e8f8fa" stroke-width="5" stroke-linecap="round" opacity=".45"/>
+  </svg>
+  <div class="whale-spray" aria-hidden="true"></div>
+  <div class="whale-ripple" aria-hidden="true"></div>
+  <div class="whale-water" aria-hidden="true"></div>
  </div>
 </section>
 
