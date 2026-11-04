@@ -173,6 +173,17 @@ font-size:25px;font-weight:400
 font-size:9px;letter-spacing:1px;
 border-bottom:1px solid rgba(255,255,255,.8);padding-bottom:4px
 }
+.gem-care{padding:30px 20px 34px;background:#fff}
+.gem-care-card{position:relative;max-width:920px;margin:0 auto;padding:24px 30px 22px;text-align:center;overflow:hidden;border:1px solid #e5eef0;border-radius:15px;background:linear-gradient(115deg,#fbfdfe,#f2f8fa);box-shadow:0 8px 24px rgba(45,82,92,.045);animation:gemCareFloat 6s ease-in-out infinite}
+.gem-care-card:before{content:"";position:absolute;top:-55px;right:-35px;width:150px;height:150px;border:1px solid rgba(127,177,190,.16);border-radius:50%;pointer-events:none}
+.gem-care-kicker{display:block;margin-bottom:7px;color:#78939b;font-size:8px;letter-spacing:2px}
+.gem-care-card h2{margin:0 0 10px;color:#294b55;font-family:var(--serif);font-size:clamp(23px,3vw,30px);font-weight:400}
+.gem-care-card p{position:relative;max-width:760px;margin:7px auto;color:#65777c;font-size:11px;line-height:1.85}
+.gem-care-card .gem-care-intro{color:#405d65}
+.gem-care-card .gem-care-note{margin-top:10px;color:#315d60;font-weight:600}
+@keyframes gemCareFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media(max-width:600px){.gem-care{padding:22px 15px 26px}.gem-care-card{padding:21px 18px 19px;border-radius:12px}.gem-care-card p{font-size:10px;line-height:1.8}}
+@media(prefers-reduced-motion:reduce){.gem-care-card{animation:none}}
 .featured{background:#f8fbfc}
 .featured-inner{max-width:1240px;margin:auto;padding:75px 25px}
 .featured-top{
@@ -617,13 +628,13 @@ body[dir="rtl"] .gem-story-copy{text-align:right}
 </section>
 
 
-<section class="featured">
- <div class="featured-inner">
-  <div class="featured-top">
-   <div><span class="kicker" data-en="A FEW SELECTED PIECES" data-ar="قطع مختارة">A FEW SELECTED PIECES</span><h2 data-en="Featured selection" data-ar="اختيارات مميزة">Featured selection</h2></div>
-   <a class="text-link" href="collection.html?category=bracelets" data-en="VIEW ALL BRACELETS ↗" data-ar="عرض كل الأساور ↗">VIEW ALL BRACELETS ↗</a>
-  </div>
-  <div class="products" id="featuredProducts"></div>
+<section class="gem-care" id="gem-care" aria-label="Gem Care">
+ <div class="gem-care-card">
+  <span class="gem-care-kicker" data-en="A LITTLE CARE FOR YOUR GEMS" data-ar="عناية صغيرة لأحجارك">A LITTLE CARE FOR YOUR GEMS</span>
+  <h2 data-en="Gem Care" data-ar="العناية بالأحجار">Gem Care</h2>
+  <p class="gem-care-intro" data-en="Keep your gemstones away from water and direct sunlight for extended periods." data-ar="للاعتناء بالأحجار، يمكنك الاحتفاظ بها بعيداً عن الماء وأشعة الشمس لفترة مطوّلة.">للاعتناء بالأحجار، يمكنك الاحتفاظ بها بعيداً عن الماء وأشعة الشمس لفترة مطوّلة.</p>
+  <p data-en="For energetic cleansing, you may gently pass them through natural incense smoke, place them under the light of a full moon, or wipe them with a cloth slightly dampened with rose water." data-ar="وبالنسبة لتنظيفها الطاقي، يمكنك تبخيرها ببخور طبيعي، أو وضعها تحت ضوء القمر المكتمل، أو مسحها بقطعة قماش مبللة قليلاً بماء الورد.">وبالنسبة لتنظيفها الطاقي، يمكنك تبخيرها ببخور طبيعي، أو وضعها تحت ضوء القمر المكتمل، أو مسحها بقطعة قماش مبللة قليلاً بماء الورد.</p>
+  <p class="gem-care-note" data-en="Every gemstone has its own needs. Please consult us before choosing a care method." data-ar="المهم ألا تنسى استشارتنا في الطريقة، لأن لكل حجر طريقته الخاصة.">المهم ألا تنسى استشارتنا في الطريقة، لأن لكل حجر طريقته الخاصة.</p>
  </div>
 </section>
 
