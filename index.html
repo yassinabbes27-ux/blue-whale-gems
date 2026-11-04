@@ -488,7 +488,7 @@ async function loadFeaturedProducts(){
   if(!response.ok)throw new Error("Catalogue unavailable");
   const products=await response.json();
   products.filter(p=>p.category==="bracelets").slice(0,4).forEach(p=>{
-   const imagePath=String(p.image||"").replace(/^\\/+/, "");
+   const imagePath=String(p.image||"").replace(/^\/+/, "");
    const params=new URLSearchParams({name:p.name,price:String(p.price),image:imagePath,delivery:String(p.delivery??8),stock:String(p.stock??1),category:p.category});
    const card=document.createElement("article");
    card.className="product";
