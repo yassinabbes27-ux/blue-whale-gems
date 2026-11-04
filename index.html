@@ -405,36 +405,7 @@ body[dir="rtl"] .btn,body[dir="rtl"] .text-link{letter-spacing:0}
    <div><span class="kicker" data-en="A FEW SELECTED PIECES" data-ar="قطع مختارة">A FEW SELECTED PIECES</span><h2 data-en="Featured selection" data-ar="اختيارات مميزة">Featured selection</h2></div>
    <a class="text-link" href="collection.html?category=bracelets" data-en="VIEW ALL BRACELETS ↗" data-ar="عرض كل الأساور ↗">VIEW ALL BRACELETS ↗</a>
   </div>
-  <div class="products">
-   <article class="product">
-    <a class="product-image" href="product.html?name=Aquamarine%20%2B%20Amethyst%20%2B%20Labradorite%20Bracelet&price=70&image=images%2F20261018_184933.jpg&delivery=8&stock=1&category=bracelets">
-     <img decoding="async" src="images/20261018_184933.jpg" alt="Aquamarine + Amethyst + Labradorite Bracelet" loading="lazy">
-    </a>
-    <a class="product-name" href="product.html?name=Aquamarine%20%2B%20Amethyst%20%2B%20Labradorite%20Bracelet&price=70&image=images%2F20261018_184933.jpg&delivery=8&stock=1&category=bracelets">Aquamarine + Amethyst + Labradorite Bracelet</a>
-    <div class="product-meta"><span class="price">70 TND</span><span class="delivery" data-en="Delivery 8 TND" data-ar="التوصيل 8 د.ت">Delivery 8 TND</span></div>
-   </article>
-   <article class="product">
-    <a class="product-image" href="product.html?name=Labradorite%2C%20Amethyst%2C%20Rose%20Quartz%20%26%20Chips%20Bracelet&price=68&image=images%2F1000088300.jpg&delivery=8&stock=1&category=bracelets">
-     <img decoding="async" src="images/1000088300.jpg" alt="Labradorite, Amethyst, Rose Quartz and Chips Bracelet" loading="lazy">
-    </a>
-    <a class="product-name" href="product.html?name=Labradorite%2C%20Amethyst%2C%20Rose%20Quartz%20%26%20Chips%20Bracelet&price=68&image=images%2F1000088300.jpg&delivery=8&stock=1&category=bracelets">Labradorite, Amethyst, Rose Quartz &amp; Chips Bracelet</a>
-    <div class="product-meta"><span class="price">68 TND</span><span class="delivery" data-en="Delivery 8 TND" data-ar="التوصيل 8 د.ت">Delivery 8 TND</span></div>
-   </article>
-   <article class="product">
-    <a class="product-image" href="product.html?name=Coral%20%26%20Agate%20Bracelet&price=45&image=images%2F1000088312.jpg&delivery=8&stock=1&category=bracelets">
-     <img decoding="async" src="images/1000088312.jpg" alt="Coral and Agate Bracelet" loading="lazy">
-    </a>
-    <a class="product-name" href="product.html?name=Coral%20%26%20Agate%20Bracelet&price=45&image=images%2F1000088312.jpg&delivery=8&stock=1&category=bracelets">Coral &amp; Agate Bracelet</a>
-    <div class="product-meta"><span class="price">45 TND</span><span class="delivery" data-en="Delivery 8 TND" data-ar="التوصيل 8 د.ت">Delivery 8 TND</span></div>
-   </article>
-   <article class="product">
-    <a class="product-image" href="product.html?name=Obsidian%20%2B%20Clear%20Quartz%20Bracelet&price=70&image=images%2F1000088313.jpg&delivery=8&stock=1&category=bracelets">
-     <img decoding="async" src="images/1000088313.jpg" alt="Obsidian and Clear Quartz Bracelet" loading="lazy">
-    </a>
-    <a class="product-name" href="product.html?name=Obsidian%20%2B%20Clear%20Quartz%20Bracelet&price=70&image=images%2F1000088313.jpg&delivery=8&stock=1&category=bracelets">Obsidian + Clear Quartz Bracelet</a>
-    <div class="product-meta"><span class="price">70 TND</span><span class="delivery" data-en="Delivery 8 TND" data-ar="التوصيل 8 د.ت">Delivery 8 TND</span></div>
-   </article>
-  </div>
+  <div class="products" id="featuredProducts"></div>
  </div>
 </section>
 
@@ -510,22 +481,51 @@ function toggleDrawer(){
 }
 applyLanguage(localStorage.getItem("bwg-language")||"en");
 
-// Reveal collection and editorial images as the visitor approaches them.
-// Images remain independently loadable; only the gentle entrance is staggered.
-const revealItems=document.querySelectorAll(".category,.product,.story-image");
-if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
- document.body.classList.add("cinema-ready");
- const revealObserver=new IntersectionObserver((entries,observer)=>{
-  entries.forEach(entry=>{
-   if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target);}
+async function loadFeaturedProducts(){
+ const grid=document.getElementById("featuredProducts");
+ try{
+  const response=await fetch("data/products.json",{cache:"no-store"});
+  if(!response.ok)throw new Error("Catalogue unavailable");
+  const products=await response.json();
+  products.filter(p=>p.category==="bracelets").slice(0,4).forEach(p=>{
+   const imagePath=String(p.image||"").replace(/^\\/+/, "");
+   const params=new URLSearchParams({name:p.name,price:String(p.price),image:imagePath,delivery:String(p.delivery??8),stock:String(p.stock??1),category:p.category});
+   const card=document.createElement("article");
+   card.className="product";
+   const imageLink=document.createElement("a");
+   imageLink.className="product-image";
+   imageLink.href="product.html?"+params.toString();
+   const img=document.createElement("img");
+   img.src=imagePath;img.alt=p.name;img.loading="lazy";img.decoding="async";
+   imageLink.appendChild(img);
+   const name=document.createElement("a");
+   name.className="product-name";name.href=imageLink.href;name.textContent=p.name;
+   const meta=document.createElement("div");meta.className="product-meta";
+   const price=document.createElement("span");price.className="price";price.textContent=p.price+" TND";
+   const delivery=document.createElement("span");delivery.className="delivery";
+   delivery.dataset.en="Delivery "+p.delivery+" TND";delivery.dataset.ar="التوصيل "+p.delivery+" د.ت";
+   delivery.textContent=delivery.dataset.en;
+   meta.append(price,delivery);card.append(imageLink,name,meta);grid.appendChild(card);
   });
- },{rootMargin:"0px 0px 260px 0px",threshold:0.04});
- revealItems.forEach((item,index)=>{
-  item.classList.add("cinema-reveal");
-  item.style.setProperty("--reveal-order",index%4);
-  revealObserver.observe(item);
- });
+ }catch(error){grid.textContent="";}
 }
+function setupReveal(){
+ const revealItems=document.querySelectorAll(".category,.product,.story-image");
+ if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  document.body.classList.add("cinema-ready");
+  const revealObserver=new IntersectionObserver((entries,observer)=>{
+   entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target);}
+   });
+  },{rootMargin:"0px 0px 260px 0px",threshold:0.04});
+  revealItems.forEach((item,index)=>{
+   item.classList.add("cinema-reveal");
+   item.style.setProperty("--reveal-order",index%4);
+   revealObserver.observe(item);
+  });
+ }
+}
+loadFeaturedProducts().then(()=>setupReveal());
 </script>
 </body>
 </html>
