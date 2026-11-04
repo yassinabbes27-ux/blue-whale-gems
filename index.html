@@ -405,7 +405,7 @@ animation:chakraProgress 35s linear infinite
 
 
 
-/* Gem Stories — refined editorial gallery; scoped exclusively to this section */
+/* Gem Stories — full-image editorial stories with Arabic copy overlaid on each photograph */
 .gem-stories{
  padding:clamp(58px,7vw,92px) 0;
  background:linear-gradient(180deg,#f7fafb 0%,#fff 100%);
@@ -424,43 +424,47 @@ animation:chakraProgress 35s linear infinite
  align-items:stretch;overflow:visible;padding:4px 2px 18px;
 }
 .gem-story-card{
- min-width:0;display:flex;flex-direction:column;overflow:hidden;
- border:1px solid #e8eff1;border-radius:18px;background:#fff;
- box-shadow:0 12px 34px rgba(46,83,94,.075);
+ position:relative;isolation:isolate;min-width:0;min-height:680px;
+ display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
+ border:1px solid #e1eaed;border-radius:18px;background:#dce9ed;
+ box-shadow:0 12px 34px rgba(46,83,94,.09);
  transition:transform .35s ease,box-shadow .35s ease;
 }
-.gem-story-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(46,83,94,.12)}
+.gem-story-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(46,83,94,.15)}
 .gem-story-media{
- height:clamp(210px,22vw,290px);padding:15px;
- display:flex;align-items:center;justify-content:center;
- background:radial-gradient(ellipse at 50% 45%,#fff 0%,#f3f8fa 68%,#eaf3f6 100%);
- border-bottom:1px solid #edf2f3;
+ position:absolute;z-index:-2;inset:0;height:100%;padding:0;
+ display:block;background:#dce9ed;border:0;
 }
 .gem-story-card img{
- display:block;width:100%;height:100%;object-fit:contain;
- border-radius:10px;transition:transform .7s cubic-bezier(.2,.7,.2,1)
+ display:block;width:100%;height:100%;object-fit:cover;object-position:center 42%;
+ border-radius:0;transition:transform .8s cubic-bezier(.2,.7,.2,1)
 }
-.gem-story-card:hover img{transform:scale(1.025)}
+.gem-story-card:hover img{transform:scale(1.035)}
+.gem-story-card:after{
+ content:"";position:absolute;z-index:-1;inset:0;
+ background:linear-gradient(180deg,rgba(13,31,39,.03) 0%,rgba(13,31,39,.06) 24%,rgba(13,31,39,.48) 49%,rgba(10,27,34,.91) 100%);
+ pointer-events:none;
+}
 .gem-story-copy{
- position:relative;display:flex;flex:1;flex-direction:column;
- padding:25px 24px 29px;text-align:right;direction:rtl;
- background:linear-gradient(180deg,#fff 0%,#fbfdfe 100%);
+ position:relative;z-index:1;display:flex;flex:1;flex-direction:column;
+ justify-content:flex-end;padding:250px 23px 27px;text-align:right;direction:rtl;
+ background:transparent;color:#fff;
 }
 .gem-story-index{
  align-self:flex-start;direction:ltr;display:inline-block;
  font-family:var(--sans);font-size:9px;letter-spacing:1.8px;
- color:#7899a6;border-bottom:1px solid #dce9ed;
+ color:#e1f0f3;border-bottom:1px solid rgba(255,255,255,.5);
  padding-bottom:8px;margin-bottom:13px
 }
 .gem-story-copy h3{
  font-family:var(--serif);font-size:clamp(27px,2.5vw,34px);
- font-weight:500;line-height:1.1;margin:0 0 14px;color:#26383e;
- text-align:right;direction:ltr;
+ font-weight:500;line-height:1.1;margin:0 0 14px;color:#fff;
+ text-align:left;direction:ltr;
 }
 .gem-story-copy p{
  font-family:"Cairo",Arial,sans-serif;font-size:13px;
- line-height:2.05;margin:0;color:#586b72;
- overflow:visible;display:block;max-height:none;
+ line-height:1.95;margin:0;color:rgba(255,255,255,.96);
+ overflow:visible;display:block;max-height:none;text-shadow:0 1px 8px rgba(0,0,0,.16);
 }
 .gem-stories-navigation{
  display:none;align-items:center;justify-content:center;gap:10px;margin:10px auto 0;
@@ -483,27 +487,27 @@ body[dir="rtl"] .gem-story-copy{text-align:right}
  }
  .gem-stories-track::-webkit-scrollbar{display:none}
  .gem-story-card{
-  flex:0 0 100%;width:100%;scroll-snap-align:center;scroll-snap-stop:always;
-  border-radius:17px;
+  flex:0 0 100%;width:100%;min-height:760px;
+  scroll-snap-align:center;scroll-snap-stop:always;border-radius:17px;
  }
- .gem-story-media{height:clamp(210px,62vw,310px);padding:13px}
- .gem-story-copy{padding:23px 22px 27px}
+ .gem-story-media{height:100%;padding:0}
+ .gem-story-card img{object-position:center 38%}
+ .gem-story-copy{padding:270px 21px 26px}
  .gem-story-copy h3{font-size:32px}
- .gem-story-copy p{font-size:13px;line-height:2.05}
+ .gem-story-copy p{font-size:13px;line-height:1.95}
  .gem-stories-navigation{display:flex}
  .gem-stories-hint{margin-top:12px}
 }
 @media(max-width:380px){
  .gem-stories-inner{width:calc(100% - 24px)}
- .gem-story-copy{padding:20px 18px 24px}
- .gem-story-copy p{font-size:12px;line-height:2}
+ .gem-story-card{min-height:800px}
+ .gem-story-copy{padding:260px 18px 24px}
+ .gem-story-copy p{font-size:12px;line-height:1.9}
 }
 @media(prefers-reduced-motion:reduce){
  .gem-story-card,.gem-story-card img,.gem-stories-dot{transition:none}
  .gem-stories-track{scroll-behavior:auto}
-}
-
-</style>
+}</style>
 </head>
 <body>
 <div class="announcement" data-en="NATURAL GEMSTONES · DISTINCTIVE PIECES · TUNISIA" data-ar="أحجار طبيعية · قطع مميزة · تونس">NATURAL GEMSTONES · DISTINCTIVE PIECES · TUNISIA</div>
