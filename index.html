@@ -467,6 +467,73 @@ animation:chakraProgress 35s linear infinite
 @media(prefers-reduced-motion:reduce){
 *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
 }
+
+/* Gem Stories — open editorial gallery, scoped to this section only */
+.gem-stories{
+ overflow:hidden;padding:78px 0 86px;
+ background:radial-gradient(ellipse at 50% 10%,#fff 0%,#f3fafc 48%,#e5f2f6 100%);
+ border-top:1px solid #e5f0f3;border-bottom:1px solid #e5f0f3
+}
+.gem-stories-head{padding-bottom:30px}
+.gem-story-window{
+ width:100%;overflow-x:auto;overflow-y:hidden;direction:ltr;
+ scroll-snap-type:x mandatory;scroll-behavior:smooth;
+ scrollbar-width:thin;scrollbar-color:#b9d5df transparent;
+ -webkit-overflow-scrolling:touch;cursor:grab;touch-action:pan-x
+}
+.gem-story-window:active{cursor:grabbing}
+.gem-story-track{
+ display:flex;gap:0;width:max-content;padding:8px 5vw 28px;
+ animation:none!important;transform:none!important;will-change:auto
+}
+.gem-story-card{
+ width:min(900px,90vw);flex:0 0 min(900px,90vw);
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);
+ align-items:center;gap:clamp(20px,4vw,56px);
+ padding:24px clamp(12px,3vw,34px);
+ overflow:visible;border:0;border-radius:0;background:transparent;
+ box-shadow:none;scroll-snap-align:center
+}
+.gem-story-photo{
+ height:390px;min-width:0;position:relative;overflow:visible;
+ padding:8px;background:transparent;isolation:isolate
+}
+.gem-story-photo:after{display:none}
+.gem-story-photo:before{
+ content:"";position:absolute;inset:12% 8%;
+ background:radial-gradient(ellipse,rgba(255,255,255,.96),rgba(220,240,246,.3) 54%,transparent 75%);
+ filter:blur(15px);z-index:-1
+}
+.gem-story-photo img{
+ width:100%;height:100%;object-fit:contain;display:block;
+ mix-blend-mode:multiply;
+ filter:drop-shadow(0 20px 23px rgba(50,104,122,.18));
+ animation:storyGemFloat 8s ease-in-out infinite
+}
+.gem-story-copy{
+ padding:22px 8px 26px;text-align:left;min-height:0;
+ border:0;background:transparent;box-shadow:none
+}
+.gem-story-era{font-size:9px;letter-spacing:2.2px;color:#6598aa;margin-bottom:15px}
+.gem-story-copy h3{font-size:clamp(34px,4vw,48px);margin:0 0 18px;color:#29434d}
+.gem-story-copy p{font-size:clamp(17px,1.8vw,20px);line-height:1.9;color:#526a73}
+@media(max-width:640px){
+ .gem-stories{padding:58px 0 64px}
+ .gem-stories-head{padding:0 20px 20px}
+ .gem-story-track{padding:4px 5vw 22px}
+ .gem-story-card{
+  width:90vw;flex-basis:90vw;grid-template-columns:1fr;gap:8px;
+  padding:10px 4px 20px;scroll-snap-align:center
+ }
+ .gem-story-photo{height:260px;padding:4px}
+ .gem-story-copy{padding:8px 12px 14px}
+ .gem-story-copy h3{font-size:34px;margin-bottom:10px}
+ .gem-story-copy p{font-size:17px;line-height:1.8}
+}
+@media(prefers-reduced-motion:reduce){
+ .gem-story-window{scroll-behavior:auto}
+ .gem-story-photo img{animation:none}
+}
 </style>
 </head>
 <body>
@@ -593,16 +660,9 @@ animation:chakraProgress 35s linear infinite
   <p data-en="A glimpse into the lore, splendour and enduring fascination of three treasured gems." data-ar="لمحة في حكايات ثلاثة أحجار نفيسة وما أحاط بها من هيبة وجمال عبر العصور.">A glimpse into the lore, splendour and enduring fascination of three treasured gems.</p>
  </div>
  <div class="gem-story-window">
-  <div class="gem-story-track">
-   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/622ef21286f7d177bd9eb19073c39fa2.jpg" alt="Amethyst gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="THE STONE OF ROYAL WISDOM" data-ar="حجر الحكمة والوقار">THE STONE OF ROYAL WISDOM</span><h3>Amethyst</h3><p data-en="Kings chose the purest hues of amethyst to adorn their crowns and rings, believing its violet depths held a secret of wisdom and dignity. They saw in it an ornament worthy of the throne, a token of sound judgement and a composed mind — as though the splendour of sovereignty could be joined with the wisdom of kings." data-ar="كان الملوكُ ينتقون من حجر الأماتيست أصفى ألوانه، فيرصّعون به تيجانهم وخواتمهم، اعتقاداً منهم أنّ في بُنيانه البنفسجي سرّاً من أسرار الحكمة والوقار. وكانوا يرون فيه زينةً تليق بمن يجلس على العرش، ورمزاً لرجاحة العقل وصفاء الرأي؛ فكأنّما أرادوا أن يجمعوا في تيجانهم بين بهاء السلطان وحكمة الملوك.">Kings chose the purest hues of amethyst to adorn their crowns and rings, believing its violet depths held a secret of wisdom and dignity. They saw in it an ornament worthy of the throne, a token of sound judgement and a composed mind — as though the splendour of sovereignty could be joined with the wisdom of kings.</p></div></article>
-   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/b055a48c5d9fdad9d57a9eac7edd933f.jpg" alt="Lapis lazuli gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="THE BLUE OF THE PHARAOHS" data-ar="زرقة الفراعنة">THE BLUE OF THE PHARAOHS</span><h3>Lapis Lazuli</h3><p data-en="In the treasuries of ancient Egypt's kings, lapis lazuli held a place reserved for precious stones. Brought from distant mountains along the Nile's trade routes, it was shaped into royal jewels, necklaces and beads for crowns. So prized was it that it adorned the mask of Tutankhamun, its deep blue mingling with the gold of the pharaohs — a lasting witness to a civilisation that made beauty an inheritance." data-ar="في خزائن ملوك مصر القديمة، كان للازورد مقامٌ لا يُمنح إلا للأحجار النفيسة. استخرجوه من أعماق الجبال البعيدة، وجلبوه عبر القوافل إلى ضفاف النيل، ثم صاغت منه أيدي الصاغة حُليّ الملوك وقلائدهم وخرز التيجان. وقد بلغ من قيمة هذا الحجر أن زيّن قناع الملك توت عنخ آمون، فامتزجت زرقتُه بذهب الفراعنة، وبقي شاهداً على ذوق حضارةٍ جعلت من الجمال إرثاً لا يفنى.">In the treasuries of ancient Egypt's kings, lapis lazuli held a place reserved for precious stones. Brought from distant mountains along the Nile's trade routes, it was shaped into royal jewels, necklaces and beads for crowns. So prized was it that it adorned the mask of Tutankhamun, its deep blue mingling with the gold of the pharaohs — a lasting witness to a civilisation that made beauty an inheritance.</p></div></article>
-   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/ed56e0d192125c1146432f314be74b42.jpg" alt="Tiger's eye gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="THE WATCHFUL STONE" data-ar="حجر اليقظة والشجاعة">THE WATCHFUL STONE</span><h3>Tiger's Eye</h3><p data-en="Tiger's Eye was known for a lustre like the gaze of a beast in the forest's darkness. Golden and brown bands shifted across its surface as the stone turned, as though an eye within it never slept. Warriors and travellers of old carried it as a sign of courage, vigilance and protection. Its mystery lay not in colour alone, but in the strange glimmer that gave it an enduring air of majesty." data-ar="كان حجرُ عين النمر يُعرف ببريقه الذي يشبه نظرةَ الوحش في عتمة الغابة؛ تتعاقب على سطحه خيوطٌ من الذهب والبنيّ، كلما دار الحجر تبدّل ضوؤه كأنّ في داخله عيناً لا تنام. وقد حمله المحاربون والمسافرون في العصور القديمة، وجعلوه رمزاً للشجاعة واليقظة والحماية، لما يوحي به من قوّةٍ وثبات. ولم يكن سحره في لونه وحده، بل في ذلك الوميض الغامض الذي جعل اسمه باقياً بين الأحجار ذات الهيبة.">Tiger's Eye was known for a lustre like the gaze of a beast in the forest's darkness. Golden and brown bands shifted across its surface as the stone turned, as though an eye within it never slept. Warriors and travellers of old carried it as a sign of courage, vigilance and protection. Its mystery lay not in colour alone, but in the strange glimmer that gave it an enduring air of majesty.</p></div></article>
-   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/622ef21286f7d177bd9eb19073c39fa2.jpg" alt="Amethyst gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="THE STONE OF ROYAL WISDOM" data-ar="حجر الحكمة والوقار">THE STONE OF ROYAL WISDOM</span><h3>Amethyst</h3><p data-en="Kings chose the purest hues of amethyst to adorn their crowns and rings, believing its violet depths held a secret of wisdom and dignity. They saw in it an ornament worthy of the throne, a token of sound judgement and a composed mind — as though the splendour of sovereignty could be joined with the wisdom of kings." data-ar="كان الملوكُ ينتقون من حجر الأماتيست أصفى ألوانه، فيرصّعون به تيجانهم وخواتمهم، اعتقاداً منهم أنّ في بُنيانه البنفسجي سرّاً من أسرار الحكمة والوقار. وكانوا يرون فيه زينةً تليق بمن يجلس على العرش، ورمزاً لرجاحة العقل وصفاء الرأي؛ فكأنّما أرادوا أن يجمعوا في تيجانهم بين بهاء السلطان وحكمة الملوك.">Kings chose the purest hues of amethyst to adorn their crowns and rings, believing its violet depths held a secret of wisdom and dignity. They saw in it an ornament worthy of the throne, a token of sound judgement and a composed mind — as though the splendour of sovereignty could be joined with the wisdom of kings.</p></div></article>
-   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/b055a48c5d9fdad9d57a9eac7edd933f.jpg" alt="Lapis lazuli gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="THE BLUE OF THE PHARAOHS" data-ar="زرقة الفراعنة">THE BLUE OF THE PHARAOHS</span><h3>Lapis Lazuli</h3><p data-en="In the treasuries of ancient Egypt's kings, lapis lazuli held a place reserved for precious stones. Brought from distant mountains along the Nile's trade routes, it was shaped into royal jewels, necklaces and beads for crowns. So prized was it that it adorned the mask of Tutankhamun, its deep blue mingling with the gold of the pharaohs — a lasting witness to a civilisation that made beauty an inheritance." data-ar="في خزائن ملوك مصر القديمة، كان للازورد مقامٌ لا يُمنح إلا للأحجار النفيسة. استخرجوه من أعماق الجبال البعيدة، وجلبوه عبر القوافل إلى ضفاف النيل، ثم صاغت منه أيدي الصاغة حُليّ الملوك وقلائدهم وخرز التيجان. وقد بلغ من قيمة هذا الحجر أن زيّن قناع الملك توت عنخ آمون، فامتزجت زرقتُه بذهب الفراعنة، وبقي شاهداً على ذوق حضارةٍ جعلت من الجمال إرثاً لا يفنى.">In the treasuries of ancient Egypt's kings, lapis lazuli held a place reserved for precious stones. Brought from distant mountains along the Nile's trade routes, it was shaped into royal jewels, necklaces and beads for crowns. So prized was it that it adorned the mask of Tutankhamun, its deep blue mingling with the gold of the pharaohs — a lasting witness to a civilisation that made beauty an inheritance.</p></div></article>
-   <article class="gem-story-card"><div class="gem-story-photo"><img src="images/ed56e0d192125c1146432f314be74b42.jpg" alt="Tiger's eye gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="THE WATCHFUL STONE" data-ar="حجر اليقظة والشجاعة">THE WATCHFUL STONE</span><h3>Tiger's Eye</h3><p data-en="Tiger's Eye was known for a lustre like the gaze of a beast in the forest's darkness. Golden and brown bands shifted across its surface as the stone turned, as though an eye within it never slept. Warriors and travellers of old carried it as a sign of courage, vigilance and protection. Its mystery lay not in colour alone, but in the strange glimmer that gave it an enduring air of majesty." data-ar="كان حجرُ عين النمر يُعرف ببريقه الذي يشبه نظرةَ الوحش في عتمة الغابة؛ تتعاقب على سطحه خيوطٌ من الذهب والبنيّ، كلما دار الحجر تبدّل ضوؤه كأنّ في داخله عيناً لا تنام. وقد حمله المحاربون والمسافرون في العصور القديمة، وجعلوه رمزاً للشجاعة واليقظة والحماية، لما يوحي به من قوّةٍ وثبات. ولم يكن سحره في لونه وحده، بل في ذلك الوميض الغامض الذي جعل اسمه باقياً بين الأحجار ذات الهيبة.">Tiger's Eye was known for a lustre like the gaze of a beast in the forest's darkness. Golden and brown bands shifted across its surface as the stone turned, as though an eye within it never slept. Warriors and travellers of old carried it as a sign of courage, vigilance and protection. Its mystery lay not in colour alone, but in the strange glimmer that gave it an enduring air of majesty.</p></div></article>
-  </div>
- </div>
-</section>
+  <div class="gem-story-track"><article class="gem-story-card"><div class="gem-story-photo"><img src="images/622ef21286f7d177bd9eb19073c39fa2.jpg" alt="Amethyst gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="THE STONE OF ROYAL WISDOM" data-ar="حجر الحكمة والوقار">THE STONE OF ROYAL WISDOM</span><h3>Amethyst</h3><p data-en="Kings chose the purest hues of amethyst to adorn their crowns and rings, believing its violet depths held a secret of wisdom and dignity. They saw in it an ornament worthy of the throne, a token of sound judgement and a composed mind — as though the splendour of sovereignty could be joined with the wisdom of kings." data-ar="كان الملوكُ ينتقون من حجر الأماتيست أصفى ألوانه، فيرصّعون به تيجانهم وخواتمهم، اعتقاداً منهم أنّ في بُنيانه البنفسجي سرّاً من أسرار الحكمة والوقار. وكانوا يرون فيه زينةً تليق بمن يجلس على العرش، ورمزاً لرجاحة العقل وصفاء الرأي؛ فكأنّما أرادوا أن يجمعوا في تيجانهم بين بهاء السلطان وحكمة الملوك.">Kings chose the purest hues of amethyst to adorn their crowns and rings, believing its violet depths held a secret of wisdom and dignity. They saw in it an ornament worthy of the throne, a token of sound judgement and a composed mind — as though the splendour of sovereignty could be joined with the wisdom of kings.</p></div></article>
+<article class="gem-story-card"><div class="gem-story-photo"><img src="images/b055a48c5d9fdad9d57a9eac7edd933f.jpg" alt="Lapis lazuli gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="THE BLUE OF THE PHARAOHS" data-ar="زرقة الفراعنة">THE BLUE OF THE PHARAOHS</span><h3>Lapis Lazuli</h3><p data-en="In the treasuries of ancient Egypt's kings, lapis lazuli held a place reserved for precious stones. Brought from distant mountains along the Nile's trade routes, it was shaped into royal jewels, necklaces and beads for crowns. So prized was it that it adorned the mask of Tutankhamun, its deep blue mingling with the gold of the pharaohs — a lasting witness to a civilisation that made beauty an inheritance." data-ar="في خزائن ملوك مصر القديمة، كان للازورد مقامٌ لا يُمنح إلا للأحجار النفيسة. استخرجوه من أعماق الجبال البعيدة، وجلبوه عبر القوافل إلى ضفاف النيل، ثم صاغت منه أيدي الصاغة حُليّ الملوك وقلائدهم وخرز التيجان. وقد بلغ من قيمة هذا الحجر أن زيّن قناع الملك توت عنخ آمون، فامتزجت زرقتُه بذهب الفراعنة، وبقي شاهداً على ذوق حضارةٍ جعلت من الجمال إرثاً لا يفنى.">In the treasuries of ancient Egypt's kings, lapis lazuli held a place reserved for precious stones. Brought from distant mountains along the Nile's trade routes, it was shaped into royal jewels, necklaces and beads for crowns. So prized was it that it adorned the mask of Tutankhamun, its deep blue mingling with the gold of the pharaohs — a lasting witness to a civilisation that made beauty an inheritance.</p></div></article>
+<article class="gem-story-card"><div class="gem-story-photo"><img src="images/ed56e0d192125c1146432f314be74b42.jpg" alt="Tiger's eye gemstone" loading="lazy"></div><div class="gem-story-copy"><span class="gem-story-era" data-en="THE WATCHFUL STONE" data-ar="حجر اليقظة والشجاعة">THE WATCHFUL STONE</span><h3>Tiger's Eye</h3><p data-en="Tiger's Eye was known for a lustre like the gaze of a beast in the forest's darkness. Golden and brown bands shifted across its surface as the stone turned, as though an eye within it never slept. Warriors and travellers of old carried it as a sign of courage, vigilance and protection. Its mystery lay not in colour alone, but in the strange glimmer that gave it an enduring air of majesty." data-ar="كان حجرُ عين النمر يُعرف ببريقه الذي يشبه نظرةَ الوحش في عتمة الغابة؛ تتعاقب على سطحه خيوطٌ من الذهب والبنيّ، كلما دار الحجر تبدّل ضوؤه كأنّ في داخله عيناً لا تنام. وقد حمله المحاربون والمسافرون في العصور القديمة، وجعلوه رمزاً للشجاعة واليقظة والحماية، لما يوحي به من قوّةٍ وثبات. ولم يكن سحره في لونه وحده، بل في ذلك الوميض الغامض الذي جعل اسمه باقياً بين الأحجار ذات الهيبة.">Tiger's Eye was known for a lustre like the gaze of a beast in the forest's darkness. Golden and brown bands shifted across its surface as the stone turned, as though an eye within it never slept. Warriors and travellers of old carried it as a sign of courage, vigilance and protection. Its mystery lay not in colour alone, but in the strange glimmer that gave it an enduring air of majesty.</p></div></article></div></div></section>
 
 <section class="section">
  <div class="section-head">
@@ -711,6 +771,29 @@ function setupReveal(){
  }
 }
 loadFeaturedProducts().then(()=>setupReveal());
+
+/* Pointer dragging for desktop; native horizontal swipe remains enabled on touch. */
+(()=>{
+ const viewport=document.querySelector(".gem-story-window");
+ if(!viewport)return;
+ let down=false,startX=0,startScroll=0,moved=false;
+ viewport.addEventListener("pointerdown",e=>{
+  if(e.pointerType==="touch")return;
+  down=true;moved=false;startX=e.clientX;startScroll=viewport.scrollLeft;
+  viewport.setPointerCapture(e.pointerId);
+ });
+ viewport.addEventListener("pointermove",e=>{
+  if(!down)return;
+  const dx=e.clientX-startX;
+  if(Math.abs(dx)>4)moved=true;
+  if(moved)viewport.scrollLeft=startScroll-dx;
+ });
+ const stop=()=>{down=false;};
+ viewport.addEventListener("pointerup",stop);
+ viewport.addEventListener("pointercancel",stop);
+ viewport.addEventListener("lostpointercapture",stop);
+})();
+
 </script>
 </body>
 </html>
