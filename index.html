@@ -534,6 +534,31 @@ animation:chakraProgress 35s linear infinite
  .gem-story-window{scroll-behavior:auto}
  .gem-story-photo img{animation:none}
 }
+
+/* Gem Stories usability correction: preserve vertical page scrolling and reduce section height */
+.gem-story-window{
+  touch-action:pan-x pan-y;
+  overscroll-behavior-x:contain;
+  overscroll-behavior-y:auto;
+}
+.gem-stories{padding:38px 0 42px}
+.gem-stories-head{padding-bottom:16px}
+.gem-story-track{padding-top:2px;padding-bottom:12px}
+.gem-story-card{padding-top:8px;padding-bottom:8px}
+.gem-story-photo{height:300px}
+.gem-story-copy{padding:12px 8px}
+.gem-story-copy h3{margin-bottom:10px;font-size:clamp(30px,3.5vw,40px)}
+.gem-story-copy p{font-size:clamp(15px,1.45vw,17px);line-height:1.72}
+@media(max-width:640px){
+  .gem-stories{padding:28px 0 32px}
+  .gem-stories-head{padding:0 18px 12px}
+  .gem-story-track{padding:0 5vw 10px}
+  .gem-story-card{gap:0;padding:4px 4px 8px}
+  .gem-story-photo{height:185px;padding:2px}
+  .gem-story-copy{padding:4px 12px 8px}
+  .gem-story-copy h3{font-size:29px;margin:0 0 7px}
+  .gem-story-copy p{font-size:14px;line-height:1.65;margin:0}
+}
 </style>
 </head>
 <body>
