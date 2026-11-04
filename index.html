@@ -6,159 +6,464 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 <title>BLUE WHALE GEMS | Natural Gemstones</title>
-<meta name="description" content="Discover natural gemstone jewelry and unique pieces at BLUE WHALE GEMS.">
+<meta name="description" content="A curated collection of natural gemstones and jewelry by BLUE WHALE GEMS.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
 :root{
+ --white:#ffffff;
+ --paper:#f8fafb;
  --blue:#b9dceb;
- --pale:#f3f9fc;
+ --blue-dark:#7895a3;
  --green:#245344;
  --whatsapp:#a9e8c5;
- --ink:#20333b;
- --muted:#71828a;
+ --ink:#25363d;
+ --muted:#7b898e;
+ --line:#e9eef0;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#fff;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+body{
+ margin:0;
+ background:var(--white);
+ color:var(--ink);
+ font-family:"DM Sans",Arial,sans-serif;
+}
 a{color:inherit;text-decoration:none}
+button{font:inherit}
 header{
- position:sticky;top:0;z-index:20;
- background:#ffffffed;backdrop-filter:blur(12px);
- border-bottom:1px solid #edf1f3
+ position:sticky;
+ top:0;
+ z-index:20;
+ background:rgba(255,255,255,.96);
+ backdrop-filter:blur(12px);
+ border-bottom:1px solid var(--line);
 }
 .nav{
- max-width:1160px;margin:auto;padding:15px 20px;
- display:flex;align-items:center;justify-content:space-between;gap:15px
+ max-width:1160px;
+ margin:auto;
+ padding:17px 22px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:15px;
 }
-.logo{font-size:16px;font-weight:800;letter-spacing:2px}
-.logo small{display:block;font-size:9px;font-weight:normal;letter-spacing:4px;color:#7795a3;margin-top:4px}
-nav{display:flex;gap:20px;font-size:12px;color:#586a72}
+.logo{
+ font-family:"Playfair Display",Georgia,serif;
+ font-size:17px;
+ letter-spacing:2px;
+ font-weight:500;
+}
+.logo small{
+ display:block;
+ font-family:"DM Sans",sans-serif;
+ font-size:9px;
+ font-weight:400;
+ letter-spacing:4px;
+ color:var(--blue-dark);
+ margin-top:5px;
+}
+nav{
+ display:flex;
+ align-items:center;
+ gap:22px;
+ font-size:11px;
+ letter-spacing:1px;
+ color:#68777d;
+}
+nav a{transition:color .2s}
 nav a:hover{color:var(--green)}
+
 .hero{
- background:linear-gradient(120deg,#f7fbfd,#dceef5);
- text-align:center;padding:75px 20px 68px
+ background:linear-gradient(135deg,#fbfdfe 0%,#edf6f9 100%);
+ text-align:center;
+ padding:88px 20px 82px;
 }
-.eyebrow{font-size:10px;letter-spacing:3px;color:#6d94a5;font-weight:bold}
+.eyebrow{
+ font-size:9px;
+ letter-spacing:3.5px;
+ color:var(--blue-dark);
+ font-weight:600;
+ text-transform:uppercase;
+}
 .hero h1{
- font:normal clamp(36px,7vw,61px)/1.13 Georgia,serif;
- max-width:760px;margin:19px auto 15px
+ max-width:760px;
+ margin:23px auto 18px;
+ font-family:"Playfair Display",Georgia,serif;
+ font-size:clamp(39px,7vw,68px);
+ line-height:1.13;
+ font-weight:400;
+ letter-spacing:-1px;
 }
-.hero p{max-width:490px;margin:0 auto;color:#637780;font-size:14px;line-height:1.9}
-.btn{
- display:inline-block;background:var(--green);color:#fff;
- padding:15px 25px;border-radius:8px;font-size:12px;
- margin-top:24px;transition:.2s
+.hero p{
+ max-width:490px;
+ margin:0 auto;
+ color:#718087;
+ font-size:13px;
+ line-height:2;
 }
-.btn:hover{transform:translateY(-2px)}
-.category-nav{
- max-width:1100px;margin:28px auto 0;padding:0 18px;
- display:grid;grid-template-columns:repeat(4,1fr);gap:12px
+.hero .btn{
+ display:inline-block;
+ margin-top:30px;
+ padding:14px 27px;
+ border:1px solid #c8dce4;
+ border-radius:2px;
+ color:var(--green);
+ font-size:10px;
+ letter-spacing:2px;
+ text-transform:uppercase;
+ transition:background .25s,color .25s;
 }
-.category-nav a{
- background:var(--pale);padding:17px 8px;text-align:center;
- border-radius:11px;font-size:12px;font-weight:bold;transition:.2s
+.hero .btn:hover{
+ background:var(--green);
+ color:white;
 }
-.category-nav a:hover{background:#e5f2f7;transform:translateY(-2px)}
-.section{max-width:1160px;margin:55px auto;padding:0 18px;scroll-margin-top:90px}
-.section-head{text-align:center;margin-bottom:25px}
-.section-head h2{font:normal 32px Georgia,serif;margin:10px 0}
-.section-head p{font-size:13px;color:var(--muted);line-height:1.7}
-.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 16px}
-.product{min-width:0;animation:fade .5s ease both}
+
+.collections{
+ max-width:1120px;
+ margin:0 auto;
+ padding:62px 20px 30px;
+}
+.collections-heading{
+ text-align:center;
+ margin-bottom:34px;
+}
+.collections-heading h2{
+ margin:13px 0 0;
+ font-family:"Playfair Display",Georgia,serif;
+ font-size:32px;
+ font-weight:400;
+}
+.category-grid{
+ display:grid;
+ grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:14px;
+}
+.category-card{
+ min-height:175px;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ padding:24px 12px;
+ background:#f7fafb;
+ border:1px solid #edf2f4;
+ border-radius:3px;
+ transition:background .3s,border-color .3s,transform .3s;
+}
+.category-card:hover{
+ background:#edf6f9;
+ border-color:#d9e9ef;
+ transform:translateY(-3px);
+}
+.category-number{
+ font-family:"Playfair Display",Georgia,serif;
+ font-size:12px;
+ color:#91a9b3;
+ margin-bottom:15px;
+}
+.category-card h3{
+ margin:0;
+ font-family:"Playfair Display",Georgia,serif;
+ font-size:clamp(18px,2.4vw,24px);
+ font-weight:400;
+ letter-spacing:.2px;
+}
+.category-card p{
+ margin:10px 0 0;
+ color:#8a989d;
+ font-size:9px;
+ letter-spacing:1.5px;
+ text-transform:uppercase;
+}
+.category-card .explore{
+ margin-top:17px;
+ font-size:9px;
+ letter-spacing:2px;
+ color:var(--green);
+ text-transform:uppercase;
+}
+
+.section{
+ max-width:1160px;
+ margin:0 auto;
+ padding:35px 20px 55px;
+ scroll-margin-top:85px;
+}
+.section[hidden]{display:none}
+.back-collections{
+ display:inline-block;
+ margin-bottom:30px;
+ font-size:9px;
+ letter-spacing:2px;
+ color:var(--blue-dark);
+ text-transform:uppercase;
+}
+.section-head{
+ text-align:center;
+ margin-bottom:35px;
+}
+.section-head h2{
+ margin:13px 0 9px;
+ font-family:"Playfair Display",Georgia,serif;
+ font-size:39px;
+ font-weight:400;
+}
+.section-head p{
+ margin:0;
+ color:var(--muted);
+ font-size:12px;
+ line-height:1.8;
+}
+.products{
+ display:grid;
+ grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:35px 19px;
+}
+.product{min-width:0}
+.product a{display:block}
 .product-image{
- aspect-ratio:1/1.12;background:#f3f7f9;
- border-radius:14px;overflow:hidden;padding:8px
+ aspect-ratio:1/1.12;
+ background:#fff;
+ overflow:hidden;
+ border-radius:3px;
+ box-shadow:none;
 }
 .product-image img{
- width:100%;height:100%;display:block;
- object-fit:contain;border-radius:9px;transition:transform .35s
+ width:100%;
+ height:100%;
+ display:block;
+ object-fit:contain;
+ border-radius:3px;
+ box-shadow:none;
+ transition:transform .5s cubic-bezier(.2,.7,.2,1);
 }
-.product a:hover img{transform:scale(1.035)}
-.product h3{font-size:13px;line-height:1.5;margin:11px 0 6px;font-weight:600}
-.product .price{font-size:13px;color:var(--green);font-weight:bold}
-.empty{color:var(--muted);text-align:center;font-size:12px}
-.about{background:#f3f9fb;text-align:center;padding:52px 22px;margin-top:65px}
-.about h2{font:normal 30px Georgia,serif}
-.about p{max-width:550px;margin:auto;color:#687b83;font-size:14px;line-height:1.9}
-.contact{text-align:center;padding:45px 20px}
-.contact p{font-size:13px;color:var(--muted);line-height:1.8}
+.product a:hover .product-image img{
+ transform:scale(1.045);
+}
+.product a:active .product-image img{
+ transform:scale(.96);
+}
+.product h3{
+ margin:14px 0 8px;
+ font-family:"Playfair Display",Georgia,serif;
+ font-size:15px;
+ line-height:1.55;
+ font-weight:400;
+ letter-spacing:.1px;
+}
+.product .price{
+ color:var(--green);
+ font-size:13px;
+ font-weight:600;
+ letter-spacing:.3px;
+}
+.delivery-label{
+ display:block;
+ margin-top:7px;
+ color:#89979d;
+ font-size:10px;
+ letter-spacing:.4px;
+}
+.image-unavailable{
+ display:flex;
+ width:100%;
+ height:100%;
+ align-items:center;
+ justify-content:center;
+ color:#89979d;
+ font-size:11px;
+}
+
+.about{
+ background:#f6fafb;
+ text-align:center;
+ padding:68px 22px;
+ margin-top:35px;
+}
+.about h2{
+ margin:15px 0;
+ font-family:"Playfair Display",Georgia,serif;
+ font-size:35px;
+ font-weight:400;
+}
+.about p{
+ max-width:540px;
+ margin:auto;
+ color:#718087;
+ font-size:13px;
+ line-height:2;
+}
+.contact{
+ text-align:center;
+ padding:65px 20px;
+}
+.contact h2{
+ margin:14px 0;
+ font-family:"Playfair Display",Georgia,serif;
+ font-size:34px;
+ font-weight:400;
+}
+.contact p{
+ color:var(--muted);
+ font-size:12px;
+ line-height:1.9;
+}
 .whatsapp-btn{
- display:inline-block;background:var(--whatsapp);color:#174b35;
- padding:16px 27px;border-radius:9px;font-size:13px;
- font-weight:bold;margin-top:15px;transition:.2s
+ display:inline-block;
+ margin-top:18px;
+ padding:16px 28px;
+ background:var(--whatsapp);
+ color:#174b35;
+ border-radius:3px;
+ font-size:10px;
+ font-weight:600;
+ letter-spacing:1.5px;
+ transition:background .2s,transform .2s;
 }
-.whatsapp-btn:hover{background:#8bd9ae;transform:translateY(-2px)}
+.whatsapp-btn:hover{
+ background:#8bd9ae;
+ transform:translateY(-2px);
+}
 footer{
- text-align:center;border-top:1px solid #edf1f3;
- padding:28px 15px;color:#809099;font-size:10px;letter-spacing:1px
+ border-top:1px solid var(--line);
+ text-align:center;
+ padding:30px 15px;
+ color:#8a989d;
+ font-size:9px;
+ letter-spacing:1.5px;
 }
-footer strong{display:block;color:var(--ink);font-size:13px;margin-bottom:8px}
-@keyframes fade{
- from{opacity:0;transform:translateY(10px)}
- to{opacity:1;transform:translateY(0)}
+footer strong{
+ display:block;
+ color:var(--ink);
+ font-family:"Playfair Display",Georgia,serif;
+ font-size:16px;
+ font-weight:400;
+ letter-spacing:2px;
+ margin-bottom:9px;
 }
+footer p{margin-top:14px}
+
 @media(max-width:700px){
- .nav{padding:13px 14px}
+ .nav{padding:14px}
  .logo{font-size:13px}
- nav{gap:11px;font-size:10px}
- nav a{white-space:nowrap}
- .hero{padding:55px 18px 48px}
- .category-nav{grid-template-columns:repeat(2,1fr);gap:9px;margin-top:20px}
- .section{margin:43px auto;padding:0 13px}
- .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 11px}
- .product h3{font-size:12px}
- .section-head h2{font-size:28px}
+ nav{gap:12px;font-size:9px;letter-spacing:.5px}
+ .hero{padding:65px 18px 58px}
+ .hero h1{font-size:43px}
+ .hero p{font-size:12px}
+ .collections{padding:45px 14px 20px}
+ .collections-heading h2{font-size:29px}
+ .category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .category-card{min-height:155px;padding:19px 8px}
+ .category-card h3{font-size:20px}
+ .section{padding:25px 13px 45px}
+ .section-head{margin-bottom:25px}
+ .section-head h2{font-size:33px}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 12px}
+ .product h3{font-size:13px}
+ .about{padding:52px 20px}
+ .about h2{font-size:29px}
+ .contact{padding:52px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{
+  animation:none!important;
+  transition:none!important;
+  scroll-behavior:auto!important;
+ }
 }
 </style>
 </head>
-<body>
 
+<body>
 <header>
  <div class="nav">
-  <a class="logo" href="#home">BLUE WHALE GEMS
+  <a class="logo" href="#home">
+   BLUE WHALE GEMS
    <small>NATURAL BEAUTY</small>
   </a>
   <nav>
    <a href="#home">Home</a>
-   <a href="#bracelets">Bracelets</a>
-   <a href="#necklaces">Necklaces</a>
+   <a href="#collections">Collections</a>
    <a href="#contact">Contact</a>
   </nav>
  </div>
 </header>
 
 <main>
-<section class="hero" id="home">
- <div class="eyebrow">NATURAL GEMSTONES & JEWELRY</div>
- <h1>Nature, Made to Be Worn.</h1>
- <p>اكتشف جمال الأحجار الطبيعية وتنوّع ألوانها. قطع مختارة بعناية لتجد ما يناسب ذوقك وأسلوبك.</p>
- <a class="btn" href="#collections">Explore Collection</a>
-</section>
+ <section class="hero" id="home">
+  <div class="eyebrow">A STUDY IN NATURAL BEAUTY</div>
+  <h1>Nature, in its own form.</h1>
+  <p>
+   A considered collection of natural gemstones and distinctive pieces.
+   Each one carries its own colour, character and quiet beauty.
+  </p>
+  <a class="btn" href="#collections">Discover the collections</a>
+ </section>
 
-<div class="category-nav" id="collections">
- <a href="#bracelets">Bracelets</a>
- <a href="#necklaces">Necklaces</a>
- <a href="#rings">Rings</a>
- <a href="#raw-gems">Raw Gems Collection</a>
-</div>
+ <section class="collections" id="collections">
+  <div class="collections-heading">
+   <div class="eyebrow">THE COLLECTIONS</div>
+   <h2>Explore by collection</h2>
+  </div>
 
-<div id="catalog"></div>
+  <div class="category-grid">
+   <a class="category-card" href="#bracelets" data-category="bracelets">
+    <span class="category-number">I</span>
+    <h3>Bracelets</h3>
+    <p>Natural forms, worn close</p>
+    <span class="explore">Explore collection ↗</span>
+   </a>
 
-<section class="about">
- <div class="eyebrow">ABOUT BLUE WHALE GEMS</div>
- <h2>جمال طبيعي، وتفاصيل مختلفة</h2>
- <p>نختار الأحجار والقطع التي تلفت الانتباه بألوانها وتكويناتها الطبيعية. تصفّح مجموعتنا واكتشف القطعة التي تناسبك.</p>
-</section>
+   <a class="category-card" href="#necklaces" data-category="necklaces">
+    <span class="category-number">II</span>
+    <h3>Necklaces</h3>
+    <p>Details with distinction</p>
+    <span class="explore">Explore collection ↗</span>
+   </a>
 
-<section class="contact" id="contact">
- <div class="eyebrow">GET IN TOUCH</div>
- <h2>Have a question?</h2>
- <p>للطلب أو الاستفسار، تواصل معنا مباشرة عبر واتساب.</p>
- <a class="whatsapp-btn"
- href="https://wa.me/message/RHFJOGTPA2UXC1"
- target="_blank" rel="noopener">
- Contact on WhatsApp
- </a>
-</section>
+   <a class="category-card" href="#rings" data-category="rings">
+    <span class="category-number">III</span>
+    <h3>Rings</h3>
+    <p>Small works of nature</p>
+    <span class="explore">Explore collection ↗</span>
+   </a>
+
+   <a class="category-card" href="#raw-gems" data-category="raw-gems">
+    <span class="category-number">IV</span>
+    <h3>Raw Gems</h3>
+    <p>Nature, unaltered</p>
+    <span class="explore">Explore collection ↗</span>
+   </a>
+  </div>
+ </section>
+
+ <div id="catalog"></div>
+
+ <section class="about">
+  <div class="eyebrow">ABOUT THE HOUSE</div>
+  <h2>Beauty in its natural state.</h2>
+  <p>
+   We are drawn to the individuality of natural gemstones:
+   their colours, textures and subtle differences.
+   Discover a piece that feels distinctly yours.
+  </p>
+ </section>
+
+ <section class="contact" id="contact">
+  <div class="eyebrow">CORRESPONDENCE</div>
+  <h2>We would be pleased to hear from you.</h2>
+  <p>للطلب أو الاستفسار، يسعدنا التواصل معك عبر واتساب.</p>
+  <a class="whatsapp-btn"
+     href="https://wa.me/21655733020"
+     target="_blank" rel="noopener">
+   CONTACT VIA WHATSAPP
+  </a>
+ </section>
 </main>
 
 <footer>
@@ -169,7 +474,7 @@ footer strong{display:block;color:var(--ink);font-size:13px;margin-bottom:8px}
 
 <script>
 const products=[
-{c:"bracelets",n:"Aquamarine + Amethyst + Labradorite Bracelet",p:70,i:"20261018_184933.jpg",d:8},
+{c:"bracelets",n:"Aquamarine + Amethyst + Labradorite Bracelet",p:70,i:"20261018_184933.jpg"},
 {c:"bracelets",n:"Labradorite, Amethyst, Rose Quartz & Chips Bracelet",p:68,i:"1000088300.jpg"},
 {c:"bracelets",n:"Coral & Agate Bracelet",p:45,i:"1000088312.jpg"},
 {c:"bracelets",n:"Obsidian + Clear Quartz Bracelet",p:70,i:"1000088313.jpg"},
@@ -190,39 +495,48 @@ const products=[
 {c:"bracelets",n:"Baltic Amber Bracelet",p:190,i:"1000079541.jpg"},
 {c:"bracelets",n:"Natural Coral Bracelet",p:39,i:"1000084081.jpg"},
 {c:"bracelets",n:"Natural Coral & Pearl Bracelet",p:89,i:"1000085232.jpg"},
+
 {c:"necklaces",n:"Coral & Pearl Pendant Necklace",p:45,i:"1000032282.jpg"},
 {c:"necklaces",n:"Amber Pendant Necklace",p:50,i:"1000052346.jpg"},
 {c:"necklaces",n:"Yemeni Scenic Agate Pendant Necklace — 925 Sterling Silver",p:220,i:"1000074156.jpg"},
 {c:"necklaces",n:"Natural Coral Necklace",p:200,i:"1000081614.jpg"},
 {c:"necklaces",n:"Suleimani Agate Pendant Necklace",p:150,i:"1000082002.jpg"},
 {c:"necklaces",n:"Egyptian Ankh & Coral Pendant Necklace",p:79,i:"1000085314.jpg"},
+
 {c:"rings",n:"Red Agate Ring — 925 Sterling Silver",p:100,i:"1000085897.jpg"},
 {c:"rings",n:"Pyrite Ring — 925 Sterling Silver",p:120,i:"1000074444.jpg"},
+
 {c:"raw-gems",n:"Raw Apatite",p:37,i:"1000082268.jpg"},
 {c:"raw-gems",n:"Raw Carnelian",p:29,i:"1000082265.jpg"},
 {c:"raw-gems",n:"Raw Green Aventurine",p:34,i:"1000082266.jpg"}
 ];
 
 const groups=[
-{id:"bracelets",title:"Bracelets",desc:"Natural stone bracelets and distinctive combinations."},
-{id:"necklaces",title:"Necklaces",desc:"Pendants and natural gemstone necklaces."},
-{id:"rings",title:"Rings",desc:"Gemstone rings set in silver."},
-{id:"raw-gems",title:"Raw Gems Collection",desc:"Natural gemstones in their raw form."}
+ {id:"bracelets",title:"Bracelets",desc:"A collection of natural gemstone bracelets."},
+ {id:"necklaces",title:"Necklaces",desc:"Pendants and necklaces shaped by nature."},
+ {id:"rings",title:"Rings",desc:"Gemstone rings set in sterling silver."},
+ {id:"raw-gems",title:"Raw Gems Collection",desc:"Natural stones in their original form."}
 ];
 
-const root=document.getElementById("catalog");
+const catalog=document.getElementById("catalog");
 
 groups.forEach(group=>{
  const section=document.createElement("section");
  section.className="section";
  section.id=group.id;
+ section.hidden=true;
+
+ const back=document.createElement("a");
+ back.href="#collections";
+ back.className="back-collections";
+ back.textContent="← All collections";
 
  const head=document.createElement("div");
  head.className="section-head";
 
  const eyebrow=document.createElement("div");
  eyebrow.className="eyebrow";
- eyebrow.textContent="BLUE WHALE GEMS COLLECTION";
+ eyebrow.textContent="BLUE WHALE GEMS · THE COLLECTION";
 
  const title=document.createElement("h2");
  title.textContent=group.title;
@@ -243,11 +557,10 @@ groups.forEach(group=>{
   const params=new URLSearchParams({
    name:p.n,
    price:String(p.p),
-   image:"images/"+p.i
+   image:"images/"+p.i,
+   delivery:"8",
+   stock:"1"
   });
-
-  if(p.d!==undefined)params.set("delivery",String(p.d));
-
   link.href="product.html?"+params.toString();
 
   const frame=document.createElement("div");
@@ -259,7 +572,11 @@ groups.forEach(group=>{
   img.loading="lazy";
 
   img.onerror=()=>{
-   frame.innerHTML='<span class="empty">Image unavailable</span>';
+   frame.innerHTML="";
+   const unavailable=document.createElement("div");
+   unavailable.className="image-unavailable";
+   unavailable.textContent="Image unavailable";
+   frame.appendChild(unavailable);
   };
 
   frame.appendChild(img);
@@ -271,15 +588,51 @@ groups.forEach(group=>{
   price.className="price";
   price.textContent=p.p+" TND";
 
-  link.append(frame,name,price);
+  const delivery=document.createElement("span");
+  delivery.className="delivery-label";
+  delivery.textContent="Delivery · 8 TND";
+
+  link.append(frame,name,price,delivery);
   card.appendChild(link);
   grid.appendChild(card);
  });
 
- section.append(head,grid);
- root.appendChild(section);
+ back.addEventListener("click",event=>{
+  event.preventDefault();
+  showCollections();
+ });
+
+ section.append(back,head,grid);
+ catalog.appendChild(section);
+});
+
+function showCollections(){
+ document.querySelectorAll("#catalog .section").forEach(section=>{
+  section.hidden=true;
+ });
+ document.getElementById("collections").scrollIntoView({
+  behavior:"smooth",
+  block:"start"
+ });
+}
+
+document.querySelectorAll(".category-card").forEach(card=>{
+ card.addEventListener("click",event=>{
+  event.preventDefault();
+
+  const id=card.dataset.category;
+
+  document.querySelectorAll("#catalog .section").forEach(section=>{
+   section.hidden=section.id!==id;
+  });
+
+  document.getElementById(id).scrollIntoView({
+   behavior:"smooth",
+   block:"start"
+  });
+ });
 });
 </script>
-
 </body>
 </html>
+
