@@ -144,7 +144,7 @@ async function loadProducts(){
    frame.className="product-image";
    const img=document.createElement("img");
    const originalImageUrl="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/"+imagePath;
-   const optimizedImageUrl="https://wsrv.nl/?url="+encodeURIComponent(originalImageUrl)+"&w=640&output=webp&q=82&maxage=1y";
+   const optimizedImageUrl=originalImageUrl;
    img.alt=p.name;
    img.loading=index<(window.matchMedia("(max-width:700px)").matches?2:4)?"eager":"lazy";
    img.decoding="async";
@@ -192,7 +192,7 @@ function chooseLanguage(lang){applyLanguage(lang);document.getElementById("langu
 function toggleLanguage(){toggleLanguageMenu();}
 applyLanguage(localStorage.getItem("bwg-language")||"en");
 if(group)document.title=group.en+" | BLUE WHALE GEMS";
-loadProducts().then(()=>{applyLanguage(localStorage.getItem("bwg-language")||"en");setupReveal();}).catch(()=>{title.textContent="Collection unavailable";description.textContent="Please refresh the page in a moment.";});
+loadProducts().then(()=>{applyLanguage(localStorage.getItem("bwg-language")||"en");setupReveal();document.dispatchEvent(new Event("bwg:products-rendered"));}).catch(error=>{console.error("Collection loading failed:",error);title.textContent="Collection unavailable";description.textContent="Please refresh the page in a moment.";});
 </script>
 
 <script>
@@ -238,26 +238,6 @@ window.applyLanguage(localStorage.getItem("bwg-language")||"en");
  </div>
 </div>
 
-<script id="bwg-product-name-language">
-(function(){
- let products=[];
- const current=()=>localStorage.getItem("bwg-language")||"en";
- function nameFor(p){const l=current();return l==="ar"?(p.nameAr||p.name):l==="fr"?(p.nameFr||p.name):p.name;}
- function update(){
-  document.querySelectorAll("#productsGrid .product").forEach(card=>{
-   const link=card.querySelector("a[href*='product.html?']");
-   const heading=card.querySelector("h2");
-   if(!link||!heading)return;
-   const image=new URL(link.href).searchParams.get("image");
-   const p=products.find(x=>(String(x.image||"").startsWith("/")?String(x.image).slice(1):String(x.image||""))===image);
-   if(p){const translated=nameFor(p);if(heading.textContent!==translated)heading.textContent=translated;}
-  });
- }
- fetch("data/products.json").then(r=>r.json()).then(data=>{products=data;update();});
- document.addEventListener("click",e=>{if(e.target.closest("#languageMenu button"))setTimeout(update,0);});
- window.addEventListener("pageshow",update);
-})();
-</script>
-<script src="order-list.js?v=20261105c" defer></script>
+<script src="order-list.js" defer></script>
 </body>
 </html>
