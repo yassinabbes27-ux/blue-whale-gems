@@ -109,30 +109,15 @@ font-size:9px;letter-spacing:1.2px;transition:.2s
 margin-top:25px;color:#8a989d;font-size:8px;letter-spacing:1.3px
 }
 .hero-visual{
-position:relative;min-height:550px;overflow:hidden;
-background:radial-gradient(ellipse at 50% 45%,rgba(255,255,255,.92) 0%,rgba(255,255,255,.28) 42%,transparent 72%),linear-gradient(145deg,#edf8fa 0%,#d8edf2 48%,#c5e1e9 100%)
+ position:relative;min-height:550px;overflow:hidden;background:#fff
 }
-.hero-visual:before{
-content:"";position:absolute;z-index:0;inset:7% 8%;
-border:1px solid rgba(255,255,255,.92);border-radius:34px;
-background:linear-gradient(145deg,rgba(255,255,255,.52),rgba(224,243,247,.24));
-box-shadow:0 22px 55px rgba(47,105,121,.12),inset 0 1px 0 rgba(255,255,255,.9)
-}
-.hero-visual:after{
-content:"";position:absolute;z-index:0;inset:calc(7% + 9px) calc(8% + 9px);
-border:1px solid rgba(139,190,203,.24);border-radius:27px;
-pointer-events:none
-}
+.hero-visual:before,.hero-visual:after{display:none}
 .hero-photo{
-position:absolute;z-index:1;inset:14% 16%;width:68%;height:72%;
-object-fit:contain;border-radius:0;
-filter:drop-shadow(0 12px 24px rgba(45,102,116,.16)) drop-shadow(0 0 18px rgba(255,255,255,.88));
-animation:logoCinematic .65s cubic-bezier(.18,.72,.22,1) both
+ position:absolute;z-index:1;inset:12%;width:76%;height:76%;
+ object-fit:contain;border-radius:0;filter:none;
+ animation:flowerLifeRotate 36s linear infinite
 }
-@keyframes logoCinematic{
-from{opacity:0;transform:translateY(20px) scale(.86);filter:blur(7px) drop-shadow(0 0 0 rgba(36,83,68,0))}
-to{opacity:1;transform:translateY(0) scale(1);filter:blur(0) drop-shadow(0 14px 28px rgba(36,83,68,.18)) drop-shadow(0 0 22px rgba(255,255,255,.9))}
-}
+@keyframes flowerLifeRotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 /* Subtle editorial reveal: content enters in sequence without delaying image loading. */
 body.cinema-ready .cinema-reveal{opacity:0;transform:translateY(14px);transition:opacity .72s ease,transform .72s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--reveal-order,0)*85ms)}
 body.cinema-ready .cinema-reveal.is-visible{opacity:1;transform:translateY(0)}
@@ -678,24 +663,39 @@ body[dir="rtl"] .gem-story-copy{text-align:right}
   <div class="hero-note" data-en="NATURAL MATERIALS · INDIVIDUAL CHARACTER" data-ar="مواد طبيعية · طابع متفرّد">NATURAL MATERIALS · INDIVIDUAL CHARACTER</div>
  </div>
  <div class="hero-visual">
-  <svg class="hero-photo" viewBox="0 0 600 470" role="img" aria-label="BLUE WHALE GEMS logo" xmlns="http://www.w3.org/2000/svg">
+  <svg class="hero-photo" viewBox="0 0 500 500" role="img" aria-label="Golden Flower of Life sacred geometry" xmlns="http://www.w3.org/2000/svg">
    <defs>
-    <linearGradient id="whaleBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a9d4e2"/><stop offset="1" stop-color="#6f9eaf"/></linearGradient>
-    <linearGradient id="gemBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8f7fb"/><stop offset="1" stop-color="#8dbdce"/></linearGradient>
+    <linearGradient id="lifeGold" x1="0" y1="0" x2="1" y2="1">
+     <stop offset="0" stop-color="#fff2b0"/>
+     <stop offset=".22" stop-color="#d6a63b"/>
+     <stop offset=".48" stop-color="#fff0a0"/>
+     <stop offset=".72" stop-color="#b98219"/>
+     <stop offset="1" stop-color="#f8df78"/>
+    </linearGradient>
    </defs>
-   <g fill="none" stroke="url(#whaleBlue)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M112 190 C151 144 219 119 302 124 C371 127 427 151 466 187 C481 201 493 211 511 215 C489 230 467 233 445 225 C409 258 353 278 288 275 C211 271 151 241 112 190Z"/>
-    <path d="M113 190 C91 170 70 158 54 160 C64 180 81 194 104 200 C83 211 69 229 61 247 C85 241 105 228 124 211"/>
-    <path d="M267 271 C267 285 267 294 267 302"/>
+   <g fill="none" stroke="url(#lifeGold)" stroke-width="2.15" stroke-linecap="round">
+    <circle cx="250.000" cy="250.000" r="70"/>
+    <circle cx="320.000" cy="250.000" r="70"/>
+    <circle cx="285.000" cy="310.622" r="70"/>
+    <circle cx="215.000" cy="310.622" r="70"/>
+    <circle cx="180.000" cy="250.000" r="70"/>
+    <circle cx="215.000" cy="189.378" r="70"/>
+    <circle cx="285.000" cy="189.378" r="70"/>
+    <circle cx="390.000" cy="250.000" r="70"/>
+    <circle cx="371.244" cy="320.000" r="70"/>
+    <circle cx="320.000" cy="371.244" r="70"/>
+    <circle cx="250.000" cy="390.000" r="70"/>
+    <circle cx="180.000" cy="371.244" r="70"/>
+    <circle cx="128.756" cy="320.000" r="70"/>
+    <circle cx="110.000" cy="250.000" r="70"/>
+    <circle cx="128.756" cy="180.000" r="70"/>
+    <circle cx="180.000" cy="128.756" r="70"/>
+    <circle cx="250.000" cy="110.000" r="70"/>
+    <circle cx="320.000" cy="128.756" r="70"/>
+    <circle cx="371.244" cy="180.000" r="70"/>
    </g>
-   <path d="M267 301 L286 320 L267 345 L248 320Z" fill="url(#gemBlue)" stroke="#789eae" stroke-width="2.5" stroke-linejoin="round"/>
-   <path d="M267 301 L267 345 M248 320 H286 M267 301 L255 320 L267 345 L279 320Z" fill="none" stroke="#fff" stroke-width="1.5" opacity=".9"/>
-   <circle cx="420" cy="183" r="3.5" fill="#789eae"/>
-   <text x="300" y="397" text-anchor="middle" fill="#304b58" font-family="'Cormorant Garamond',Georgia,serif" font-size="34" letter-spacing="5">BLUE WHALE GEMS</text>
-   <path d="M190 416 H410" stroke="#b9dceb" stroke-width="1.5"/>
-   <text x="300" y="440" text-anchor="middle" fill="#7899a6" font-family="Manrope,Arial,sans-serif" font-size="10" letter-spacing="5">NATURAL BEAUTY</text>
   </svg>
-  <div class="stamp">The beauty<br>of nature<br>in every detail</div>
+ </div>
  </div>
 </section>
 
