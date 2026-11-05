@@ -183,7 +183,7 @@ window.applyLanguage=function(lang){
  if(!["en","ar","fr"].includes(lang))lang="en";
  localStorage.setItem("bwg-language",lang);document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.body.dir=lang==="ar"?"rtl":"ltr";
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=lang==="fr"?(fr[el.dataset.en]||el.dataset.en):el.dataset[lang]);
- document.querySelector(".lang").textContent=lang==="en"?"Français":lang==="fr"?"العربية":"English";
+ document.querySelector(".lang").textContent=lang==="en"?"Language ▾":lang==="fr"?"Langue ▾":"اللغة ▾";
  if(group){title.textContent=lang==="fr"?frGroups[category].title:group[lang];description.textContent=lang==="fr"?frGroups[category].desc:(lang==="ar"?group.descAr:group.descEn);}
  document.querySelectorAll(".delivery").forEach(el=>{const m=el.dataset.en.match(/[0-9.]+/);if(m)el.textContent=lang==="fr"?"Livraison · "+m[0]+" TND":lang==="ar"?el.dataset.ar:el.dataset.en;});
  const ey=document.querySelector(".eyebrow");if(ey&&lang==="fr")ey.textContent="BLUE WHALE GEMS · LA COLLECTION";else if(ey)ey.textContent="BLUE WHALE GEMS · THE COLLECTION";
