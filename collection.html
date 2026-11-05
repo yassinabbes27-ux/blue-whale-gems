@@ -17,10 +17,15 @@ body{margin:0;background:#fff;color:var(--ink);font-family:"DM Sans",Arial,sans-
 body[dir="rtl"]{font-family:"Cairo",Arial,sans-serif}
 a{color:inherit;text-decoration:none}
 header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{max-width:1160px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.nav{max-width:1160px;margin:auto;padding:16px 125px 16px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
 .logo{font-family:"Playfair Display",serif;font-size:16px;letter-spacing:2px;font-weight:500}
 .logo small{display:block;font-family:"DM Sans",sans-serif;font-size:9px;letter-spacing:4px;color:var(--blue-dark);margin-top:5px}
-.lang{border:1px solid #dce8ec;background:white;color:var(--green);padding:8px 12px;border-radius:2px;font-size:11px;cursor:pointer}
+.language-switcher{position:absolute;right:22px;top:50%;transform:translateY(-50%);z-index:20;direction:ltr}
+.lang{border:1px solid #dce8ec;background:white;color:var(--green);padding:8px 12px;border-radius:5px;font-size:11px;cursor:pointer}
+.language-menu{display:none;position:absolute;right:0;top:calc(100% + 8px);min-width:130px;padding:6px;background:#fff;border:1px solid #e2ecef;border-radius:8px;box-shadow:0 10px 28px rgba(39,67,77,.13)}
+.language-menu.open{display:block}
+.language-menu button{display:block;width:100%;padding:10px 12px;text-align:left;background:transparent;border:0;border-radius:5px;color:#526a73;font-size:11px;cursor:pointer}
+.language-menu button[aria-current=true]{background:#f0f7f9;color:var(--green)}
 main{max-width:1160px;margin:auto;padding:32px 20px 70px}
 .back{display:inline-block;margin-bottom:28px;color:var(--blue-dark);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
 .heading{text-align:center;margin:5px 0 38px}
@@ -45,14 +50,22 @@ body[dir="rtl"] .eyebrow,body[dir="rtl"] .back{letter-spacing:0}
 .product-image img{transition:transform .25s ease;opacity:1;transform:none}
 .product a:hover .product-image img{transform:scale(1.025)}
 @media(prefers-reduced-motion:reduce){.product-image img{transition:none!important;transform:none!important}}
-@media(max-width:700px){.nav{padding:13px}.logo{font-size:12px}main{padding:23px 13px 50px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 12px}.product h2{font-size:13px}h1{font-size:32px}}
+@media(max-width:700px){
+ .nav{padding-right:105px}.language-switcher{right:13px}.lang{padding:7px 9px;font-size:10px}.nav{padding:13px}.logo{font-size:12px}main{padding:23px 13px 50px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 12px}.product h2{font-size:13px}h1{font-size:32px}}
 </style>
 </head>
 <body>
-<header>
+<header style="position:sticky">
  <div class="nav">
   <a class="logo" href="index.html">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a>
-  <button class="lang" type="button" onclick="toggleLanguage()">العربية</button>
+ </div>
+ <div class="language-switcher">
+  <button class="lang" type="button" onclick="toggleLanguageMenu()" aria-expanded="false" aria-haspopup="true">Language ▾</button>
+  <div class="language-menu" id="languageMenu">
+   <button type="button" onclick="chooseLanguage('en')">English</button>
+   <button type="button" onclick="chooseLanguage('fr')">Français</button>
+   <button type="button" onclick="chooseLanguage('ar')">العربية</button>
+  </div>
  </div>
 </header>
 <main>
@@ -135,13 +148,16 @@ function applyLanguage(lang){
  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
  document.body.dir=lang==="ar"?"rtl":"ltr";
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=el.dataset[lang]);
- document.querySelector(".lang").textContent=lang==="ar"?"English":"العربية";
+ document.querySelector(".lang").textContent=lang==="en"?"Language ▾":lang==="fr"?"Langue ▾":"اللغة ▾";
+ document.querySelectorAll("#languageMenu button").forEach(el=>el.setAttribute("aria-current",({"English":"en","Français":"fr","العربية":"ar"}[el.textContent]===lang)?"true":"false"));
  if(group){
   title.textContent=group[lang];
   description.textContent=lang==="ar"?group.descAr:group.descEn;
  }
 }
-function toggleLanguage(){applyLanguage((localStorage.getItem("bwg-language")||"en")==="en"?"ar":"en")}
+function toggleLanguageMenu(){const menu=document.getElementById("languageMenu"),button=document.querySelector(".lang"),open=menu.classList.toggle("open");button.setAttribute("aria-expanded",open?"true":"false");}
+function chooseLanguage(lang){applyLanguage(lang);document.getElementById("languageMenu").classList.remove("open");document.querySelector(".lang").setAttribute("aria-expanded","false");}
+function toggleLanguage(){toggleLanguageMenu();}
 applyLanguage(localStorage.getItem("bwg-language")||"en");
 if(group)document.title=group.en+" | BLUE WHALE GEMS";
 loadProducts().then(()=>{applyLanguage(localStorage.getItem("bwg-language")||"en");setupReveal();}).catch(()=>{title.textContent="Collection unavailable";description.textContent="Please refresh the page in a moment.";});
