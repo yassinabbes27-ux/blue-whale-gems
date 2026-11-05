@@ -45,7 +45,7 @@ body[dir=rtl] .caveat{border-left:0;border-right:2px solid #c4e2ec;border-radius
 .selector button{border:1px solid var(--line);background:#fff;color:#75868c;padding:9px 13px;border-radius:30px;font-size:9px;transition:.2s}
 .selector button.active{border-color:var(--chakra);color:#344e57;background:color-mix(in srgb,var(--chakra) 9%,white);box-shadow:0 4px 15px rgba(34,65,77,.06)}
 footer{text-align:center;border-top:1px solid var(--line);padding:26px 18px;color:#94a1a5;font-size:9px}
-@media(max-width:760px){main{padding:34px 14px 60px}.explorer{grid-template-columns:1fr;gap:14px}.figure-card{min-height:390px;padding:17px}.body-map{height:300px;width:230px}.detail-card{min-height:0}.nav{padding:13px 14px}.brand{font-size:15px}.back{font-size:8px}.intro{margin-bottom:25px}}
+@media(max-width:760px){main{padding:34px 14px 60px}.explorer{grid-template-columns:1fr;gap:14px}.figure-card{min-height:0;padding:17px}.chakra-symbol-stack{max-width:320px;gap:4px}.chakra-symbol{min-height:47px}.symbol-art{width:38px;height:38px;flex-basis:38px}.detail-card{min-height:0}.nav{padding:13px 14px}.brand{font-size:15px}.back{font-size:8px}.intro{margin-bottom:25px}}
 @media(max-width:390px){.stones{grid-template-columns:1fr}.nav-right{gap:8px}.langs button{padding:6px 8px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important;animation:none!important}}
 </style>
@@ -55,20 +55,7 @@ footer{text-align:center;border-top:1px solid var(--line);padding:26px 18px;colo
 <main>
 <section class="intro"><div class="eyebrow" data-i18n="eyebrow">A JOURNEY THROUGH SYMBOL & STONE</div><h1 data-i18n="title">The Seven Chakras</h1><p data-i18n="intro">Explore the seven energy centres as they are described in several Indian spiritual traditions, and discover gemstones that have become symbolically associated with each one.</p></section>
 <section class="explorer" aria-label="Interactive chakra explorer">
-<div class="figure-card"><div class="figure-title" data-i18n="mapTitle">The human form</div><div class="figure-sub" data-i18n="mapSub">SYMBOLIC POSITIONS · NOT ANATOMICAL</div>
-<svg class="body-map" viewBox="0 0 260 410" role="img" aria-label="Symbolic human silhouette with seven chakra points">
-<defs><linearGradient id="bodyFill" x1="0" x2="1"><stop stop-color="#e6eff1"/><stop offset=".5" stop-color="#f8fbfb"/><stop offset="1" stop-color="#e4eef0"/></linearGradient></defs>
-<path class="body-outline" fill="url(#bodyFill)" d="M130 18c-27 0-43 20-43 45 0 18 8 31 20 39l-3 20c-22 7-41 18-50 38-8 18-10 47-12 73l-9 80c-1 9 5 16 13 17 8 1 13-5 15-13l18-75 8-38 5 58-5 93c0 9 6 16 14 16 9 0 14-6 15-15l8-83 8 83c1 9 7 15 15 15 8 0 14-7 13-16l-5-93 5-58 8 38 18 75c2 8 7 14 15 13 8-1 14-8 13-17l-9-80c-2-26-4-55-12-73-9-20-28-31-50-38l-3-20c12-8 20-21 20-39 0-25-16-45-43-45z"/>
-<path d="M90 126Q130 142 170 126M78 167Q130 185 182 167M76 214Q130 229 184 214" fill="none" stroke="#d3e1e4" stroke-width="1.2"/>
-<g id="bodyPoints">
-<g class="chakra-point active" data-index="0" tabindex="0" role="button" aria-label="Root chakra"><circle cx="130" cy="302" r="9" fill="#bd4c58"/></g>
-<g class="chakra-point" data-index="1" tabindex="0" role="button" aria-label="Sacral chakra"><circle cx="130" cy="266" r="9" fill="#df8748"/></g>
-<g class="chakra-point" data-index="2" tabindex="0" role="button" aria-label="Solar plexus chakra"><circle cx="130" cy="218" r="9" fill="#d9ad3f"/></g>
-<g class="chakra-point" data-index="3" tabindex="0" role="button" aria-label="Heart chakra"><circle cx="130" cy="172" r="9" fill="#4a9b70"/></g>
-<g class="chakra-point" data-index="4" tabindex="0" role="button" aria-label="Throat chakra"><circle cx="130" cy="116" r="9" fill="#54a9c4"/></g>
-<g class="chakra-point" data-index="5" tabindex="0" role="button" aria-label="Third eye chakra"><circle cx="130" cy="69" r="9" fill="#5659a9"/></g>
-<g class="chakra-point" data-index="6" tabindex="0" role="button" aria-label="Crown chakra"><circle cx="130" cy="27" r="9" fill="#9869bd"/></g>
-</g></svg><div class="figure-note" data-i18n="mapNote">Tap any coloured chakra point on the figure or choose its name below to reveal its details.</div></div>
+<div class="figure-card"><div class="figure-title" data-i18n="mapTitle">The seven symbols</div><div class="figure-sub" data-i18n="mapSub">A SEQUENCE OF SEVEN CHAKRAS</div><div class="chakra-symbol-stack" id="chakraSymbolStack" aria-label="Seven interactive chakra symbols"></div><div class="figure-note" data-i18n="mapNote">Tap any symbol to reveal its chakra details and associated gemstones.</div></div>
 <div class="detail-card" id="chakraDetail" style="--chakra:#bd4c58"><div class="detail-top"><div class="color-mark"></div><div><div class="number" id="chakraNumber">01 / 07</div><h2 id="chakraName">Root Chakra</h2><div class="sanskrit" id="chakraSanskrit">Muladhara · मूलाधार</div></div></div>
 <div class="position" id="chakraPosition">Base of the spine</div><p class="description" id="chakraDescription"></p>
 <div class="meaning-grid"><div class="meaning"><small data-i18n="themeLabel">TRADITIONAL THEMES</small><strong id="chakraThemes"></strong></div><div class="meaning"><small data-i18n="colourLabel">ASSOCIATED COLOUR</small><strong id="chakraColour"></strong></div></div>
@@ -90,16 +77,18 @@ const chakras=[
 ];
 const words={
 en:{back:"← BACK TO HOME",eyebrow:"A JOURNEY THROUGH SYMBOL & STONE",title:"The Seven Chakras",intro:"Explore the seven energy centres as they are described in several Indian spiritual traditions, and discover gemstones that have become symbolically associated with each one.",mapTitle:"The human form",mapSub:"SYMBOLIC POSITIONS · NOT ANATOMICAL",mapNote:"Select a coloured point or a chakra name below to explore its traditional symbolism.",themeLabel:"TRADITIONAL THEMES",colourLabel:"ASSOCIATED COLOUR",stonesTitle:"Associated gemstones",sevenSelections:"7 SYMBOLIC SELECTIONS",caveat:"These gemstone associations come from a range of modern and traditional spiritual practices. They are cultural and symbolic, not scientific classifications or medical advice.",footer:"A thoughtful exploration of gemstones and symbolism."},
-ar:{back:"العودة إلى الرئيسية ←",eyebrow:"رحلة بين الرمز والحجر",title:"الشاكرات السبع",intro:"اكتشف مراكز الطاقة السبعة كما تصفها بعض التقاليد الروحية الهندية، وتعرّف على الأحجار الكريمة التي ارتبطت رمزياً بكل مركز.",mapTitle:"هيئة الإنسان",mapSub:"مواقع رمزية · ليست تشريحاً طبياً",mapNote:"اضغط على أي شاكرة ملوّنة في جسم الإنسان، أو اختر اسمها أدناه، لتظهر لك تفاصيلها وأحجارها المرتبطة بها.",themeLabel:"المعاني التقليدية",colourLabel:"اللون المرتبط",stonesTitle:"الأحجار المرتبطة",sevenSelections:"7 اختيارات رمزية",caveat:"تأتي هذه الروابط بين الأحجار والشاكرات من ممارسات روحية تقليدية وحديثة متنوعة. وهي دلالات ثقافية ورمزية، وليست تصنيفات علمية أو نصائح طبية.",footer:"استكشاف متأنٍ للأحجار ورموزها."},
-fr:{back:"← RETOUR À L’ACCUEIL",eyebrow:"UN VOYAGE ENTRE SYMBOLE ET PIERRE",title:"Les sept chakras",intro:"Explorez les sept centres énergétiques tels qu’ils sont décrits dans plusieurs traditions spirituelles indiennes, et découvrez les pierres qui leur sont symboliquement associées.",mapTitle:"La silhouette humaine",mapSub:"POSITIONS SYMBOLIQUES · NON ANATOMIQUES",mapNote:"Appuyez sur un chakra coloré du corps ou choisissez son nom ci-dessous pour afficher ses détails et les pierres qui lui sont associées.",themeLabel:"THÈMES TRADITIONNELS",colourLabel:"COULEUR ASSOCIÉE",stonesTitle:"Pierres associées",sevenSelections:"7 SÉLECTIONS SYMBOLIQUES",caveat:"Ces associations proviennent de diverses pratiques spirituelles traditionnelles et modernes. Elles sont culturelles et symboliques, et non des classifications scientifiques ou des conseils médicaux.",footer:"Une exploration attentive des pierres et de leur symbolique."}
+ar:{back:"العودة إلى الرئيسية ←",eyebrow:"رحلة بين الرمز والحجر",title:"الشاكرات السبع",intro:"اكتشف مراكز الطاقة السبعة كما تصفها بعض التقاليد الروحية الهندية، وتعرّف على الأحجار الكريمة التي ارتبطت رمزياً بكل مركز.",mapTitle:"رموز الشاكرات السبع",mapSub:"عرض متتابع للشاكرات السبع",mapNote:"اضغط على أي رمز لتظهر تفاصيل الشاكرة والأحجار المرتبطة بها.",themeLabel:"المعاني التقليدية",colourLabel:"اللون المرتبط",stonesTitle:"الأحجار المرتبطة",sevenSelections:"7 اختيارات رمزية",caveat:"تأتي هذه الروابط بين الأحجار والشاكرات من ممارسات روحية تقليدية وحديثة متنوعة. وهي دلالات ثقافية ورمزية، وليست تصنيفات علمية أو نصائح طبية.",footer:"استكشاف متأنٍ للأحجار ورموزها."},
+fr:{back:"← RETOUR À L’ACCUEIL",eyebrow:"UN VOYAGE ENTRE SYMBOLE ET PIERRE",title:"Les sept chakras",intro:"Explorez les sept centres énergétiques tels qu’ils sont décrits dans plusieurs traditions spirituelles indiennes, et découvrez les pierres qui leur sont symboliquement associées.",mapTitle:"Les sept symboles",mapSub:"UNE SÉQUENCE DES SEPT CHAKRAS",mapNote:"Appuyez sur un symbole pour afficher les détails du chakra et les pierres qui lui sont associées.",themeLabel:"THÈMES TRADITIONNELS",colourLabel:"COULEUR ASSOCIÉE",stonesTitle:"Pierres associées",sevenSelections:"7 SÉLECTIONS SYMBOLIQUES",caveat:"Ces associations proviennent de diverses pratiques spirituelles traditionnelles et modernes. Elles sont culturelles et symboliques, et non des classifications scientifiques ou des conseils médicaux.",footer:"Une exploration attentive des pierres et de leur symbolique."}
 };
 let lang=localStorage.getItem("bwg-language")||"en";if(!["en","ar","fr"].includes(lang))lang="en";let current=0;
 function t(key){return words[lang][key]||words.en[key]}
+const chakraGlyphs=["✥","☾","△","❀","◉","◈","✺"];
 function render(){
  const c=chakras[current],d=document;
  d.documentElement.lang=lang;d.documentElement.dir=lang==="ar"?"rtl":"ltr";d.body.dir=lang==="ar"?"rtl":"ltr";
  d.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));
  d.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+ d.getElementById("chakraSymbolStack").innerHTML=chakras.map((x,i)=>'<button type="button" class="chakra-symbol '+(i===current?'active':'')+'" data-index="'+i+'" style="--chakra:'+x.color+';--i:'+i+'" aria-label="'+x[lang]+'"><span class="symbol-art" aria-hidden="true">'+chakraGlyphs[i]+'</span><span class="symbol-label"><strong>'+x[lang]+'</strong><small>'+x.san.split(" · ")[0].toUpperCase()+'</small></span></button>').join("");
  d.getElementById("chakraDetail").style.setProperty("--chakra",c.color);
  d.querySelector(".color-mark").style.background=c.color;
  d.getElementById("chakraNumber").textContent=String(current+1).padStart(2,"0")+" / 07";
@@ -114,7 +103,6 @@ function render(){
  d.querySelectorAll(".chakra-point").forEach((p,i)=>p.classList.toggle("active",i===current));
 }
 document.addEventListener("click",e=>{const p=e.target.closest("[data-index]");const b=e.target.closest("[data-select]");const l=e.target.closest("[data-lang]");if(p){current=Number(p.dataset.index);render()}if(b){current=Number(b.dataset.select);render()}if(l){lang=l.dataset.lang;localStorage.setItem("bwg-language",lang);render()}});
-document.addEventListener("keydown",e=>{const p=e.target.closest(".chakra-point");if(p&&(e.key==="Enter"||e.key===" ")){e.preventDefault();current=Number(p.dataset.index);render()}});
 render();
 </script>
 </body></html>
