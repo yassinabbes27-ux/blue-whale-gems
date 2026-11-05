@@ -58,11 +58,22 @@ body[dir="rtl"] .eyebrow,body[dir="rtl"] .back{letter-spacing:0}
 .social-link:hover{color:var(--green)}
 .social-icon{width:15px;height:15px;flex:0 0 15px;fill:currentColor}
 
+
+/* Mobile navigation drawer — matches the homepage menu */
+.menu-button{display:none;position:absolute;left:13px;top:50%;transform:translateY(-50%);padding:4px 6px;border:0;background:transparent;color:var(--ink);font-size:21px;line-height:1;cursor:pointer;z-index:2}
+.mobile-drawer{display:none;position:fixed;inset:0;z-index:50;background:rgba(24,45,51,.3)}
+.mobile-drawer.open{display:block}
+.drawer-card{position:absolute;top:0;bottom:0;left:0;width:min(82%,330px);background:#fff;padding:25px;box-shadow:8px 0 30px rgba(24,45,51,.08)}
+.drawer-close{float:right;border:0;background:none;font-size:24px;cursor:pointer;color:var(--ink)}
+.drawer-brand{font-family:"Playfair Display",serif;font-size:17px;letter-spacing:2px;margin:28px 0}
+.drawer-card a{display:block;padding:15px 0;border-bottom:1px solid var(--line);font-size:12px;color:var(--ink)}
+@media(max-width:700px){.menu-button{display:inline-block}}
 </style>
 </head>
 <body>
 <header style="position:sticky">
  <div class="nav">
+  <button class="menu-button" type="button" onclick="toggleDrawer()" aria-label="Open menu">☰</button>
   <a class="logo" href="index.html">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a>
  </div>
  <div class="language-switcher">
@@ -165,6 +176,7 @@ function applyLanguage(lang){
   description.textContent=lang==="ar"?group.descAr:group.descEn;
  }
 }
+function toggleDrawer(){document.getElementById("mobileDrawer").classList.toggle("open");}
 function toggleLanguageMenu(){const menu=document.getElementById("languageMenu"),button=document.querySelector(".lang"),open=menu.classList.toggle("open");button.setAttribute("aria-expanded",open?"true":"false");}
 function chooseLanguage(lang){applyLanguage(lang);document.getElementById("languageMenu").classList.remove("open");document.querySelector(".lang").setAttribute("aria-expanded","false");}
 function toggleLanguage(){toggleLanguageMenu();}
@@ -204,5 +216,17 @@ window.applyLanguage(localStorage.getItem("bwg-language")||"en");
  });
 })();
 </script>
+
+<div class="mobile-drawer" id="mobileDrawer" onclick="if(event.target===this)toggleDrawer()">
+ <div class="drawer-card">
+  <button class="drawer-close" type="button" onclick="toggleDrawer()" aria-label="Close menu">×</button>
+  <div class="drawer-brand">BLUE WHALE GEMS</div>
+  <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+  <a href="index.html#collections" onclick="toggleDrawer()" data-en="Collections" data-ar="المجموعات">Collections</a>
+  <a href="index.html#story" onclick="toggleDrawer()" data-en="Our story" data-ar="قصتنا">Our story</a>
+  <a href="index.html#contact" onclick="toggleDrawer()" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+ </div>
+</div>
+
 </body>
 </html>
