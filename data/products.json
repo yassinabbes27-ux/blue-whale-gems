@@ -1,257 +1,257 @@
 [
   {
-    "category": "bracelets",
     "name": "Aquamarine + Amethyst + Labradorite Bracelet",
+    "category": "bracelets",
     "price": 70,
-    "image": "images/20261018_184933.jpg",
+    "image": "/images/20261018_184933.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Labradorite, Amethyst, Rose Quartz & Chips Bracelet",
+    "category": "bracelets",
     "price": 68,
-    "image": "images/1000088300.jpg",
+    "image": "/images/1000088300.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Coral & Agate Bracelet",
+    "category": "bracelets",
     "price": 45,
-    "image": "images/1000088312.jpg",
+    "image": "/images/1000088312.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Obsidian + Clear Quartz Bracelet",
+    "category": "bracelets",
     "price": 70,
-    "image": "images/1000088313.jpg",
+    "image": "/images/1000088313.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Moss Quartz Bracelet",
+    "category": "bracelets",
     "price": 60,
-    "image": "images/1000088296.jpg",
+    "image": "/images/1000088296.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Pink Tourmaline & Natural Pearl Bracelet",
+    "category": "bracelets",
     "price": 79,
-    "image": "images/1000088281.jpg",
+    "image": "/images/1000088281.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Red Carnelian Chip Bracelet",
+    "category": "bracelets",
     "price": 50,
-    "image": "images/1000088295.jpg",
+    "image": "/images/1000088295.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 6
   },
   {
-    "category": "bracelets",
     "name": "Citrine Chip Bracelet",
+    "category": "bracelets",
     "price": 50,
-    "image": "images/1000088297.jpg",
+    "image": "/images/1000088297.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 3
   },
   {
-    "category": "bracelets",
     "name": "Rutilated Quartz & Tiger's Eye Chip Bracelet",
+    "category": "bracelets",
     "price": 55,
-    "image": "images/1000088299.jpg",
+    "image": "/images/1000088299.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 2
   },
   {
-    "category": "bracelets",
     "name": "Falcon's Eye & Flower Agate Bracelet",
+    "category": "bracelets",
     "price": 69,
-    "image": "images/1000088279.jpg",
+    "image": "/images/1000088279.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Aquamarine, Labradorite & Coral Bracelet",
+    "category": "bracelets",
     "price": 80,
-    "image": "images/1000088265.jpg",
+    "image": "/images/1000088265.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Seven Chakras Bracelet",
+    "category": "bracelets",
     "price": 77,
-    "image": "images/1000088268.jpg",
+    "image": "/images/1000088268.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Red Jasper Bracelet",
+    "category": "bracelets",
     "price": 60,
-    "image": "images/1000088278.jpg",
+    "image": "/images/1000088278.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Amethyst & Rose Quartz Bracelet",
+    "category": "bracelets",
     "price": 66,
-    "image": "images/1000088290.jpg",
+    "image": "/images/1000088290.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Amethyst Bracelet",
+    "category": "bracelets",
     "price": 70,
-    "image": "images/1000057411.jpg",
+    "image": "/images/1000057411.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Tiger's Eye Bracelet",
+    "category": "bracelets",
     "price": 60,
-    "image": "images/1000063564.jpg",
+    "image": "/images/1000063564.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 2
   },
   {
-    "category": "bracelets",
     "name": "Multi-Color Tourmaline Bracelet",
+    "category": "bracelets",
     "price": 65,
-    "image": "images/1000063590.jpg",
+    "image": "/images/1000063590.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Lapis Lazuli Bracelet",
+    "category": "bracelets",
     "price": 80,
-    "image": "images/1000078469.jpg",
+    "image": "/images/1000078469.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "bracelets",
     "name": "Baltic Amber Bracelet",
+    "category": "bracelets",
     "price": 190,
-    "image": "images/1000079541.jpg",
+    "image": "/images/1000079541.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 2
   },
   {
-    "category": "bracelets",
     "name": "Natural Coral Bracelet",
-    "price": 39,
-    "image": "images/1000084081.jpg",
-    "delivery": 8,
-    "stock": 1
-  },
-  {
     "category": "bracelets",
+    "price": 39,
+    "image": "/images/1000084081.jpg",
+    "delivery": 8,
+    "stock": 7
+  },
+  {
     "name": "Natural Coral & Pearl Bracelet",
+    "category": "bracelets",
     "price": 89,
-    "image": "images/1000085232.jpg",
+    "image": "/images/1000085232.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "necklaces",
     "name": "Coral & Pearl Pendant Necklace",
+    "category": "necklaces",
     "price": 45,
-    "image": "images/1000032282.jpg",
+    "image": "/images/1000032282.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 6
   },
   {
-    "category": "necklaces",
     "name": "Amber Pendant Necklace",
+    "category": "necklaces",
     "price": 50,
-    "image": "images/1000052346.jpg",
+    "image": "/images/1000052346.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 10
   },
   {
-    "category": "necklaces",
     "name": "Yemeni Scenic Agate Pendant Necklace — 925 Sterling Silver",
+    "category": "necklaces",
     "price": 220,
-    "image": "images/1000074156.jpg",
+    "image": "/images/1000074156.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "necklaces",
     "name": "Natural Coral Necklace",
+    "category": "necklaces",
     "price": 200,
-    "image": "images/1000081614.jpg",
+    "image": "/images/1000081614.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "necklaces",
     "name": "Suleimani Agate Pendant Necklace",
-    "price": 150,
-    "image": "images/1000082002.jpg",
-    "delivery": 8,
-    "stock": 1
-  },
-  {
     "category": "necklaces",
+    "price": 150,
+    "image": "/images/1000082002.jpg",
+    "delivery": 8,
+    "stock": 1
+  },
+  {
     "name": "Egyptian Ankh & Coral Pendant Necklace",
+    "category": "necklaces",
     "price": 79,
-    "image": "images/1000085314.jpg",
+    "image": "/images/1000085314.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "rings",
     "name": "Red Agate Ring — 925 Sterling Silver",
-    "price": 100,
-    "image": "images/1000085897.jpg",
-    "delivery": 8,
-    "stock": 1
-  },
-  {
     "category": "rings",
+    "price": 100,
+    "image": "/images/1000085897.jpg",
+    "delivery": 8,
+    "stock": 1
+  },
+  {
     "name": "Pyrite Ring — 925 Sterling Silver",
+    "category": "rings",
     "price": 120,
-    "image": "images/1000074444.jpg",
+    "image": "/images/1000074444.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "raw-gems",
     "name": "Raw Apatite",
+    "category": "raw-gems",
     "price": 37,
-    "image": "images/1000082268.jpg",
+    "image": "/images/1000082268.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "raw-gems",
     "name": "Raw Carnelian",
+    "category": "raw-gems",
     "price": 29,
-    "image": "images/1000082265.jpg",
+    "image": "/images/1000082265.jpg",
     "delivery": 8,
     "stock": 1
   },
   {
-    "category": "raw-gems",
     "name": "Raw Green Aventurine",
+    "category": "raw-gems",
     "price": 34,
-    "image": "images/1000082266.jpg",
+    "image": "/images/1000082266.jpg",
     "delivery": 8,
     "stock": 1
   }
