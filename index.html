@@ -885,7 +885,7 @@ function applyLanguage(lang){
  document.querySelectorAll("[data-aria-en][data-aria-ar]").forEach(el=>{
   el.setAttribute("aria-label",el.dataset["aria"+(lang==="ar"?"Ar":"En")]);
  });
- document.querySelector(".lang").textContent=lang==="ar"?"English":"العربية";
+ document.querySelector(".lang").textContent=lang==="en"?"English ▾":lang==="fr"?"Français ▾":"العربية ▾";
 }
 function toggleLanguage(){
  applyLanguage((localStorage.getItem("bwg-language")||"en")==="en"?"ar":"en");
@@ -989,7 +989,7 @@ window.applyLanguage=function(lang){
  document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.body.dir=lang==="ar"?"rtl":"ltr";
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>{el.textContent=lang==="fr"?(fr[el.dataset.en]||el.dataset.en):el.dataset[lang];});
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>{if(el.dataset.en&&fr[el.dataset.en])el.dataset.fr=fr[el.dataset.en];});
- document.querySelectorAll(".lang").forEach(el=>el.textContent=lang==="en"?"English ▾":lang==="fr"?"Langue ▾":"اللغة ▾");
+ document.querySelectorAll(".lang").forEach(el=>el.textContent=lang==="en"?"English ▾":lang==="fr"?"Français ▾":"العربية ▾");
   document.querySelectorAll("#languageMenu button").forEach(el=>el.setAttribute("aria-current",({"English":"en","Français":"fr","العربية":"ar"}[el.textContent]===lang)?"true":"false"));
  const staticMap=fr;
  window.__bwgTextOriginals=window.__bwgTextOriginals||new WeakMap();
