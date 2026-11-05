@@ -442,5 +442,58 @@ window.applyLanguage(localStorage.getItem("bwg-language")||"en");
 })();
 </script>
 <script src="order-list.js?v=20261105d" defer></script>
+
+<!-- BLUE WHALE GEMS background ambience -->
+<div id="bwgMusicControls" style="position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:6px;padding:7px 9px;background:rgba(255,255,255,.94);border:1px solid #dce9ed;border-radius:30px;box-shadow:0 5px 20px rgba(30,65,78,.12);backdrop-filter:blur(10px)">
+ <button id="bwgMusicPlay" type="button" aria-label="Pause background music" title="Play or pause background music" style="width:32px;height:32px;border:0;border-radius:50%;background:#245344;color:#fff;font-size:14px;display:grid;place-items:center">Ⅱ</button>
+ <button id="bwgMusicMute" type="button" aria-label="Mute background music" title="Mute or unmute background music" style="width:32px;height:32px;border:1px solid #dce9ed;border-radius:50%;background:#fff;color:#245344;font-size:15px;display:grid;place-items:center">♫</button>
+</div>
+<audio id="bwgBackgroundMusic" preload="auto" loop playsinline>
+ <source src="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/juliush-waves-from-piano-and-sea-ambient-chill-out-piano-music-and-waves-3551.mp3" type="audio/mpeg">
+</audio>
+<script id="bwg-background-music">
+(function(){
+ const audio=document.getElementById("bwgBackgroundMusic");
+ const playButton=document.getElementById("bwgMusicPlay");
+ const muteButton=document.getElementById("bwgMusicMute");
+ if(!audio||!playButton||!muteButton)return;
+ const savedTime=Number(sessionStorage.getItem("bwg-music-time")||0);
+ audio.volume=0.05;
+ audio.muted=false;
+ audio.addEventListener("loadedmetadata",function(){
+  if(Number.isFinite(savedTime)&&savedTime>0&&savedTime<audio.duration)audio.currentTime=savedTime;
+  const attempt=audio.play();
+  if(attempt&&typeof attempt.catch==="function")attempt.catch(function(){});
+ },{once:true});
+ function updateControls(){
+  playButton.textContent=audio.paused?"▶":"Ⅱ";
+  playButton.setAttribute("aria-label",audio.paused?"Play background music":"Pause background music");
+  muteButton.textContent=audio.muted?"♪":"♫";
+  muteButton.setAttribute("aria-label",audio.muted?"Unmute background music":"Mute background music");
+ }
+ function savePosition(){
+  if(Number.isFinite(audio.currentTime))sessionStorage.setItem("bwg-music-time",String(audio.currentTime));
+ }
+ audio.addEventListener("timeupdate",savePosition);
+ window.addEventListener("pagehide",savePosition);
+ audio.addEventListener("play",updateControls);
+ audio.addEventListener("pause",updateControls);
+ audio.addEventListener("volumechange",updateControls);
+ playButton.addEventListener("click",function(){
+  if(audio.paused)audio.play().catch(function(){});
+  else audio.pause();
+ });
+ muteButton.addEventListener("click",function(){audio.muted=!audio.muted;});
+ document.addEventListener("pointerdown",function(event){
+  if(event.target.closest("#bwgMusicControls"))return;
+  if(audio.paused)audio.play().catch(function(){});
+ },{once:true,passive:true});
+ document.addEventListener("keydown",function(){
+  if(audio.paused)audio.play().catch(function(){});
+ },{once:true});
+ updateControls();
+})();
+</script>
+
 </body>
 </html>
