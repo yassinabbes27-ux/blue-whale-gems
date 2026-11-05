@@ -26,7 +26,7 @@ main{max-width:1050px;margin:0 auto;padding:35px 22px 0}
 .product{display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:start}
 .photo{background:transparent;padding:0;border:0;overflow:hidden}
 .photo img{display:block;width:100%;height:auto;max-height:620px;object-fit:contain;border-radius:3px;box-shadow:none}
-.details{padding:15px 0 0}
+.details{padding:15px 0 0;visibility:hidden}
 .eyebrow{font-size:9px;letter-spacing:3px;color:var(--blue-dark);font-weight:600;text-transform:uppercase}
 h1{margin:20px 0 16px;font-family:"Playfair Display",serif;font-size:clamp(30px,4vw,43px);line-height:1.3;font-weight:400}
 body[dir="rtl"] h1,body[dir="rtl"] h2{font-family:"Cairo",sans-serif}
@@ -253,10 +253,15 @@ if(!name||!validPrice||!validImage||!validDelivery){
  productImage.loading="eager";
  productImage.fetchPriority="high";
  productImage.decoding="async";
+ productImage.onload=function(){
+  document.querySelector(".product .details").style.visibility="visible";
+ };
  productImage.onerror=function(){
   if(this.dataset.fallback!=="used"){
    this.dataset.fallback="used";
    this.src=originalImageUrl;
+  }else{
+   document.querySelector(".product .details").style.visibility="visible";
   }
  }; 
  productImage.src=optimizedImageUrl;
