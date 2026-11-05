@@ -98,6 +98,7 @@ h1{margin:14px 0 12px;line-height:1.2}
 
 /* Final product-image spacing: clean white margins, no frame or shadow */
 .product .photo{
+ visibility:hidden;
  background:#fff!important;
  border:0!important;
  border-radius:0!important;
@@ -254,6 +255,7 @@ if(!name||!validPrice||!validImage||!validDelivery){
  productImage.fetchPriority="high";
  productImage.decoding="async";
  productImage.onload=function(){
+  document.querySelector(".product .photo").style.visibility="visible";
   document.querySelector(".product .details").style.visibility="visible";
  };
  productImage.onerror=function(){
