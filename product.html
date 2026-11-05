@@ -92,6 +92,47 @@ h1{margin:14px 0 12px;line-height:1.2}
 
 @media(max-width:700px){header{padding:13px}.logo{font-size:12px}main{padding:23px 14px 0}.product{grid-template-columns:1fr;gap:25px}.photo img{max-height:470px}.details{padding:0 3px}h1{font-size:32px;margin:15px 0}.price{font-size:21px}.info{padding:15px 17px}.editorial{margin-top:55px;padding:45px 18px}.editorial h2{font-size:29px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+
+/* Final product-image correction: full image, edge-to-edge, no frame or shadow */
+.product .photo{
+ background:transparent!important;
+ border:0!important;
+ border-radius:0!important;
+ padding:0!important;
+ box-shadow:none!important;
+ overflow:visible!important;
+ width:100%;
+}
+.product .photo img,
+body.cinema-ready .product .photo img,
+body.cinema-ready .product .photo.is-visible img{
+ display:block!important;
+ width:100%!important;
+ height:auto!important;
+ max-height:none!important;
+ aspect-ratio:auto!important;
+ object-fit:contain!important;
+ object-position:center!important;
+ border:0!important;
+ border-radius:0!important;
+ padding:0!important;
+ margin:0!important;
+ box-shadow:none!important;
+ filter:none!important;
+ opacity:1!important;
+ transform:none!important;
+ animation:none!important;
+ transition:none!important;
+}
+@media(max-width:700px){
+ main{padding-left:0!important;padding-right:0!important}
+ .back{margin-left:14px;margin-right:14px}
+ .product{width:100%;gap:22px}
+ .product .photo{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+ .product .photo img{width:100vw!important}
+ .product .details{padding-left:16px!important;padding-right:16px!important}
+}
+
 </style>
 </head>
 <body>
@@ -193,8 +234,20 @@ if(!name||!validPrice||!validImage||!validDelivery){
  document.getElementById("infoPrice").textContent=productAmount+" TND";
  document.getElementById("deliveryPrice").textContent=deliveryAmount+" TND";
  document.getElementById("totalPrice").textContent=total+" TND";
- document.getElementById("productImage").src=image;
- document.getElementById("productImage").alt=name;
+ const productImage=document.getElementById("productImage");
+ const originalImageUrl="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/"+image;
+ const optimizedImageUrl="https://wsrv.nl/?url="+encodeURIComponent(originalImageUrl)+"&w=1200&output=webp&q=82";
+ productImage.alt=name;
+ productImage.loading="eager";
+ productImage.fetchPriority="high";
+ productImage.decoding="async";
+ productImage.onerror=function(){
+  if(this.dataset.fallback!=="used"){
+   this.dataset.fallback="used";
+   this.src=originalImageUrl;
+  }
+ }; 
+ productImage.src=optimizedImageUrl;
 
  document.getElementById("stockText").dataset.en=availableStock>0?"ONLY "+availableStock+" PIECE"+(availableStock>1?"S":"")+" AVAILABLE":"CURRENTLY UNAVAILABLE";
  document.getElementById("stockText").dataset.ar=availableStock>0?"متوفر: "+availableStock+" قطعة":"غير متوفر حالياً";
