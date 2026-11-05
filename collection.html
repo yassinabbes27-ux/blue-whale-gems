@@ -238,6 +238,27 @@ window.applyLanguage(localStorage.getItem("bwg-language")||"en");
  </div>
 </div>
 
-<script src="order-list.js" defer></script>
+<script id="bwg-product-name-language">
+(function(){
+ let products=[];
+ const current=()=>localStorage.getItem("bwg-language")||"en";
+ function nameFor(p){const l=current();return l==="ar"?(p.nameAr||p.name):l==="fr"?(p.nameFr||p.name):p.name;}
+ function update(){
+  document.querySelectorAll("#productsGrid .product").forEach(card=>{
+   const link=card.querySelector("a[href*='product.html?']");
+   const heading=card.querySelector("h2");
+   if(!link||!heading)return;
+   const image=new URL(link.href).searchParams.get("image");
+   const p=products.find(x=>String(x.image||"").replace(/^\/+ /,"").replace(/^\//,"")===image);
+   if(p)heading.textContent=nameFor(p);
+  });
+ }
+ fetch("data/products.json").then(r=>r.json()).then(data=>{products=data;update();});
+ document.addEventListener("click",e=>{if(e.target.closest("#languageMenu button"))setTimeout(update,0);});
+ new MutationObserver(update).observe(document.getElementById("productsGrid")||document.body,{childList:true,subtree:true});
+ window.addEventListener("pageshow",update);
+})();
+</script>
+<script src="order-list.js?v=20261105b" defer></script>
 </body>
 </html>
