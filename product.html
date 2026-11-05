@@ -420,6 +420,27 @@ window.applyLanguage(localStorage.getItem("bwg-language")||"en");
  </div>
 </div>
 
-<script src="order-list.js" defer></script>
+<script id="bwg-product-name-language">
+(function(){
+ const image=new URLSearchParams(location.search).get("image");
+ function update(data){
+  const p=data.find(x=>String(x.image||"").replace(/^\//,"")===image);
+  if(!p)return;
+  const lang=localStorage.getItem("bwg-language")||"en";
+  const name=lang==="ar"?(p.nameAr||p.name):lang==="fr"?(p.nameFr||p.name):p.name;
+  const heading=document.getElementById("productName");
+  if(heading)heading.textContent=name;
+  document.title=name+" | BLUE WHALE GEMS";
+  const img=document.getElementById("productImage");
+  if(img)img.alt=name;
+ }
+ fetch("data/products.json").then(r=>r.json()).then(data=>{
+  update(data);
+  document.addEventListener("click",e=>{if(e.target.closest("#languageMenu button"))setTimeout(()=>update(data),0);});
+  window.addEventListener("pageshow",()=>update(data));
+ });
+})();
+</script>
+<script src="order-list.js?v=20261105b" defer></script>
 </body>
 </html>
