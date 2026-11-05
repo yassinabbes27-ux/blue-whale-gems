@@ -33,8 +33,8 @@ header{
 position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);
 backdrop-filter:blur(12px);border-bottom:1px solid var(--line)
 }
-.header{
-max-width:1240px;margin:auto;padding:17px 25px;
+ .header{
+position:relative;max-width:1240px;margin:auto;padding:17px 25px;
 display:grid;grid-template-columns:1fr auto 1fr;
 align-items:center;gap:18px
 }
@@ -50,10 +50,15 @@ display:block;margin-top:4px;font-family:Manrope,Arial,sans-serif;
 font-size:8px;font-weight:400;letter-spacing:4px;color:var(--blue-dark)
 }
 .actions{justify-content:flex-end}
+.language-switcher{position:absolute;right:25px;top:50%;transform:translateY(-50%);z-index:30;direction:ltr}
 .lang{
-background:white;border:1px solid #dce8ec;
-padding:8px 11px;color:var(--green);font-size:10px
+background:white;border:1px solid #dce8ec;border-radius:5px;
+padding:8px 12px;color:var(--green);font-size:10px;cursor:pointer
 }
+.language-menu{display:none;position:absolute;right:0;top:calc(100% + 9px);min-width:132px;padding:6px;background:#fff;border:1px solid #e2ecef;border-radius:8px;box-shadow:0 10px 28px rgba(39,67,77,.13)}
+.language-menu.open{display:block}
+.language-menu button{display:block;width:100%;padding:10px 12px;text-align:left;background:transparent;border:0;border-radius:5px;color:#526a73;font-size:11px;cursor:pointer}
+.language-menu button:hover,.language-menu button[aria-current="true"]{background:#f0f7f9;color:var(--green)}
 .menu-button{display:none;background:none;border:0;font-size:20px}
 .hero{
 max-width:1440px;margin:auto;min-height:550px;
@@ -458,7 +463,8 @@ animation:chakraProgress 35s linear infinite
 .brand{font-size:12px;letter-spacing:1.2px}
 .brand small{font-size:7px;letter-spacing:2px}
 .actions{gap:5px}
-.lang{padding:7px;font-size:9px}
+.lang{padding:7px 9px;font-size:9px}
+ .language-switcher{right:13px}
 .hero{grid-template-columns:1fr;min-height:0}
 .hero-copy{padding:52px 23px 40px;min-height:570px;background-position:center 22%}
 .hero h1{font-size:42px;margin:16px 0 13px}
@@ -640,7 +646,14 @@ body[dir="rtl"] .gem-story-copy{text-align:right}
   <a class="brand" href="index.html">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a>
   <div class="actions">
    <a class="nav" href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-   <button class="lang" onclick="toggleLanguage()">العربية</button>
+  </div>
+  <div class="language-switcher">
+   <button class="lang" type="button" onclick="toggleLanguageMenu()" aria-expanded="false" aria-haspopup="true">Language ▾</button>
+   <div class="language-menu" id="languageMenu">
+    <button type="button" onclick="chooseLanguage('en')">English</button>
+    <button type="button" onclick="chooseLanguage('fr')">Français</button>
+    <button type="button" onclick="chooseLanguage('ar')">العربية</button>
+   </div>
   </div>
  </div>
 </header>
@@ -965,7 +978,8 @@ window.applyLanguage=function(lang){
  document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.body.dir=lang==="ar"?"rtl":"ltr";
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>{el.textContent=lang==="fr"?(fr[el.dataset.en]||el.dataset.en):el.dataset[lang];});
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>{if(el.dataset.en&&fr[el.dataset.en])el.dataset.fr=fr[el.dataset.en];});
- document.querySelectorAll(".lang").forEach(el=>el.textContent=lang==="en"?"Français":lang==="fr"?"العربية":"English");
+ document.querySelectorAll(".lang").forEach(el=>el.textContent=lang==="en"?"Language ▾":lang==="fr"?"Langue ▾":"اللغة ▾");
+  document.querySelectorAll("#languageMenu button").forEach(el=>el.setAttribute("aria-current",({"English":"en","Français":"fr","العربية":"ar"}[el.textContent]===lang)?"true":"false"));
  const staticMap=fr;
  window.__bwgTextOriginals=window.__bwgTextOriginals||new WeakMap();
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
@@ -982,7 +996,9 @@ window.applyLanguage=function(lang){
  document.querySelectorAll(".gem-story-copy p").forEach((el,i)=>{if(!window.__bwgStoryOriginals.has(el))window.__bwgStoryOriginals.set(el,el.textContent);if(lang==="fr"){el.textContent=["Dans les trésors des rois de l’Égypte ancienne, le lapis-lazuli occupait une place réservée aux pierres précieuses. Extrait des montagnes lointaines, il était acheminé par les caravanes jusqu’aux rives du Nil, où les artisans en faisaient des bijoux royaux, des colliers et des ornements de couronnes. Sa valeur était telle qu’il ornait le masque du roi Toutânkhamon, mêlant son bleu à l’or des pharaons. Il demeure le témoin d’une civilisation qui fit de la beauté un héritage intemporel.","L’œil-de-tigre était apprécié pour son éclat évoquant le regard d’un fauve dans l’obscurité de la forêt. Des lignes dorées et brunes se succèdent à sa surface ; lorsque la pierre tourne, sa lumière semble changer comme si un œil veillait en son cœur. Dans l’Antiquité, voyageurs et guerriers le portaient comme symbole de courage, de vigilance et de protection. Son charme ne réside pas seulement dans sa couleur, mais aussi dans ce reflet mystérieux qui lui confère son prestige.","Les souverains choisissaient les plus belles nuances d’améthyste pour orner leurs couronnes et leurs bagues, voyant dans sa robe violette un symbole de sagesse et de dignité. Ils y trouvaient un ornement digne du trône, associé à la lucidité et à la justesse du jugement. Comme s’ils souhaitaient réunir dans leurs couronnes l’éclat du pouvoir et la sagesse des rois."][i];}else{el.textContent=window.__bwgStoryOriginals.get(el);}}); 
  document.querySelectorAll(".gem-story-index").forEach((el,i)=>{if(!el.dataset.original)el.dataset.original=el.textContent;el.textContent=lang==="fr"?["01 · LAPIS-LAZULI","02 · ŒIL-DE-TIGRE","03 · AMÉTHYSTE"][i]:el.dataset.original;});
 }
-window.toggleLanguage=function(){const cur=localStorage.getItem("bwg-language")||"en";window.applyLanguage(cur==="en"?"fr":cur==="fr"?"ar":"en");};
+window.toggleLanguageMenu=function(){const menu=document.getElementById("languageMenu"),button=document.querySelector(".lang"),open=menu.classList.toggle("open");button.setAttribute("aria-expanded",open?"true":"false");};
+window.chooseLanguage=function(lang){window.applyLanguage(lang);document.getElementById("languageMenu").classList.remove("open");document.querySelector(".lang").setAttribute("aria-expanded","false");};
+window.toggleLanguage=function(){window.toggleLanguageMenu();};
 window.applyLanguage(localStorage.getItem("bwg-language")||"en");
 })();
 </script>
