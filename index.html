@@ -7,9 +7,9 @@
 <meta name="description" content="BLUE WHALE GEMS — Natural gemstones and distinctive jewellery, selected in Tunisia.">
 <title>BLUE WHALE GEMS | Natural Gemstones</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://wsrv.nl" crossorigin>
+
 <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-<link rel="dns-prefetch" href="//wsrv.nl">
+
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -943,7 +943,7 @@ async function loadFeaturedProducts(){
    const img=document.createElement("img");
    img.alt=p.name;img.width=640;img.height=640;img.loading=index<2?"eager":"lazy";img.decoding="async";img.fetchPriority=index<2?"high":"auto";
     const originalImageUrl="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/"+imagePath;
-    const optimizedImageUrl="https://wsrv.nl/?url="+encodeURIComponent(originalImageUrl)+"&w=640&output=webp&q=76&fit=contain&maxage=1y";
+    const optimizedImageUrl=originalImageUrl;
     img.onerror=function(){if(this.dataset.fallback!=="used"){this.dataset.fallback="used";this.src=originalImageUrl;}};
     img.src=optimizedImageUrl;
    imageLink.appendChild(img);
@@ -1027,6 +1027,6 @@ window.applyLanguage(localStorage.getItem("bwg-language")||"en");
  });
 })();
 </script>
-<script src="order-list.js?v=20261105c" defer></script>
+<script src="order-list.js?v=20261105d" defer></script>
 </body>
 </html>
