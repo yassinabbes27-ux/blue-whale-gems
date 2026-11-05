@@ -59,9 +59,20 @@ background:linear-gradient(115deg,#fbfdfe,#f1f8fa 55%,#e5f2f5);
 overflow:hidden
 }
 .hero-copy{
+position:relative;isolation:isolate;
 display:flex;flex-direction:column;align-items:flex-start;
-justify-content:center;padding:70px clamp(28px,8vw,115px)
+justify-content:center;padding:70px clamp(28px,8vw,115px);
+background-image:url("images/homepage-seashells.jpg");
+background-size:cover;background-position:center 24%;
 }
+.hero-copy:before{
+content:"";position:absolute;inset:0;z-index:-1;
+background:linear-gradient(90deg,rgba(239,248,250,.76),rgba(239,248,250,.46));
+}
+.hero-copy>*{position:relative;z-index:1}
+.hero-copy .kicker,.hero-copy h1{color:#173b4b}
+.hero-copy p{color:#294b59}
+.hero-note{color:#345b69}
 .kicker{
 font-size:9px;letter-spacing:3px;color:var(--blue-dark);
 font-weight:700;text-transform:uppercase
@@ -387,7 +398,7 @@ animation:chakraProgress 35s linear infinite
 .actions{gap:5px}
 .lang{padding:7px;font-size:9px}
 .hero{grid-template-columns:1fr;min-height:0}
-.hero-copy{padding:52px 23px 40px}
+.hero-copy{padding:52px 23px 40px;min-height:570px;background-position:center 22%}
 .hero h1{font-size:42px;margin:16px 0 13px}
 .hero-copy p{font-size:12px}
 .hero-visual{min-height:315px}
