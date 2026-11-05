@@ -209,7 +209,8 @@ if(!name||!validPrice||!validImage||!validDelivery){
   const customerPhone=document.getElementById("customerPhone").value.trim();
   const customerAddress=document.getElementById("customerAddress").value.trim();
   if(!customerName||!customerPhone||!customerAddress){this.reportValidity();return;}
-  const message="طلب جديد | BLUE WHALE GEMS\n\nالسلام عليكم، أرغب في تأكيد طلبي التالي:\n\n01 — معلومات الحريف\nالاسم: "+customerName+"\nالهاتف: "+customerPhone+"\nالعنوان: "+customerAddress+"\n\n02 — تفاصيل الطلب\nالمنتج: "+name+"\nالسعر: "+productAmount+" د.ت\nالتوصيل: "+deliveryAmount+" د.ت\nالكمية: "+quantity+"\n\nالمبلغ الجملي: "+total+" د.ت\n\nشكراً لكم.";
+  const lang=localStorage.getItem("bwg-language")||"en";
+  const message=lang==="fr"?"Commande BLUE WHALE GEMS\n\nBonjour, je souhaite confirmer la commande suivante :\n\n01 — Informations client\nNom : "+customerName+"\nTéléphone : "+customerPhone+"\nAdresse : "+customerAddress+"\n\n02 — Détails de la commande\nProduit : "+name+"\nPrix : "+productAmount+" TND\nLivraison : "+deliveryAmount+" TND\nQuantité : "+quantity+"\n\nTotal : "+total+" TND\n\nMerci.":lang==="ar"?"طلب جديد | BLUE WHALE GEMS\n\nالسلام عليكم، أرغب في تأكيد طلبي التالي:\n\n01 — معلومات الحريف\nالاسم: "+customerName+"\nالهاتف: "+customerPhone+"\nالعنوان: "+customerAddress+"\n\n02 — تفاصيل الطلب\nالمنتج: "+name+"\nالسعر: "+productAmount+" د.ت\nالتوصيل: "+deliveryAmount+" د.ت\nالكمية: "+quantity+"\n\nالمبلغ الجملي: "+total+" د.ت\n\nشكراً لكم.":"New order | BLUE WHALE GEMS\n\nHello, I would like to confirm the following order:\n\n01 — Customer information\nName: "+customerName+"\nPhone: "+customerPhone+"\nAddress: "+customerAddress+"\n\n02 — Order details\nProduct: "+name+"\nPrice: "+productAmount+" TND\nDelivery: "+deliveryAmount+" TND\nQuantity: "+quantity+"\n\nTotal: "+total+" TND\n\nThank you.";
   window.location.href="https://wa.me/21655733020?text="+encodeURIComponent(message);
  });
 }
