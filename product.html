@@ -6,6 +6,9 @@
 <meta name="theme-color" content="#ffffff">
 <title>Product | BLUE WHALE GEMS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://wsrv.nl" crossorigin>
+<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+<link rel="dns-prefetch" href="//wsrv.nl">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--blue:#b9dceb;--blue-dark:#7895a3;--green:#245344;--whatsapp:#a9e8c5;--ink:#25363d;--muted:#7b898e;--line:#e9eef0}
@@ -244,7 +247,8 @@ if(!name||!validPrice||!validImage||!validDelivery){
  document.getElementById("totalPrice").textContent=total+" TND";
  const productImage=document.getElementById("productImage");
  const originalImageUrl="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/"+image;
- const optimizedImageUrl="https://wsrv.nl/?url="+encodeURIComponent(originalImageUrl)+"&w=1200&output=webp&q=82";
+ const imageWidth=window.matchMedia("(max-width:700px)").matches?800:1200;
+  const optimizedImageUrl="https://wsrv.nl/?url="+encodeURIComponent(originalImageUrl)+"&w="+imageWidth+"&output=webp&q=76&fit=contain&maxage=1y";
  productImage.alt=name;
  productImage.loading="eager";
  productImage.fetchPriority="high";
