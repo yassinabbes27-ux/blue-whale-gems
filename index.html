@@ -654,7 +654,7 @@ body[dir="rtl"] .gem-story-copy{text-align:right}
    <a class="nav" href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
   </div>
   <div class="language-switcher">
-   <button class="lang" type="button" onclick="toggleLanguageMenu()" aria-expanded="false" aria-haspopup="true">Language ▾</button>
+   <button class="lang" type="button" onclick="toggleLanguageMenu()" aria-expanded="false" aria-haspopup="true">English ▾</button>
    <div class="language-menu" id="languageMenu">
     <button type="button" onclick="chooseLanguage('en')">English</button>
     <button type="button" onclick="chooseLanguage('fr')">Français</button>
@@ -989,7 +989,7 @@ window.applyLanguage=function(lang){
  document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.body.dir=lang==="ar"?"rtl":"ltr";
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>{el.textContent=lang==="fr"?(fr[el.dataset.en]||el.dataset.en):el.dataset[lang];});
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>{if(el.dataset.en&&fr[el.dataset.en])el.dataset.fr=fr[el.dataset.en];});
- document.querySelectorAll(".lang").forEach(el=>el.textContent=lang==="en"?"Language ▾":lang==="fr"?"Langue ▾":"اللغة ▾");
+ document.querySelectorAll(".lang").forEach(el=>el.textContent=lang==="en"?"English ▾":lang==="fr"?"Langue ▾":"اللغة ▾");
   document.querySelectorAll("#languageMenu button").forEach(el=>el.setAttribute("aria-current",({"English":"en","Français":"fr","العربية":"ar"}[el.textContent]===lang)?"true":"false"));
  const staticMap=fr;
  window.__bwgTextOriginals=window.__bwgTextOriginals||new WeakMap();
