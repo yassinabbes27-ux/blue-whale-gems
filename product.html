@@ -248,7 +248,7 @@ if(!name||!validPrice||!validImage||!validDelivery){
  const productImage=document.getElementById("productImage");
  const originalImageUrl="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/"+image;
  const imageWidth=window.matchMedia("(max-width:700px)").matches?800:1200;
-  const optimizedImageUrl="https://wsrv.nl/?url="+encodeURIComponent(originalImageUrl)+"&w="+imageWidth+"&output=webp&q=76&fit=contain&maxage=1y";
+  const optimizedImageUrl=originalImageUrl;
  productImage.alt=name;
  productImage.loading="eager";
  productImage.fetchPriority="high";
@@ -283,7 +283,7 @@ if(!name||!validPrice||!validImage||!validDelivery){
 function setupReveal(){
  if(!("IntersectionObserver" in window)||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
  document.body.classList.add("cinema-ready");
- const items=document.querySelectorAll(".photo, .details > *, .editorial > *, .details-contact > *");
+ const items=document.querySelectorAll(".details > *, .editorial > *, .details-contact > *");
  const observer=new IntersectionObserver((entries,activeObserver)=>{
   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");activeObserver.unobserve(entry.target);}});
  },{rootMargin:"0px 0px 160px 0px",threshold:0.04});
