@@ -888,7 +888,7 @@ async function loadFeaturedProducts(){
   const response=await fetch("data/products.json");
   if(!response.ok)throw new Error("Catalogue unavailable");
   const products=await response.json();
-  products.filter(p=>p.category==="bracelets").slice(0,4).forEach(p=>{
+  products.filter(p=>p.category==="bracelets").slice(0,4).forEach((p,index)=>{
    const imagePath=String(p.image||"").replace(/^\/+/, "");
    const params=new URLSearchParams({name:p.name,price:String(p.price),image:imagePath,delivery:String(p.delivery??8),stock:String(p.stock??1),category:p.category});
    const card=document.createElement("article");
@@ -897,7 +897,7 @@ async function loadFeaturedProducts(){
    imageLink.className="product-image";
    imageLink.href="product.html?"+params.toString();
    const img=document.createElement("img");
-   img.alt=p.name;img.loading="lazy";img.decoding="async";img.fetchPriority="low";img.src=imagePath;
+   img.alt=p.name;img.loading=index===0?"eager":"lazy";img.decoding="async";img.fetchPriority=index===0?"high":"auto";img.src=imagePath;
    imageLink.appendChild(img);
    const name=document.createElement("a");
    name.className="product-name";name.href=imageLink.href;name.textContent=p.name;
