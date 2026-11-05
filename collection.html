@@ -250,12 +250,11 @@ window.applyLanguage(localStorage.getItem("bwg-language")||"en");
    if(!link||!heading)return;
    const image=new URL(link.href).searchParams.get("image");
    const p=products.find(x=>(String(x.image||"").startsWith("/")?String(x.image).slice(1):String(x.image||""))===image);
-   if(p)heading.textContent=nameFor(p);
+   if(p){const translated=nameFor(p);if(heading.textContent!==translated)heading.textContent=translated;}
   });
  }
  fetch("data/products.json").then(r=>r.json()).then(data=>{products=data;update();});
  document.addEventListener("click",e=>{if(e.target.closest("#languageMenu button"))setTimeout(update,0);});
- new MutationObserver(update).observe(document.getElementById("productsGrid")||document.body,{childList:true,subtree:true});
  window.addEventListener("pageshow",update);
 })();
 </script>
