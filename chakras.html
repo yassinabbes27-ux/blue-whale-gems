@@ -22,10 +22,14 @@ main{max-width:1180px;margin:auto;padding:48px 22px 80px}
 .figure-card,.detail-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 50px rgba(38,72,83,.055)}
 .figure-card{padding:22px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:530px;background:radial-gradient(ellipse at 50% 43%,#f1f9fb 0,#fff 66%)}
 .figure-title{font:500 23px var(--serif);color:#507b8a;margin-bottom:4px}.figure-sub{font-size:8px;letter-spacing:2px;color:#9aabb0;margin-bottom:8px}
-.body-map{width:min(100%,300px);height:400px;overflow:visible}
-.body-outline{fill:#edf4f5;stroke:#b9cbd0;stroke-width:1.5}
-.chakra-point{cursor:pointer;outline:none}.chakra-point circle{stroke:#fff;stroke-width:3;filter:drop-shadow(0 2px 5px rgba(32,60,70,.18));transition:r .2s,stroke-width .2s;transform-box:fill-box;transform-origin:center;animation:chakraSequence 7s ease-in-out infinite}\n#bodyPoints .chakra-point:nth-child(1) circle{animation-delay:0s}\n#bodyPoints .chakra-point:nth-child(2) circle{animation-delay:1s}\n#bodyPoints .chakra-point:nth-child(3) circle{animation-delay:2s}\n#bodyPoints .chakra-point:nth-child(4) circle{animation-delay:3s}\n#bodyPoints .chakra-point:nth-child(5) circle{animation-delay:4s}\n#bodyPoints .chakra-point:nth-child(6) circle{animation-delay:5s}\n#bodyPoints .chakra-point:nth-child(7) circle{animation-delay:6s}\n@keyframes chakraSequence{0%,9%,100%{transform:scale(1);filter:drop-shadow(0 2px 5px rgba(32,60,70,.18))}4%{transform:scale(1.55);filter:drop-shadow(0 0 9px currentColor)}}
-.chakra-point.active circle{stroke:#29434c;stroke-width:3.5}.chakra-point:focus circle{stroke:#29434c;stroke-width:4}
+.chakra-symbol-stack{width:100%;max-width:330px;display:flex;flex-direction:column;align-items:center;gap:7px;padding:10px 0 14px}
+.chakra-symbol{--chakra:#888;position:relative;width:100%;min-height:53px;display:flex;align-items:center;gap:15px;padding:5px 16px;border:1px solid transparent;border-radius:16px;background:transparent;color:#61777e;text-align:left;cursor:pointer;opacity:.62;transition:background .35s,border-color .35s,opacity .35s,transform .35s;animation:symbolSequence 7s ease-in-out infinite;animation-delay:calc(var(--i)*1s)}
+.chakra-symbol:nth-child(1){--i:0}.chakra-symbol:nth-child(2){--i:1}.chakra-symbol:nth-child(3){--i:2}.chakra-symbol:nth-child(4){--i:3}.chakra-symbol:nth-child(5){--i:4}.chakra-symbol:nth-child(6){--i:5}.chakra-symbol:nth-child(7){--i:6}
+.symbol-art{width:43px;height:43px;flex:0 0 43px;display:grid;place-items:center;border-radius:50%;color:var(--chakra);border:1px solid color-mix(in srgb,var(--chakra) 42%,white);background:color-mix(in srgb,var(--chakra) 9%,white);font-family:var(--serif);font-size:26px;line-height:1;box-shadow:0 3px 12px rgba(35,60,70,.05);transition:transform .4s,box-shadow .4s}
+.symbol-label{display:flex;flex-direction:column;gap:2px;min-width:0}.symbol-label strong{font-size:11px;font-weight:600;color:#526970}.symbol-label small{font-size:8px;letter-spacing:1.4px;color:#9aabb0}
+.chakra-symbol.active{opacity:1;background:color-mix(in srgb,var(--chakra) 8%,white);border-color:color-mix(in srgb,var(--chakra) 34%,white);transform:scale(1.025)}
+.chakra-symbol.active .symbol-art{transform:scale(1.12);box-shadow:0 0 0 5px color-mix(in srgb,var(--chakra) 10%,white),0 0 22px color-mix(in srgb,var(--chakra) 30%,transparent)}
+@keyframes symbolSequence{0%,8%,100%{opacity:.62}3.5%{opacity:1}}
 .figure-note{font-size:9px;color:#98a6aa;text-align:center;line-height:1.7;max-width:260px}
 .detail-card{padding:clamp(20px,4vw,38px);min-height:530px}
 .detail-top{display:flex;align-items:center;gap:15px;margin-bottom:17px}
@@ -62,7 +66,7 @@ footer{text-align:center;border-top:1px solid var(--line);padding:26px 18px;colo
 <div class="stones-head"><h3 data-i18n="stonesTitle">Associated gemstones</h3><span data-i18n="sevenSelections">7 SYMBOLIC SELECTIONS</span></div><div class="stones" id="stoneList"></div>
 <div class="caveat" data-i18n="caveat">These gemstone associations come from a range of modern and traditional spiritual practices. They are cultural and symbolic, not scientific classifications or medical advice.</div></div>
 </section>
-<div class="selector" id="chakraSelector" aria-label="Choose a chakra"></div>
+
 </main>
 <footer>BLUE WHALE GEMS · <span data-i18n="footer">A thoughtful exploration of gemstones and symbolism.</span></footer>
 <script>
@@ -99,10 +103,10 @@ function render(){
  d.getElementById("chakraThemes").textContent=c.theme[lang];
  d.getElementById("chakraColour").textContent=c.colour[lang];
  d.getElementById("stoneList").innerHTML=c.stones.map(s=>'<div class="stone"><span class="stone-dot" style="--stone:'+s[3]+'"></span><span><strong>'+s[({en:0,ar:1,fr:2}[lang])]+'</strong><small>'+s[4]+'</small></span></div>').join("");
- d.getElementById("chakraSelector").innerHTML=chakras.map((x,i)=>'<button type="button" data-select="'+i+'" class="'+(i===current?'active':'')+'" style="--chakra:'+x.color+'">'+String(i+1).padStart(2,"0")+' · '+x[lang]+'</button>').join("");
+
  d.querySelectorAll(".chakra-point").forEach((p,i)=>p.classList.toggle("active",i===current));
 }
-document.addEventListener("click",e=>{const p=e.target.closest("[data-index]");const b=e.target.closest("[data-select]");const l=e.target.closest("[data-lang]");if(p){current=Number(p.dataset.index);render()}if(b){current=Number(b.dataset.select);render()}if(l){lang=l.dataset.lang;localStorage.setItem("bwg-language",lang);render()}});
+document.addEventListener("click",e=>{const p=e.target.closest("[data-index]");const l=e.target.closest("[data-lang]");if(p){current=Number(p.dataset.index);render()}if(l){lang=l.dataset.lang;localStorage.setItem("bwg-language",lang);render()}});
 render();
 </script>
 </body></html>
