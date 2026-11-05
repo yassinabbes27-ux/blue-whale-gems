@@ -1002,5 +1002,17 @@ window.toggleLanguage=function(){window.toggleLanguageMenu();};
 window.applyLanguage(localStorage.getItem("bwg-language")||"en");
 })();
 </script>
+<script id="bwg-sync-saved-language">
+(function(){
+ function syncSavedLanguage(){
+  const lang=localStorage.getItem("bwg-language")||"en";
+  if(typeof window.applyLanguage==="function")window.applyLanguage(lang);
+ }
+ window.addEventListener("pageshow",syncSavedLanguage);
+ window.addEventListener("storage",function(event){
+  if(event.key==="bwg-language")syncSavedLanguage();
+ });
+})();
+</script>
 </body>
 </html>
