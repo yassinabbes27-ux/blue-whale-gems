@@ -262,6 +262,8 @@ window.applyLanguage=function(lang){
  document.getElementById("customerAddress").placeholder="Ville, quartier, rue, numéro de maison et toute précision utile à la livraison";
  document.getElementById("orderButton").innerHTML="<span>CONFIRMER VOTRE COMMANDE</span><small>VIA WHATSAPP</small>";
  }else{
+ set("stockText",document.getElementById("stockText").dataset[lang]||"");
+ set("quantityText",document.getElementById("quantityText").dataset[lang]||"");
  set("backLink",lang==="ar"?"→ العودة إلى المجموعة":"← Return to collection");
  document.getElementById("customerName").placeholder=lang==="ar"?"اكتب الإسم الكريم":"Enter your full name";
  document.getElementById("customerPhone").placeholder=lang==="ar"?"اكتب رقم الهاتف":"Enter your phone number";
