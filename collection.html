@@ -249,7 +249,7 @@ window.applyLanguage(localStorage.getItem("bwg-language")||"en");
    const heading=card.querySelector("h2");
    if(!link||!heading)return;
    const image=new URL(link.href).searchParams.get("image");
-   const p=products.find(x=>String(x.image||"").replace(/^\/+ /,"").replace(/^\//,"")===image);
+   const p=products.find(x=>String(x.image||"").replace(/^\\/+ /,"")===image);
    if(p)heading.textContent=nameFor(p);
   });
  }
