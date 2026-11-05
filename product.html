@@ -93,12 +93,12 @@ h1{margin:14px 0 12px;line-height:1.2}
 @media(max-width:700px){header{padding:13px}.logo{font-size:12px}main{padding:23px 14px 0}.product{grid-template-columns:1fr;gap:25px}.photo img{max-height:470px}.details{padding:0 3px}h1{font-size:32px;margin:15px 0}.price{font-size:21px}.info{padding:15px 17px}.editorial{margin-top:55px;padding:45px 18px}.editorial h2{font-size:29px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
 
-/* Final product-image correction: full image, edge-to-edge, no frame or shadow */
+/* Final product-image spacing: clean white margins, no frame or shadow */
 .product .photo{
- background:transparent!important;
+ background:#fff!important;
  border:0!important;
  border-radius:0!important;
- padding:0!important;
+ padding:14px!important;
  box-shadow:none!important;
  overflow:visible!important;
  width:100%;
@@ -128,8 +128,16 @@ body.cinema-ready .product .photo.is-visible img{
  main{padding-left:0!important;padding-right:0!important}
  .back{margin-left:14px;margin-right:14px}
  .product{width:100%;gap:22px}
- .product .photo{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
- .product .photo img{width:100vw!important}
+ .product .photo{
+  width:calc(100% - 24px)!important;
+  margin:0 12px!important;
+  padding:12px!important;
+  background:#fff!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+ }
+ .product .photo img{width:100%!important}
  .product .details{padding-left:16px!important;padding-right:16px!important}
 }
 
