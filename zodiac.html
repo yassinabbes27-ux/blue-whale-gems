@@ -109,6 +109,8 @@ footer strong{color:#e5d3ff}
 @keyframes nebulaTurn{to{transform:translateX(-50%) rotate(360deg)}}
 @media(max-width:560px){.scene-copy{margin-top:clamp(270px,45vh,340px)}.scene-copy p{font-size:13px}.scene-orbit,.scene-planet,.scene-core{top:clamp(130px,22vh,185px)}}
 @media(prefers-reduced-motion:reduce){.scene-stars,.scene-nebula,.scene-orbit,.scene-planet,.scene-core,.scene-copy{animation:none!important}}
+.cinema-scene{overflow-x:hidden;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(207,174,244,.35) transparent}.scene-copy{padding-bottom:38px}.scene-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px auto 20px;max-width:520px}.scene-meta>div{padding:12px 10px;border:1px solid rgba(220,190,255,.2);border-radius:12px;background:rgba(255,255,255,.055)}.scene-meta small{display:block;color:#b9a6d2;font-size:10px;margin-bottom:6px}.scene-meta strong{display:block;color:#f4e9ff;font-size:13px;font-weight:600}.related-section{margin:18px auto 0;max-width:620px}.related-products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:12px;text-align:right}.related-product{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;align-items:center;min-width:0;padding:9px;border:1px solid rgba(220,190,255,.2);border-radius:12px;background:rgba(255,255,255,.065);transition:background .2s,border-color .2s,transform .2s}.related-product:hover{background:rgba(255,255,255,.12);border-color:hsla(var(--hue),70%,80%,.55);transform:translateY(-2px)}.related-product img{width:76px;height:76px;object-fit:contain;border-radius:8px;background:rgba(255,255,255,.96)}.related-product strong{display:block;color:#f5eaff;font-size:11px;line-height:1.6;font-weight:600}.related-product small{display:block;color:#d4bce9;font-size:11px;margin-top:5px}.related-loading,.related-empty{grid-column:1/-1;color:#c6b5da;font-size:11px;text-align:center;padding:13px}.related-more{grid-column:1/-1;text-align:center;color:#d8c2f0;font-size:10px;padding:7px}.scene-copy .note{margin-top:22px!important}
+@media(max-width:560px){.scene-meta{gap:7px}.scene-meta>div{padding:10px 7px}.related-products{grid-template-columns:1fr}.related-product{grid-template-columns:70px minmax(0,1fr)}.related-product img{width:70px;height:70px}.scene-copy{padding-bottom:28px}}
 </style>
 </head>
 <body>
@@ -134,7 +136,7 @@ footer strong{color:#e5d3ff}
  <div class="scene-orbit orbit-a"><i></i></div><div class="scene-orbit orbit-b"><i></i></div><div class="scene-orbit orbit-c"><i></i></div>
  <div class="scene-planet"></div><div class="scene-core"><span class="modal-glyph" id="modalGlyph"></span></div>
  <button class="close" id="closeModal" aria-label="إغلاق">×</button>
- <div class="scene-copy"><div class="scene-kicker">CELESTIAL SIGN · BLUE WHALE GEMS</div><h2 id="modalTitle"></h2><div class="latin" id="modalLatin"></div><div class="range" id="modalRange"></div><p id="modalDescription"></p><div class="gem-label">أحجار ترتبط بهذا البرج في بعض التقاليد</div><div class="gems" id="modalGems"></div><p class="note">هذه الروابط رمزية وتراثية وتختلف باختلاف المصادر؛ لا تمثل حقائق علمية أو وعوداً بتأثيرات محددة.</p></div>
+ <div class="scene-copy"><div class="scene-kicker">CELESTIAL SIGN · BLUE WHALE GEMS</div><h2 id="modalTitle"></h2><div class="latin" id="modalLatin"></div><div class="range" id="modalRange"></div><p id="modalDescription"></p><div class="gem-label">أحجار ترتبط بهذا البرج في بعض التقاليد</div><div class="gems" id="modalGems"></div><div class="scene-meta"><div><small>الكوكب الحاكم في التقاليد الفلكية</small><strong id="modalPlanet"></strong></div><div><small>ملامح رمزية</small><strong id="modalQualities"></strong></div></div><section class="related-section"><div class="gem-label">قطع من BLUE WHALE GEMS مرتبطة بأحجار هذا البرج</div><div class="related-products" id="modalProducts"><span class="related-loading">جارٍ العثور على القطع المتوفرة...</span></div></section><p class="note">هذه الروابط رمزية وتراثية وتختلف باختلاف المصادر؛ لا تمثل حقائق علمية أو وعوداً بتأثيرات محددة.</p></div>
 </div>
 </div>
 <script>
@@ -152,6 +154,20 @@ const signs=[
 {ar:"الدلو",en:"AQUARIUS",glyph:"♒",date:"20 يناير – 18 فبراير",element:"الهواء",hue:185,gem:["الأماثيست","الأكوامارين"],desc:"يرمز الدلو إلى الاستقلال والأفكار الجديدة والخيال. وتظهر معه أحجار بنفسجية وزرقاء في بعض تقاليد الأبراج."},
 {ar:"الحوت",en:"PISCES",glyph:"♓",date:"19 فبراير – 20 مارس",element:"الماء",hue:245,gem:["الأكوامارين","الجمشت"],desc:"يرتبط الحوت في الرموز الفلكية بالخيال والحساسية والعالم الداخلي. وتنسجم معه رمزياً الأحجار البحرية والبنفسجية."}
 ];
+const signDetails={
+ARIES:{planet:"المريخ",qualities:"المبادرة · الشجاعة · الحماس",keywords:["Red Carnelian","Red Jasper"]},
+TAURUS:{planet:"الزهرة",qualities:"الثبات · الذوق · حب الجمال",keywords:["Rose Quartz","Moss Quartz","Green Aventurine"]},
+GEMINI:{planet:"عطارد",qualities:"الفضول · التواصل · المرونة",keywords:["Citrine","Agate"]},
+CANCER:{planet:"القمر",qualities:"الرعاية · الذاكرة · الحساسية",keywords:["Pearl","Natural Pearl"]},
+LEO:{planet:"الشمس",qualities:"الإشراق · الإبداع · الحضور",keywords:["Tiger's Eye","Amber"]},
+VIRGO:{planet:"عطارد",qualities:"الدقة · التنظيم · التأمل",keywords:["Red Jasper","Lapis Lazuli"]},
+LIBRA:{planet:"الزهرة",qualities:"التوازن · الانسجام · الجمال",keywords:["Rose Quartz","Lapis Lazuli","Tourmaline"]},
+SCORPIO:{planet:"بلوتو (والمريخ تقليدياً)",qualities:"العمق · التحوّل · القوة الداخلية",keywords:["Red Carnelian","Obsidian","Agate"]},
+SAGITTARIUS:{planet:"المشتري",qualities:"الاستكشاف · التفاؤل · المعرفة",keywords:["Amethyst","Turquoise"]},
+CAPRICORN:{planet:"زحل",qualities:"الصبر · الانضباط · الطموح",keywords:["Pyrite","Obsidian"]},
+AQUARIUS:{planet:"أورانوس (وزحل تقليدياً)",qualities:"الاستقلال · الابتكار · الأصالة",keywords:["Aquamarine","Amethyst"]},
+PISCES:{planet:"نبتون (والمشتري تقليدياً)",qualities:"الخيال · التعاطف · الحسّ الفني",keywords:["Aquamarine","Amethyst"]}
+};
 const zodiacPaths={
 ARIES:'<path d="M50 76V43 C44 31 38 18 27 18 C16 18 12 28 17 37 M50 43 C56 31 62 18 73 18 C84 18 88 28 83 37"/>',
 TAURUS:'<circle cx="50" cy="59" r="22"/><path d="M28 48 C22 39 19 30 22 21 M72 48 C78 39 81 30 78 21"/>',
@@ -174,7 +190,29 @@ signs.forEach((s,i)=>{
  card.addEventListener("click",()=>openSign(s));grid.appendChild(card);
 });
 const modal=document.getElementById("modal"),dialog=document.getElementById("dialog");
-function openSign(s){dialog.style.setProperty("--hue",s.hue);document.getElementById("modalGlyph").innerHTML=zodiacMark(s);document.getElementById("modalTitle").textContent=s.ar;document.getElementById("modalLatin").textContent=s.en;document.getElementById("modalRange").textContent=s.date+" · عنصر "+s.element;document.getElementById("modalDescription").textContent=s.desc;const gems=document.getElementById("modalGems");gems.replaceChildren();s.gem.forEach(g=>{const el=document.createElement("span");el.textContent=g;gems.appendChild(el)});modal.classList.add("open");document.body.style.overflow="hidden";document.getElementById("closeModal").focus()}
+let zodiacProductsCache=null;
+async function renderRelatedProducts(sign){
+ const container=document.getElementById("modalProducts");
+ const detail=signDetails[sign.en];
+ container.innerHTML='<span class="related-loading">جارٍ العثور على القطع المتوفرة...</span>';
+ try{
+  if(!zodiacProductsCache){const response=await fetch("data/products.json");if(!response.ok)throw new Error("Products unavailable");zodiacProductsCache=await response.json();}
+  const keys=(detail&&detail.keywords)||[];
+  const matches=[];
+  keys.forEach(key=>{const found=zodiacProductsCache.find(p=>Number(p.stock??1)>0&&String(p.name||"").toLowerCase().includes(key.toLowerCase())&&!matches.some(x=>x.name===p.name));if(found&&matches.length<2)matches.push(found);});
+  container.replaceChildren();
+  if(!matches.length){const empty=document.createElement("span");empty.className="related-empty";empty.textContent="لا توجد قطعة متاحة مرتبطة مباشرة بهذه الأحجار حالياً.";container.appendChild(empty);return;}
+  matches.forEach(p=>{
+   const imagePath=String(p.image||"").replace(/^\/+/, "");
+   const params=new URLSearchParams({name:p.name,price:String(p.price),image:imagePath,delivery:String(p.delivery??8),stock:String(p.stock??1),category:p.category});
+   const link=document.createElement("a");link.className="related-product";link.href="product.html?"+params.toString();
+   const image=document.createElement("img");image.src="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/"+imagePath;image.alt=p.name;image.loading="lazy";image.decoding="async";
+   const info=document.createElement("span");const name=document.createElement("strong");name.textContent=p.name;const price=document.createElement("small");price.textContent=String(p.price)+" TND";info.append(name,price);link.append(image,info);container.appendChild(link);
+  });
+  const more=document.createElement("a");more.className="related-more";more.href="index.html#collections";more.textContent="اكتشف بقية مجموعة الأحجار والقطع ←";container.appendChild(more);
+ }catch(error){container.innerHTML='<span class="related-empty">تعذّر تحميل القطع الآن. يمكنك تصفح مجموعات المتجر.</span>';}
+}
+function openSign(s){dialog.style.setProperty("--hue",s.hue);document.getElementById("modalGlyph").innerHTML=zodiacMark(s);const detail=signDetails[s.en]||{};document.getElementById("modalPlanet").textContent=detail.planet||"—";document.getElementById("modalQualities").textContent=detail.qualities||"—";renderRelatedProducts(s);document.getElementById("modalTitle").textContent=s.ar;document.getElementById("modalLatin").textContent=s.en;document.getElementById("modalRange").textContent=s.date+" · عنصر "+s.element;document.getElementById("modalDescription").textContent=s.desc;const gems=document.getElementById("modalGems");gems.replaceChildren();s.gem.forEach(g=>{const el=document.createElement("span");el.textContent=g;gems.appendChild(el)});modal.classList.add("open");document.body.style.overflow="hidden";document.getElementById("closeModal").focus()}
 function close(){modal.classList.remove("open");document.body.style.overflow=""}
 document.getElementById("closeModal").addEventListener("click",close);modal.addEventListener("click",e=>{if(e.target===modal)close()});document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
 </script>
