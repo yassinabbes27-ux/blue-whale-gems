@@ -13,3 +13,5 @@ collections_config:
   data:
     path: data
     icon: data_usage
+    _enabled_editors:
+      - data
