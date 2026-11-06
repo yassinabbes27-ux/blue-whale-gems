@@ -331,9 +331,9 @@
   },
   {
     "name": "Agate pendent",
-    "category": "Necklace",
+    "category": "necklaces",
     "price": 40,
-    "image": "/uploads/1000090741.jpg",
+    "image": "images/necklaces/1000090741.jpg",
     "delivery": 8,
     "stock": 1,
     "nameAr": "تعليقة من العقيق",
@@ -341,9 +341,9 @@
   },
   {
     "name": "Pyrite ring silver 925",
-    "category": "Rings",
+    "category": "rings",
     "price": 140,
-    "image": "/uploads/1000090739.jpg",
+    "image": "images/rings/1000090739.jpg",
     "delivery": 8,
     "stock": 1,
     "nameAr": "خاتم بيريت من الفضة 925",
