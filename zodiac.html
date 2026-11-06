@@ -281,17 +281,24 @@ ar:{back:"العودة إلى المتجر ←",intro:"اثنا عشر برجا�
 };
 
 const signKeys=["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
-function localSign(s){return translations[currentLanguage][signKeys[signs.indexOf(s)]]||{};}
+function localSign(s){
+ const languageSigns=translations[currentLanguage]||translations.en;
+ const key=signKeys[signs.indexOf(s)];
+ return languageSigns[key]||translations.en[key]||{name:s.ar||s.en,date:s.date,element:s.element,desc:"",planet:"—",qualities:"—"};
+}
 function translatedGem(g){return currentLanguage==="ar"?g:((gemNames[g]||[g,g])[currentLanguage==="en"?0:1]);}
 function renderGrid(){
- grid.replaceChildren();
+ // Build the complete grid before replacing the visible one, so a translation
+ // lookup problem can never leave the zodiac page blank.
+ const fragment=document.createDocumentFragment();
  signs.forEach((s,i)=>{
   const t=localSign(s);
-  const card=document.createElement("button");card.type="button";card.className="sign";card.style.setProperty("--hue",s.hue);card.style.setProperty("--i",i);card.setAttribute("aria-label",(currentLanguage==="ar"?"اكتشف برج ":"Discover ")+(currentLanguage==="fr"?"le signe ":"")+t.name);
+  const card=document.createElement("button");card.type="button";card.className="sign";card.style.setProperty("--hue",s.hue);card.style.setProperty("--i",i);card.setAttribute("aria-label",(currentLanguage==="ar"?"اكتشف برج ":currentLanguage==="fr"?"Découvrez le signe ":"Discover ")+t.name);
   card.innerHTML='<span class="glyph" aria-hidden="true">'+zodiacMark(s)+'</span><h2></h2><div class="latin">'+s.en+'</div><div class="date"></div><span class="element"></span>';
-  card.querySelector("h2").textContent=t.name;card.querySelector(".date").textContent=t.date;card.querySelector(".element").textContent=t.element;
-  card.addEventListener("click",()=>openSign(s));grid.appendChild(card);
+  card.querySelector("h2").textContent=t.name;card.querySelector(".date").textContent=t.date||"";card.querySelector(".element").textContent=t.element||"";
+  card.addEventListener("click",()=>openSign(s));fragment.appendChild(card);
  });
+ grid.replaceChildren(fragment);
 }
 function applyZodiacLanguage(lang){
  if(!["ar","en","fr"].includes(lang))lang="en";
