@@ -20,6 +20,14 @@ a{color:inherit;text-decoration:none}button{font:inherit}
 .nebula{position:absolute;width:420px;height:420px;border-radius:50%;filter:blur(70px);opacity:.28;animation:drift 22s ease-in-out infinite alternate}
 .nebula.one{background:#b99be9;top:8%;left:-170px}.nebula.two{background:#a4dce5;right:-190px;top:38%;animation-delay:-8s}.nebula.three{background:#d9b1e9;bottom:-250px;left:34%;animation-delay:-12s}
 header{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:20px clamp(18px,5vw,70px);border-bottom:1px solid rgba(132,104,190,.15);background:rgba(255,255,255,.68);backdrop-filter:blur(18px)}
+.language-switcher{position:relative;z-index:30;direction:ltr;margin-left:auto;flex-shrink:0}
+.lang{background:rgba(255,255,255,.1);border:1px solid rgba(198,166,238,.3);border-radius:20px;min-width:88px;height:34px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;color:#e5d8f6;font-size:11px;cursor:pointer}
+.language-menu{display:none;position:absolute;right:0;top:calc(100% + 9px);min-width:132px;padding:6px;background:#17102b;border:1px solid rgba(198,166,238,.3);border-radius:9px;box-shadow:0 10px 28px rgba(0,0,0,.3)}
+.language-menu.open{display:block}
+.language-menu button{display:block;width:100%;padding:10px 12px;text-align:left;background:transparent;border:0;border-radius:5px;color:#e5d8f6;font-size:11px;cursor:pointer}
+.language-menu button:hover,.language-menu button[aria-current="true"]{background:rgba(255,255,255,.1);color:#fff}
+@media(max-width:560px){header{gap:9px}.language-switcher{margin-left:auto}.lang{min-width:76px;font-size:10px}.back{padding:8px 10px;font-size:10px}}
+
 .brand{font-family:"Cormorant Garamond",serif;font-size:18px;letter-spacing:2.4px;direction:ltr;text-align:left;color:#3d3458}.brand small{display:block;color:#7daeb9;font-family:Arial,sans-serif;font-size:8px;letter-spacing:4px;margin-top:3px}
 .back{border:1px solid rgba(132,104,190,.28);padding:9px 15px;border-radius:30px;color:#655484;font-size:12px;background:rgba(255,255,255,.58);transition:.25s}.back:hover{background:#7660a9;color:#fff;transform:translateY(-2px)}
 .hero{position:relative;text-align:center;padding:75px 20px 38px;min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center}
@@ -157,25 +165,34 @@ footer strong{color:#e5d3ff}
 <div class="nebula one"></div><div class="nebula two"></div><div class="nebula three"></div>
 <div class="star" style="top:8%;left:12%"></div><div class="star" style="top:17%;left:76%"></div><div class="star" style="top:29%;left:35%"></div><div class="star" style="top:41%;left:91%"></div><div class="star" style="top:54%;left:8%"></div><div class="star" style="top:67%;left:62%"></div><div class="star" style="top:78%;left:24%"></div><div class="star" style="top:88%;left:84%"></div><div class="star" style="top:13%;left:49%"></div><div class="star" style="top:36%;left:65%"></div><div class="star" style="top:73%;left:95%"></div><div class="star" style="top:92%;left:43%"></div><div class="star" style="top:48%;left:48%"></div><div class="star" style="top:4%;left:91%"></div><div class="star" style="top:60%;left:79%"></div>
 </div>
-<header><a class="brand" href="index.html">BLUE WHALE GEMS<small>THE WORLD OF NATURAL GEMS</small></a><a class="back" href="index.html">العودة إلى المتجر ←</a></header>
+<header><a class="brand" href="index.html">BLUE WHALE GEMS<small>THE WORLD OF NATURAL GEMS</small></a>
+<div class="language-switcher">
+ <button class="lang" id="languageButton" type="button" onclick="toggleLanguageMenu()" aria-expanded="false" aria-haspopup="true">English ▾</button>
+ <div class="language-menu" id="languageMenu">
+  <button type="button" onclick="chooseLanguage('en')">English</button>
+  <button type="button" onclick="chooseLanguage('fr')">Français</button>
+  <button type="button" onclick="chooseLanguage('ar')">العربية</button>
+ </div>
+</div>
+<a class="back" id="backToShop" href="index.html">Back to shop ←</a></header>
 <main>
 <section class="hero">
 <div class="orbit"></div><div class="orbit-inner"></div>
 <div class="eyebrow">✦ THE CELESTIAL COLLECTION ✦</div>
 <h1>ZODIAC</h1>
-<p>اثنا عشر برجاً، اثنا عشر عالماً من الرموز والحكايات. اكتشف برجك، وتعرّف على الأحجار التي ارتبطت به عبر تقاليد وثقافات مختلفة.</p>
+<p id="heroIntro">اثنا عشر برجاً، اثنا عشر عالماً من الرموز والحكايات. اكتشف برجك، وتعرّف على الأحجار التي ارتبطت به عبر تقاليد وثقافات مختلفة.</p>
 </section>
 <section class="zodiac-grid" id="zodiacGrid" aria-label="الأبراج الاثنا عشر"></section>
-<p class="hint">اضغط على برجك لاكتشاف رمزه وأحجاره المرتبطة به ✧</p>
+<p class="hint" id="pageHint">اضغط على برجك لاكتشاف رمزه وأحجاره المرتبطة به ✧</p>
 </main>
-<footer><strong>BLUE WHALE GEMS</strong>الأحجار تحمل جمالاً ورموزاً تتناقلها الثقافات — اختر ما يلامس ذوقك.</footer>
+<footer><strong>BLUE WHALE GEMS</strong><span id="footerLine">الأحجار تحمل جمالاً ورموزاً تتناقلها الثقافات — اختر ما يلامس ذوقك.</span></footer>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
 <div class="cinema-scene" id="dialog">
  <div class="scene-stars"></div><div class="scene-nebula"></div>
  <div class="scene-orbit orbit-a"><i></i></div><div class="scene-orbit orbit-b"><i></i></div><div class="scene-orbit orbit-c"><i></i></div>
  <div class="scene-planet"></div><div class="scene-core"><span class="modal-glyph" id="modalGlyph"></span></div>
- <button class="close" id="closeModal" aria-label="إغلاق">×</button>
- <div class="scene-copy"><div class="scene-kicker">CELESTIAL SIGN · BLUE WHALE GEMS</div><h2 id="modalTitle"></h2><div class="latin" id="modalLatin"></div><div class="range" id="modalRange"></div><p id="modalDescription"></p><div class="gem-label">أحجار ترتبط بهذا البرج في بعض التقاليد</div><div class="gems" id="modalGems"></div><div class="scene-meta"><div><small>الكوكب الحاكم في التقاليد الفلكية</small><strong id="modalPlanet"></strong></div><div><small>ملامح رمزية</small><strong id="modalQualities"></strong></div></div><section class="related-section"><div class="gem-label">قطع من BLUE WHALE GEMS مرتبطة بأحجار هذا البرج</div><div class="related-products" id="modalProducts"><span class="related-loading">جارٍ العثور على القطع المتوفرة...</span></div></section><p class="note">هذه الروابط رمزية وتراثية وتختلف باختلاف المصادر؛ لا تمثل حقائق علمية أو وعوداً بتأثيرات محددة.</p></div>
+ <button class="close" id="closeModal" aria-label="Close">×</button>
+ <div class="scene-copy"><div class="scene-kicker" id="sceneKicker">CELESTIAL SIGN · BLUE WHALE GEMS</div><h2 id="modalTitle"></h2><div class="latin" id="modalLatin"></div><div class="range" id="modalRange"></div><p id="modalDescription"></p><div class="gem-label" id="gemLabel">أحجار ترتبط بهذا البرج في بعض التقاليد</div><div class="gems" id="modalGems"></div><div class="scene-meta"><div><small id="planetLabel">الكوكب الحاكم في التقاليد الفلكية</small><strong id="modalPlanet"></strong></div><div><small id="qualitiesLabel">ملامح رمزية</small><strong id="modalQualities"></strong></div></div><section class="related-section"><div class="gem-label" id="relatedLabel">قطع من BLUE WHALE GEMS مرتبطة بأحجار هذا البرج</div><div class="related-products" id="modalProducts"><span class="related-loading" id="relatedLoading">جارٍ العثور على القطع المتوفرة...</span></div></section><p class="note" id="symbolicNote">هذه الروابط رمزية وتراثية وتختلف باختلاف المصادر؛ لا تمثل حقائق علمية أو وعوداً بتأثيرات محددة.</p></div>
 </div>
 </div>
 <script>
@@ -223,24 +240,102 @@ PISCES:'<path d="M28 20 C51 31 51 69 28 80 M72 20 C49 31 49 69 72 80 M25 50 H75"
 };
 function zodiacMark(sign){return '<svg viewBox="0 0 100 100" role="img" aria-label="'+sign.en+' zodiac symbol" xmlns="http://www.w3.org/2000/svg"><circle class="fine" cx="50" cy="50" r="43"/>'+zodiacPaths[sign.en]+'</svg>';}
 const grid=document.getElementById("zodiacGrid");
-signs.forEach((s,i)=>{
- const card=document.createElement("button");card.type="button";card.className="sign";card.style.setProperty("--hue",s.hue);card.style.setProperty("--i",i);card.setAttribute("aria-label","اكتشف برج "+s.ar);
- card.innerHTML='<span class="glyph" aria-hidden="true">'+zodiacMark(s)+'</span><h2>'+s.ar+'</h2><div class="latin">'+s.en+'</div><div class="date">'+s.date+'</div><span class="element">'+s.element+'</span>';
- card.addEventListener("click",()=>openSign(s));grid.appendChild(card);
-});
+let currentLanguage=localStorage.getItem("bwg-language")||"en";
+const translations={
+en:{
+ Aries:{name:"Aries",date:"March 21 – April 19",element:"Fire",desc:"In astrological traditions, Aries is associated with beginnings, drive and courage. Red stones and gems with a strong visual presence are often linked to this sign.",planet:"Mars",qualities:"Initiative · Courage · Enthusiasm"},
+ Taurus:{name:"Taurus",date:"April 20 – May 20",element:"Earth",desc:"Taurus symbolizes stability, an appreciation of beauty and harmony with nature. Green and pink gemstones are often associated with this sign.",planet:"Venus",qualities:"Stability · Taste · Beauty"},
+ Gemini:{name:"Gemini",date:"May 21 – June 20",element:"Air",desc:"Gemini represents curiosity, communication and many-sided interests. A varied range of colourful stones appears in traditional zodiac gemstone lists.",planet:"Mercury",qualities:"Curiosity · Communication · Flexibility"},
+ Cancer:{name:"Cancer",date:"June 21 – July 22",element:"Water",desc:"Cancer is symbolically linked with home, memory and intuition. Pearly lustre and gentle colours are often considered fitting associations.",planet:"The Moon",qualities:"Care · Memory · Sensitivity"},
+ Leo:{name:"Leo",date:"July 23 – August 22",element:"Fire",desc:"Leo carries symbolism of radiance, presence and creativity. Warm-toned stones such as tiger’s eye and sunstone are sometimes associated with it.",planet:"The Sun",qualities:"Radiance · Creativity · Presence"},
+ Virgo:{name:"Virgo",date:"August 23 – September 22",element:"Earth",desc:"Virgo is traditionally associated with reflection, precision and order. Natural stones in earthy or calm blue shades often appear in its gemstone lists.",planet:"Mercury",qualities:"Precision · Order · Reflection"},
+ Libra:{name:"Libra",date:"September 23 – October 22",element:"Air",desc:"Libra symbolizes balance, good taste, beauty and relationships. Pink and blue gemstones are found in some traditional lists for this sign.",planet:"Venus",qualities:"Balance · Harmony · Beauty"},
+ Scorpio:{name:"Scorpio",date:"October 23 – November 21",element:"Water",desc:"Scorpio carries symbolism of depth, transformation and mystery. Richly coloured stones with a distinctive presence are linked to it in some traditions.",planet:"Pluto (traditionally Mars)",qualities:"Depth · Transformation · Inner strength"},
+ Sagittarius:{name:"Sagittarius",date:"November 22 – December 21",element:"Fire",desc:"Sagittarius represents exploration, openness and the pursuit of knowledge. Turquoise and violet gemstones appear in several traditional lists.",planet:"Jupiter",qualities:"Exploration · Optimism · Knowledge"},
+ Capricorn:{name:"Capricorn",date:"December 22 – January 19",element:"Earth",desc:"Capricorn is symbolically associated with ambition, patience and steady progress. Dark and earthy stones suit its traditional imagery.",planet:"Saturn",qualities:"Patience · Discipline · Ambition"},
+ Aquarius:{name:"Aquarius",date:"January 20 – February 18",element:"Air",desc:"Aquarius symbolizes independence, new ideas and imagination. Violet and blue gemstones are often included in traditional associations.",planet:"Uranus (traditionally Saturn)",qualities:"Independence · Innovation · Originality"},
+ Pisces:{name:"Pisces",date:"February 19 – March 20",element:"Water",desc:"Pisces is linked symbolically with imagination, sensitivity and the inner world. Sea-coloured and violet stones are often associated with it.",planet:"Neptune (traditionally Jupiter)",qualities:"Imagination · Empathy · Artistic sense"}
+},
+fr:{
+ Aries:{name:"Bélier",date:"21 mars – 19 avril",element:"Feu",desc:"Dans les traditions astrologiques, le Bélier est associé aux commencements, à l’élan et au courage. Les pierres rouges et celles au caractère affirmé lui sont souvent associées.",planet:"Mars",qualities:"Initiative · Courage · Enthousiasme"},
+ Taurus:{name:"Taureau",date:"20 avril – 20 mai",element:"Terre",desc:"Le Taureau symbolise la stabilité, le goût de la beauté et l’harmonie avec la nature. Les pierres vertes et roses lui sont souvent associées.",planet:"Vénus",qualities:"Stabilité · Goût · Beauté"},
+ Gemini:{name:"Gémeaux",date:"21 mai – 20 juin",element:"Air",desc:"Les Gémeaux représentent la curiosité, la communication et la diversité des intérêts. Des pierres aux couleurs variées figurent dans les listes zodiacales traditionnelles.",planet:"Mercure",qualities:"Curiosité · Communication · Souplesse"},
+ Cancer:{name:"Cancer",date:"21 juin – 22 juillet",element:"Eau",desc:"Le Cancer est symboliquement lié au foyer, à la mémoire et à l’intuition. Les pierres aux reflets nacrés et aux teintes douces lui sont souvent associées.",planet:"La Lune",qualities:"Attention · Mémoire · Sensibilité"},
+ Leo:{name:"Lion",date:"23 juillet – 22 août",element:"Feu",desc:"Le Lion porte une symbolique d’éclat, de présence et de créativité. Les pierres aux tons chauds, comme l’œil-de-tigre et la pierre de soleil, lui sont parfois associées.",planet:"Le Soleil",qualities:"Éclat · Créativité · Présence"},
+ Virgo:{name:"Vierge",date:"23 août – 22 septembre",element:"Terre",desc:"La Vierge est traditionnellement associée à la réflexion, à la précision et à l’ordre. Les pierres naturelles aux tons terreux ou bleus doux figurent souvent dans ses listes.",planet:"Mercure",qualities:"Précision · Organisation · Réflexion"},
+ Libra:{name:"Balance",date:"23 septembre – 22 octobre",element:"Air",desc:"La Balance symbolise l’équilibre, le goût, la beauté et les relations. Des pierres roses et bleues apparaissent dans certaines listes traditionnelles.",planet:"Vénus",qualities:"Équilibre · Harmonie · Beauté"},
+ Scorpio:{name:"Scorpion",date:"23 octobre – 21 novembre",element:"Eau",desc:"Le Scorpion porte une symbolique de profondeur, de transformation et de mystère. Des pierres aux couleurs intenses et au caractère marqué lui sont associées.",planet:"Pluton (Mars traditionnellement)",qualities:"Profondeur · Transformation · Force intérieure"},
+ Sagittarius:{name:"Sagittaire",date:"22 novembre – 21 décembre",element:"Feu",desc:"Le Sagittaire symbolise l’exploration, l’ouverture et la quête du savoir. La turquoise et les pierres violettes figurent dans plusieurs listes traditionnelles.",planet:"Jupiter",qualities:"Exploration · Optimisme · Connaissance"},
+ Capricorn:{name:"Capricorne",date:"22 décembre – 19 janvier",element:"Terre",desc:"Le Capricorne est symboliquement associé à l’ambition, à la patience et à la progression constante. Les pierres sombres et terreuses correspondent à son image traditionnelle.",planet:"Saturne",qualities:"Patience · Discipline · Ambition"},
+ Aquarius:{name:"Verseau",date:"20 janvier – 18 février",element:"Air",desc:"Le Verseau symbolise l’indépendance, les idées nouvelles et l’imagination. Les pierres violettes et bleues figurent souvent dans les associations traditionnelles.",planet:"Uranus (Saturne traditionnellement)",qualities:"Indépendance · Innovation · Originalité"},
+ Pisces:{name:"Poissons",date:"19 février – 20 mars",element:"Eau",desc:"Les Poissons sont symboliquement liés à l’imagination, à la sensibilité et au monde intérieur. Les pierres aux couleurs marines et violettes leur sont souvent associées.",planet:"Neptune (Jupiter traditionnellement)",qualities:"Imagination · Empathie · Sens artistique"}
+}
+};
+const gemNames={
+"العقيق الأحمر (كارنيليان)":["Red Carnelian","Cornaline rouge"],"اليشب الأحمر":["Red Jasper","Jaspe rouge"],"حجر الدم":["Bloodstone","Héliotrope"],"الغارنت":["Garnet","Grenat"],"الهيماتيت":["Hematite","Hématite"],"عين النمر":["Tiger’s Eye","Œil-de-tigre"],"السيترين":["Citrine","Citrine"],"الزمرد":["Emerald","Émeraude"],"الكوارتز الوردي":["Rose Quartz","Quartz rose"],"الأفنتورين الأخضر":["Green Aventurine","Aventurine verte"],"العقيق الطحلبي":["Moss Agate","Agate mousse"],"المالاكيت":["Malachite","Malachite"],"الرودونيت":["Rhodonite","Rhodonite"],"العقيق":["Agate","Agate"],"الفلوريت":["Fluorite","Fluorite"],"السوداليت":["Sodalite","Sodalite"],"الكوارتز الشفاف":["Clear Quartz","Quartz clair"],"العقيق الأزرق المخطط":["Blue Banded Agate","Agate bleu rubané"],"حجر القمر":["Moonstone","Pierre de lune"],"السيلينيت":["Selenite","Sélénite"],"الكالسيدوني":["Chalcedony","Calcédoine"],"الأمازونيت":["Amazonite","Amazonite"],"اللابرادوريت":["Labradorite","Labradorite"],"الكهرمان":["Amber","Ambre"],"حجر الشمس":["Sunstone","Pierre de soleil"],"البيريت":["Pyrite","Pyrite"],"الكوارتز الدخاني":["Smoky Quartz","Quartz fumé"],"الزبرجد":["Peridot","Péridot"],"اللازورد":["Lapis Lazuli","Lapis-lazuli"],"اليشم":["Jade","Jade"],"السبج":["Obsidian","Obsidienne"],"الفيروز":["Turquoise","Turquoise"],"الأباتيت الأزرق":["Blue Apatite","Apatite bleue"],"الأونيكس":["Onyx","Onyx"],"التورمالين الأسود":["Black Tourmaline","Tourmaline noire"],"الأكوامارين":["Aquamarine","Aigue-marine"],"الجمشت":["Amethyst","Améthyste"]
+};
+const uiText={
+en:{back:"Back to shop ←",intro:"Twelve signs, twelve worlds of symbols and stories. Discover your sign and the gemstones associated with it across different traditions and cultures.",hint:"Select your sign to discover its symbol and associated gemstones ✧",footer:"Gemstones carry beauty and symbolism across cultures — choose what speaks to your taste.",grid:"The twelve zodiac signs",close:"Close",gemLabel:"Gemstones associated with this sign in some traditions",planetLabel:"Ruling planet in astrological traditions",qualitiesLabel:"Symbolic qualities",relatedLabel:"BLUE WHALE GEMS pieces featuring stones associated with this sign",loading:"Finding available pieces...",empty:"No currently available piece is directly associated with these stones.",more:"Explore the rest of the gemstone and jewellery collection →",note:"These associations are symbolic and traditional, and vary between sources; they are not scientific facts or promises of specific effects.",rangeJoin:" · Element: ",kicker:"CELESTIAL SIGN · BLUE WHALE GEMS",language:"English ▾"},
+fr:{back:"Retour à la boutique ←",intro:"Douze signes, douze univers de symboles et de récits. Découvrez votre signe et les pierres précieuses qui lui sont associées dans différentes traditions et cultures.",hint:"Choisissez votre signe pour découvrir son symbole et les pierres qui lui sont associées ✧",footer:"Les pierres portent beauté et symboles à travers les cultures — choisissez celle qui vous correspond.",grid:"Les douze signes du zodiaque",close:"Fermer",gemLabel:"Pierres associées à ce signe dans certaines traditions",planetLabel:"Astre gouvernant dans les traditions astrologiques",qualitiesLabel:"Traits symboliques",relatedLabel:"Pièces BLUE WHALE GEMS avec des pierres associées à ce signe",loading:"Recherche des pièces disponibles...",empty:"Aucune pièce disponible n’est actuellement directement associée à ces pierres.",more:"Découvrez le reste de la collection de pierres et de bijoux →",note:"Ces associations sont symboliques et traditionnelles, et varient selon les sources ; elles ne constituent ni des faits scientifiques ni des promesses d’effets précis.",rangeJoin:" · Élément : ",kicker:"SIGNE CÉLESTE · BLUE WHALE GEMS",language:"Français ▾"},
+ar:{back:"العودة إلى المتجر ←",intro:"اثنا عشر برجاً، اثنا عشر عالماً من الرموز والحكايات. اكتشف برجك، وتعرّف على الأحجار التي ارتبطت به عبر تقاليد وثقافات مختلفة.",hint:"اضغط على برجك لاكتشاف رمزه وأحجاره المرتبطة به ✧",footer:"الأحجار تحمل جمالاً ورموزاً تتناقلها الثقافات — اختر ما يلامس ذوقك.",grid:"الأبراج الاثنا عشر",close:"إغلاق",gemLabel:"أحجار ترتبط بهذا البرج في بعض التقاليد",planetLabel:"الكوكب الحاكم في التقاليد الفلكية",qualitiesLabel:"ملامح رمزية",relatedLabel:"قطع من BLUE WHALE GEMS مرتبطة بأحجار هذا البرج",loading:"جارٍ العثور على القطع المتوفرة...",empty:"لا توجد قطعة متاحة مرتبطة مباشرة بهذه الأحجار حالياً.",more:"اكتشف بقية مجموعة الأحجار والقطع ←",note:"هذه الروابط رمزية وتراثية وتختلف باختلاف المصادر؛ لا تمثل حقائق علمية أو وعوداً بتأثيرات محددة.",rangeJoin:" · عنصر ",kicker:"CELESTIAL SIGN · BLUE WHALE GEMS",language:"العربية ▾"}
+};
+
+function localSign(s){return translations[currentLanguage][signKeys[signs.indexOf(s)]]||{};}
+function translatedGem(g){return currentLanguage==="ar"?g:((gemNames[g]||[g,g])[currentLanguage==="en"?0:1]);}
+function renderGrid(){
+ grid.replaceChildren();
+ signs.forEach((s,i)=>{
+  const t=localSign(s);
+  const card=document.createElement("button");card.type="button";card.className="sign";card.style.setProperty("--hue",s.hue);card.style.setProperty("--i",i);card.setAttribute("aria-label",(currentLanguage==="ar"?"اكتشف برج ":"Discover ")+(currentLanguage==="fr"?"le signe ":"")+t.name);
+  card.innerHTML='<span class="glyph" aria-hidden="true">'+zodiacMark(s)+'</span><h2></h2><div class="latin">'+s.en+'</div><div class="date"></div><span class="element"></span>';
+  card.querySelector("h2").textContent=t.name;card.querySelector(".date").textContent=t.date;card.querySelector(".element").textContent=t.element;
+  card.addEventListener("click",()=>openSign(s));grid.appendChild(card);
+ });
+}
+function applyZodiacLanguage(lang){
+ if(!["ar","en","fr"].includes(lang))lang="en";
+ currentLanguage=lang;localStorage.setItem("bwg-language",lang);
+ document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.body.dir=lang==="ar"?"rtl":"ltr";
+ const u=uiText[lang];
+ document.getElementById("languageButton").textContent=u.language;
+ document.getElementById("backToShop").textContent=u.back;
+ document.getElementById("heroIntro").textContent=u.intro;
+ document.getElementById("pageHint").textContent=u.hint;
+ document.getElementById("footerLine").textContent=u.footer;
+ document.getElementById("zodiacGrid").setAttribute("aria-label",u.grid);
+ document.getElementById("closeModal").setAttribute("aria-label",u.close);
+ document.getElementById("sceneKicker").textContent=u.kicker;
+ document.getElementById("gemLabel").textContent=u.gemLabel;
+ document.getElementById("planetLabel").textContent=u.planetLabel;
+ document.getElementById("qualitiesLabel").textContent=u.qualitiesLabel;
+ document.getElementById("relatedLabel").textContent=u.relatedLabel;
+ document.getElementById("symbolicNote").textContent=u.note;
+ const loading=document.getElementById("relatedLoading");if(loading)loading.textContent=u.loading;
+ document.querySelectorAll("#languageMenu button").forEach(b=>b.setAttribute("aria-current",String(b.textContent===(lang==="en"?"English":lang==="fr"?"Français":"العربية"))));
+ renderGrid();
+ const open=modal.classList.contains("open");
+ if(open){const selected=signs.find(x=>x.en===document.getElementById("modalLatin").textContent);if(selected)openSign(selected);}
+}
+function toggleLanguageMenu(){
+ const menu=document.getElementById("languageMenu"),button=document.getElementById("languageButton");
+ const opened=menu.classList.toggle("open");button.setAttribute("aria-expanded",String(opened));
+}
+function chooseLanguage(lang){document.getElementById("languageMenu").classList.remove("open");document.getElementById("languageButton").setAttribute("aria-expanded","false");applyZodiacLanguage(lang);}
+document.addEventListener("click",e=>{const sw=document.querySelector(".language-switcher");if(sw&&!sw.contains(e.target)){document.getElementById("languageMenu").classList.remove("open");document.getElementById("languageButton").setAttribute("aria-expanded","false");}});
+renderGrid();
 const modal=document.getElementById("modal"),dialog=document.getElementById("dialog");
 let zodiacProductsCache=null;
 async function renderRelatedProducts(sign){
  const container=document.getElementById("modalProducts");
  const detail=signDetails[sign.en];
- container.innerHTML='<span class="related-loading">جارٍ العثور على القطع المتوفرة...</span>';
+ container.innerHTML='<span class="related-loading">'+uiText[currentLanguage].loading+'</span>';
  try{
   if(!zodiacProductsCache){const response=await fetch("data/products.json");if(!response.ok)throw new Error("Products unavailable");zodiacProductsCache=await response.json();}
   const keys=(detail&&detail.keywords)||[];
   const matches=[];
   keys.forEach(key=>{const found=zodiacProductsCache.find(p=>Number(p.stock??1)>0&&String(p.name||"").toLowerCase().includes(key.toLowerCase())&&!matches.some(x=>x.name===p.name));if(found&&matches.length<2)matches.push(found);});
   container.replaceChildren();
-  if(!matches.length){const empty=document.createElement("span");empty.className="related-empty";empty.textContent="لا توجد قطعة متاحة مرتبطة مباشرة بهذه الأحجار حالياً.";container.appendChild(empty);return;}
+  if(!matches.length){const empty=document.createElement("span");empty.className="related-empty";empty.textContent=uiText[currentLanguage].empty;container.appendChild(empty);return;}
   matches.forEach(p=>{
    const imagePath=String(p.image||"").replace(/^\/+/, "");
    const params=new URLSearchParams({name:p.name,price:String(p.price),image:imagePath,delivery:String(p.delivery??8),stock:String(p.stock??1),category:p.category});
@@ -248,12 +343,13 @@ async function renderRelatedProducts(sign){
    const image=document.createElement("img");image.src="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/"+imagePath;image.alt=p.name;image.loading="lazy";image.decoding="async";
    const info=document.createElement("span");const name=document.createElement("strong");name.textContent=p.name;const price=document.createElement("small");price.textContent=String(p.price)+" TND";info.append(name,price);link.append(image,info);container.appendChild(link);
   });
-  const more=document.createElement("a");more.className="related-more";more.href="index.html#collections";more.textContent="اكتشف بقية مجموعة الأحجار والقطع ←";container.appendChild(more);
+  const more=document.createElement("a");more.className="related-more";more.href="index.html#collections";more.textContent=uiText[currentLanguage].more;container.appendChild(more);
  }catch(error){container.innerHTML='<span class="related-empty">تعذّر تحميل القطع الآن. يمكنك تصفح مجموعات المتجر.</span>';}
 }
-function openSign(s){dialog.style.setProperty("--hue",s.hue);document.getElementById("modalGlyph").innerHTML=zodiacMark(s);const detail=signDetails[s.en]||{};document.getElementById("modalPlanet").textContent=detail.planet||"—";document.getElementById("modalQualities").textContent=detail.qualities||"—";renderRelatedProducts(s);document.getElementById("modalTitle").textContent=s.ar;document.getElementById("modalLatin").textContent=s.en;document.getElementById("modalRange").textContent=s.date+" · عنصر "+s.element;document.getElementById("modalDescription").textContent=s.desc;const gems=document.getElementById("modalGems");gems.replaceChildren();s.gem.forEach(g=>{const el=document.createElement("span");el.textContent=g;gems.appendChild(el)});modal.classList.add("open");document.body.style.overflow="hidden";document.getElementById("closeModal").focus()}
+function openSign(s){dialog.style.setProperty("--hue",s.hue);document.getElementById("modalGlyph").innerHTML=zodiacMark(s);const t=localSign(s);document.getElementById("modalPlanet").textContent=t.planet||"—";document.getElementById("modalQualities").textContent=t.qualities||"—";renderRelatedProducts(s);document.getElementById("modalTitle").textContent=t.name;document.getElementById("modalLatin").textContent=s.en;document.getElementById("modalRange").textContent=t.date+uiText[currentLanguage].rangeJoin+t.element;document.getElementById("modalDescription").textContent=t.desc;const gems=document.getElementById("modalGems");gems.replaceChildren();s.gem.forEach(g=>{const el=document.createElement("span");el.textContent=translatedGem(g);gems.appendChild(el)});modal.classList.add("open");document.body.style.overflow="hidden";document.getElementById("closeModal").focus()}
 function close(){modal.classList.remove("open");document.body.style.overflow=""}
 document.getElementById("closeModal").addEventListener("click",close);modal.addEventListener("click",e=>{if(e.target===modal)close()});document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+applyZodiacLanguage(localStorage.getItem("bwg-language")||"en");
 </script>
 <!-- BLUE WHALE GEMS background ambience -->
 <div id="bwgMusicControls" style="position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:6px;padding:7px;background:rgba(255,255,255,.96);border:1px solid #dce9ed;border-radius:50%;box-shadow:0 5px 20px rgba(30,65,78,.12);backdrop-filter:blur(10px)">
