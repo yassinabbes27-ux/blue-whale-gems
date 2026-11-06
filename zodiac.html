@@ -282,9 +282,22 @@ ar:{back:"العودة إلى المتجر ←",intro:"اثنا عشر برجا�
 
 const signKeys=["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
 function localSign(s){
+ const index=signs.indexOf(s);
+ const key=signKeys[index];
+ // Arabic uses the original Arabic zodiac data, not the English fallback.
+ if(currentLanguage==="ar"){
+  const detail=signDetails[s.en]||{};
+  return {
+   name:s.ar,
+   date:s.date,
+   element:s.element,
+   desc:s.desc,
+   planet:detail.planet||"—",
+   qualities:detail.qualities||"—"
+  };
+ }
  const languageSigns=translations[currentLanguage]||translations.en;
- const key=signKeys[signs.indexOf(s)];
- return languageSigns[key]||translations.en[key]||{name:s.ar||s.en,date:s.date,element:s.element,desc:"",planet:"—",qualities:"—"};
+ return languageSigns[key]||translations.en[key]||{name:s.ar||s.en,date:s.date,element:s.element,desc:s.desc||"",planet:"—",qualities:"—"};
 }
 function translatedGem(g){return currentLanguage==="ar"?g:((gemNames[g]||[g,g])[currentLanguage==="en"?0:1]);}
 function renderGrid(){
