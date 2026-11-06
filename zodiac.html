@@ -280,6 +280,7 @@ fr:{back:"Retour à la boutique ←",intro:"Douze signes, douze univers de symbo
 ar:{back:"العودة إلى المتجر ←",intro:"اثنا عشر برجاً، اثنا عشر عالماً من الرموز والحكايات. اكتشف برجك، وتعرّف على الأحجار التي ارتبطت به عبر تقاليد وثقافات مختلفة.",hint:"اضغط على برجك لاكتشاف رمزه وأحجاره المرتبطة به ✧",footer:"الأحجار تحمل جمالاً ورموزاً تتناقلها الثقافات — اختر ما يلامس ذوقك.",grid:"الأبراج الاثنا عشر",close:"إغلاق",gemLabel:"أحجار ترتبط بهذا البرج في بعض التقاليد",planetLabel:"الكوكب الحاكم في التقاليد الفلكية",qualitiesLabel:"ملامح رمزية",relatedLabel:"قطع من BLUE WHALE GEMS مرتبطة بأحجار هذا البرج",loading:"جارٍ العثور على القطع المتوفرة...",empty:"لا توجد قطعة متاحة مرتبطة مباشرة بهذه الأحجار حالياً.",more:"اكتشف بقية مجموعة الأحجار والقطع ←",note:"هذه الروابط رمزية وتراثية وتختلف باختلاف المصادر؛ لا تمثل حقائق علمية أو وعوداً بتأثيرات محددة.",rangeJoin:" · عنصر ",kicker:"CELESTIAL SIGN · BLUE WHALE GEMS",language:"العربية ▾"}
 };
 
+const signKeys=["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
 function localSign(s){return translations[currentLanguage][signKeys[signs.indexOf(s)]]||{};}
 function translatedGem(g){return currentLanguage==="ar"?g:((gemNames[g]||[g,g])[currentLanguage==="en"?0:1]);}
 function renderGrid(){
@@ -344,7 +345,7 @@ async function renderRelatedProducts(sign){
    const info=document.createElement("span");const name=document.createElement("strong");name.textContent=p.name;const price=document.createElement("small");price.textContent=String(p.price)+" TND";info.append(name,price);link.append(image,info);container.appendChild(link);
   });
   const more=document.createElement("a");more.className="related-more";more.href="index.html#collections";more.textContent=uiText[currentLanguage].more;container.appendChild(more);
- }catch(error){container.innerHTML='<span class="related-empty">تعذّر تحميل القطع الآن. يمكنك تصفح مجموعات المتجر.</span>';}
+ }catch(error){container.innerHTML='<span class="related-empty">'+(currentLanguage==="en"?"Products could not be loaded. You can browse the shop collections.":currentLanguage==="fr"?"Impossible de charger les articles. Vous pouvez parcourir les collections de la boutique.":"تعذّر تحميل القطع الآن. يمكنك تصفح مجموعات المتجر.")+'</span>';}
 }
 function openSign(s){dialog.style.setProperty("--hue",s.hue);document.getElementById("modalGlyph").innerHTML=zodiacMark(s);const t=localSign(s);document.getElementById("modalPlanet").textContent=t.planet||"—";document.getElementById("modalQualities").textContent=t.qualities||"—";renderRelatedProducts(s);document.getElementById("modalTitle").textContent=t.name;document.getElementById("modalLatin").textContent=s.en;document.getElementById("modalRange").textContent=t.date+uiText[currentLanguage].rangeJoin+t.element;document.getElementById("modalDescription").textContent=t.desc;const gems=document.getElementById("modalGems");gems.replaceChildren();s.gem.forEach(g=>{const el=document.createElement("span");el.textContent=translatedGem(g);gems.appendChild(el)});modal.classList.add("open");document.body.style.overflow="hidden";document.getElementById("closeModal").focus()}
 function close(){modal.classList.remove("open");document.body.style.overflow=""}
