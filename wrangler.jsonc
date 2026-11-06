@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "yellow-heart-cbd0blue-whale-gem-lab",
+  "main": "gem-lab-worker.js",
+  "compatibility_date": "2026-11-06",
+  "vars": {
+    "ALLOWED_ORIGIN": "https://yassinabbes27-ux.github.io",
+    "OPENAI_MODEL": "gpt-5.5"
+  }
+}
