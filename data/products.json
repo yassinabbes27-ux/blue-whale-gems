@@ -318,5 +318,15 @@
     "stock": 1,
     "nameAr": "أفينتورين أخضر خام",
     "nameFr": "Aventurine verte brute"
+  },
+  {
+    "name": "Coral Pendant with Chain",
+    "category": "necklaces",
+    "price": 40,
+    "image": "/images/1000090740.jpg",
+    "delivery": 8,
+    "stock": 1,
+    "nameAr": "تعليقة مرجان مع سلسال",
+    "nameFr": "Pendentif en corail avec chaîne"
   }
 ]
