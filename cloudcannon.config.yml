@@ -9,9 +9,37 @@ source: /
 collections_config:
   pages:
     path: ''
+    glob:
+      - '*.html'
     icon: wysiwyg
   data:
     path: data
+    glob:
+      - 'products.json'
     icon: data_usage
     _enabled_editors:
       - data
+file_config:
+  - glob: data/products.json
+    _enabled_editors:
+      - data
+    _inputs:
+      $:
+        type: array
+        label: Products
+        options:
+          structures: _structures.products
+    _structures:
+      products:
+        style: modal
+        values:
+          - label: Product
+            value:
+              name: ''
+              category: bracelets
+              price: 0
+              image: ''
+              delivery: 8
+              stock: 1
+              nameAr: ''
+              nameFr: ''
