@@ -148,6 +148,7 @@ render();
  const audio=document.getElementById("bwgBackgroundMusic");
  const playButton=document.getElementById("bwgMusicPlay");
  if(!audio||!playButton)return;
+ const preferenceKey="bwg-music-preference";
  const savedTime=Number(sessionStorage.getItem("bwg-music-time")||0);
  audio.volume=0.05;
  audio.muted=false;
@@ -156,6 +157,7 @@ render();
   playButton.setAttribute("aria-label",audio.paused?"Play background music":"Pause background music");
  }
  function tryAutoplay(){
+  if(sessionStorage.getItem(preferenceKey)==="paused")return;
   const attempt=audio.play();
   if(attempt&&typeof attempt.catch==="function")attempt.catch(function(){});
  }
@@ -169,18 +171,26 @@ render();
  }
  audio.addEventListener("timeupdate",savePosition);
  window.addEventListener("pagehide",savePosition);
+ window.addEventListener("pageshow",function(){
+  if(sessionStorage.getItem(preferenceKey)!=="paused")tryAutoplay();
+ });
  audio.addEventListener("play",updateControl);
  audio.addEventListener("pause",updateControl);
  playButton.addEventListener("click",function(){
-  if(audio.paused)audio.play().catch(function(){});
-  else audio.pause();
+  if(audio.paused){
+   sessionStorage.setItem(preferenceKey,"playing");
+   tryAutoplay();
+  }else{
+   sessionStorage.setItem(preferenceKey,"paused");
+   audio.pause();
+  }
  });
  document.addEventListener("pointerdown",function(event){
   if(event.target.closest("#bwgMusicControls"))return;
-  if(audio.paused)audio.play().catch(function(){});
+  if(sessionStorage.getItem(preferenceKey)!=="paused"&&audio.paused)tryAutoplay();
  },{once:true,passive:true});
  document.addEventListener("keydown",function(){
-  if(audio.paused)audio.play().catch(function(){});
+  if(sessionStorage.getItem(preferenceKey)!=="paused"&&audio.paused)tryAutoplay();
  },{once:true});
  updateControl();
  tryAutoplay();
