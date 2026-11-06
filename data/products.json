@@ -328,5 +328,15 @@
     "stock": 1,
     "nameAr": "تعليقة مرجان مع سلسال",
     "nameFr": "Pendentif en corail avec chaîne"
+  },
+  {
+    "name": "Agate pendent",
+    "category": "Necklace",
+    "price": 40,
+    "image": "/uploads/1000090741.jpg",
+    "delivery": 8,
+    "stock": 1,
+    "nameAr": "تعليقة من العقيق",
+    "nameFr": "Pendentif en agate "
   }
 ]
