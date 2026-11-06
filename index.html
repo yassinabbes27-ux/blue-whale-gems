@@ -623,38 +623,159 @@ body[dir="rtl"] .gem-story-copy{text-align:right}
 .social-icon{width:15px;height:15px;flex:0 0 15px;fill:currentColor}
 
 
-/* Zodiac invitation — immersive cinematic celestial experience */
-.zodiac-invitation{position:relative;isolation:isolate;overflow:hidden;min-height:540px;margin:0 auto;padding:62px 22px 68px;display:grid;place-items:center;text-align:center;color:#f7f2ff;background:radial-gradient(ellipse at 50% 48%,rgba(117,79,164,.48) 0%,rgba(62,39,96,.28) 34%,transparent 68%),radial-gradient(ellipse at 14% 10%,rgba(102,73,151,.36),transparent 38%),radial-gradient(ellipse at 88% 90%,rgba(74,94,139,.25),transparent 40%),radial-gradient(ellipse at 78% 20%,rgba(91,57,132,.2),transparent 42%),linear-gradient(128deg,#100a20 0%,#211432 45%,#151329 100%);background-size:150% 150%;animation:zodiacNebulaDrift 26s ease-in-out infinite alternate;border-top:1px solid rgba(211,190,242,.2);border-bottom:1px solid rgba(211,190,242,.18)}
-.zodiac-invitation:before{content:"";position:absolute;inset:-3%;z-index:-1;opacity:.68;background-image:radial-gradient(1px 1px at 8% 18%,#fff 98%,transparent),radial-gradient(1.5px 1.5px at 18% 72%,#d9c8ff 98%,transparent),radial-gradient(1px 1px at 28% 33%,#fff 98%,transparent),radial-gradient(1.5px 1.5px at 42% 13%,#fff 98%,transparent),radial-gradient(1px 1px at 59% 78%,#e5d6ff 98%,transparent),radial-gradient(1px 1px at 72% 25%,#fff 98%,transparent),radial-gradient(1.5px 1.5px at 86% 61%,#d8c2ff 98%,transparent),radial-gradient(1px 1px at 94% 16%,#fff 98%,transparent),radial-gradient(1px 1px at 5% 88%,#fff 98%,transparent),radial-gradient(2px 2px at 34% 83%,rgba(255,255,255,.9) 98%,transparent),radial-gradient(1px 1px at 66% 54%,rgba(221,199,255,.9) 98%,transparent);background-size:100% 100%;animation:zodiacStarDrift 34s ease-in-out infinite alternate,zodiacStarTwinkle 6s ease-in-out infinite alternate}
-.zodiac-invitation:after{content:"";position:absolute;z-index:-1;width:min(760px,110vw);aspect-ratio:1;border:1px solid rgba(205,178,241,.15);border-radius:50%;box-shadow:0 0 0 24px rgba(205,178,241,.025),0 0 0 62px rgba(205,178,241,.02),0 0 0 112px rgba(205,178,241,.014),0 0 110px rgba(139,103,190,.16);pointer-events:none;animation:zodiacGalaxyRotation 110s linear infinite}
-.zodiac-invitation-inner{position:relative;width:100%;max-width:900px;margin:0 auto;animation:zodiacContentFloat 9s ease-in-out infinite}
-.zodiac-invitation .kicker{display:block;color:#c7a9eb;letter-spacing:3.5px;font-size:8px;text-shadow:0 0 18px rgba(204,169,239,.35)}
-.zodiac-invitation h2{margin:13px 0 10px;color:#fff;font-family:var(--serif);font-size:clamp(35px,5vw,55px);font-weight:400;line-height:1.04;letter-spacing:.2px;text-shadow:0 3px 28px rgba(196,160,245,.28);animation:zodiacTitleGlow 5s ease-in-out infinite}
-.zodiac-invitation p{max-width:540px;margin:0 auto;color:#d0c5df;font-size:11px;line-height:1.95;text-shadow:0 2px 16px rgba(10,5,22,.5)}
-.zodiac-orbit{position:relative;width:270px;height:270px;margin:25px auto 22px;border:1px solid rgba(201,174,236,.28);border-radius:50%;box-shadow:0 0 0 12px rgba(201,174,236,.025),inset 0 0 45px rgba(151,110,202,.12),0 0 55px rgba(142,103,195,.17);animation:zodiacOrbitBreath 7s ease-in-out infinite,zodiacOrbitRotation 100s linear infinite}
-.zodiac-orbit:before,.zodiac-orbit:after{content:"";position:absolute;inset:18px;border:1px solid rgba(205,184,232,.17);border-radius:50%}
-.zodiac-orbit:after{inset:48px;border-color:rgba(205,184,232,.15);box-shadow:inset 0 0 28px rgba(166,126,210,.07)}
-.zodiac-orbit-core{position:absolute;inset:50%;width:76px;height:76px;transform:translate(-50%,-50%);display:grid;place-items:center;border:1px solid rgba(224,204,249,.62);border-radius:50%;background:radial-gradient(circle at 35% 28%,#9678b8 0%,#46315f 56%,#241b39 100%);color:#fff0d2;font-family:var(--serif);font-size:34px;box-shadow:0 0 28px rgba(187,145,235,.4),0 0 70px rgba(169,126,218,.16),inset 0 0 18px rgba(255,255,255,.14);animation:zodiacCorePulse 4s ease-in-out infinite}
-.zodiac-orbit-symbol{position:absolute;top:50%;left:50%;width:36px;height:36px;margin:-18px;border:0;border-radius:0;display:grid;place-items:center;background:transparent;color:#eadcff;font-family:"Noto Sans Symbols 2","Segoe UI Symbol",serif;font-size:25px;font-weight:400;line-height:1;text-shadow:0 0 7px rgba(235,216,255,.62),0 0 20px rgba(178,133,232,.42);filter:drop-shadow(0 2px 5px rgba(8,5,18,.55));transform:rotate(calc(var(--i)*30deg)) translateY(-119px) rotate(calc(var(--i)*-30deg));animation:zodiacGlyphGlow 5s ease-in-out infinite;animation-delay:calc(var(--i)*-.4s)}
+/* BLUE WHALE GEMS — Zodiac editorial portal */
+.zodiac-invitation{
+ position:relative;isolation:isolate;overflow:hidden;min-height:620px;
+ padding:clamp(54px,7vw,88px) clamp(22px,6vw,82px);
+ display:grid;place-items:center;color:#edf7fb;
+ background:
+  radial-gradient(ellipse at 72% 48%,rgba(31,111,143,.24),transparent 42%),
+  radial-gradient(ellipse at 18% 18%,rgba(34,82,112,.22),transparent 40%),
+  linear-gradient(112deg,#071521 0%,#0b1e2b 48%,#081521 100%);
+ border-top:1px solid rgba(164,208,224,.16);
+ border-bottom:1px solid rgba(164,208,224,.16)
+}
+.zodiac-invitation:before{
+ content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
+ background-image:
+  radial-gradient(1px 1px at 8% 18%,rgba(235,249,255,.9) 98%,transparent),
+  radial-gradient(1px 1px at 17% 72%,rgba(164,218,238,.85) 98%,transparent),
+  radial-gradient(1.5px 1.5px at 29% 35%,rgba(255,255,255,.9) 98%,transparent),
+  radial-gradient(1px 1px at 43% 13%,rgba(207,235,247,.8) 98%,transparent),
+  radial-gradient(1px 1px at 58% 82%,rgba(255,255,255,.8) 98%,transparent),
+  radial-gradient(1px 1px at 73% 25%,rgba(185,225,240,.9) 98%,transparent),
+  radial-gradient(1.5px 1.5px at 89% 61%,rgba(255,255,255,.9) 98%,transparent),
+  radial-gradient(1px 1px at 96% 12%,rgba(188,226,240,.8) 98%,transparent);
+ background-size:100% 100%;opacity:.62;
+ animation:zodiacFieldDrift 42s ease-in-out infinite alternate
+}
+.zodiac-invitation:after{
+ content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;
+ opacity:.22;
+ background:repeating-radial-gradient(circle at 72% 50%,transparent 0 72px,rgba(150,204,224,.12) 73px,transparent 74px 116px);
+ mask-image:linear-gradient(90deg,transparent 25%,#000 72%,transparent 100%)
+}
+.zodiac-invitation-inner{
+ width:min(1180px,100%);margin:0 auto;display:grid;
+ grid-template-columns:minmax(0,.88fr) minmax(390px,1.12fr);
+ align-items:center;gap:clamp(30px,6vw,90px)
+}
+.zodiac-copy{position:relative;z-index:2;max-width:510px;text-align:left}
+.zodiac-copy:before{
+ content:"12 / 12";display:block;margin-bottom:25px;
+ color:rgba(169,211,226,.55);font-family:var(--sans);
+ font-size:9px;letter-spacing:3px
+}
+.zodiac-invitation .kicker{
+ display:block;color:#9bc9d9;letter-spacing:3.2px;
+ font-size:9px;font-weight:600
+}
+.zodiac-invitation h2{
+ max-width:500px;margin:18px 0 18px;color:#f6fbfd;
+ font-family:var(--serif);font-size:clamp(45px,6vw,76px);
+ font-weight:400;line-height:.98;letter-spacing:-1.2px;
+ text-shadow:0 8px 38px rgba(93,177,205,.13)
+}
+.zodiac-invitation p{
+ max-width:430px;margin:0;color:#b5cbd4;
+ font-size:13px;line-height:2.05
+}
+.zodiac-invitation-link{
+ position:relative;display:inline-flex;align-items:center;justify-content:center;
+ gap:15px;min-height:50px;margin-top:32px;padding:0 24px;
+ border:1px solid rgba(161,211,229,.48);border-radius:2px;
+ background:linear-gradient(110deg,rgba(54,119,145,.34),rgba(17,48,66,.72));
+ color:#f2f9fc;font-size:9px;font-weight:600;letter-spacing:2px;
+ box-shadow:0 12px 30px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.08);
+ transition:background .3s ease,border-color .3s ease,transform .3s ease,box-shadow .3s ease
+}
+.zodiac-invitation-link:hover{
+ transform:translateY(-3px);border-color:#b9e4f0;
+ background:linear-gradient(110deg,rgba(70,148,174,.48),rgba(22,67,87,.86));
+ box-shadow:0 16px 36px rgba(0,0,0,.25),0 0 24px rgba(104,190,215,.12)
+}
+.zodiac-invitation-link span{color:#a9d9e8;font-size:15px}
+.zodiac-art{
+ position:relative;width:min(100%,510px);aspect-ratio:1;
+ display:grid;place-items:center;margin:auto;
+ filter:drop-shadow(0 24px 55px rgba(0,0,0,.22))
+}
+.zodiac-art:before{
+ content:"";position:absolute;width:43%;aspect-ratio:1;border-radius:50%;
+ background:
+  radial-gradient(circle at 34% 27%,rgba(191,237,249,.95) 0%,rgba(86,165,190,.9) 8%,rgba(31,91,119,.98) 36%,#0b2638 68%,#061521 100%);
+ box-shadow:inset -22px -15px 35px rgba(0,0,0,.5),inset 8px 7px 18px rgba(220,248,255,.3),0 0 35px rgba(88,177,207,.2),0 0 100px rgba(53,138,171,.15);
+ animation:zodiacPlanetBreath 8s ease-in-out infinite
+}
+.zodiac-art:after{
+ content:"";position:absolute;width:56%;height:18%;border:1px solid rgba(160,218,235,.34);
+ border-radius:50%;transform:rotate(-24deg);
+ box-shadow:0 0 22px rgba(107,190,215,.12),inset 0 0 14px rgba(107,190,215,.08);
+ pointer-events:none
+}
+.zodiac-orbit{
+ position:relative;width:82%;height:82%;border:1px solid rgba(156,211,230,.3);
+ border-radius:50%;box-shadow:0 0 0 17px rgba(143,204,225,.025),0 0 0 48px rgba(143,204,225,.018),inset 0 0 50px rgba(87,164,191,.08);
+ animation:zodiacWheelTurn 150s linear infinite
+}
+.zodiac-orbit:before,.zodiac-orbit:after{
+ content:"";position:absolute;inset:7%;border:1px solid rgba(166,216,232,.14);border-radius:50%
+}
+.zodiac-orbit:after{inset:21%;border-color:rgba(166,216,232,.12);box-shadow:0 0 35px rgba(87,164,191,.08)}
+.zodiac-orbit-core{
+ position:absolute;top:50%;left:50%;width:21%;aspect-ratio:1;
+ transform:translate(-50%,-50%);display:grid;place-items:center;
+ border:1px solid rgba(207,239,247,.52);border-radius:50%;
+ background:radial-gradient(circle at 32% 25%,#b9e7f2 0%,#4c9ab4 16%,#17445c 57%,#092235 100%);
+ color:#e9faff;font-family:var(--serif);font-size:clamp(28px,4vw,43px);
+ box-shadow:0 0 24px rgba(116,201,225,.34),0 0 72px rgba(71,157,188,.22),inset 0 0 20px rgba(255,255,255,.16)
+}
+.zodiac-orbit-symbol{
+ position:absolute;top:50%;left:50%;width:42px;height:42px;margin:-21px;
+ display:grid;place-items:center;border:1px solid rgba(165,213,229,.25);
+ border-radius:50%;background:linear-gradient(145deg,rgba(20,54,72,.94),rgba(7,25,39,.96));
+ color:#d8f0f7;font-family:"Noto Sans Symbols 2","Segoe UI Symbol",serif;
+ font-size:22px;line-height:1;text-shadow:0 0 13px rgba(158,222,240,.34);
+ box-shadow:0 5px 18px rgba(0,0,0,.25),inset 0 1px rgba(255,255,255,.08);
+ transform:rotate(calc(var(--i)*30deg)) translateY(-207px) rotate(calc(var(--i)*-30deg));
+ animation:zodiacSignLight 7s ease-in-out infinite;animation-delay:calc(var(--i)*-.48s)
+}
 .zodiac-orbit-symbol:nth-child(2){--i:0}.zodiac-orbit-symbol:nth-child(3){--i:1}.zodiac-orbit-symbol:nth-child(4){--i:2}.zodiac-orbit-symbol:nth-child(5){--i:3}.zodiac-orbit-symbol:nth-child(6){--i:4}.zodiac-orbit-symbol:nth-child(7){--i:5}.zodiac-orbit-symbol:nth-child(8){--i:6}.zodiac-orbit-symbol:nth-child(9){--i:7}.zodiac-orbit-symbol:nth-child(10){--i:8}.zodiac-orbit-symbol:nth-child(11){--i:9}.zodiac-orbit-symbol:nth-child(12){--i:10}.zodiac-orbit-symbol:nth-child(13){--i:11}
-.zodiac-invitation-link{display:inline-flex;align-items:center;justify-content:center;gap:13px;min-height:46px;margin-top:23px;padding:0 25px;border:1px solid rgba(220,199,246,.62);border-radius:3px;background:linear-gradient(110deg,rgba(117,83,155,.38),rgba(69,55,104,.32));background-size:200% 100%;color:#f6efff;font-size:9px;font-weight:600;letter-spacing:1.8px;box-shadow:0 8px 28px rgba(8,5,18,.2),inset 0 1px rgba(255,255,255,.08),0 0 25px rgba(173,132,220,.08);transition:background .35s ease,border-color .35s ease,transform .35s ease,box-shadow .35s ease;animation:zodiacPortalShimmer 8s ease-in-out infinite}
-.zodiac-invitation-link:hover{transform:translateY(-3px);border-color:#ead8ff;background:linear-gradient(110deg,rgba(146,105,190,.62),rgba(91,75,135,.52));box-shadow:0 12px 34px rgba(8,5,18,.28),0 0 22px rgba(180,139,228,.17)}
-.zodiac-invitation-link span{color:#e9d4ff;font-size:14px}
+body[dir="rtl"] .zodiac-copy{text-align:right}
+body[dir="rtl"] .zodiac-copy:before{letter-spacing:2px}
 body[dir="rtl"] .zodiac-invitation-link{letter-spacing:0}
-@keyframes zodiacNebulaDrift{0%{background-position:0% 45%}50%{background-position:70% 55%}100%{background-position:100% 35%}}
-@keyframes zodiacStarDrift{from{transform:translate3d(-1%,0,0) scale(1);background-position:0 0}to{transform:translate3d(1.5%,-1%,0) scale(1.04);background-position:22px -18px}}
-@keyframes zodiacStarTwinkle{from{opacity:.42}to{opacity:.9}}
-@keyframes zodiacGalaxyRotation{from{transform:rotate(0deg) scale(.98)}to{transform:rotate(360deg) scale(1.02)}}
-@keyframes zodiacContentFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@keyframes zodiacTitleGlow{0%,100%{text-shadow:0 3px 24px rgba(196,160,245,.18)}50%{text-shadow:0 3px 36px rgba(211,177,255,.48),0 0 58px rgba(151,111,204,.22)}}
-@keyframes zodiacOrbitBreath{0%,100%{box-shadow:0 0 0 12px rgba(201,174,236,.025),inset 0 0 45px rgba(151,110,202,.09),0 0 55px rgba(142,103,195,.13)}50%{box-shadow:0 0 0 18px rgba(201,174,236,.035),inset 0 0 58px rgba(151,110,202,.15),0 0 75px rgba(142,103,195,.2)}}
-@keyframes zodiacOrbitRotation{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@keyframes zodiacCorePulse{0%,100%{box-shadow:0 0 28px rgba(187,145,235,.32),0 0 58px rgba(169,126,218,.12),inset 0 0 18px rgba(255,255,255,.12)}50%{box-shadow:0 0 38px rgba(205,167,246,.55),0 0 82px rgba(169,126,218,.25),inset 0 0 24px rgba(255,255,255,.2)}}
-@keyframes zodiacGlyphGlow{0%,100%{color:#d8c7ee;filter:drop-shadow(0 0 5px rgba(179,137,225,.2))}50%{color:#fff;filter:drop-shadow(0 0 12px rgba(196,156,242,.8))}}
-@keyframes zodiacPortalShimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-@media(max-width:600px){.zodiac-invitation{min-height:480px;padding:43px 18px 49px}.zodiac-invitation .kicker{font-size:7px;letter-spacing:2.5px}.zodiac-invitation h2{font-size:clamp(34px,9vw,43px);max-width:340px;margin:12px auto 9px}.zodiac-invitation p{max-width:330px;font-size:10px}.zodiac-orbit{width:228px;height:228px;margin:23px auto 20px}.zodiac-orbit:before{inset:15px}.zodiac-orbit:after{inset:40px}.zodiac-orbit-symbol{transform:rotate(calc(var(--i)*30deg)) translateY(-100px) rotate(calc(var(--i)*-30deg));width:27px;height:27px;margin:-13.5px;font-size:14px}.zodiac-orbit-core{width:67px;height:67px;font-size:30px}.zodiac-invitation-link{min-height:44px;padding:0 19px;font-size:8px;letter-spacing:1.3px}}
-@media(prefers-reduced-motion:reduce){.zodiac-invitation,.zodiac-invitation:before,.zodiac-invitation:after,.zodiac-invitation-inner,.zodiac-invitation h2,.zodiac-orbit,.zodiac-orbit-core,.zodiac-orbit-symbol,.zodiac-invitation-link{animation:none!important}.zodiac-invitation-link{transition:none}.zodiac-invitation-link:hover{transform:none}}
-
+@keyframes zodiacFieldDrift{from{transform:translate3d(-.5%,0,0)}to{transform:translate3d(.8%,-.5%,0)}}
+@keyframes zodiacWheelTurn{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes zodiacPlanetBreath{0%,100%{filter:brightness(.94);transform:scale(.985)}50%{filter:brightness(1.12);transform:scale(1.025)}}
+@keyframes zodiacSignLight{0%,100%{border-color:rgba(165,213,229,.2);color:#c7e7f0;box-shadow:0 5px 18px rgba(0,0,0,.25),inset 0 1px rgba(255,255,255,.08)}50%{border-color:rgba(190,235,246,.55);color:#fff;box-shadow:0 5px 24px rgba(0,0,0,.28),0 0 20px rgba(119,202,227,.16),inset 0 1px rgba(255,255,255,.13)}}
+@media(max-width:850px){
+ .zodiac-invitation{min-height:0;padding:58px 22px 62px}
+ .zodiac-invitation-inner{grid-template-columns:1fr;gap:24px;text-align:center}
+ .zodiac-copy{max-width:620px;margin:0 auto;text-align:center}
+ .zodiac-copy:before{margin-bottom:17px}
+ .zodiac-invitation h2{margin:15px auto 14px;font-size:clamp(43px,8vw,62px)}
+ .zodiac-invitation p{margin:0 auto}
+ .zodiac-invitation-link{margin-top:24px}
+ .zodiac-art{width:min(440px,88vw);grid-row:2}
+}
+@media(max-width:520px){
+ .zodiac-invitation{padding:45px 17px 48px}
+ .zodiac-invitation .kicker{font-size:7px;letter-spacing:2px}
+ .zodiac-invitation h2{font-size:clamp(38px,10vw,49px)}
+ .zodiac-invitation p{font-size:11px;line-height:1.95}
+ .zodiac-art{width:min(340px,94vw)}
+ .zodiac-orbit-symbol{width:32px;height:32px;margin:-16px;font-size:17px;transform:rotate(calc(var(--i)*30deg)) translateY(-140px) rotate(calc(var(--i)*-30deg))}
+ .zodiac-invitation-link{min-height:46px;padding:0 18px;font-size:8px;letter-spacing:1.2px}
+}
+@media(max-width:370px){
+ .zodiac-art{width:300px;max-width:100%}
+ .zodiac-orbit-symbol{transform:rotate(calc(var(--i)*30deg)) translateY(-123px) rotate(calc(var(--i)*-30deg))}
+}
+@media(prefers-reduced-motion:reduce){
+ .zodiac-invitation:before,.zodiac-art:before,.zodiac-orbit,.zodiac-orbit-symbol{animation:none!important}
+ .zodiac-invitation-link{transition:none}
+ .zodiac-invitation-link:hover{transform:none}
+}
 </style>
 </head>
 <body>
@@ -875,14 +996,18 @@ body[dir="rtl"] .zodiac-invitation-link{letter-spacing:0}
 
 <section class="zodiac-invitation" aria-labelledby="zodiacInvitationTitle">
  <div class="zodiac-invitation-inner">
-  <span class="kicker" data-en="A CELESTIAL JOURNEY · TWELVE SIGNS · TIMELESS STORIES" data-ar="رحلة سماوية · اثنا عشر برجاً · حكايات خالدة">A CELESTIAL JOURNEY · TWELVE SIGNS · TIMELESS STORIES</span>
-  <h2 id="zodiacInvitationTitle" data-en="Written in the Stars." data-ar="حكايةٌ كتبتها النجوم.">Written in the Stars.</h2>
-  <p data-en="Twelve signs. Twelve stories. Discover the gemstones, symbols and traditions woven through the zodiac." data-ar="اثنا عشر برجاً، واثنتا عشرة حكاية. اكتشف الأحجار والرموز والتقاليد التي ارتبطت بعالم الأبراج.">Twelve signs. Twelve stories. Discover the gemstones, symbols and traditions woven through the zodiac.</p>
-  <div class="zodiac-orbit" aria-hidden="true">
-   <span class="zodiac-orbit-core">✦</span>
-   <span class="zodiac-orbit-symbol">♈</span><span class="zodiac-orbit-symbol">♉</span><span class="zodiac-orbit-symbol">♊</span><span class="zodiac-orbit-symbol">♋</span><span class="zodiac-orbit-symbol">♌</span><span class="zodiac-orbit-symbol">♍</span><span class="zodiac-orbit-symbol">♎</span><span class="zodiac-orbit-symbol">♏</span><span class="zodiac-orbit-symbol">♐</span><span class="zodiac-orbit-symbol">♑</span><span class="zodiac-orbit-symbol">♒</span><span class="zodiac-orbit-symbol">♓</span>
+  <div class="zodiac-copy">
+   <span class="kicker" data-en="A CELESTIAL JOURNEY · TWELVE SIGNS · TIMELESS STORIES" data-ar="رحلة سماوية · اثنا عشر برجاً · حكايات خالدة">A CELESTIAL JOURNEY · TWELVE SIGNS · TIMELESS STORIES</span>
+   <h2 id="zodiacInvitationTitle" data-en="Written in the Stars." data-ar="حكايةٌ كتبتها النجوم.">Written in the Stars.</h2>
+   <p data-en="Twelve signs. Twelve stories. Discover the gemstones, symbols and traditions woven through the zodiac." data-ar="اثنا عشر برجاً، واثنتا عشرة حكاية. اكتشف الأحجار والرموز والتقاليد التي ارتبطت بعالم الأبراج.">Twelve signs. Twelve stories. Discover the gemstones, symbols and traditions woven through the zodiac.</p>
+   <a class="zodiac-invitation-link" href="zodiac.html" data-en="ENTER THE ZODIAC" data-ar="ادخل إلى عالم الأبراج"><span aria-hidden="true">✧</span> ENTER THE ZODIAC <span aria-hidden="true">↗</span></a>
   </div>
-  <a class="zodiac-invitation-link" href="zodiac.html" data-en="ENTER THE ZODIAC" data-ar="ادخل إلى عالم الأبراج"><span aria-hidden="true">✧</span> ENTER THE ZODIAC <span aria-hidden="true">↗</span></a>
+  <div class="zodiac-art" aria-hidden="true">
+   <div class="zodiac-orbit">
+    <span class="zodiac-orbit-core">✦</span>
+    <span class="zodiac-orbit-symbol">♈</span><span class="zodiac-orbit-symbol">♉</span><span class="zodiac-orbit-symbol">♊</span><span class="zodiac-orbit-symbol">♋</span><span class="zodiac-orbit-symbol">♌</span><span class="zodiac-orbit-symbol">♍</span><span class="zodiac-orbit-symbol">♎</span><span class="zodiac-orbit-symbol">♏</span><span class="zodiac-orbit-symbol">♐</span><span class="zodiac-orbit-symbol">♑</span><span class="zodiac-orbit-symbol">♒</span><span class="zodiac-orbit-symbol">♓</span>
+   </div>
+  </div>
  </div>
 </section>
 
