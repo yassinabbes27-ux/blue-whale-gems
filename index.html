@@ -931,7 +931,9 @@ async function loadFeaturedProducts(){
  try{
   const response=await fetch("data/products.json");
   if(!response.ok)throw new Error("Catalogue unavailable");
-  const products=await response.json();
+  const catalogue=await response.json();
+  const products=catalogue.products;
+  if(!Array.isArray(products))throw new Error("Invalid product catalogue");
   products.filter(p=>p.category==="bracelets").slice(0,4).forEach((p,index)=>{
    const imagePath=String(p.image||"").replace(/^\/+/, "");
    const params=new URLSearchParams({name:p.name,price:String(p.price),image:imagePath,delivery:String(p.delivery??8),stock:String(p.stock??1),category:p.category});
