@@ -1,4 +1,5 @@
 name: GEM LAB Worker smoke test
+# Deployment and live API regression checks.
 
 on:
   push:
