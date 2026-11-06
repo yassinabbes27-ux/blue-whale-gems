@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>Collection | BLUE WHALE GEMS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#b9dceb;--blue-dark:#7895a3;--green:#245344;--ink:#25363d;--muted:#7b898e;--line:#e9eef0}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
+body[dir="rtl"]{font-family:"Cairo",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{position:relative;max-width:1240px;margin:auto;padding:17px 25px;min-height:12px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{
+position:absolute;left:50%;transform:translateX(-50%);text-align:center;font-family:"Cormorant Garamond",Georgia,serif;
+font-size:17px;font-weight:500;letter-spacing:2.5px;white-space:nowrap
+}
+.logo small{
+display:block;margin-top:4px;font-family:Manrope,Arial,sans-serif;
+font-size:8px;font-weight:400;letter-spacing:4px;color:var(--blue-dark)
+}
+.language-switcher{position:absolute;right:22px;top:50%;transform:translateY(-50%);z-index:20;direction:ltr}
+.lang{
+background:white;border:1px solid #dce8ec;border-radius:5px;
+width:76px;height:34px;padding:0 8px;display:inline-flex;align-items:center;justify-content:center;
+box-sizing:border-box;white-space:nowrap;color:var(--green);font-size:10px;cursor:pointer
+}
+.language-menu{display:none;position:absolute;right:0;top:calc(100% + 8px);min-width:130px;padding:6px;background:#fff;border:1px solid #e2ecef;border-radius:8px;box-shadow:0 10px 28px rgba(39,67,77,.13)}
+.language-menu.open{display:block}
+.language-menu button{display:block;width:100%;padding:10px 12px;text-align:left;background:transparent;border:0;border-radius:5px;color:#526a73;font-size:11px;cursor:pointer}
+.language-menu button[aria-current=true]{background:#f0f7f9;color:var(--green)}
+main{max-width:1160px;margin:auto;padding:32px 20px 70px}
+.back{display:inline-block;margin-bottom:28px;color:var(--blue-dark);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+.heading{text-align:center;margin:5px 0 38px}
+.eyebrow{font-size:9px;letter-spacing:3px;color:var(--blue-dark);font-weight:600;text-transform:uppercase}
+h1{margin:14px 0 10px;font-family:"Playfair Display",serif;font-size:clamp(32px,5vw,45px);font-weight:400}
+body[dir="rtl"] h1{font-family:"Cairo",sans-serif}
+.heading p{color:var(--muted);font-size:12px;line-height:1.9}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:35px 19px}
+.product{min-width:0}
+.product a{display:block}
+.product-image{aspect-ratio:1/1.12;background:#fff;overflow:hidden;border-radius:4px}
+.product-image img{width:100%;height:100%;display:block;object-fit:contain;border-radius:4px;box-shadow:none;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.product a:hover img{transform:scale(1.045)}
+.product a:active img{transform:scale(.96)}
+.product h2{margin:14px 0 8px;font-family:"Playfair Display",serif;font-size:15px;line-height:1.55;font-weight:400}
+.product .price{color:var(--green);font-size:13px;font-weight:600}
+.delivery{display:block;margin-top:7px;color:#89979d;font-size:10px}
+.unavailable{height:100%;display:flex;align-items:center;justify-content:center;color:#89979d;font-size:11px}
+footer{border-top:1px solid var(--line);text-align:center;padding:29px 15px;color:#89979d;font-size:9px;letter-spacing:1.5px}
+footer strong{display:block;color:var(--ink);font-family:"Playfair Display",serif;font-size:15px;font-weight:400;letter-spacing:2px;margin-bottom:8px}
+body[dir="rtl"] .eyebrow,body[dir="rtl"] .back{letter-spacing:0}
+.product-image img{transition:transform .25s ease;opacity:1;transform:none}
+.product a:hover .product-image img{transform:scale(1.025)}
+@media(prefers-reduced-motion:reduce){.product-image img{transition:none!important;transform:none!important}}
+@media(max-width:700px){
+ .nav{padding-right:105px}.language-switcher{right:13px}.lang{width:68px;height:29px;padding:0 6px;font-size:9px}.nav{height:52px;min-height:52px;padding:13px;box-sizing:border-box}.logo{font-size:12px;letter-spacing:1.2px}.logo small{font-size:7px;letter-spacing:2px}main{padding:23px 13px 50px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 12px}.product h2{font-size:13px}h1{font-size:32px}}
+
+.social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:18px;margin-top:17px}
+.social-link{display:inline-flex;align-items:center;gap:7px;color:#78878c;text-decoration:none;font-size:10px;letter-spacing:.3px}
+.social-link:hover{color:var(--green)}
+.social-icon{width:15px;height:15px;flex:0 0 15px;fill:currentColor}
+
+
+/* Mobile navigation drawer — matches the homepage menu */
+.menu-button{display:none;position:absolute;left:13px;top:50%;transform:translateY(-50%);padding:4px 6px;border:0;background:transparent;color:var(--ink);font-size:21px;line-height:1;cursor:pointer;z-index:2}
+.mobile-drawer{display:none;position:fixed;inset:0;z-index:50;background:rgba(24,45,51,.3)}
+.mobile-drawer.open{display:block}
+.drawer-card{position:absolute;top:0;bottom:0;left:0;width:min(82%,330px);background:#fff;padding:25px;box-shadow:8px 0 30px rgba(24,45,51,.08)}
+.drawer-close{float:right;border:0;background:none;font-size:24px;cursor:pointer;color:var(--ink)}
+.drawer-brand{font-family:"Playfair Display",serif;font-size:17px;letter-spacing:2px;margin:28px 0}
+.drawer-card a{display:block;padding:15px 0;border-bottom:1px solid var(--line);font-size:12px;color:var(--ink)}
+@media(max-width:700px){.menu-button{display:inline-block}}
+</style>
+</head>
+<body>
+<header style="position:sticky">
+ <div class="nav">
+  <button class="menu-button" type="button" onclick="toggleDrawer()" aria-label="Open menu">☰</button>
+  <a class="logo" href="index.html">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a>
+ </div>
+ <div class="language-switcher">
+  <button class="lang" type="button" onclick="toggleLanguageMenu()" aria-expanded="false" aria-haspopup="true">English ▾</button>
+  <div class="language-menu" id="languageMenu">
+   <button type="button" onclick="chooseLanguage('en')">English</button>
+   <button type="button" onclick="chooseLanguage('fr')">Français</button>
+   <button type="button" onclick="chooseLanguage('ar')">العربية</button>
+  </div>
+ </div>
+</header>
+<main>
+ <a class="back" href="index.html#collections" data-en="← All collections" data-ar="→ جميع المجموعات">← All collections</a>
+ <div class="heading">
+  <div class="eyebrow">BLUE WHALE GEMS · THE COLLECTION</div>
+  <h1 id="collectionTitle">Collection</h1>
+  <p id="collectionDescription"></p>
+ </div>
+ <div class="products" id="productsGrid"></div>
+</main>
+<footer><strong>BLUE WHALE GEMS</strong><span data-en="NATURAL GEMSTONES · TUNISIA" data-ar="أحجار طبيعية · تونس">NATURAL GEMSTONES · TUNISIA</span><div class="social-links" aria-label="BLUE WHALE GEMS social media">
+ <a class="social-link" href="https://www.tiktok.com/@blue_whale_gems?_r=1&amp;_t=ZS-9B9OhXJV0Ld" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.2a6.8 6.8 0 0 1-4.1-1.4v8.1a6.9 6.9 0 1 1-6-6.8v3.6a3.3 3.3 0 1 0 2.4 3.2V2h3.6c.2 2 1.7 3.6 4.1 3.9v1.3Z"/></svg><span>TikTok</span></a>
+ <a class="social-link" href="https://www.instagram.com/bluewhale__gems?rpxt=MW1tczJoZXVtbjNrMg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.7" r="1.2"/></svg><span>Instagram</span></a>
+ <a class="social-link" href="https://www.facebook.com/share/1CPVUZALJH/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg><span>Facebook</span></a>
+</div></footer>
+<script>
+const groups={
+bracelets:{en:"Bracelets",ar:"الأساور",descEn:"A collection of natural gemstone bracelets.",descAr:"مجموعة من الأساور المصنوعة من الأحجار الطبيعية."},
+necklaces:{en:"Necklaces",ar:"القلائد",descEn:"Pendants and necklaces shaped by nature.",descAr:"قلائد وقطع تتزيّن بجمال الأحجار الطبيعية."},
+rings:{en:"Rings",ar:"الخواتم",descEn:"Gemstone rings set in sterling silver.",descAr:"خواتم من الأحجار الطبيعية والفضة."},
+"raw-gems":{en:"Raw Gems Collection",ar:"الأحجار الخام",descEn:"Natural stones in their original form.",descAr:"أحجار طبيعية في هيئتها الأصلية."}
+};
+const category=new URLSearchParams(location.search).get("category");
+const group=groups[category];
+const title=document.getElementById("collectionTitle");
+const description=document.getElementById("collectionDescription");
+const grid=document.getElementById("productsGrid");
+async function loadProducts(){
+ const response=await fetch("data/products.json");
+ if(!response.ok)throw new Error("Could not load product catalogue");
+ const products=await response.json();
+ if(!group){
+  title.textContent="Collection not found";
+  description.textContent="Please return to the collections page.";
+ }else{
+  title.textContent=group.en;
+  description.dataset.en=group.descEn;
+  description.dataset.ar=group.descAr;
+  const categoryProducts=products.filter(p=>p.category===category);
+  categoryProducts.forEach((p,index)=>{
+   const imagePath=String(p.image||"").replace(/^\/+/, "");
+   const params=new URLSearchParams({name:p.name,price:String(p.price),image:imagePath,delivery:String(p.delivery??8),stock:String(p.stock??1),category:p.category});
+   const card=document.createElement("article");
+   card.className="product";
+   const link=document.createElement("a");
+   link.href="product.html?"+params.toString();
+   const frame=document.createElement("div");
+   frame.className="product-image";
+   const img=document.createElement("img");
+   const originalImageUrl="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/"+imagePath;
+   const optimizedImageUrl=originalImageUrl;
+   img.alt=p.name;
+   img.loading=index<(window.matchMedia("(max-width:700px)").matches?2:4)?"eager":"lazy";
+   img.decoding="async";
+   img.fetchPriority=img.loading==="eager"?"high":"low";
+   img.src=optimizedImageUrl;
+   img.onerror=()=>{if(img.src!==originalImageUrl){img.src=originalImageUrl;return;}frame.innerHTML='<div class="unavailable">Image unavailable</div>'};
+   frame.appendChild(img);
+   const name=document.createElement("h2");
+   name.textContent=p.name;
+   const price=document.createElement("div");
+   price.className="price";
+   price.textContent=p.price+" TND";
+   const delivery=document.createElement("span");
+   delivery.className="delivery";
+   delivery.dataset.en="Delivery · "+p.delivery+" TND";
+   delivery.dataset.ar="التوصيل · "+p.delivery+" د.ت";
+   delivery.textContent=delivery.dataset.en;
+   link.append(frame,name,price,delivery);
+   card.appendChild(link);
+   grid.appendChild(card);
+  });
+ }
+}
+function setupReveal(){
+ if(!("IntersectionObserver" in window)||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ const items=document.querySelectorAll(".heading > *");
+ items.forEach(item=>{item.style.opacity="1";item.style.transform="none";});
+}
+function applyLanguage(lang){
+ localStorage.setItem("bwg-language",lang);
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ document.body.dir=lang==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=el.dataset[lang]);
+ document.querySelector(".lang").textContent=lang==="en"?"English ▾":lang==="fr"?"Français ▾":"العربية ▾";
+ document.querySelectorAll("#languageMenu button").forEach(el=>el.setAttribute("aria-current",({"English":"en","Français":"fr","العربية":"ar"}[el.textContent]===lang)?"true":"false"));
+ if(group){
+  title.textContent=group[lang];
+  description.textContent=lang==="ar"?group.descAr:group.descEn;
+ }
+}
+function toggleDrawer(){document.getElementById("mobileDrawer").classList.toggle("open");}
+function toggleLanguageMenu(){const menu=document.getElementById("languageMenu"),button=document.querySelector(".lang"),open=menu.classList.toggle("open");button.setAttribute("aria-expanded",open?"true":"false");}
+function chooseLanguage(lang){applyLanguage(lang);document.getElementById("languageMenu").classList.remove("open");document.querySelector(".lang").setAttribute("aria-expanded","false");}
+function toggleLanguage(){toggleLanguageMenu();}
+applyLanguage(localStorage.getItem("bwg-language")||"en");
+if(group)document.title=group.en+" | BLUE WHALE GEMS";
+loadProducts().then(()=>{applyLanguage(localStorage.getItem("bwg-language")||"en");setupReveal();document.dispatchEvent(new Event("bwg:products-rendered"));}).catch(error=>{console.error("Collection loading failed:",error);title.textContent="Collection unavailable";description.textContent="Please refresh the page in a moment.";});
+</script>
+
+<script>
+(function(){
+const fr={"NATURAL GEMSTONES · DISTINCTIVE PIECES · TUNISIA":"GEMMES NATURELLES · PIÈCES SINGULIÈRES · TUNISIE","Home":"Accueil","Collections":"Collections","Our story":"Notre histoire","Contact":"Contact","NATURAL GEMSTONES · DISTINCTIVE PIECES":"GEMMES NATURELLES · PIÈCES SINGULIÈRES","Nature, in its own form.":"La nature, dans sa forme authentique.","Discover the colours, textures and quiet character of natural gemstones. Thoughtfully selected pieces made to become part of your own style.":"Découvrez les couleurs, les textures et le caractère singulier des pierres naturelles. Des pièces choisies avec soin pour accompagner votre style.","EXPLORE COLLECTIONS":"DÉCOUVRIR LES COLLECTIONS","SHOP BRACELETS":"VOIR LES BRACELETS","NATURAL MATERIALS · INDIVIDUAL CHARACTER":"MATIÈRES NATURELLES · CARACTÈRE UNIQUE","Natural gemstone selection":"Sélection de pierres naturelles","A Tunisian brand":"Une marque tunisienne","Personal order assistance":"Accompagnement personnalisé","FIND YOUR PIECE":"TROUVEZ VOTRE PIÈCE","Explore the collections":"Explorez les collections","From gemstone bracelets to distinctive silver-set pieces and natural stones in their original form.":"Des bracelets en pierres naturelles aux créations serties d’argent, jusqu’aux pierres brutes dans leur forme originelle.","DISCOVER BRACELETS ↗":"DÉCOUVRIR LES BRACELETS ↗","DISCOVER NECKLACES ↗":"DÉCOUVRIR LES COLLIERS ↗","DISCOVER RINGS ↗":"DÉCOUVRIR LES BAGUES ↗","DISCOVER RAW GEMS ↗":"DÉCOUVRIR LES PIERRES BRUTES ↗","The Seven Chakras":"Les sept chakras","ANCIENT SYMBOLS · SEVEN GEMSTONES":"SYMBOLES ANCIENS · SEPT PIERRES","01 · ROOT CHAKRA":"01 · CHAKRA RACINE","Root Chakra · Red Jasper":"Chakra racine · Jaspe rouge","02 · SACRAL CHAKRA":"02 · CHAKRA SACRÉ","Sacral Chakra · Carnelian":"Chakra sacré · Cornaline","03 · SOLAR PLEXUS":"03 · PLEXUS SOLAIRE","Solar Plexus · Citrine":"Plexus solaire · Citrine","04 · HEART CHAKRA":"04 · CHAKRA DU CŒUR","Heart Chakra · Emerald":"Chakra du cœur · Émeraude","05 · THROAT CHAKRA":"05 · CHAKRA DE LA GORGE","Throat Chakra · Aquamarine":"Chakra de la gorge · Aigue-marine","06 · THIRD EYE CHAKRA":"06 · TROISIÈME ŒIL","Third Eye · Lapis Lazuli":"Troisième œil · Lapis-lazuli","07 · CROWN CHAKRA":"07 · CHAKRA CORONAL","Crown Chakra · Amethyst":"Chakra coronal · Améthyste","A ritual of care":"Un rituel de soin","THE ART OF GEM CARE":"L’ART DE PRENDRE SOIN DES PIERRES","Every Gem Has Its Own Way.":"Chaque pierre a ses propres besoins.","Keep your gemstones away from water and prolonged direct sunlight. For a gentle personal ritual, discover two traditional ways of caring for them.":"Évitez l’eau et l’exposition prolongée au soleil direct. Pour un rituel tout en douceur, découvrez deux méthodes traditionnelles pour prendre soin de vos pierres.","Natural Incense":"Encens naturel","A gentle aromatic ritual":"Un doux rituel parfumé","Full Moonlight":"Clair de pleine lune","A quiet moment beneath the moon":"Un moment paisible sous la lune","Care methods vary by stone. Ask us before treating a delicate gemstone.":"Les méthodes d’entretien varient selon les pierres. Demandez-nous conseil avant de traiter une pierre délicate.","WELCOME TO BLUE WHALE GEMS":"BIENVENUE CHEZ BLUE WHALE GEMS","A gemstone for every reason.":"Une pierre précieuse, mille raisons.","Whatever brings you to gemstones — an interest in your zodiac sign, a personal search for comfort, balance and positive energy, or simply a love of wearing them as fine jewellery — we are here to offer pieces that speak to your taste and your purpose. Thank you for being here. We hope you enjoy discovering our world. 🩵🙏":"Quelle que soit votre raison de découvrir les pierres — l’intérêt pour votre signe astrologique, la recherche de confort, d’équilibre et d’énergie positive, ou simplement le plaisir de les porter comme de beaux bijoux — nous vous proposons des pièces qui correspondent à vos goûts et à vos envies. Merci de votre visite. Nous vous souhaitons une belle découverte de notre univers. 🩵🙏","A piece worth discovering.":"Une pièce qui mérite d’être découverte.","Questions about a gemstone or a particular piece? We are here to help.":"Une question sur une pierre ou une pièce en particulier ? Nous sommes là pour vous aider.","CONTACT VIA WHATSAPP":"CONTACTER VIA WHATSAPP","A considered collection of natural gemstones and distinctive jewellery, selected in Tunisia.":"Une collection soigneusement choisie de pierres naturelles et de bijoux singuliers, sélectionnés en Tunisie.","SHOP":"BOUTIQUE","INFORMATION":"INFORMATIONS","CONNECT":"NOUS SUIVRE","Delivery ":"Livraison ","Return to collections":"Retour aux collections","Collection":"Collection","Collection not found":"Collection introuvable","Please return to the collections page.":"Veuillez revenir à la page des collections.","Image unavailable":"Image indisponible","Product not found":"Produit introuvable","← All collections":"← Toutes les collections","← Return to collections":"← Retour aux collections","Product price":"Prix du produit","Delivery":"Livraison","Available quantity":"Quantité disponible","Total":"Total","Customer information":"Informations client","Full name":"Nom complet","Phone number":"Numéro de téléphone","Exact address":"Adresse complète","WhatsApp will open with a message containing the product and order details.":"WhatsApp s’ouvrira avec un message contenant les détails du produit et de la commande.","THE NATURAL COLLECTION":"LA COLLECTION NATURELLE","Beauty has its own character.":"La beauté a son propre caractère.","Natural gemstones differ in their colours, formations and textures. We let their beauty speak for itself, without exaggeration.":"Les pierres naturelles se distinguent par leurs couleurs, leurs formations et leurs textures. Nous laissons leur beauté parler d’elle-même, sans exagération.","A question about this piece?":"Une question sur cette pièce ?","We would be pleased to answer your questions and help with your order.":"Nous serons ravis de répondre à vos questions et de vous accompagner dans votre commande.","CONTACT BLUE WHALE GEMS":"CONTACTER BLUE WHALE GEMS","NATURAL GEMSTONES · TUNISIA":"PIERRES NATURELLES · TUNISIE","BLUE WHALE GEMS · THE COLLECTION":"BLUE WHALE GEMS · LA COLLECTION","BLUE WHALE GEMS · SELECTED PIECE":"BLUE WHALE GEMS · PIÈCE SÉLECTIONNÉE","ONE PIECE AVAILABLE":"UNE PIÈCE DISPONIBLE","CURRENTLY UNAVAILABLE":"ACTUELLEMENT INDISPONIBLE"};
+Object.assign(fr,{"Bracelets":"Bracelets","Necklaces":"Colliers","Rings":"Bagues","Raw Gems":"Pierres brutes","NATURAL BEAUTY":"BEAUTÉ NATURELLE","Collection unavailable":"Collection indisponible","Please refresh the page in a moment.":"Veuillez actualiser la page dans un instant."});
+ const frGroups={bracelets:{title:"Bracelets",desc:"Une collection de bracelets en pierres naturelles."},necklaces:{title:"Colliers",desc:"Pendentifs et colliers sublimés par la beauté de la nature."},rings:{title:"Bagues",desc:"Des bagues ornées de pierres naturelles et d’argent sterling."},"raw-gems":{title:"Collection de pierres brutes",desc:"Des pierres naturelles dans leur forme originelle."}};
+const orig=window.applyLanguage;
+window.applyLanguage=function(lang){
+ if(!["en","ar","fr"].includes(lang))lang="en";
+ localStorage.setItem("bwg-language",lang);document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.body.dir=lang==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=lang==="fr"?(fr[el.dataset.en]||el.dataset.en):el.dataset[lang]);
+ document.querySelector(".lang").textContent=lang==="en"?"English ▾":lang==="fr"?"Français ▾":"العربية ▾";
+ if(group){title.textContent=lang==="fr"?frGroups[category].title:group[lang];description.textContent=lang==="fr"?frGroups[category].desc:(lang==="ar"?group.descAr:group.descEn);}
+ document.querySelectorAll(".delivery").forEach(el=>{const m=el.dataset.en.match(/[0-9.]+/);if(m)el.textContent=lang==="fr"?"Livraison · "+m[0]+" TND":lang==="ar"?el.dataset.ar:el.dataset.en;});
+ const ey=document.querySelector(".eyebrow");if(ey&&lang==="fr")ey.textContent="BLUE WHALE GEMS · LA COLLECTION";else if(ey)ey.textContent="BLUE WHALE GEMS · THE COLLECTION";
+};
+window.toggleLanguage=function(){const cur=localStorage.getItem("bwg-language")||"en";window.applyLanguage(cur==="en"?"fr":cur==="fr"?"ar":"en");};
+window.applyLanguage(localStorage.getItem("bwg-language")||"en");
+})();
+</script>
+<script id="bwg-sync-saved-language">
+(function(){
+ function syncSavedLanguage(){
+  const lang=localStorage.getItem("bwg-language")||"en";
+  if(typeof window.applyLanguage==="function")window.applyLanguage(lang);
+ }
+ window.addEventListener("pageshow",syncSavedLanguage);
+ window.addEventListener("storage",function(event){
+  if(event.key==="bwg-language")syncSavedLanguage();
+ });
+})();
+</script>
+
+<div class="mobile-drawer" id="mobileDrawer" onclick="if(event.target===this)toggleDrawer()">
+ <div class="drawer-card">
+  <button class="drawer-close" type="button" onclick="toggleDrawer()" aria-label="Close menu">×</button>
+  <div class="drawer-brand">BLUE WHALE GEMS</div>
+  <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+  <a href="index.html#collections" onclick="toggleDrawer()" data-en="Collections" data-ar="المجموعات">Collections</a>
+  <a href="index.html#story" onclick="toggleDrawer()" data-en="Our story" data-ar="قصتنا">Our story</a>
+  <a href="index.html#contact" onclick="toggleDrawer()" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+ </div>
+</div>
+
+<script src="order-list.js?v=20261105d" defer></script>
+
+<!-- BLUE WHALE GEMS background ambience -->
+<div id="bwgMusicControls" style="position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:6px;padding:7px;background:rgba(255,255,255,.96);border:1px solid #dce9ed;border-radius:50%;box-shadow:0 5px 20px rgba(30,65,78,.12);backdrop-filter:blur(10px)">
+ <button id="bwgMusicPlay" type="button" aria-label="Play background music" title="Play or pause background music" style="width:36px;height:36px;border:1px solid #dce9ed;border-radius:50%;background:#fff;color:#245344;font-size:15px;display:grid;place-items:center">▶</button>
+</div>
+<audio id="bwgBackgroundMusic" preload="auto" loop playsinline autoplay>
+ <source src="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/juliush-waves-from-piano-and-sea-ambient-chill-out-piano-music-and-waves-3551.mp3" type="audio/mpeg">
+</audio>
+<script id="bwg-background-music">
+(function(){
+ const audio=document.getElementById("bwgBackgroundMusic");
+ const playButton=document.getElementById("bwgMusicPlay");
+ if(!audio||!playButton)return;
+ const preferenceKey="bwg-music-preference";
+ const savedTime=Number(sessionStorage.getItem("bwg-music-time")||0);
+ audio.volume=0.05;
+ audio.muted=false;
+ function updateControl(){
+  playButton.textContent=audio.paused?"▶":"Ⅱ";
+  playButton.setAttribute("aria-label",audio.paused?"Play background music":"Pause background music");
+ }
+ function tryAutoplay(){
+  if(sessionStorage.getItem(preferenceKey)==="paused")return;
+  const attempt=audio.play();
+  if(attempt&&typeof attempt.catch==="function")attempt.catch(function(){});
+ }
+ audio.addEventListener("loadedmetadata",function(){
+  if(Number.isFinite(savedTime)&&savedTime>0&&savedTime<audio.duration)audio.currentTime=savedTime;
+  tryAutoplay();
+ },{once:true});
+ audio.addEventListener("canplay",tryAutoplay,{once:true});
+ function savePosition(){
+  if(Number.isFinite(audio.currentTime))sessionStorage.setItem("bwg-music-time",String(audio.currentTime));
+ }
+ audio.addEventListener("timeupdate",savePosition);
+ window.addEventListener("pagehide",savePosition);
+ window.addEventListener("pageshow",function(){
+  if(sessionStorage.getItem(preferenceKey)!=="paused")tryAutoplay();
+ });
+ audio.addEventListener("play",updateControl);
+ audio.addEventListener("pause",updateControl);
+ playButton.addEventListener("click",function(){
+  if(audio.paused){
+   sessionStorage.setItem(preferenceKey,"playing");
+   tryAutoplay();
+  }else{
+   sessionStorage.setItem(preferenceKey,"paused");
+   audio.pause();
+  }
+ });
+ document.addEventListener("pointerdown",function(event){
+  if(event.target.closest("#bwgMusicControls"))return;
+  if(sessionStorage.getItem(preferenceKey)!=="paused"&&audio.paused)tryAutoplay();
+ },{once:true,passive:true});
+ document.addEventListener("keydown",function(){
+  if(sessionStorage.getItem(preferenceKey)!=="paused"&&audio.paused)tryAutoplay();
+ },{once:true});
+ updateControl();
+ tryAutoplay();
+})();
+</script>
+
+</body>
+</html>
