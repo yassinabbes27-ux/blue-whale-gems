@@ -128,6 +128,13 @@ footer strong{color:#e5d3ff}
 .scene-stars,.scene-nebula,.scene-orbit,.scene-planet,.scene-core,.scene-copy{
   animation:none!important;
 }
+/* Restore the zodiac symbol's cinematic entrance and subtle floating motion */
+.scene-core{animation:signArrival 1.25s cubic-bezier(.16,.8,.2,1) both!important}
+.modal-glyph{animation:glyphFloat 4.2s ease-in-out 1.25s infinite}
+@keyframes glyphFloat{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-7px) scale(1.035)}
+}
 .scene-nebula{filter:none;opacity:.7}
 .scene-planet{filter:none;box-shadow:inset -14px -12px 24px rgba(0,0,0,.58),0 0 28px hsla(var(--hue),80%,70%,.28)}
 .scene-core{filter:none}
