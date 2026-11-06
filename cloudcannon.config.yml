@@ -1,0 +1,15 @@
+paths:
+  static: ''
+  uploads: uploads
+timezone: Africa/Tunis
+markdown:
+  engine: commonmark
+  options: {}
+source: /
+collections_config:
+  pages:
+    path: ''
+    icon: wysiwyg
+  data:
+    path: data
+    icon: data_usage
