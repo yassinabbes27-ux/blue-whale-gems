@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6fafb">
+<meta name="description" content="BLUE WHALE GEMS GEM LAB — a bilingual digital exploration of gemstone science.">
+<title>GEM LAB | BLUE WHALE GEMS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="gem-lab.css">
+<script src="gem-lab.js" defer></script>
+</head>
+<body>
+<div class="topline"></div>
+<header><div class="head">
+<a class="brand" href="index.html">BLUE WHALE GEMS<small>GEM LABORATORY</small></a>
+<div class="head-actions"><a class="back" href="index.html" data-i18n="back">Back to the store</a><button class="lang" id="langToggle" type="button">العربية</button></div>
+</div></header>
+<main>
+<section class="hero"><div class="hero-inner">
+<div><div class="eyebrow" data-i18n="heroEyebrow">A DIGITAL GEMOLOGICAL EXPERIENCE</div>
+<h1 data-i18n="heroTitle">The science behind <em>the wonder.</em></h1>
+<p data-i18n="heroText">Explore the mineral world through guided discovery, visual examination and a specialist AI assistant. Curiosity is your first instrument.</p>
+<a class="primary" href="#instruments" data-i18n="explore">EXPLORE THE LAB</a></div>
+<div class="hero-visual" aria-hidden="true"><div class="orb"><div class="orb-gem"></div></div><div class="float-label one">MINERAL SCIENCE · 01</div><div class="float-label two">OBSERVE · COMPARE · LEARN</div></div>
+</div></section>
+<section class="section" id="instruments"><div class="container">
+<div class="section-head"><div><div class="kicker" data-i18n="toolsKicker">YOUR LABORATORY</div><h2 data-i18n="toolsTitle">Choose an instrument</h2></div><p class="section-intro" data-i18n="toolsIntro">A collection of guided tools for learning about gemstones, their properties and their stories.</p></div>
+<div class="grid4">
+<a class="tool-card" href="#identify"><div class="tool-icon">⌕</div><strong data-i18n="tool1">Stone identification</strong><span data-i18n="tool1d">Examine visible features in a photograph and learn what to investigate next.</span></a>
+<a class="tool-card" href="#assistant"><div class="tool-icon">✳</div><strong data-i18n="tool2">Ask the gemologist</strong><span data-i18n="tool2d">Explore mineralogy, gem properties, treatments and care.</span></a>
+<a class="tool-card" href="#compare"><div class="tool-icon">⇄</div><strong data-i18n="tool3">Compare gemstones</strong><span data-i18n="tool3d">Understand the differences between two popular gem materials.</span></a>
+<a class="tool-card" href="#discovery"><div class="tool-icon">⌘</div><strong data-i18n="tool4">Discovery profile</strong><span data-i18n="tool4d">Follow a short learning path based on your curiosity.</span></a>
+</div></div></section>
+<section class="section" id="identify" style="background:#fbfdfe"><div class="container">
+<div class="section-head"><div><div class="kicker">01 / VISUAL EXAMINATION</div><h2 data-i18n="identifyTitle">Visual stone examination</h2></div><p class="section-intro" data-i18n="identifyIntro">Upload a clear photograph. The lab can help describe visible clues, but a photograph cannot prove identity, natural origin or treatment status.</p></div>
+<div class="lab-panel"><div class="panel-grid"><div><div class="dropzone"><div><div style="font-size:30px;color:#78a9b8">◇</div><strong data-i18n="upload">Choose a stone photograph</strong><p data-i18n="imageHint">Use daylight, a neutral background and several angles if possible.</p><input id="stoneFile" type="file" accept="image/*"><div id="fileName" style="font-size:10px;margin-top:8px"></div></div></div></div>
+<div><img id="stonePreview" class="preview" alt="Selected gemstone preview" hidden><div style="margin-top:14px"><button class="primary" id="examineImage" type="button" data-i18n="analyze">Examine image</button></div><div class="result" id="visualResult" role="status"></div></div></div></div>
+</div></section>
+<section class="section" id="assistant"><div class="container">
+<div class="section-head"><div><div class="kicker">02 / SPECIALIST CONVERSATION</div><h2 data-i18n="aiTitle">Gem Lab AI assistant</h2></div><p class="section-intro" data-i18n="aiIntro">Ask about mineral structure, hardness, inclusions, optical effects, origin and gemstone care.</p></div>
+<div class="chat-shell"><div class="chat-top"><strong>GEM LAB <span style="color:#7da8b5">AI</span></strong><span class="status" data-i18n="pending">AI connection not configured yet</span></div><div class="chat-log" id="chatLog" aria-live="polite"><div class="bubble" data-i18n="chatWelcome">Welcome to the Gem Lab. I can guide you through gemstone science. The live AI service will be connected after secure server setup.</div></div><div class="chat-compose"><input id="chatInput" type="text" data-i18n-placeholder="chatPlaceholder" placeholder="Ask a gemstone question…" maxlength="1200"><button class="primary" id="sendChat" type="button" data-i18n="send">Send</button></div></div>
+<p class="notice" style="margin-top:12px" data-i18n="apiNote">The live AI endpoint is not connected in this prototype. No question or image is sent to a third party yet.</p>
+</div></section>
+<section class="section" id="compare" style="background:#fbfdfe"><div class="container">
+<div class="section-head"><div><div class="kicker">03 / MATERIAL COMPARISON</div><h2 data-i18n="compareTitle">Compare two gemstones</h2></div><p class="section-intro" data-i18n="compareIntro">Select two materials to see a concise educational comparison.</p></div>
+<div class="lab-panel"><div class="panel-grid"><div class="field"><label for="gemOne" data-i18n="gemA">First gemstone</label><select id="gemOne"><option value="amethyst">Amethyst</option><option value="tiger">Tiger's eye</option><option value="aqua">Aquamarine</option><option value="rose">Rose quartz</option><option value="turquoise">Turquoise</option></select></div><div class="field"><label for="gemTwo" data-i18n="gemB">Second gemstone</label><select id="gemTwo"><option value="tiger">Tiger's eye</option><option value="amethyst">Amethyst</option><option value="aqua">Aquamarine</option><option value="rose">Rose quartz</option><option value="turquoise">Turquoise</option></select></div></div><button class="primary" id="compareBtn" type="button" data-i18n="compare">Compare</button><div class="compare-result" id="compareResult" hidden></div></div>
+</div></section>
+<section class="section" id="discovery"><div class="container">
+<div class="section-head"><div><div class="kicker">04 / GUIDED LEARNING</div><h2 data-i18n="quizTitle">Your discovery profile</h2></div><p class="section-intro" data-i18n="quizIntro">What would you like to understand first?</p></div>
+<div class="lab-panel"><strong data-i18n="quizQ">Choose the subject that interests you most.</strong><div class="quiz-options" style="margin:18px 0"><button type="button" data-quiz="optics" data-i18n="quiz1">Colour and optical effects</button><button type="button" data-quiz="durability" data-i18n="quiz2">Hardness and durability</button><button type="button" data-quiz="origin" data-i18n="quiz3">Natural origin and treatments</button><button type="button" data-quiz="crystal" data-i18n="quiz4">Crystal structure and formation</button></div><button class="primary" id="quizSubmit" type="button" data-i18n="quizNext">Show my learning path</button><div class="result" id="quizResult" role="status"></div></div>
+</div></section>
+<section class="section" id="index" style="background:#fbfdfe"><div class="container">
+<div class="section-head"><div><div class="kicker">05 / REFERENCE COLLECTION</div><h2 data-i18n="explorerTitle">The gemstone index</h2></div><p class="section-intro" data-i18n="explorerIntro">Start with three familiar examples. The index can grow into a deeper bilingual reference library.</p></div>
+<div class="gem-list">
+<article class="gem"><div class="gem-art"><i></i></div><div class="gem-info"><h3 data-i18n="amethyst">Amethyst</h3><p data-i18n="amethystD">A violet variety of quartz coloured by trace iron and natural irradiation.</p></div></article>
+<article class="gem"><div class="gem-art"><i></i></div><div class="gem-info"><h3 data-i18n="tiger">Tiger's eye</h3><p data-i18n="tigerD">A chatoyant quartz material with silky bands caused by fibrous inclusions.</p></div></article>
+<article class="gem"><div class="gem-art"><i></i></div><div class="gem-info"><h3 data-i18n="aqua">Aquamarine</h3><p data-i18n="aquaD">A blue to blue-green variety of beryl, coloured mainly by iron.</p></div></article>
+</div>
+<p class="disclaimer" data-i18n="disclaimer">Educational information only. Visual suggestions are not gemological identification or a laboratory report. Definitive identification and treatment detection may require refractive index, specific gravity, microscopy, spectroscopy or a qualified gem laboratory.</p>
+</div></section>
+</main>
+<footer data-i18n="footer">BLUE WHALE GEMS · GEM LAB · LEARN WITH CURIOSITY</footer>
+</body></html>
