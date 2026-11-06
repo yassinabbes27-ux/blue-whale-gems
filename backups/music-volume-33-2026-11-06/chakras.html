@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>The Seven Chakras | BLUE WHALE GEMS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#26383e;--muted:#78878d;--line:#e8eef0;--green:#245344;--blue:#c4e2ec;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:var(--sans);background:linear-gradient(180deg,#f8fcfd 0,#fff 440px)}
+body[dir=rtl]{font-family:"Tajawal",Arial,sans-serif}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--serif);font-size:19px;letter-spacing:2px}.brand small{display:block;font:8px var(--sans);letter-spacing:3px;color:#7899a6;margin-top:3px}
+.nav-right{display:flex;align-items:center;gap:16px}.back{font-size:10px;letter-spacing:1px;color:#637c85}
+.langs{display:flex;gap:4px;border:1px solid var(--line);padding:3px;border-radius:30px}.langs button{border:0;background:transparent;padding:7px 10px;border-radius:20px;color:#75858b;font-size:9px}.langs button.active{background:#edf6f8;color:var(--green)}
+main{max-width:1180px;margin:auto;padding:48px 22px 80px}
+.intro{text-align:center;max-width:760px;margin:0 auto 34px}.eyebrow{font-size:9px;letter-spacing:3px;color:#7899a6;font-weight:700}.intro h1{font:500 clamp(38px,6vw,62px)/1.04 var(--serif);margin:13px 0 12px;color:#29434c}.intro p{font-size:12px;line-height:2;color:var(--muted);margin:0 auto;max-width:620px}
+.explorer{display:grid;grid-template-columns:minmax(250px,.82fr) minmax(0,1.18fr);gap:22px;align-items:stretch}
+.figure-card,.detail-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 50px rgba(38,72,83,.055)}
+.figure-card{padding:22px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:530px;background:radial-gradient(ellipse at 50% 43%,#f1f9fb 0,#fff 66%)}
+.figure-title{font:500 23px var(--serif);color:#507b8a;margin-bottom:4px}.figure-sub{font-size:8px;letter-spacing:2px;color:#9aabb0;margin-bottom:8px}
+.chakra-symbol-stack{width:100%;max-width:330px;display:flex;flex-direction:column;align-items:center;gap:7px;padding:10px 0 14px}
+.chakra-symbol{--chakra:#888;position:relative;width:100%;min-height:53px;display:flex;align-items:center;gap:15px;padding:5px 16px;border:1px solid transparent;border-radius:16px;background:transparent;color:#61777e;text-align:left;cursor:pointer;opacity:.62;transition:background .35s,border-color .35s,opacity .35s,transform .35s;animation:symbolSequence 7s ease-in-out infinite;animation-delay:calc(var(--i)*1s)}
+.chakra-symbol:nth-child(1){--i:0}.chakra-symbol:nth-child(2){--i:1}.chakra-symbol:nth-child(3){--i:2}.chakra-symbol:nth-child(4){--i:3}.chakra-symbol:nth-child(5){--i:4}.chakra-symbol:nth-child(6){--i:5}.chakra-symbol:nth-child(7){--i:6}
+.symbol-art{width:43px;height:43px;flex:0 0 43px;display:grid;place-items:center;border-radius:50%;color:var(--chakra);border:1px solid color-mix(in srgb,var(--chakra) 42%,white);background:color-mix(in srgb,var(--chakra) 9%,white);font-family:var(--serif);font-size:26px;line-height:1;box-shadow:0 3px 12px rgba(35,60,70,.05);transition:transform .4s,box-shadow .4s}
+.symbol-label{display:flex;flex-direction:column;gap:2px;min-width:0}.symbol-label strong{font-size:11px;font-weight:600;color:#526970}.symbol-label small{font-size:8px;letter-spacing:1.4px;color:#9aabb0}
+.chakra-symbol.active{opacity:1;background:color-mix(in srgb,var(--chakra) 8%,white);border-color:color-mix(in srgb,var(--chakra) 34%,white);transform:scale(1.025)}
+.chakra-symbol.active .symbol-art{transform:scale(1.12);box-shadow:0 0 0 5px color-mix(in srgb,var(--chakra) 10%,white),0 0 22px color-mix(in srgb,var(--chakra) 30%,transparent)}
+@keyframes symbolSequence{0%,8%,100%{opacity:.62}3.5%{opacity:1}}
+.figure-note{font-size:9px;color:#98a6aa;text-align:center;line-height:1.7;max-width:260px}
+.detail-card{padding:clamp(20px,4vw,38px);min-height:530px}
+.detail-top{display:flex;align-items:center;gap:15px;margin-bottom:17px}
+.color-mark{width:48px;height:48px;border-radius:50%;background:var(--chakra);box-shadow:inset 0 0 0 7px rgba(255,255,255,.35),0 5px 18px rgba(35,60,70,.1);flex:0 0 auto}
+.number{font-size:8px;letter-spacing:2px;color:#9aabb0}.detail-card h2{font:500 clamp(30px,4vw,42px)/1 var(--serif);margin:4px 0 2px;color:#29434c}.sanskrit{font-size:11px;color:#81969e}
+.position{display:inline-flex;margin:3px 0 16px;padding:7px 11px;border-radius:30px;background:#f2f8f9;color:#5c7c87;font-size:9px}
+.description{font-size:12px;line-height:1.95;color:#687a81;margin:0 0 22px}
+.meaning-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 24px}.meaning{padding:12px 13px;border:1px solid #edf1f2;border-radius:12px}.meaning small{display:block;font-size:8px;letter-spacing:1px;color:#98a7ac;margin-bottom:5px}.meaning strong{font:500 16px var(--serif);color:#405b64}
+.stones-head{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-bottom:12px}.stones-head h3{font:500 23px var(--serif);margin:0;color:#29434c}.stones-head span{font-size:8px;color:#9aabb0}
+.stones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.stone{display:flex;align-items:center;gap:10px;padding:9px 10px;border:1px solid #edf1f2;border-radius:11px;min-width:0}
+.stone-dot{width:25px;height:25px;flex:0 0 25px;border-radius:50%;background:var(--stone);border:1px solid rgba(0,0,0,.06);box-shadow:inset -4px -5px 8px rgba(0,0,0,.12),inset 3px 3px 7px rgba(255,255,255,.5)}
+.stone strong{display:block;font-size:10px;font-weight:600;color:#526970}.stone small{display:block;font-size:8px;line-height:1.45;color:#98a6aa;margin-top:3px}
+.caveat{margin-top:20px;padding:12px 14px;background:#f8fbfc;border-left:2px solid #c4e2ec;border-radius:0 10px 10px 0;font-size:9px;line-height:1.8;color:#839399}
+body[dir=rtl] .caveat{border-left:0;border-right:2px solid #c4e2ec;border-radius:10px 0 0 10px}
+.selector{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:26px 0 0}
+.selector button{border:1px solid var(--line);background:#fff;color:#75868c;padding:9px 13px;border-radius:30px;font-size:9px;transition:.2s}
+.selector button.active{border-color:var(--chakra);color:#344e57;background:color-mix(in srgb,var(--chakra) 9%,white);box-shadow:0 4px 15px rgba(34,65,77,.06)}
+footer{text-align:center;border-top:1px solid var(--line);padding:26px 18px;color:#94a1a5;font-size:9px}
+@media(max-width:760px){main{padding:34px 14px 60px}.explorer{grid-template-columns:1fr;gap:14px}.figure-card{min-height:0;padding:17px}.chakra-symbol-stack{max-width:320px;gap:4px}.chakra-symbol{min-height:47px}.symbol-art{width:38px;height:38px;flex-basis:38px}.detail-card{min-height:0}.nav{padding:13px 14px}.brand{font-size:15px}.back{font-size:8px}.intro{margin-bottom:25px}}
+@media(max-width:390px){.stones{grid-template-columns:1fr}.nav-right{gap:8px}.langs button{padding:6px 8px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important;animation:none!important}}
+
+.my-pages-footer{margin-top:30px;background:rgba(255,255,255,.9);border-top:1px solid var(--line)}
+.my-pages-inner{max-width:1180px;margin:auto;padding:32px 22px 18px;text-align:center}
+.my-pages-inner h2{margin:0 0 20px;font:500 25px var(--serif);letter-spacing:1.5px;color:#405b64}
+.my-pages-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 28px}
+.my-pages-links a{display:inline-flex;align-items:center;gap:8px;color:#78878c;font-size:10px;transition:color .2s,transform .2s}
+.my-pages-links a:hover{color:var(--green);transform:translateY(-2px)}
+.my-page-icon{width:25px;height:25px;display:grid;place-items:center;border:1px solid #e7eef0;border-radius:50%;color:#7899a6;font:600 13px var(--sans)}
+.my-pages-bottom{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);font-size:8px;letter-spacing:1.2px;color:#929da1}
+@media(max-width:600px){.my-pages-inner{padding:28px 16px 16px}.my-pages-links{gap:14px 20px}}
+
+</style>
+</head>
+<body>
+<header><div class="nav"><a class="brand" href="index.html">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a><div class="nav-right"><a class="back" href="index.html" data-i18n="back">← BACK TO HOME</a><div class="langs" aria-label="Language"><button data-lang="en" class="active">EN</button><button data-lang="fr">FR</button><button data-lang="ar">عربي</button></div></div></div></header>
+<main>
+<section class="intro"><div class="eyebrow" data-i18n="eyebrow">A JOURNEY THROUGH SYMBOL & STONE</div><h1 data-i18n="title">The Seven Chakras</h1><p data-i18n="intro">Explore the seven energy centres as they are described in several Indian spiritual traditions, and discover gemstones that have become symbolically associated with each one.</p></section>
+<section class="explorer" aria-label="Interactive chakra explorer">
+<div class="figure-card"><div class="figure-title" data-i18n="mapTitle">The seven symbols</div><div class="figure-sub" data-i18n="mapSub">A SEQUENCE OF SEVEN CHAKRAS</div><div class="chakra-symbol-stack" id="chakraSymbolStack" aria-label="Seven interactive chakra symbols"></div><div class="figure-note" data-i18n="mapNote">Tap any symbol to reveal its chakra details and associated gemstones.</div></div>
+<div class="detail-card" id="chakraDetail" style="--chakra:#bd4c58"><div class="detail-top"><div class="color-mark"></div><div><div class="number" id="chakraNumber">01 / 07</div><h2 id="chakraName">Root Chakra</h2><div class="sanskrit" id="chakraSanskrit">Muladhara · मूलाधार</div></div></div>
+<div class="position" id="chakraPosition">Base of the spine</div><p class="description" id="chakraDescription"></p>
+<div class="meaning-grid"><div class="meaning"><small data-i18n="themeLabel">TRADITIONAL THEMES</small><strong id="chakraThemes"></strong></div><div class="meaning"><small data-i18n="colourLabel">ASSOCIATED COLOUR</small><strong id="chakraColour"></strong></div></div>
+<div class="stones-head"><h3 data-i18n="stonesTitle">Associated gemstones</h3><span data-i18n="sevenSelections">7 SYMBOLIC SELECTIONS</span></div><div class="stones" id="stoneList"></div>
+<div class="caveat" data-i18n="caveat">These gemstone associations come from a range of modern and traditional spiritual practices. They are cultural and symbolic, not scientific classifications or medical advice.</div></div>
+</section>
+
+</main>
+
+<footer class="my-pages-footer">
+ <div class="my-pages-inner">
+  <h2 id="myPagesTitle">MY PAGES</h2>
+  <div class="my-pages-links" aria-label="BLUE WHALE GEMS social pages">
+   <a href="https://wa.me/21655733020" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><span class="my-page-icon">◉</span><span>WhatsApp</span></a>
+   <a href="https://www.tiktok.com/@blue_whale_gems?_r=1&amp;_t=ZS-9B9OhXJV0Ld" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><span class="my-page-icon">♪</span><span>TikTok</span></a>
+   <a href="https://www.instagram.com/bluewhale__gems?rpxt=MW1tczJoZXVtbjNrMg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="my-page-icon">◎</span><span>Instagram</span></a>
+   <a href="https://www.facebook.com/share/1CPVUZALJH/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span class="my-page-icon">f</span><span>Facebook</span></a>
+  </div>
+  <div class="my-pages-bottom">© 2026 BLUE WHALE GEMS · TUNISIA</div>
+ </div>
+</footer>
+
+<footer>BLUE WHALE GEMS · <span data-i18n="footer">A thoughtful exploration of gemstones and symbolism.</span></footer>
+<script>
+const chakras=[
+{key:"root",color:"#bd4c58",en:"Root Chakra",ar:"شاكرة الجذر",fr:"Chakra racine",san:"Muladhara · मूलाधार",pos:{en:"Base of the spine",ar:"قاعدة العمود الفقري",fr:"Base de la colonne vertébrale"},theme:{en:"Grounding · Stability",ar:"الثبات · الاستقرار",fr:"Ancrage · Stabilité"},colour:{en:"Red",ar:"الأحمر",fr:"Rouge"},desc:{en:"In several yoga and tantric traditions, Muladhara is the foundational centre, associated with grounding, stability and the sense of being connected to the physical world.",ar:"في عدد من تقاليد اليوغا والتانترا، تمثل مولادهارا المركز الأساسي، وترتبط بالثبات والشعور بالارتباط بالعالم المادي.",fr:"Dans plusieurs traditions du yoga et du tantra, Muladhara est le centre fondamental, associé à l’ancrage, à la stabilité et au lien avec le monde matériel."},stones:[["Red Jasper","اليشب الأحمر","Jaspe rouge","#a94743","Its earthy red tone echoes the chakra’s traditional colour and grounding symbolism."],["Smoky Quartz","الكوارتز الدخاني","Quartz fumé","#78685e","Its smoky, earth-like appearance is often used as a symbol of steadiness."],["Black Tourmaline","التورمالين الأسود","Tourmaline noire","#252a2b","Its dark colour is commonly associated with protection and grounding."],["Hematite","الهيماتيت","Hématite","#55575b","Its metallic, weighty appearance suggests solidity and stability."],["Garnet","العقيق الأحمر","Grenat","#7b2036","Its deep red colour connects it visually with the root palette."],["Bloodstone","حجر الدم","Héliotrope","#3f6654","Its green-and-red appearance links earth tones with the root colour."],["Obsidian","السبج","Obsidienne","#24272b","Its volcanic origin and dark glassy surface evoke the earth."]]},
+{key:"sacral",color:"#df8748",en:"Sacral Chakra",ar:"الشاكرة العجزية",fr:"Chakra sacré",san:"Svadhisthana · स्वाधिष्ठान",pos:{en:"Lower abdomen",ar:"أسفل البطن",fr:"Bas-ventre"},theme:{en:"Creativity · Flow",ar:"الإبداع · الانسياب",fr:"Créativité · Fluidité"},colour:{en:"Orange",ar:"البرتقالي",fr:"Orange"},desc:{en:"Svadhisthana is commonly described as the centre associated with creativity, emotional movement, pleasure and the symbolism of water.",ar:"توصف سفاديستانا عادةً بأنها المركز المرتبط بالإبداع والحركة العاطفية والمتعة ورمزية الماء.",fr:"Svadhisthana est généralement décrit comme le centre lié à la créativité, au mouvement émotionnel, au plaisir et au symbolisme de l’eau."},stones:[["Carnelian","العقيق الأحمر البرتقالي","Cornaline","#bd6038","Its warm orange-red colour is a natural visual match for this chakra."],["Orange Calcite","الكالسيت البرتقالي","Calcite orange","#e99a4b","Its bright orange tone reflects the traditional colour association."],["Sunstone","حجر الشمس","Pierre de soleil","#d78b43","Its warm shimmer is often linked symbolically with vitality and joy."],["Peach Moonstone","حجر القمر الخوخي","Pierre de lune pêche","#d9a58c","Its soft peach hue complements the sacral colour palette."],["Amber","الكهرمان","Ambre","#c78332","Its golden-orange warmth evokes movement and warmth."],["Aragonite","الأراجونيت","Aragonite","#c77d4d","Its earthy orange varieties echo the chakra’s colour."],["Fire Opal","الأوبال الناري","Opale de feu","#e46c3c","Its vivid orange flashes make a strong visual association."]]},
+{key:"solar",color:"#d9ad3f",en:"Solar Plexus Chakra",ar:"شاكرة الضفيرة الشمسية",fr:"Chakra du plexus solaire",san:"Manipura · मणिपूर",pos:{en:"Upper abdomen",ar:"أعلى البطن",fr:"Haut de l’abdomen"},theme:{en:"Confidence · Will",ar:"الثقة · الإرادة",fr:"Confiance · Volonté"},colour:{en:"Yellow",ar:"الأصفر",fr:"Jaune"},desc:{en:"Manipura is associated in yoga traditions with personal agency, will, confidence and the imagery of fire and transformation.",ar:"ترتبط مانيبورا في تقاليد اليوغا بالإرادة والقدرة على الفعل والثقة ورمزية النار والتحول.",fr:"Dans les traditions du yoga, Manipura est associé à la volonté, à l’autonomie, à la confiance et à l’image du feu et de la transformation."},stones:[["Citrine","السيترين","Citrine","#d6a33f","Its golden-yellow colour mirrors the chakra’s traditional palette."],["Yellow Jasper","اليشب الأصفر","Jaspe jaune","#c7a34b","Its warm earthy yellow is a visual symbol of steadiness and confidence."],["Tiger’s Eye","عين النمر","Œil-de-tigre","#a8793d","Its golden bands are often linked symbolically with courage and focus."],["Pyrite","البيريت","Pyrite","#b99a4a","Its metallic gold appearance evokes the sun and inner fire."],["Yellow Calcite","الكالسيت الأصفر","Calcite jaune","#e5c45d","Its bright yellow tone fits the traditional colour association."],["Golden Topaz","التوباز الذهبي","Topaze dorée","#c98e39","Its golden hue makes a direct visual connection."],["Amber","الكهرمان","Ambre","#c78332","Its warm honey colour complements the solar symbolism."]]},
+{key:"heart",color:"#4a9b70",en:"Heart Chakra",ar:"شاكرة القلب",fr:"Chakra du cœur",san:"Anahata · अनाहत",pos:{en:"Centre of the chest",ar:"وسط الصدر",fr:"Centre de la poitrine"},theme:{en:"Compassion · Connection",ar:"التعاطف · التواصل",fr:"Compassion · Lien"},colour:{en:"Green (sometimes pink)",ar:"الأخضر (وأحياناً الوردي)",fr:"Vert (parfois rose)"},desc:{en:"Anahata is traditionally linked with compassion, love, balance and the meeting of inner and outer experience. Green is its common colour association; pink is also used in modern interpretations.",ar:"ترتبط أناهاتا تقليدياً بالتعاطف والمحبة والتوازن والالتقاء بين التجربة الداخلية والخارجية. ويرتبط بها الأخضر غالباً، كما يُستخدم الوردي في تفسيرات حديثة.",fr:"Anahata est traditionnellement lié à la compassion, à l’amour, à l’équilibre et à la rencontre entre l’expérience intérieure et extérieure. Le vert est sa couleur courante, le rose apparaît aussi dans des interprétations modernes."},stones:[["Rose Quartz","الكوارتز الوردي","Quartz rose","#e5a8b7","Its soft pink colour is widely used as a symbol of tenderness and affection."],["Green Aventurine","الأفنتورين الأخضر","Aventurine verte","#57936e","Its green colour echoes the heart chakra’s common palette."],["Emerald","الزمرد","Émeraude","#28734e","Its rich green hue makes a traditional visual association."],["Rhodonite","الرودونيت","Rhodonite","#bd7880","Its pink-and-black pattern is often used to represent compassion with balance."],["Malachite","الملاكيت","Malachite","#3f8066","Its layered greens connect it visually with heart symbolism."],["Jade","اليشم","Jade","#78a78a","Its calm green varieties are associated with harmony in modern crystal traditions."],["Green Tourmaline","التورمالين الأخضر","Tourmaline verte","#367e62","Its green colour fits the traditional heart-centre palette."]]},
+{key:"throat",color:"#54a9c4",en:"Throat Chakra",ar:"شاكرة الحلق",fr:"Chakra de la gorge",san:"Vishuddha · विशुद्ध",pos:{en:"Throat",ar:"منطقة الحلق",fr:"Gorge"},theme:{en:"Expression · Truth",ar:"التعبير · الصدق",fr:"Expression · Vérité"},colour:{en:"Blue",ar:"الأزرق",fr:"Bleu"},desc:{en:"Vishuddha is associated with communication, expression, listening and clarity in several yoga and tantric descriptions.",ar:"ترتبط فيشودا بالتواصل والتعبير والإصغاء والوضوح في عدد من أوصاف اليوغا والتانترا.",fr:"Vishuddha est associé à la communication, à l’expression, à l’écoute et à la clarté dans plusieurs descriptions du yoga et du tantra."},stones:[["Aquamarine","الأكوامارين","Aigue-marine","#83c5d3","Its clear sea-blue colour reflects the throat chakra’s common palette."],["Blue Lace Agate","العقيق الأزرق المخطط","Agate blue lace","#9dc5d1","Its delicate blue bands suggest calm and clear expression."],["Sodalite","السوداليت","Sodalite","#4b668e","Its deep blue colour makes a strong visual association."],["Turquoise","الفيروز","Turquoise","#45a6a3","Its blue-green hue is commonly linked with communication symbolism."],["Amazonite","الأمازونيت","Amazonite","#6daea3","Its soft blue-green colour complements the throat palette."],["Blue Apatite","الأباتيت الأزرق","Apatite bleue","#3189b5","Its vivid blue colour echoes the traditional association."],["Chrysocolla","الكريزوكولا","Chrysocolle","#398e89","Its blue-green patterns recall water and expressive flow."]]},
+{key:"third",color:"#5659a9",en:"Third Eye Chakra",ar:"شاكرة العين الثالثة",fr:"Chakra du troisième œil",san:"Ajna · आज्ञा",pos:{en:"Between the eyebrows",ar:"بين الحاجبين",fr:"Entre les sourcils"},theme:{en:"Insight · Intuition",ar:"البصيرة · الحدس",fr:"Clarté · Intuition"},colour:{en:"Indigo",ar:"النيلي",fr:"Indigo"},desc:{en:"Ajna is described as a centre of insight, discernment and inner vision in several Indian spiritual systems. Its familiar colour association is indigo.",ar:"توصف أجنا بأنها مركز البصيرة والتمييز والرؤية الداخلية في عدد من الأنظمة الروحية الهندية، ويرتبط بها اللون النيلي.",fr:"Ajna est décrit comme un centre de discernement, de perception et de vision intérieure dans plusieurs systèmes spirituels indiens. Sa couleur courante est l’indigo."},stones:[["Lapis Lazuli","اللازورد","Lapis-lazuli","#354a83","Its deep blue colour and historic symbolism make it a familiar association."],["Amethyst","الأماتيست","Améthyste","#8064a8","Its violet tone is often linked with reflection and contemplation."],["Iolite","الأيوليت","Iolite","#59618f","Its blue-violet hue fits the indigo palette."],["Fluorite","الفلوريت","Fluorite","#7774b2","Its purple and blue varieties are often chosen for insight symbolism."],["Labradorite","اللبرادوريت","Labradorite","#536d82","Its shifting flashes are used as a metaphor for perception."],["Azurite","الأزوريت","Azurite","#245c9a","Its intense blue colour echoes the third-eye palette."],["Sugilite","السوجيليت","Sugilite","#684b82","Its deep violet colour complements modern third-eye associations."]]},
+{key:"crown",color:"#9869bd",en:"Crown Chakra",ar:"شاكرة التاج",fr:"Chakra couronne",san:"Sahasrara · सहस्रार",pos:{en:"At the crown of the head",ar:"قمة الرأس",fr:"Sommet de la tête"},theme:{en:"Awareness · Transcendence",ar:"الوعي · التسامي",fr:"Conscience · Transcendance"},colour:{en:"Violet or white",ar:"البنفسجي أو الأبيض",fr:"Violet ou blanc"},desc:{en:"Sahasrara is presented in many modern chakra systems as the highest centre, associated with spiritual awareness, contemplation and transcendence. Some traditions describe it differently or place it beyond the other six centres.",ar:"تُقدَّم ساهاسرارا في كثير من أنظمة الشاكرات الحديثة بوصفها المركز الأعلى، وترتبط بالوعي الروحي والتأمل والتسامي. وتصفها بعض التقاليد بصورة مختلفة أو تجعلها متجاوزة للمراكز الستة الأخرى.",fr:"Dans de nombreux systèmes modernes des chakras, Sahasrara est présenté comme le centre supérieur, lié à la conscience spirituelle, à la contemplation et à la transcendance. Certaines traditions le décrivent autrement ou au-delà des six autres centres."},stones:[["Amethyst","الأماتيست","Améthyste","#8064a8","Its violet colour is the most familiar modern crown-chakra association."],["Clear Quartz","الكوارتز الشفاف","Cristal de roche","#d8e2e5","Its clarity is used as a symbol of openness and awareness."],["Selenite","السيلينيت","Sélénite","#e8e3d8","Its pale translucent appearance fits white-light symbolism."],["Lepidolite","الليبيدوليت","Lépidolite","#9b83a8","Its lilac colour connects it with modern crown associations."],["Howlite","الهاولايت","Howlite","#e8e5df","Its white appearance is used as a symbol of stillness."],["Moonstone","حجر القمر","Pierre de lune","#d5d7e4","Its soft sheen is associated symbolically with reflection and contemplation."],["Purple Fluorite","الفلوريت البنفسجي","Fluorite violette","#8c73b8","Its violet colour complements the crown palette."]]}
+];
+const words={
+en:{back:"← BACK TO HOME",eyebrow:"A JOURNEY THROUGH SYMBOL & STONE",title:"The Seven Chakras",intro:"Explore the seven energy centres as they are described in several Indian spiritual traditions, and discover gemstones that have become symbolically associated with each one.",mapTitle:"The human form",mapSub:"SYMBOLIC POSITIONS · NOT ANATOMICAL",mapNote:"Select a coloured point or a chakra name below to explore its traditional symbolism.",themeLabel:"TRADITIONAL THEMES",colourLabel:"ASSOCIATED COLOUR",stonesTitle:"Associated gemstones",sevenSelections:"7 SYMBOLIC SELECTIONS",caveat:"These gemstone associations come from a range of modern and traditional spiritual practices. They are cultural and symbolic, not scientific classifications or medical advice.",footer:"A thoughtful exploration of gemstones and symbolism."},
+ar:{back:"العودة إلى الرئيسية ←",eyebrow:"رحلة بين الرمز والحجر",title:"الشاكرات السبع",intro:"اكتشف مراكز الطاقة السبعة كما تصفها بعض التقاليد الروحية الهندية، وتعرّف على الأحجار الكريمة التي ارتبطت رمزياً بكل مركز.",mapTitle:"رموز الشاكرات السبع",mapSub:"عرض متتابع للشاكرات السبع",mapNote:"اضغط على أي رمز لتظهر تفاصيل الشاكرة والأحجار المرتبطة بها.",themeLabel:"المعاني التقليدية",colourLabel:"اللون المرتبط",stonesTitle:"الأحجار المرتبطة",sevenSelections:"7 اختيارات رمزية",caveat:"تأتي هذه الروابط بين الأحجار والشاكرات من ممارسات روحية تقليدية وحديثة متنوعة. وهي دلالات ثقافية ورمزية، وليست تصنيفات علمية أو نصائح طبية.",footer:"استكشاف متأنٍ للأحجار ورموزها."},
+fr:{back:"← RETOUR À L’ACCUEIL",eyebrow:"UN VOYAGE ENTRE SYMBOLE ET PIERRE",title:"Les sept chakras",intro:"Explorez les sept centres énergétiques tels qu’ils sont décrits dans plusieurs traditions spirituelles indiennes, et découvrez les pierres qui leur sont symboliquement associées.",mapTitle:"Les sept symboles",mapSub:"UNE SÉQUENCE DES SEPT CHAKRAS",mapNote:"Appuyez sur un symbole pour afficher les détails du chakra et les pierres qui lui sont associées.",themeLabel:"THÈMES TRADITIONNELS",colourLabel:"COULEUR ASSOCIÉE",stonesTitle:"Pierres associées",sevenSelections:"7 SÉLECTIONS SYMBOLIQUES",caveat:"Ces associations proviennent de diverses pratiques spirituelles traditionnelles et modernes. Elles sont culturelles et symboliques, et non des classifications scientifiques ou des conseils médicaux.",footer:"Une exploration attentive des pierres et de leur symbolique."}
+};
+let lang=localStorage.getItem("bwg-language")||"en";if(!["en","ar","fr"].includes(lang))lang="en";let current=0;
+function t(key){return words[lang][key]||words.en[key]}
+const chakraGlyphs=["✥","☾","△","❀","◉","◈","✺"];
+function render(){
+ const c=chakras[current],d=document;
+ d.documentElement.lang=lang;d.documentElement.dir=lang==="ar"?"rtl":"ltr";d.body.dir=lang==="ar"?"rtl":"ltr";
+ d.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));
+ const pagesTitle=d.getElementById("myPagesTitle");if(pagesTitle)pagesTitle.textContent=lang==="ar"?"صفحاتي":lang==="fr"?"MES PAGES":"MY PAGES";
+ d.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+ d.getElementById("chakraSymbolStack").innerHTML=chakras.map((x,i)=>'<button type="button" class="chakra-symbol '+(i===current?'active':'')+'" data-index="'+i+'" style="--chakra:'+x.color+';--i:'+i+'" aria-label="'+x[lang]+'"><span class="symbol-art" aria-hidden="true">'+chakraGlyphs[i]+'</span><span class="symbol-label"><strong>'+x[lang]+'</strong><small>'+x.san.split(" · ")[0].toUpperCase()+'</small></span></button>').join("");
+ d.getElementById("chakraDetail").style.setProperty("--chakra",c.color);
+ d.querySelector(".color-mark").style.background=c.color;
+ d.getElementById("chakraNumber").textContent=String(current+1).padStart(2,"0")+" / 07";
+ d.getElementById("chakraName").textContent=c[lang];
+ d.getElementById("chakraSanskrit").textContent=c.san;
+ d.getElementById("chakraPosition").textContent=c.pos[lang];
+ d.getElementById("chakraDescription").textContent=c.desc[lang];
+ d.getElementById("chakraThemes").textContent=c.theme[lang];
+ d.getElementById("chakraColour").textContent=c.colour[lang];
+ d.getElementById("stoneList").innerHTML=c.stones.map(s=>'<div class="stone"><span class="stone-dot" style="--stone:'+s[3]+'"></span><span><strong>'+s[({en:0,ar:1,fr:2}[lang])]+'</strong><small>'+s[4]+'</small></span></div>').join("");
+
+ d.querySelectorAll(".chakra-point").forEach((p,i)=>p.classList.toggle("active",i===current));
+}
+document.addEventListener("click",e=>{const p=e.target.closest("[data-index]");const l=e.target.closest("[data-lang]");if(p){current=Number(p.dataset.index);render()}if(l){lang=l.dataset.lang;localStorage.setItem("bwg-language",lang);render()}});
+render();
+</script>
+
+<!-- BLUE WHALE GEMS background ambience -->
+<div id="bwgMusicControls" style="position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:6px;padding:7px;background:rgba(255,255,255,.96);border:1px solid #dce9ed;border-radius:50%;box-shadow:0 5px 20px rgba(30,65,78,.12);backdrop-filter:blur(10px)">
+ <button id="bwgMusicPlay" type="button" aria-label="Play background music" title="Play or pause background music" style="width:36px;height:36px;border:1px solid #dce9ed;border-radius:50%;background:#fff;color:#245344;font-size:15px;display:grid;place-items:center">▶</button>
+</div>
+<audio id="bwgBackgroundMusic" preload="auto" loop playsinline autoplay>
+ <source src="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/juliush-waves-from-piano-and-sea-ambient-chill-out-piano-music-and-waves-3551.mp3" type="audio/mpeg">
+</audio>
+<script id="bwg-background-music">
+(function(){
+ const audio=document.getElementById("bwgBackgroundMusic");
+ const playButton=document.getElementById("bwgMusicPlay");
+ if(!audio||!playButton)return;
+ const preferenceKey="bwg-music-preference";
+ const savedTime=Number(sessionStorage.getItem("bwg-music-time")||0);
+ audio.volume=0.15;
+ audio.muted=false;
+ function updateControl(){
+  playButton.textContent=audio.paused?"▶":"Ⅱ";
+  playButton.setAttribute("aria-label",audio.paused?"Play background music":"Pause background music");
+ }
+ function tryAutoplay(){
+  if(sessionStorage.getItem(preferenceKey)==="paused")return;
+  const attempt=audio.play();
+  if(attempt&&typeof attempt.catch==="function")attempt.catch(function(){});
+ }
+ audio.addEventListener("loadedmetadata",function(){
+  if(Number.isFinite(savedTime)&&savedTime>0&&savedTime<audio.duration)audio.currentTime=savedTime;
+  tryAutoplay();
+ },{once:true});
+ audio.addEventListener("canplay",tryAutoplay,{once:true});
+ function savePosition(){
+  if(Number.isFinite(audio.currentTime))sessionStorage.setItem("bwg-music-time",String(audio.currentTime));
+ }
+ audio.addEventListener("timeupdate",savePosition);
+ window.addEventListener("pagehide",savePosition);
+ window.addEventListener("pageshow",function(){
+  if(sessionStorage.getItem(preferenceKey)!=="paused")tryAutoplay();
+ });
+ audio.addEventListener("play",updateControl);
+ audio.addEventListener("pause",updateControl);
+ playButton.addEventListener("click",function(){
+  if(audio.paused){
+   sessionStorage.setItem(preferenceKey,"playing");
+   tryAutoplay();
+  }else{
+   sessionStorage.setItem(preferenceKey,"paused");
+   audio.pause();
+  }
+ });
+ document.addEventListener("pointerdown",function(event){
+  if(event.target.closest("#bwgMusicControls"))return;
+  if(sessionStorage.getItem(preferenceKey)!=="paused"&&audio.paused)tryAutoplay();
+ },{once:true,passive:true});
+ document.addEventListener("keydown",function(){
+  if(sessionStorage.getItem(preferenceKey)!=="paused"&&audio.paused)tryAutoplay();
+ },{once:true});
+ updateControl();
+ tryAutoplay();
+})();
+</script>
+
+</body></html>
