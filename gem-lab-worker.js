@@ -54,7 +54,7 @@ export default {
     if (route === "/chat") {
       const message = typeof body.message === "string" ? body.message.trim() : "";
       if (!message || message.length > 1600) return json({ error: "Message must be 1–1600 characters." }, 400, allowedOrigin || "*");
-      parts = [{ text: "Answer in " + language + ".\\n\\n" + message }];
+      parts = [{ text: "Answer in " + language + ".\n\n" + message }];
     } else {
       const dataUrl = typeof body.image === "string" ? body.image : "";
       const match = dataUrl.match(/^data:image\/(jpeg|png|webp);base64,([A-Za-z0-9+/=]+)$/);
@@ -83,7 +83,7 @@ export default {
       if (!upstream.ok) {
         const providerMessage = String(result?.error?.message || "");
         if (upstream.status === 429) return json({ error: "Gemini free-tier usage limit reached. Please try again later." }, 429, allowedOrigin || "*");
-        if (upstream.status === 400 || upstream.status === 404) return json({ error: "Gemini rejected the request or model. Check the configured Gemini model and API key permissions." }, 502, allowedOrigin || "*");
+        if (upstream.status === 400 || upstream.status === 404) return json({ error: "Gemini API error (" + upstream.status + "): " + (providerMessage || "The request was rejected. Check model access and API key permissions.").slice(0, 260) }, 502, allowedOrigin || "*");
         return json({ error: "Gemini provider request failed." }, 502, allowedOrigin || "*");
       }
       const answer = extractAnswer(result);
