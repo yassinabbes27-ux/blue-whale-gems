@@ -38,7 +38,7 @@ export default {
     if (!env.GEMINI_API_KEY) return json({ error: "Gemini service is not configured." }, 503, allowedOrigin || "*");
 
     const url = new URL(request.url);
-    const route = url.pathname.replace(/\\/+$/, "");
+    const route = url.pathname.replace(/\/+$/, "");
     if (route !== "/chat" && route !== "/analyze") return json({ error: "Not found." }, 404, allowedOrigin || "*");
 
     const length = Number(request.headers.get("Content-Length") || 0);
@@ -57,7 +57,7 @@ export default {
       parts = [{ text: "Answer in " + language + ".\\n\\n" + message }];
     } else {
       const dataUrl = typeof body.image === "string" ? body.image : "";
-      const match = dataUrl.match(/^data:image\\/(jpeg|png|webp);base64,([A-Za-z0-9+/=]+)$/);
+      const match = dataUrl.match(/^data:image\/(jpeg|png|webp);base64,([A-Za-z0-9+/=]+)$/);
       if (!match) return json({ error: "Provide a JPEG, PNG or WebP image." }, 400, allowedOrigin || "*");
       if (dataUrl.length > 5_000_000) return json({ error: "Image too large. Maximum 4 MB." }, 413, allowedOrigin || "*");
       const mimeType = "image/" + match[1];
