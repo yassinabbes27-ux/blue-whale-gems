@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="BLUE WHALE GEMS — Natural gemstones and distinctive jewellery, selected in Tunisia.">
+<title>BLUE WHALE GEMS | Natural Gemstones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--white:#fff;--paper:#f7fafb;--blue:#c4e2ec;
+--blue-dark:#7899a6;--green:#245344;--ink:#26383e;
+--muted:#7b898e;--line:#e8eef0;
+--serif:"Cormorant Garamond",Georgia,serif;
+--sans:"Manrope",Arial,sans-serif
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:white;color:var(--ink);font-family:var(--sans)}
+body[dir="rtl"]{font-family:"Cairo",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.announcement{
+background:#f1f8fa;color:#607982;text-align:center;
+padding:9px 12px;font-size:9px;letter-spacing:1.2px
+}
+header{
+position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--line)
+}
+ .header{
+position:relative;max-width:1240px;margin:auto;padding:17px 25px;
+display:grid;grid-template-columns:1fr auto 1fr;
+align-items:center;gap:18px
+}
+.nav,.actions{display:flex;align-items:center;gap:20px}
+.nav a{font-size:10px;color:#687980}
+.nav a:hover{color:var(--green)}
+.brand{
+position:absolute;left:50%;transform:translateX(-50%);text-align:center;font-family:"Cormorant Garamond",Georgia,serif;
+font-size:17px;font-weight:500;letter-spacing:2.5px;white-space:nowrap
+}
+.brand small{
+display:block;margin-top:4px;font-family:Manrope,Arial,sans-serif;
+font-size:8px;font-weight:400;letter-spacing:4px;color:var(--blue-dark)
+}
+.actions{justify-content:flex-end;padding-right:110px}
+.language-switcher{position:absolute;right:25px;top:50%;transform:translateY(-50%);z-index:30;direction:ltr}
+.lang{
+background:white;border:1px solid #dce8ec;border-radius:5px;
+width:76px;height:34px;padding:0 8px;display:inline-flex;align-items:center;justify-content:center;
+box-sizing:border-box;white-space:nowrap;color:var(--green);font-size:10px;cursor:pointer
+}
+.language-menu{display:none;position:absolute;right:0;top:calc(100% + 9px);min-width:132px;padding:6px;background:#fff;border:1px solid #e2ecef;border-radius:8px;box-shadow:0 10px 28px rgba(39,67,77,.13)}
+.language-menu.open{display:block}
+.language-menu button{display:block;width:100%;padding:10px 12px;text-align:left;background:transparent;border:0;border-radius:5px;color:#526a73;font-size:11px;cursor:pointer}
+.language-menu button:hover,.language-menu button[aria-current="true"]{background:#f0f7f9;color:var(--green)}
+.menu-button{display:none;background:none;border:0;font-size:20px}
+.hero{
+max-width:1440px;margin:auto;min-height:550px;
+display:grid;grid-template-columns:1fr 1fr;
+background:linear-gradient(115deg,#fbfdfe,#f1f8fa 55%,#e5f2f5);
+overflow:hidden
+}
+.hero-copy{
+position:relative;isolation:isolate;
+display:flex;flex-direction:column;align-items:flex-start;
+justify-content:center;padding:70px clamp(28px,8vw,115px);
+background-image:url("images/homepage-seashells.jpg");
+background-size:cover;background-position:center 24%;
+}
+.hero-copy:before{
+content:"";position:absolute;inset:0;z-index:-1;
+background:linear-gradient(90deg,rgba(239,248,250,.76),rgba(239,248,250,.46));
+}
+.hero-copy>*{position:relative;z-index:1}
+.hero-copy .kicker,.hero-copy h1{color:#173b4b}
+.hero-copy p{color:#294b59}
+.hero-note{color:#345b69}
+.kicker{
+font-size:9px;letter-spacing:3px;color:var(--blue-dark);
+font-weight:700;text-transform:uppercase
+}
+.hero h1{
+max-width:560px;margin:22px 0 17px;
+font-family:var(--serif);font-size:clamp(42px,5.2vw,68px);
+font-weight:400;line-height:1.13;letter-spacing:-1px
+}
+.hero-copy p{
+max-width:440px;margin:0;color:#718188;
+font-size:13px;line-height:2
+}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{
+display:inline-flex;align-items:center;justify-content:center;
+min-height:45px;padding:0 22px;background:var(--green);
+border:1px solid var(--green);color:white;
+font-size:9px;letter-spacing:1.2px;transition:.2s
+}
+.btn:hover{background:#193e34;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--green);border-color:#cbdde2}
+.btn-outline:hover{background:white;color:var(--green)}
+.hero-note{
+margin-top:25px;color:#8a989d;font-size:8px;letter-spacing:1.3px
+}
+.hero-visual{
+ position:relative;min-height:550px;overflow:hidden;background:#fff
+}
+.hero-visual:before,.hero-visual:after{display:none}
+.hero-photo{
+ position:absolute;z-index:1;inset:12%;width:76%;height:76%;
+ object-fit:contain;border-radius:0;filter:none;
+ animation:flowerLifeRotate 36s linear infinite
+}
+@keyframes flowerLifeRotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+/* Subtle editorial reveal: content enters in sequence without delaying image loading. */
+body.cinema-ready .cinema-reveal{opacity:0;transform:translateY(14px);transition:opacity .72s ease,transform .72s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--reveal-order,0)*85ms)}
+body.cinema-ready .cinema-reveal.is-visible{opacity:1;transform:translateY(0)}
+.stamp{
+position:absolute;z-index:2;right:8%;bottom:10%;
+width:105px;height:105px;border-radius:50%;
+background:rgba(255,255,255,.92);display:flex;
+align-items:center;justify-content:center;text-align:center;
+color:var(--green);font-family:var(--serif);
+font-size:13px;line-height:1.4
+}
+.trust{
+max-width:1160px;margin:auto;padding:22px 20px;
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:15px;border-bottom:1px solid var(--line)
+}
+.trust-item{
+display:flex;align-items:center;justify-content:center;
+gap:10px;color:#708087;font-size:10px
+}
+.trust-icon{
+width:30px;height:30px;border:1px solid #dce9ed;
+border-radius:50%;display:grid;place-items:center;color:var(--green)
+}
+.section{max-width:1240px;margin:auto;padding:75px 25px}
+.section-head{text-align:center;margin-bottom:32px}
+.section-head h2,.featured h2{
+margin:12px 0;font-family:var(--serif);
+font-size:clamp(30px,4vw,42px);font-weight:400
+}
+.section-head p{
+max-width:540px;margin:auto;color:var(--muted);
+font-size:12px;line-height:1.9
+}
+.categories{
+display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px
+}
+.category{
+position:relative;min-height:260px;overflow:hidden;
+display:flex;align-items:flex-end;padding:22px;
+background:#edf5f7
+}
+.category:after{
+content:"";position:absolute;inset:0;z-index:1;
+background:linear-gradient(180deg,transparent 35%,rgba(25,49,55,.65))
+}
+.category img{
+position:absolute;inset:0;width:100%;height:100%;
+object-fit:cover;display:block
+}
+.category-content{position:relative;z-index:2;color:white}
+.category-content small{font-size:8px;letter-spacing:2px}
+.category-content h3{
+margin:8px 0;font-family:var(--serif);
+font-size:25px;font-weight:400
+}
+.category-content span{
+font-size:9px;letter-spacing:1px;
+border-bottom:1px solid rgba(255,255,255,.8);padding-bottom:4px
+}
+.gem-care{padding:42px 20px 48px;background:#fff}
+.gem-care-card{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0, .92fr) minmax(0, 1.08fr);max-width:1040px;min-height:310px;margin:0 auto;overflow:hidden;border:1px solid #203b4b;border-radius:18px;background:#102b3b;box-shadow:0 20px 48px rgba(18,43,58,.16)}
+.gem-care-visual{position:relative;min-height:310px;overflow:hidden;background:#132f40}
+.gem-care-visual img{display:block;width:100%;height:100%;min-height:310px;object-fit:cover;object-position:center 48%;filter:saturate(.82) brightness(.78)}
+.gem-care-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,27,40,.05),rgba(10,27,40,.28)),linear-gradient(0deg,rgba(8,25,37,.48),transparent 48%)}
+.gem-care-visual-label{position:absolute;z-index:1;left:24px;bottom:22px;color:#fff;font-family:var(--serif);font-size:clamp(20px,2.5vw,29px);letter-spacing:.3px}
+.gem-care-content{position:relative;display:flex;flex-direction:column;justify-content:center;padding:34px clamp(24px,4vw,48px);color:#f4f8f9;background:radial-gradient(ellipse at 100% 0%,rgba(105,151,169,.19),transparent 48%),linear-gradient(135deg,#17394a,#102b3b 72%)}
+.gem-care-content:after{content:"";position:absolute;right:-55px;top:-72px;width:210px;height:210px;border:1px solid rgba(197,222,230,.12);border-radius:50%;box-shadow:0 0 0 18px rgba(197,222,230,.025),0 0 0 38px rgba(197,222,230,.02);pointer-events:none}
+.gem-care-kicker{position:relative;z-index:1;display:block;margin-bottom:9px;color:#a9cbd5;font-size:8px;letter-spacing:2.4px}
+.gem-care-content h2{position:relative;z-index:1;margin:0 0 9px;color:#fff;font-family:var(--serif);font-size:clamp(29px,3.4vw,40px);font-weight:400;line-height:1.05}
+.gem-care-content p{position:relative;z-index:1;max-width:490px;margin:0;color:#c1d0d5;font-size:11px;line-height:1.85}
+.gem-care-methods{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.gem-care-method{display:flex;align-items:center;gap:10px;min-width:0;padding:10px 11px;border:1px solid rgba(206,230,237,.19);border-radius:10px;background:rgba(255,255,255,.045)}
+.gem-care-symbol{flex:0 0 30px;width:30px;height:30px;display:grid;place-items:center;border:1px solid rgba(190,222,232,.28);border-radius:50%;color:#d7edf2;font-family:var(--serif);font-size:17px}
+.gem-care-method strong{display:block;color:#f5f8f9;font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.1}
+.gem-care-method small{display:block;margin-top:4px;color:#a9c0c8;font-size:8px;line-height:1.4}
+.gem-care-note{position:relative;z-index:1;margin-top:15px!important;color:#a9cbd5!important;font-size:9px!important}
+@media(max-width:680px){.gem-care{padding:28px 14px 34px}.gem-care-card{grid-template-columns:1fr;min-height:0;border-radius:15px}.gem-care-visual{min-height:190px;height:190px}.gem-care-visual img{min-height:190px}.gem-care-visual-label{left:18px;bottom:15px;font-size:23px}.gem-care-content{padding:25px 19px 23px}.gem-care-content h2{font-size:32px}.gem-care-methods{gap:8px;margin-top:17px}.gem-care-method{gap:7px;padding:9px 8px}.gem-care-method strong{font-size:13px}.gem-care-method small{font-size:7px}.gem-care-note{font-size:8px!important}}
+@media(max-width:370px){.gem-care-methods{grid-template-columns:1fr}.gem-care-method{padding:9px 11px}}
+@media(prefers-reduced-motion:reduce){.gem-care-card{animation:none}}
+.featured{background:#f8fbfc}
+.featured-inner{max-width:1240px;margin:auto;padding:75px 25px}
+.featured-top{
+display:flex;align-items:flex-end;justify-content:space-between;
+gap:20px;margin-bottom:28px
+}
+.featured h2{margin-bottom:0}
+.text-link{
+font-size:9px;letter-spacing:1px;color:var(--green);
+border-bottom:1px solid #bdd4db;padding-bottom:6px
+}
+.products{
+display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:19px
+}
+.product{min-width:0}
+.product-image{
+position:relative;display:block;overflow:hidden;
+aspect-ratio:1/1.12;background:white;border:1px solid #edf1f2
+}
+.product-image img{
+width:100%;height:100%;object-fit:contain;
+display:block
+}
+.product-name{
+display:block;margin:12px 0 7px;
+font-family:var(--serif);font-size:18px;line-height:1.25
+}
+.product-meta{
+display:flex;justify-content:space-between;gap:7px;align-items:center
+}
+.price{color:var(--green);font-size:12px;font-weight:700}
+.delivery{color:#929da1;font-size:9px}
+
+/* Featured product cards — refined presentation only */
+.products{align-items:stretch}
+.product{
+ min-width:0;padding:10px 10px 14px;
+ border:1px solid #e8eff1;border-radius:15px;
+ background:linear-gradient(180deg,#fff 0%,#fff 76%,#fbfdfe 100%);
+ box-shadow:none;
+ transition:transform .28s ease,,border-color .28s ease;
+}
+.product:hover{
+ transform:translateY(-4px);
+ border-color:#d7e7eb;
+ box-shadow:none;
+}
+.product-image{
+ aspect-ratio:1/1.08;
+ border:1px solid #f0f4f5;
+ border-radius:10px;
+ background:radial-gradient(ellipse at 50% 42%,#fff 0%,#fbfdfe 64%,#f2f8fa 100%);
+}
+.product-image img{
+ padding:9px;
+ transition:transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.product:hover .product-image img{transform:scale(1.035)}
+.product-name{
+ min-height:43px;
+ margin:13px 2px 9px;
+ color:#30464e;
+ font-size:19px;
+ line-height:1.22;
+ transition:color .2s ease;
+}
+.product-name:hover{color:var(--green)}
+.product-meta{
+ min-height:30px;
+ padding:8px 2px 0;
+ border-top:1px solid #edf2f3;
+}
+.price{font-size:13px;letter-spacing:.15px}
+.delivery{
+ padding:5px 7px;border-radius:20px;
+ background:#f1f7f8;color:#71868d;
+ font-size:8px;white-space:nowrap;
+}
+@media(max-width:640px){
+ .product{padding:7px 7px 11px;border-radius:12px}
+ .product-image{aspect-ratio:1/1.04;border-radius:8px}
+ .product-image img{padding:6px}
+ .product-name{min-height:38px;margin:10px 1px 8px;font-size:13px;line-height:1.3}
+ .product-meta{gap:4px;padding-top:7px}
+ .price{font-size:11px}
+ .delivery{padding:4px 5px;font-size:7px}
+}
+@media(prefers-reduced-motion:reduce){
+ .product,.product-image img,.product-name{transition:none}
+ .product:hover{transform:none}
+}
+
+.values{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:25px;text-align:center
+}
+.value{padding:10px 18px}
+.value-icon{
+width:42px;height:42px;margin:0 auto 14px;
+border:1px solid #d8e7eb;border-radius:50%;
+display:grid;place-items:center;color:var(--green)
+}
+.value h3{font-family:var(--serif);font-size:19px;font-weight:400;margin:0 0 8px}
+.value p{font-size:11px;line-height:1.9;color:var(--muted);margin:0}
+.contact{
+background:linear-gradient(115deg,#eff7f9,#f8fbfc);
+padding:53px 20px;text-align:center
+}
+.contact h2{font-family:var(--serif);font-size:32px;font-weight:400;margin:10px 0}
+.contact p{font-size:11px;color:var(--muted);margin-bottom:20px}
+.contact a{
+display:inline-flex;padding:14px 22px;background:var(--green);
+color:white;font-size:9px;letter-spacing:1.3px
+}
+footer{border-top:1px solid var(--line);background:white}
+.footer-main{
+max-width:1240px;margin:auto;padding:45px 25px;
+display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px
+}
+.footer-brand{font-family:var(--serif);font-size:18px;letter-spacing:2px}
+.footer-brand small{
+display:block;font-family:var(--sans);font-size:8px;
+letter-spacing:3px;color:var(--blue-dark);margin-top:5px
+}
+.footer-about{max-width:270px;color:var(--muted);font-size:11px;line-height:1.9}
+.footer-col h4{font-size:9px;letter-spacing:1.5px;margin:4px 0 15px}
+.footer-col a{display:block;margin:11px 0;color:#78878c;font-size:10px}
+.footer-col a:hover{color:var(--green)}
+.footer-bottom{
+border-top:1px solid var(--line);max-width:1240px;margin:auto;
+padding:17px 25px;display:flex;justify-content:space-between;
+gap:15px;color:#929da1;font-size:9px
+}
+.mobile-drawer{
+display:none;position:fixed;inset:0;z-index:50;background:rgba(24,45,51,.3)
+}
+.mobile-drawer.open{display:block}
+.drawer-card{
+position:absolute;top:0;bottom:0;left:0;width:min(82%,330px);
+background:white;padding:25px
+}
+.drawer-close{float:right;border:0;background:none;font-size:24px}
+.drawer-brand{font-family:var(--serif);font-size:17px;letter-spacing:2px;margin:28px 0}
+.drawer-card a{display:block;padding:15px 0;border-bottom:1px solid var(--line);font-size:12px}
+body[dir="rtl"] .hero h1,body[dir="rtl"] h2,
+body[dir="rtl"] h3,body[dir="rtl"] .product-name{font-family:"Cairo",sans-serif}
+body[dir="rtl"] .kicker,body[dir="rtl"] .nav,
+body[dir="rtl"] .btn,body[dir="rtl"] .text-link{letter-spacing:0}
+
+/* BLUE WHALE GEMS — sequential seven chakra symbol showcase */
+.whale-scene{
+position:relative;isolation:isolate;overflow:hidden;min-height:440px;
+display:grid;place-items:center;
+background:radial-gradient(ellipse at 50% 42%,rgba(255,255,255,.99) 0%,rgba(241,250,253,.94) 43%,transparent 76%),linear-gradient(145deg,#f8fcff 0%,#e5f3f8 52%,#cfe8f0 100%)
+}
+.whale-scene:before{
+content:"";position:absolute;inset:5% 7%;border:1px solid rgba(255,255,255,.95);
+border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.7),rgba(197,229,242,.16));
+box-shadow:0 22px 55px rgba(45,105,135,.1),inset 0 1px 0 rgba(255,255,255,.95);z-index:-1
+}
+.chakra-showcase{position:relative;width:min(760px,90vw);height:340px;display:flex;align-items:center;justify-content:center}
+.whale-scene-caption{
+position:absolute;z-index:3;top:0;left:0;right:0;text-align:center;
+font-family:var(--serif);font-size:clamp(23px,3vw,31px);font-weight:400;
+letter-spacing:.4px;color:#477f9a
+}
+.whale-scene-caption small{display:block;margin-top:7px;font-family:var(--sans);font-size:8px;letter-spacing:3px;color:#709caf}
+.chakra-sequence{position:absolute;inset:75px 0 28px;display:flex;align-items:center;justify-content:center}
+.chakra-slide{
+position:absolute;display:flex;align-items:center;justify-content:center;gap:32px;
+width:min(540px,88vw);opacity:0;visibility:hidden;
+animation:chakraReveal 35s infinite both
+}
+.chakra-slide:nth-child(1){animation-delay:0s}
+.chakra-slide:nth-child(2){animation-delay:5s}
+.chakra-slide:nth-child(3){animation-delay:10s}
+.chakra-slide:nth-child(4){animation-delay:15s}
+.chakra-slide:nth-child(5){animation-delay:20s}
+.chakra-slide:nth-child(6){animation-delay:25s}
+.chakra-slide:nth-child(7){animation-delay:30s}
+.chakra-emblem{
+width:150px;height:150px;flex:0 0 150px;border-radius:50%;
+display:grid;place-items:center;background:rgba(255,255,255,.76);
+border:1px solid rgba(255,255,255,.95);
+box-shadow:0 14px 38px rgba(50,105,127,.12),inset 0 0 24px rgba(255,255,255,.9);
+color:var(--chakra);filter:drop-shadow(0 0 13px color-mix(in srgb,var(--chakra) 28%,transparent))
+}
+.chakra-emblem svg{width:112px;height:112px;overflow:visible}
+.root-emblem{--chakra:#bd4c58}.sacral-emblem{--chakra:#df8748}
+.solar-emblem{--chakra:#d9ad3f}.heart-emblem{--chakra:#4a9b70}
+.throat-emblem{--chakra:#54a9c4}.third-emblem{--chakra:#5659a9}
+.crown-emblem{--chakra:#9869bd}
+.chakra-description{min-width:220px;text-align:left;animation:chakraTextIn 1.1s ease both}
+.chakra-description span{font-size:8px;letter-spacing:2px;color:var(--chakra);font-weight:700}
+.chakra-description h3{
+font-family:var(--serif);font-size:clamp(29px,4vw,39px);font-weight:400;
+line-height:1.15;margin:12px 0 9px;color:#293e48
+}
+.chakra-description p{font-family:var(--serif);font-size:16px;color:#71858d;margin:0}
+.root-slide{--chakra:#bd4c58}.sacral-slide{--chakra:#df8748}
+.solar-slide{--chakra:#d9ad3f}.heart-slide{--chakra:#4a9b70}
+.throat-slide{--chakra:#54a9c4}.third-slide{--chakra:#5659a9}
+.crown-slide{--chakra:#9869bd}
+.chakra-progress{
+position:absolute;bottom:5px;left:50%;transform:translateX(-50%);
+width:min(300px,65vw);height:2px;background:rgba(91,145,165,.16);overflow:hidden
+}
+.chakra-progress i{
+display:block;width:100%;height:100%;background:#79aec1;transform:scaleX(0);transform-origin:left;
+animation:chakraProgress 35s linear infinite
+}
+@keyframes chakraReveal{
+0%,1%{opacity:0;visibility:hidden;transform:translateY(15px) scale(.97)}
+3%,12%{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+14.2%,100%{opacity:0;visibility:hidden;transform:translateY(-12px) scale(1.015)}
+}
+@keyframes chakraTextIn{from{opacity:0;transform:translateX(15px)}to{opacity:1;transform:translateX(0)}}
+@keyframes chakraProgress{to{transform:scaleX(1)}}
+@media(max-width:640px){
+.whale-scene{min-height:390px}
+.chakra-showcase{height:315px;width:94vw}
+.whale-scene-caption{top:2px}
+.chakra-sequence{top:76px;bottom:26px}
+.chakra-slide{gap:15px;width:91vw}
+.chakra-emblem{width:112px;height:112px;flex-basis:112px}
+.chakra-emblem svg{width:86px;height:86px}
+.chakra-description{min-width:0;flex:1}
+.chakra-description span{font-size:7px;letter-spacing:1px}
+.chakra-description h3{font-size:26px;margin:9px 0}
+.chakra-description p{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+.chakra-slide{animation:none;opacity:1;visibility:visible;position:relative;transform:none;margin:12px auto}
+.chakra-sequence{position:relative;inset:auto;display:flex;flex-direction:column;padding-top:80px}
+.chakra-showcase{height:auto;min-height:400px;display:block;padding:20px 0}
+.chakra-progress{display:none}
+}
+@media(max-width:900px){
+.categories{grid-template-columns:repeat(2,minmax(0,1fr))}
+.products{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:25px}
+.footer-main{grid-template-columns:1.4fr 1fr 1fr}
+.footer-col:last-child{grid-column:2}
+}
+@media(max-width:640px){
+.announcement{font-size:8px;letter-spacing:.5px}
+.header{padding:13px;grid-template-columns:1fr auto 1fr;gap:6px}
+.nav{display:none}
+.menu-button{display:inline-block}
+.brand{font-size:12px;letter-spacing:1.2px}
+.brand small{font-size:7px;letter-spacing:2px}
+.actions{gap:5px}
+.lang{width:68px;height:29px;padding:0 6px;font-size:9px}
+ .language-switcher{right:13px}
+.hero{grid-template-columns:1fr;min-height:0}
+.hero-copy{padding:52px 23px 40px;min-height:570px;background-position:center 22%}
+.hero h1{font-size:42px;margin:16px 0 13px}
+.hero-copy p{font-size:12px}
+.hero-visual{min-height:315px}
+.hero-photo{inset:13% 13%;width:74%;height:74%}
+.stamp{width:80px;height:80px;font-size:10px;right:6%;bottom:7%}
+.trust{padding:15px 8px;gap:6px}
+.trust-item{font-size:8px;flex-direction:column;text-align:center;gap:6px}
+.trust-icon{width:25px;height:25px}
+.section{padding:55px 14px}
+.section-head{margin-bottom:24px}
+.categories{gap:10px}
+.category{min-height:185px;padding:14px}
+.category-content h3{font-size:21px}
+.category-content span{font-size:8px}
+.featured-inner{padding:55px 14px}
+.featured-top{margin-bottom:22px}
+.featured h2{font-size:28px}
+.text-link{font-size:8px}
+.products{gap:22px 11px}
+.product-name{font-size:12px}
+.price{font-size:11px}
+.delivery{font-size:8px}
+.values{grid-template-columns:1fr;gap:22px}
+.contact{padding:43px 16px}
+.contact h2{font-size:27px}
+.footer-main{grid-template-columns:1fr 1fr;padding:35px 18px;gap:25px 15px}
+.footer-main>div:first-child{grid-column:1/-1}
+.footer-col:last-child{grid-column:auto}
+.footer-bottom{padding:15px 18px;flex-direction:column;text-align:center}
+.drawer-card{padding:23px}
+}
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+}
+
+
+
+/* Gem Stories — full-image editorial stories with Arabic copy overlaid on each photograph */
+.gem-stories{
+ padding:clamp(58px,7vw,92px) 0;
+ background:linear-gradient(180deg,#f7fafb 0%,#fff 100%);
+ overflow:hidden;
+}
+.gem-stories-inner{width:min(1240px,calc(100% - 48px));margin:0 auto}
+.gem-stories-head{text-align:center;margin:0 auto 38px;max-width:720px}
+.gem-stories-head .kicker{display:block}
+.gem-stories-head h2{
+ font-family:var(--serif);font-weight:500;font-size:clamp(38px,5vw,58px);
+ line-height:1.05;margin:10px 0;color:var(--ink)
+}
+.gem-stories-head p{color:var(--muted);font-size:13px;line-height:1.9;margin:0}
+.gem-stories-track{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;
+ align-items:stretch;overflow:visible;padding:4px 2px 18px;
+}
+.gem-story-card{
+ position:relative;isolation:isolate;min-width:0;height:510px;min-height:0;
+ display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
+ border:1px solid #e1eaed;border-radius:18px;background:#dce9ed;
+ box-shadow:0 12px 34px rgba(46,83,94,.09);
+ transition:transform .35s ease,box-shadow .35s ease;
+}
+.gem-story-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(46,83,94,.15)}
+.gem-story-media{
+ position:absolute;z-index:-2;inset:0;height:100%;padding:0;
+ display:block;background:#dce9ed;border:0;
+}
+.gem-story-card img{
+ display:block;width:100%;height:100%;object-fit:cover;object-position:center 42%;
+ border-radius:0;transition:transform .8s cubic-bezier(.2,.7,.2,1)
+}
+.gem-story-card:hover img{transform:scale(1.035)}
+.gem-story-card:after{
+ content:"";position:absolute;z-index:-1;inset:0;
+ background:linear-gradient(180deg,rgba(13,31,39,.03) 0%,rgba(13,31,39,.06) 24%,rgba(13,31,39,.48) 49%,rgba(10,27,34,.91) 100%);
+ pointer-events:none;
+}
+.gem-story-copy{
+ position:relative;z-index:1;display:flex;flex:1;flex-direction:column;
+ justify-content:flex-end;padding:65px 23px 24px;text-align:right;direction:rtl;
+ background:transparent;color:#fff;
+}
+.gem-story-index{
+ align-self:flex-start;direction:ltr;display:inline-block;
+ font-family:var(--sans);font-size:9px;letter-spacing:1.8px;
+ color:#e1f0f3;border-bottom:1px solid rgba(255,255,255,.5);
+ padding-bottom:8px;margin-bottom:13px
+}
+.gem-story-copy h3{
+ font-family:var(--serif);font-size:clamp(27px,2.5vw,34px);
+ font-weight:500;line-height:1.1;margin:0 0 14px;color:#fff;
+ text-align:left;direction:ltr;
+}
+.gem-story-copy p{
+ font-family:"Cairo",Arial,sans-serif;font-size:13px;
+ line-height:1.95;margin:0;color:rgba(255,255,255,.96);
+ overflow:visible;display:block;max-height:none;text-shadow:0 1px 8px rgba(0,0,0,.16);
+}
+.gem-stories-navigation{
+ display:none;align-items:center;justify-content:center;gap:10px;margin:10px auto 0;
+}
+.gem-stories-dot{
+ width:7px;height:7px;padding:0;border:0;border-radius:20px;
+ background:#cbdde2;transition:width .25s ease,background .25s ease;
+}
+.gem-stories-dot[aria-current="true"]{width:23px;background:#628d9d}
+.gem-stories-hint{text-align:center;color:#829399;font-size:9px;letter-spacing:1.3px;margin-top:15px}
+body[dir="rtl"] .gem-story-copy{text-align:right}
+@media(max-width:800px){
+ .gem-stories-inner{width:min(100% - 30px,560px)}
+ .gem-stories-head{margin-bottom:26px}
+ .gem-stories-track{
+  display:flex;gap:17px;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;padding:4px 1px 15px;
+ }
+ .gem-stories-track::-webkit-scrollbar{display:none}
+ .gem-story-card{
+  flex:0 0 100%;width:100%;height:570px;min-height:0;
+  scroll-snap-align:center;scroll-snap-stop:always;border-radius:17px;
+ }
+ .gem-story-media{height:100%;padding:0}
+ .gem-story-card img{object-position:center 38%}
+ .gem-story-copy{padding:75px 21px 22px}
+ .gem-story-copy h3{font-size:32px}
+ .gem-story-copy p{font-size:13px;line-height:1.95}
+ .gem-stories-navigation{display:flex}
+ .gem-stories-hint{margin-top:12px}
+}
+@media(max-width:380px){
+ .gem-stories-inner{width:calc(100% - 24px)}
+ .gem-story-card{height:600px;min-height:0}
+ .gem-story-copy{padding:70px 18px 20px}
+ .gem-story-copy p{font-size:12px;line-height:1.9}
+}
+@media(prefers-reduced-motion:reduce){
+ .gem-story-card,.gem-story-card img,.gem-stories-dot{transition:none}
+ .gem-stories-track{scroll-behavior:auto}
+}
+.welcome-note{
+ padding:clamp(54px,7vw,82px) 24px;
+ background:linear-gradient(145deg,#f3f8fa 0%,#ffffff 52%,#f5fafb 100%);
+ text-align:center;
+ border-top:1px solid #edf3f5;
+ border-bottom:1px solid #edf3f5;
+}
+.welcome-note-inner{max-width:790px;margin:0 auto}
+.welcome-note .kicker{display:block;margin-bottom:17px}
+.welcome-note h2{
+ font-family:var(--serif);font-size:clamp(27px,4vw,38px);
+ line-height:1.35;font-weight:400;color:var(--ink);
+ margin:0 0 18px;
+}
+.welcome-note p{
+ max-width:730px;margin:0 auto;color:var(--muted);
+ font-size:14px;line-height:2.15;
+}
+@media(max-width:600px){
+ .welcome-note{padding:48px 21px}
+ .welcome-note p{font-size:13px;line-height:2}
+}
+
+
+.social-links{display:grid;gap:11px;margin-top:12px}
+.social-link{display:inline-flex!important;align-items:center;gap:9px;width:max-content;max-width:100%;margin:0!important;color:#78878c;font-size:10px}
+.social-link:hover{color:var(--green)}
+.social-icon{width:15px;height:15px;flex:0 0 15px;fill:currentColor}
+
+</style>
+</head>
+<body>
+<div class="announcement" data-en="NATURAL GEMSTONES · SILVER · TUNISIAN CORAL · LOOSE PEARLS" data-fr="PIERRES PRÉCIEUSES NATURELLES · ARGENT · CORAIL TUNISIEN · PERLES LIBRES" data-ar="أحجار كريمة طبيعية · فضة · مرجان تونسي · لؤلؤ حر">NATURAL GEMSTONES · SILVER · TUNISIAN CORAL · LOOSE PEARLS</div>
+
+<header>
+ <div class="header">
+  <div class="nav">
+   <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+   <a href="#collections" data-en="Collections" data-ar="المجموعات">Collections</a>
+   <a href="#story" data-en="Our story" data-ar="قصتنا">Our story</a>
+  </div>
+  <button class="menu-button" onclick="toggleDrawer()" aria-label="Open menu">☰</button>
+  <a class="brand" href="index.html">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></a>
+  <div class="actions">
+   <a class="nav" href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+  </div>
+  <div class="language-switcher">
+   <button class="lang" type="button" onclick="toggleLanguageMenu()" aria-expanded="false" aria-haspopup="true">English ▾</button>
+   <div class="language-menu" id="languageMenu">
+    <button type="button" onclick="chooseLanguage('en')">English</button>
+    <button type="button" onclick="chooseLanguage('fr')">Français</button>
+    <button type="button" onclick="chooseLanguage('ar')">العربية</button>
+   </div>
+  </div>
+ </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="hero-copy">
+  <span class="kicker" data-en="NATURAL GEMSTONES · DISTINCTIVE PIECES" data-ar="أحجار طبيعية · قطع لها طابعها">NATURAL GEMSTONES · DISTINCTIVE PIECES</span>
+  <h1 data-en="Nature, in its own form." data-ar="للطبيعة جمالها كما خُلقت.">Nature, in its own form.</h1>
+  <p data-en="Discover the colours, textures and quiet character of natural gemstones. Thoughtfully selected pieces made to become part of your own style." data-ar="اكتشف ألوان الأحجار الطبيعية وتكويناتها وجمالها الهادئ. قطع مختارة بعناية لتصبح جزءاً من أسلوبك وحضورك الخاص.">Discover the colours, textures and quiet character of natural gemstones. Thoughtfully selected pieces made to become part of your own style.</p>
+  <div class="buttons">
+   <a class="btn" href="#collections" data-en="EXPLORE COLLECTIONS" data-ar="اكتشف المجموعات">EXPLORE COLLECTIONS</a>
+   <a class="btn btn-outline" href="collection.html?category=bracelets" data-en="SHOP BRACELETS" data-ar="تسوق الأساور">SHOP BRACELETS</a>
+  </div>
+  <div class="hero-note" data-en="NATURAL MATERIALS · INDIVIDUAL CHARACTER" data-ar="مواد طبيعية · طابع متفرّد">NATURAL MATERIALS · INDIVIDUAL CHARACTER</div>
+ </div>
+ <div class="hero-visual">
+  <svg class="hero-photo" viewBox="0 0 500 500" role="img" aria-label="Golden Flower of Life sacred geometry" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <linearGradient id="lifeGold" x1="0" y1="0" x2="1" y2="1">
+     <stop offset="0" stop-color="#fff2b0"/>
+     <stop offset=".22" stop-color="#d6a63b"/>
+     <stop offset=".48" stop-color="#fff0a0"/>
+     <stop offset=".72" stop-color="#b98219"/>
+     <stop offset="1" stop-color="#f8df78"/>
+    </linearGradient>
+   </defs>
+   <g fill="none" stroke="url(#lifeGold)" stroke-width="2.15" stroke-linecap="round">
+    <circle cx="250.000" cy="250.000" r="70"/>
+    <circle cx="320.000" cy="250.000" r="70"/>
+    <circle cx="285.000" cy="310.622" r="70"/>
+    <circle cx="215.000" cy="310.622" r="70"/>
+    <circle cx="180.000" cy="250.000" r="70"/>
+    <circle cx="215.000" cy="189.378" r="70"/>
+    <circle cx="285.000" cy="189.378" r="70"/>
+    <circle cx="390.000" cy="250.000" r="70"/>
+    <circle cx="371.244" cy="320.000" r="70"/>
+    <circle cx="320.000" cy="371.244" r="70"/>
+    <circle cx="250.000" cy="390.000" r="70"/>
+    <circle cx="180.000" cy="371.244" r="70"/>
+    <circle cx="128.756" cy="320.000" r="70"/>
+    <circle cx="110.000" cy="250.000" r="70"/>
+    <circle cx="128.756" cy="180.000" r="70"/>
+    <circle cx="180.000" cy="128.756" r="70"/>
+    <circle cx="250.000" cy="110.000" r="70"/>
+    <circle cx="320.000" cy="128.756" r="70"/>
+    <circle cx="371.244" cy="180.000" r="70"/>
+   </g>
+  </svg>
+ </div>
+ </div>
+</section>
+
+<div class="trust">
+ <div class="trust-item"><span class="trust-icon">◇</span><span data-en="Natural gemstone selection" data-ar="اختيارات من الأحجار الطبيعية">Natural gemstone selection</span></div>
+ <div class="trust-item"><span class="trust-icon">⌂</span><span data-en="A Tunisian brand" data-ar="علامة تونسية">A Tunisian brand</span></div>
+ <div class="trust-item"><span class="trust-icon">♡</span><span data-en="Personal order assistance" data-ar="مرافقة في إتمام الطلب">Personal order assistance</span></div>
+</div>
+
+<section class="section" id="collections">
+ <div class="section-head">
+  <span class="kicker" data-en="FIND YOUR PIECE" data-ar="اكتشف القطعة التي تشبهك">FIND YOUR PIECE</span>
+  <h2 data-en="Explore the collections" data-ar="اكتشف مجموعاتنا">Explore the collections</h2>
+  <p data-en="From gemstone bracelets to distinctive silver-set pieces and natural stones in their original form." data-ar="من أساور الأحجار إلى القطع المميزة المرصعة بالفضة والأحجار الطبيعية في هيئتها الأصلية.">From gemstone bracelets to distinctive silver-set pieces and natural stones in their original form.</p>
+ </div>
+ <div class="categories">
+  <a class="category" href="collection.html?category=bracelets">
+   <img decoding="async" fetchpriority="low" src="images/1000088300.jpg" alt="Gemstone bracelets" loading="lazy">
+   <div class="category-content"><small>01 / COLLECTION</small><h3>Bracelets</h3><span data-en="DISCOVER BRACELETS ↗" data-ar="اكتشف الأساور ↗">DISCOVER BRACELETS ↗</span></div>
+  </a>
+  <a class="category" href="collection.html?category=necklaces">
+   <img decoding="async" fetchpriority="low" src="images/1000032282.jpg" alt="Gemstone necklaces" loading="lazy">
+   <div class="category-content"><small>02 / COLLECTION</small><h3>Necklaces</h3><span data-en="DISCOVER NECKLACES ↗" data-ar="اكتشف القلائد ↗">DISCOVER NECKLACES ↗</span></div>
+  </a>
+  <a class="category" href="collection.html?category=rings">
+   <img decoding="async" fetchpriority="low" src="images/1000085897.jpg" alt="Gemstone rings" loading="lazy">
+   <div class="category-content"><small>03 / COLLECTION</small><h3>Rings</h3><span data-en="DISCOVER RINGS ↗" data-ar="اكتشف الخواتم ↗">DISCOVER RINGS ↗</span></div>
+  </a>
+  <a class="category" href="collection.html?category=raw-gems">
+   <img decoding="async" fetchpriority="low" src="images/1000082268.jpg" alt="Raw natural gemstones" loading="lazy">
+   <div class="category-content"><small>04 / COLLECTION</small><h3>Raw Gems</h3><span data-en="DISCOVER RAW GEMS ↗" data-ar="اكتشف الأحجار الخام ↗">DISCOVER RAW GEMS ↗</span></div>
+  </a>
+ </div>
+</section>
+
+
+<section class="whale-scene" aria-label="Seven chakra symbols appearing one by one" data-aria-en="Seven chakra symbols appearing one by one" data-aria-ar="رموز الشاكرات السبع تظهر تباعاً">
+ <div class="chakra-showcase">
+  <div class="whale-scene-caption"><span data-en="The Seven Chakras" data-ar="الشاكرات السبع">The Seven Chakras</span><small data-en="ANCIENT SYMBOLS · SEVEN GEMSTONES" data-ar="رموز عريقة · سبعة أحجار كريمة">ANCIENT SYMBOLS · SEVEN GEMSTONES</small></div>
+  <a href="chakras.html" data-en="EXPLORE ALL SEVEN CHAKRAS ↗" data-ar="اكتشف الشاكرات السبع ↗" style="position:absolute;z-index:5;top:58px;left:50%;transform:translateX(-50%);display:inline-flex;align-items:center;justify-content:center;padding:9px 15px;border:1px solid #cbdfe5;border-radius:30px;background:rgba(255,255,255,.88);color:#315b69;font-size:8px;letter-spacing:1px;white-space:nowrap">EXPLORE ALL SEVEN CHAKRAS ↗</a>
+  <div class="chakra-sequence">
+   <article class="chakra-slide root-slide">
+    <div class="chakra-emblem root-emblem" aria-hidden="true"><svg viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="60" cy="60" r="43"/><path d="M60 17 Q38 34 60 52 Q82 34 60 17 M103 60 Q86 38 68 60 Q86 82 103 60 M60 103 Q82 86 60 68 Q38 86 60 103 M17 60 Q34 82 52 60 Q34 38 17 60"/><rect x="43" y="43" width="34" height="34" rx="2"/><path d="M60 43 L60 77 M43 60 L77 60"/></g></svg></div>
+    <div class="chakra-description"><span data-en="01 · ROOT CHAKRA" data-ar="01 · شاكرة الجذر">01 · ROOT CHAKRA</span><h3>Muladhara</h3><p data-en="Root Chakra · Red Jasper" data-ar="شاكرة الجذر · اليشب الأحمر">Root Chakra · Red Jasper</p></div>
+   </article>
+   <article class="chakra-slide sacral-slide">
+    <div class="chakra-emblem sacral-emblem" aria-hidden="true"><svg viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="60" cy="60" r="43"/><path d="M60 17 Q43 32 60 48 Q77 32 60 17 M97 39 Q74 40 69 60 Q91 66 97 39 M97 81 Q75 67 63 77 Q68 98 97 81 M60 103 Q43 88 60 72 Q77 88 60 103 M23 81 Q45 67 57 77 Q52 98 23 81 M23 39 Q46 40 51 60 Q29 66 23 39"/><path d="M42 67 Q60 45 78 67 Q60 89 42 67Z"/><path d="M42 67 Q60 78 78 67"/></g></svg></div>
+    <div class="chakra-description"><span data-en="02 · SACRAL CHAKRA" data-ar="02 · الشاكرة العجزية">02 · SACRAL CHAKRA</span><h3>Svadhisthana</h3><p data-en="Sacral Chakra · Carnelian" data-ar="الشاكرة العجزية · العقيق الأحمر">Sacral Chakra · Carnelian</p></div>
+   </article>
+   <article class="chakra-slide solar-slide">
+    <div class="chakra-emblem solar-emblem" aria-hidden="true"><svg viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="60" cy="60" r="43"/><path d="M60 17 Q45 33 60 45 Q75 33 60 17 M85 25 Q68 38 76 54 Q95 48 85 25 M103 60 Q84 48 72 60 Q84 72 103 60 M85 95 Q95 72 76 66 Q68 82 85 95 M60 103 Q75 87 60 75 Q45 87 60 103 M35 95 Q52 82 44 66 Q25 72 35 95 M17 60 Q36 72 48 60 Q36 48 17 60 M35 25 Q25 48 44 54 Q52 38 35 25"/><path d="M60 37 L82 77 H38 Z"/></g></svg></div>
+    <div class="chakra-description"><span data-en="03 · SOLAR PLEXUS" data-ar="03 · شاكرة الضفيرة الشمسية">03 · SOLAR PLEXUS</span><h3>Manipura</h3><p data-en="Solar Plexus · Citrine" data-ar="الضفيرة الشمسية · السيترين">Solar Plexus · Citrine</p></div>
+   </article>
+   <article class="chakra-slide heart-slide">
+    <div class="chakra-emblem heart-emblem" aria-hidden="true"><svg viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="60" cy="60" r="43"/><path d="M60 17 Q44 33 60 45 Q76 33 60 17 M82 23 Q67 39 76 53 Q94 45 82 23 M99 43 Q78 48 76 64 Q96 69 99 43 M99 77 Q78 69 68 82 Q78 99 99 77 M60 103 Q76 87 60 75 Q44 87 60 103 M21 77 Q42 69 52 82 Q42 99 21 77 M21 43 Q42 48 44 64 Q24 69 21 43 M38 23 Q53 39 44 53 Q26 45 38 23"/><path d="M60 38 L79 60 L60 82 L41 60 Z"/></g></svg></div>
+    <div class="chakra-description"><span data-en="04 · HEART CHAKRA" data-ar="04 · شاكرة القلب">04 · HEART CHAKRA</span><h3>Anahata</h3><p data-en="Heart Chakra · Emerald" data-ar="شاكرة القلب · الزمرد">Heart Chakra · Emerald</p></div>
+   </article>
+   <article class="chakra-slide throat-slide">
+    <div class="chakra-emblem throat-emblem" aria-hidden="true"><svg viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="60" cy="60" r="43"/><circle cx="60" cy="60" r="25"/><g><path d="M60 17V35 M60 85V103 M17 60H35 M85 60H103 M29.5 29.5L42 42 M78 78L90.5 90.5 M90.5 29.5L78 42 M42 78L29.5 90.5 M44 20L50 38 M70 82L76 100 M20 44L38 50 M82 70L100 76 M76 20L70 38 M50 82L44 100 M100 44L82 50 M38 70L20 76"/></g><circle cx="60" cy="60" r="10"/></g></svg></div>
+    <div class="chakra-description"><span data-en="05 · THROAT CHAKRA" data-ar="05 · شاكرة الحلق">05 · THROAT CHAKRA</span><h3>Vishuddha</h3><p data-en="Throat Chakra · Aquamarine" data-ar="شاكرة الحلق · الأكوامارين">Throat Chakra · Aquamarine</p></div>
+   </article>
+   <article class="chakra-slide third-slide">
+    <div class="chakra-emblem third-emblem" aria-hidden="true"><svg viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.5"><path d="M60 60 Q31 15 12 60 Q31 105 60 60 Q89 15 108 60 Q89 105 60 60Z"/><path d="M60 42 L77 72 H43 Z"/><circle cx="60" cy="60" r="5"/></g></svg></div>
+    <div class="chakra-description"><span data-en="06 · THIRD EYE CHAKRA" data-ar="06 · شاكرة العين الثالثة">06 · THIRD EYE CHAKRA</span><h3>Ajna</h3><p data-en="Third Eye · Lapis Lazuli" data-ar="العين الثالثة · اللازورد">Third Eye · Lapis Lazuli</p></div>
+   </article>
+   <article class="chakra-slide crown-slide">
+    <div class="chakra-emblem crown-emblem" aria-hidden="true"><svg viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="60" cy="60" r="43"/><circle cx="60" cy="60" r="28"/><path d="M60 8 Q48 28 60 43 Q72 28 60 8 M60 112 Q48 92 60 77 Q72 92 60 112 M8 60 Q28 48 43 60 Q28 72 8 60 M112 60 Q92 48 77 60 Q92 72 112 60 M23 23 Q46 27 48 48 Q27 46 23 23 M97 23 Q74 27 72 48 Q93 46 97 23 M23 97 Q46 93 48 72 Q27 74 23 97 M97 97 Q74 93 72 72 Q93 74 97 97"/><circle cx="60" cy="60" r="8"/></g></svg></div>
+    <div class="chakra-description"><span data-en="07 · CROWN CHAKRA" data-ar="07 · شاكرة التاج">07 · CROWN CHAKRA</span><h3>Sahasrara</h3><p data-en="Crown Chakra · Amethyst" data-ar="شاكرة التاج · الأماتيست">Crown Chakra · Amethyst</p></div>
+   </article>
+  </div>
+  <div class="chakra-progress" aria-hidden="true"><i></i></div>
+ </div>
+</section>
+
+
+<section class="gem-care" id="gem-care" aria-label="Gem Care">
+ <div class="gem-care-card">
+  <div class="gem-care-visual">
+   <img src="images/fce6a271476e28d75e0e91c6cdadd92b.jpg" alt="Gemstone care ritual" loading="lazy" decoding="async">
+   <span class="gem-care-visual-label" data-en="A ritual of care" data-ar="طقوس من العناية">A ritual of care</span>
+  </div>
+  <div class="gem-care-content">
+   <span class="gem-care-kicker" data-en="THE ART OF GEM CARE" data-ar="فن العناية بالأحجار">THE ART OF GEM CARE</span>
+   <h2 data-en="Every Gem Has Its Own Way." data-ar="لكل حجر طريقته الخاصة.">Every Gem Has Its Own Way.</h2>
+   <p data-en="Keep your gemstones away from water and prolonged direct sunlight. For a gentle personal ritual, discover two traditional ways of caring for them." data-ar="احتفظ بأحجارك بعيداً عن الماء وأشعة الشمس المباشرة لفترات طويلة. ولطقس عناية لطيف، تعرّف على طريقتين تقليديتين للاهتمام بها.">Keep your gemstones away from water and prolonged direct sunlight. For a gentle personal ritual, discover two traditional ways of caring for them.</p>
+   <div class="gem-care-methods">
+    <div class="gem-care-method"><span class="gem-care-symbol" aria-hidden="true">〰</span><span><strong data-en="Natural Incense" data-ar="البخور الطبيعي">Natural Incense</strong><small data-en="A gentle aromatic ritual" data-ar="طقس عطري لطيف">A gentle aromatic ritual</small></span></div>
+    <div class="gem-care-method"><span class="gem-care-symbol" aria-hidden="true">☾</span><span><strong data-en="Full Moonlight" data-ar="ضوء القمر المكتمل">Full Moonlight</strong><small data-en="A quiet moment beneath the moon" data-ar="لحظة هادئة تحت ضوء القمر">A quiet moment beneath the moon</small></span></div>
+   </div>
+   <p class="gem-care-note" data-en="Care methods vary by stone. Ask us before treating a delicate gemstone." data-ar="تختلف طرق العناية باختلاف الحجر؛ استشرنا قبل التعامل مع الأحجار الحساسة.">Care methods vary by stone. Ask us before treating a delicate gemstone.</p>
+  </div>
+ </div>
+</section>
+
+<section class="gem-stories" id="story">
+ <div class="gem-stories-inner">
+  <div class="gem-stories-head">
+   <span class="kicker">THE STORIES OF GEMSTONES</span>
+   <h2>Gem Stories</h2>
+   <p>حكاياتٌ من ذاكرة الأحجار، حيث يلتقي جمال الطبيعة بأثر العصور.</p>
+  </div>
+  <div class="gem-stories-track" id="gemStoriesTrack" aria-label="Gemstone stories">
+   <article class="gem-story-card" id="gemStory1">
+    <div class="gem-story-media"><img src="images/429f9ad335b19790158a5b7cf7687dda.jpg" alt="Lapis Lazuli gemstone" loading="lazy" decoding="async" fetchpriority="low"></div>
+    <div class="gem-story-copy">
+     <span class="gem-story-index">01 · LAPIS LAZULI</span>
+     <h3>Lapis Lazuli</h3>
+     <p>في خزائن ملوك مصر القديمة، كان للازورد مقامٌ لا يُمنح إلا للأحجار النفيسة. استخرجوه من أعماق الجبال البعيدة، وجلبوه عبر القوافل إلى ضفاف النيل، ثم صاغت منه أيدي الصاغة حُليّ الملوك وقلائدهم وخرز التيجان. وقد بلغ من قيمة هذا الحجر أن زيّن قناع الملك توت عنخ آمون، فامتزجت زرقتُه بذهب الفراعنة، وبقي شاهداً على ذوق حضارةٍ جعلت من الجمال إرثاً لا يفنى.</p>
+    </div>
+   </article>
+   <article class="gem-story-card" id="gemStory2">
+    <div class="gem-story-media"><img src="images/5b2b2edd0c5f7c337bae690266a18b8f.jpg" alt="Tiger's Eye gemstone" loading="lazy" decoding="async"></div>
+    <div class="gem-story-copy">
+     <span class="gem-story-index">02 · TIGER'S EYE</span>
+     <h3>Tiger's Eye</h3>
+     <p>كان حجرُ عين النمر يُعرف ببريقه الذي يشبه نظرةَ الوحش في عتمة الغابة؛ تتعاقب على سطحه خيوطٌ من الذهب والبنيّ، كلما دار الحجر تبدّل ضوؤه كأنّ في داخله عيناً لا تنام. وقد حمله المحاربون والمسافرون في العصور القديمة، وجعلوه رمزاً للشجاعة واليقظة والحماية، لما يوحي به من قوّةٍ وثبات. ولم يكن سحره في لونه وحده، بل في ذلك الوميض الغامض الذي جعل اسمه باقياً بين الأحجار ذات الهيبة.</p>
+    </div>
+   </article>
+   <article class="gem-story-card" id="gemStory3">
+    <div class="gem-story-media"><img src="images/b695789ae82ee0293d2da13d32ecf0a3.jpg" alt="Amethyst gemstone" loading="lazy" decoding="async"></div>
+    <div class="gem-story-copy">
+     <span class="gem-story-index">03 · AMETHYST</span>
+     <h3>Amethyst</h3>
+     <p>كان الملوكُ ينتقون من حجر الأماتيست أصفى ألوانه، فيرصّعون به تيجانهم وخواتمهم، اعتقاداً منهم أنّ في بُنيانه البنفسجي سرّاً من أسرار الحكمة والوقار. وكانوا يرون فيه زينةً تليق بمن يجلس على العرش، ورمزاً لرجاحة العقل وصفاء الرأي؛ فكأنّما أرادوا أن يجمعوا في تيجانهم بين بهاء السلطان وحكمة الملوك.</p>
+    </div>
+   </article>
+  </div>
+  <div class="gem-stories-navigation" aria-label="Choose a gemstone story">
+   <button class="gem-stories-dot" type="button" aria-label="Story 1" aria-current="true" onclick="goToGemStory(0)"></button>
+   <button class="gem-stories-dot" type="button" aria-label="Story 2" aria-current="false" onclick="goToGemStory(1)"></button>
+   <button class="gem-stories-dot" type="button" aria-label="Story 3" aria-current="false" onclick="goToGemStory(2)"></button>
+  </div>
+  <div class="gem-stories-hint">SWIPE TO DISCOVER · اسحب لاكتشاف الحكايات</div>
+ </div>
+</section>
+
+<section class="welcome-note">
+  <div class="welcome-note-inner">
+   <span class="kicker" data-en="WELCOME TO BLUE WHALE GEMS" data-ar="أهلاً بك في BLUE WHALE GEMS">WELCOME TO BLUE WHALE GEMS</span>
+   <h2 data-en="A gemstone for every reason." data-ar="لكل اختيارٍ سببه، ولكل حجرٍ سحره.">A gemstone for every reason.</h2>
+   <p data-en="Whatever brings you to gemstones — an interest in your zodiac sign, a personal search for comfort, balance and positive energy, or simply a love of wearing them as fine jewellery — we are here to offer pieces that speak to your taste and your purpose. Thank you for being here. We hope you enjoy discovering our world. 🩵🙏" data-ar="مهما كان سبب اقتنائك للأحجار الكريمة، سواء أكان اختيارك مرتبطاً ببرجك الفلكي، أو رغبةً في تعزيز شعورك بالراحة والتوازن والطاقة الإيجابية، أو حباً لجمالها حين تتألّق كقطعة مجوهرات فاخرة؛ ستجد هنا ما تبحث عنه، وما يليق بذوقك. شكراً لزيارتك، ونتمنى لك وقتاً ممتعاً في اكتشاف عالمنا. 🩵🙏">Whatever brings you to gemstones — an interest in your zodiac sign, a personal search for comfort, balance and positive energy, or simply a love of wearing them as fine jewellery — we are here to offer pieces that speak to your taste and your purpose. Thank you for being here. We hope you enjoy discovering our world. 🩵🙏</p>
+  </div>
+ </section>
+
+<section class="contact" id="contact">
+ <h2 data-en="A piece worth discovering." data-ar="قطعة تستحق أن تكتشفها.">A piece worth discovering.</h2>
+ <p data-en="Questions about a gemstone or a particular piece? We are here to help." data-ar="هل لديك سؤال عن حجر أو قطعة معينة؟ يسعدنا مساعدتك.">Questions about a gemstone or a particular piece? We are here to help.</p>
+ <a href="https://wa.me/21655733020" target="_blank" rel="noopener" data-en="CONTACT VIA WHATSAPP" data-ar="تواصل عبر واتساب">CONTACT VIA WHATSAPP</a>
+</section>
+</main>
+
+<footer>
+ <div class="footer-main">
+  <div>
+   <div class="footer-brand">BLUE WHALE GEMS<small>NATURAL BEAUTY</small></div>
+   <p class="footer-about" data-en="A considered collection of natural gemstones and distinctive jewellery, selected in Tunisia." data-ar="مجموعة مختارة بعناية من الأحجار الطبيعية والقطع المميزة، من تونس.">A considered collection of natural gemstones and distinctive jewellery, selected in Tunisia.</p>
+  </div>
+  <div class="footer-col"><h4 data-en="SHOP" data-ar="تسوق">SHOP</h4><a href="collection.html?category=bracelets">Bracelets</a><a href="collection.html?category=necklaces">Necklaces</a><a href="collection.html?category=rings">Rings</a><a href="collection.html?category=raw-gems">Raw Gems</a></div>
+  <div class="footer-col"><h4 data-en="INFORMATION" data-ar="معلومات">INFORMATION</h4><a href="#story" data-en="Our story" data-ar="قصتنا">Our story</a><a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a></div>
+  <div class="footer-col"><h4 data-en="CONNECT" data-ar="تواصل">CONNECT</h4><div class="social-links" aria-label="BLUE WHALE GEMS social media"><a class="social-link" href="https://wa.me/21655733020" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 1 0 20.5 3.5ZM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9 9 0 1 1 12 21Zm5-6.7c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a7.3 7.3 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.5.1-.7l.5-.6.2-.5c.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4s-1.1 1.1-1.1 2.6 1.1 3 1.3 3.2 2.2 3.4 5.4 4.7c.8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4s-.2-.2-.5-.4Z"/></svg><span>WhatsApp</span></a>
+ <a class="social-link" href="https://www.tiktok.com/@blue_whale_gems?_r=1&amp;_t=ZS-9B9OhXJV0Ld" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.2a6.8 6.8 0 0 1-4.1-1.4v8.1a6.9 6.9 0 1 1-6-6.8v3.6a3.3 3.3 0 1 0 2.4 3.2V2h3.6c.2 2 1.7 3.6 4.1 3.9v1.3Z"/></svg><span>TikTok</span></a>
+ <a class="social-link" href="https://www.instagram.com/bluewhale__gems?rpxt=MW1tczJoZXVtbjNrMg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.7" r="1.2"/></svg><span>Instagram</span></a>
+ <a class="social-link" href="https://www.facebook.com/share/1CPVUZALJH/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg><span>Facebook</span></a>
+</div></div>
+ </div>
+ <div class="footer-bottom"><span>© 2026 BLUE WHALE GEMS · TUNISIA</span><span data-en="NATURAL GEMSTONES · DISTINCTIVE PIECES" data-ar="أحجار طبيعية · قطع مميزة">NATURAL GEMSTONES · DISTINCTIVE PIECES</span></div>
+</footer>
+
+<div class="mobile-drawer" id="mobileDrawer" onclick="if(event.target===this)toggleDrawer()">
+ <div class="drawer-card">
+  <button class="drawer-close" onclick="toggleDrawer()">×</button>
+  <div class="drawer-brand">BLUE WHALE GEMS</div>
+  <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+  <a href="#collections" onclick="toggleDrawer()" data-en="Collections" data-ar="المجموعات">Collections</a>
+  <a href="#story" onclick="toggleDrawer()" data-en="Our story" data-ar="قصتنا">Our story</a>
+  <a href="#contact" onclick="toggleDrawer()" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+ </div>
+</div>
+
+<script>
+function applyLanguage(lang){
+ localStorage.setItem("bwg-language",lang);
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ document.body.dir=lang==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-en][data-ar]").forEach(el=>{
+  el.textContent=el.dataset[lang];
+ });
+ document.querySelectorAll("[data-aria-en][data-aria-ar]").forEach(el=>{
+  el.setAttribute("aria-label",el.dataset["aria"+(lang==="ar"?"Ar":"En")]);
+ });
+ document.querySelector(".lang").textContent=lang==="en"?"English ▾":lang==="fr"?"Français ▾":"العربية ▾";
+}
+function toggleLanguage(){
+ applyLanguage((localStorage.getItem("bwg-language")||"en")==="en"?"ar":"en");
+}
+function toggleDrawer(){
+ document.getElementById("mobileDrawer").classList.toggle("open");
+}
+applyLanguage(localStorage.getItem("bwg-language")||"en");
+
+function goToGemStory(index){
+ const track=document.getElementById("gemStoriesTrack");
+ const cards=track?track.querySelectorAll(".gem-story-card"):[];
+ if(!cards[index])return;
+ cards[index].scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});
+}
+function setupGemStories(){
+ const track=document.getElementById("gemStoriesTrack");
+ const cards=track?Array.from(track.querySelectorAll(".gem-story-card")):[];
+ const dots=Array.from(document.querySelectorAll(".gem-stories-dot"));
+ if(!track||!cards.length||!dots.length)return;
+ if(!("IntersectionObserver" in window)){
+  track.addEventListener("scroll",()=>{
+   const index=Math.round(track.scrollLeft/(cards[0].getBoundingClientRect().width+17));
+   dots.forEach((dot,i)=>dot.setAttribute("aria-current",String(i===index)));
+  },{passive:true});
+  return;
+ }
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+   if(entry.isIntersecting&&entry.intersectionRatio>=0.6){
+    const index=cards.indexOf(entry.target);
+    dots.forEach((dot,i)=>dot.setAttribute("aria-current",String(i===index)));
+   }
+  });
+ },{root:track,threshold:[0.6,0.8]});
+ cards.forEach(card=>observer.observe(card));
+}
+setupGemStories();
+async function loadFeaturedProducts(){
+ const grid=document.getElementById("featuredProducts");
+ try{
+  const response=await fetch("data/products.json");
+  if(!response.ok)throw new Error("Catalogue unavailable");
+  const products=await response.json();
+  products.filter(p=>p.category==="bracelets").slice(0,4).forEach((p,index)=>{
+   const imagePath=String(p.image||"").replace(/^\/+/, "");
+   const params=new URLSearchParams({name:p.name,price:String(p.price),image:imagePath,delivery:String(p.delivery??8),stock:String(p.stock??1),category:p.category});
+   const card=document.createElement("article");
+   card.className="product";
+   const imageLink=document.createElement("a");
+   imageLink.className="product-image";
+   imageLink.href="product.html?"+params.toString();
+   const img=document.createElement("img");
+   img.alt=p.name;img.width=640;img.height=640;img.loading=index<2?"eager":"lazy";img.decoding="async";img.fetchPriority=index<2?"high":"auto";
+    const originalImageUrl="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/"+imagePath;
+    const optimizedImageUrl=originalImageUrl;
+    img.onerror=function(){if(this.dataset.fallback!=="used"){this.dataset.fallback="used";this.src=originalImageUrl;}};
+    img.src=optimizedImageUrl;
+   imageLink.appendChild(img);
+   const name=document.createElement("a");
+   name.className="product-name";name.href=imageLink.href;name.textContent=p.name;
+   const meta=document.createElement("div");meta.className="product-meta";
+   const price=document.createElement("span");price.className="price";price.textContent=p.price+" TND";
+   const delivery=document.createElement("span");delivery.className="delivery";
+   delivery.dataset.en="Delivery "+p.delivery+" TND";delivery.dataset.ar="التوصيل "+p.delivery+" د.ت";
+   delivery.textContent=delivery.dataset.en;
+   meta.append(price,delivery);card.append(imageLink,name,meta);grid.appendChild(card);
+  });
+ }catch(error){grid.textContent="";}
+}
+function setupReveal(){
+ const revealItems=document.querySelectorAll(".hero-copy > *, .category,.product,.story-image,.section-head > *, .featured-top > *, .story-copy > *, .value,.contact > *, .footer-col,.trust-item");
+ if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  document.body.classList.add("cinema-ready");
+  const revealObserver=new IntersectionObserver((entries,observer)=>{
+   entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target);}
+   });
+  },{rootMargin:"0px 0px 260px 0px",threshold:0.04});
+  revealItems.forEach((item,index)=>{
+   item.classList.add("cinema-reveal");
+   item.style.setProperty("--reveal-order",index%4);
+   revealObserver.observe(item);
+  });
+ }
+}
+loadFeaturedProducts().then(()=>setupReveal());
+
+
+
+</script>
+
+<script>
+(function(){
+const fr={"NATURAL GEMSTONES · DISTINCTIVE PIECES · TUNISIA":"GEMMES NATURELLES · PIÈCES SINGULIÈRES · TUNISIE","Home":"Accueil","Collections":"Collections","Our story":"Notre histoire","Contact":"Contact","NATURAL GEMSTONES · DISTINCTIVE PIECES":"GEMMES NATURELLES · PIÈCES SINGULIÈRES","Nature, in its own form.":"La nature, dans sa forme authentique.","Discover the colours, textures and quiet character of natural gemstones. Thoughtfully selected pieces made to become part of your own style.":"Découvrez les couleurs, les textures et le caractère singulier des pierres naturelles. Des pièces choisies avec soin pour accompagner votre style.","EXPLORE COLLECTIONS":"DÉCOUVRIR LES COLLECTIONS","SHOP BRACELETS":"VOIR LES BRACELETS","NATURAL MATERIALS · INDIVIDUAL CHARACTER":"MATIÈRES NATURELLES · CARACTÈRE UNIQUE","Natural gemstone selection":"Sélection de pierres naturelles","A Tunisian brand":"Une marque tunisienne","Personal order assistance":"Accompagnement personnalisé","FIND YOUR PIECE":"TROUVEZ VOTRE PIÈCE","Explore the collections":"Explorez les collections","From gemstone bracelets to distinctive silver-set pieces and natural stones in their original form.":"Des bracelets en pierres naturelles aux créations serties d’argent, jusqu’aux pierres brutes dans leur forme originelle.","DISCOVER BRACELETS ↗":"DÉCOUVRIR LES BRACELETS ↗","DISCOVER NECKLACES ↗":"DÉCOUVRIR LES COLLIERS ↗","DISCOVER RINGS ↗":"DÉCOUVRIR LES BAGUES ↗","DISCOVER RAW GEMS ↗":"DÉCOUVRIR LES PIERRES BRUTES ↗","The Seven Chakras":"Les sept chakras","ANCIENT SYMBOLS · SEVEN GEMSTONES":"SYMBOLES ANCIENS · SEPT PIERRES","01 · ROOT CHAKRA":"01 · CHAKRA RACINE","Root Chakra · Red Jasper":"Chakra racine · Jaspe rouge","02 · SACRAL CHAKRA":"02 · CHAKRA SACRÉ","Sacral Chakra · Carnelian":"Chakra sacré · Cornaline","03 · SOLAR PLEXUS":"03 · PLEXUS SOLAIRE","Solar Plexus · Citrine":"Plexus solaire · Citrine","04 · HEART CHAKRA":"04 · CHAKRA DU CŒUR","Heart Chakra · Emerald":"Chakra du cœur · Émeraude","05 · THROAT CHAKRA":"05 · CHAKRA DE LA GORGE","Throat Chakra · Aquamarine":"Chakra de la gorge · Aigue-marine","06 · THIRD EYE CHAKRA":"06 · TROISIÈME ŒIL","Third Eye · Lapis Lazuli":"Troisième œil · Lapis-lazuli","07 · CROWN CHAKRA":"07 · CHAKRA CORONAL","Crown Chakra · Amethyst":"Chakra coronal · Améthyste","A ritual of care":"Un rituel de soin","THE ART OF GEM CARE":"L’ART DE PRENDRE SOIN DES PIERRES","Every Gem Has Its Own Way.":"Chaque pierre a ses propres besoins.","Keep your gemstones away from water and prolonged direct sunlight. For a gentle personal ritual, discover two traditional ways of caring for them.":"Évitez l’eau et l’exposition prolongée au soleil direct. Pour un rituel tout en douceur, découvrez deux méthodes traditionnelles pour prendre soin de vos pierres.","Natural Incense":"Encens naturel","A gentle aromatic ritual":"Un doux rituel parfumé","Full Moonlight":"Clair de pleine lune","A quiet moment beneath the moon":"Un moment paisible sous la lune","Care methods vary by stone. Ask us before treating a delicate gemstone.":"Les méthodes d’entretien varient selon les pierres. Demandez-nous conseil avant de traiter une pierre délicate.","WELCOME TO BLUE WHALE GEMS":"BIENVENUE CHEZ BLUE WHALE GEMS","A gemstone for every reason.":"Une pierre précieuse, mille raisons.","Whatever brings you to gemstones — an interest in your zodiac sign, a personal search for comfort, balance and positive energy, or simply a love of wearing them as fine jewellery — we are here to offer pieces that speak to your taste and your purpose. Thank you for being here. We hope you enjoy discovering our world. 🩵🙏":"Quelle que soit votre raison de découvrir les pierres — l’intérêt pour votre signe astrologique, la recherche de confort, d’équilibre et d’énergie positive, ou simplement le plaisir de les porter comme de beaux bijoux — nous vous proposons des pièces qui correspondent à vos goûts et à vos envies. Merci de votre visite. Nous vous souhaitons une belle découverte de notre univers. 🩵🙏","A piece worth discovering.":"Une pièce qui mérite d’être découverte.","Questions about a gemstone or a particular piece? We are here to help.":"Une question sur une pierre ou une pièce en particulier ? Nous sommes là pour vous aider.","CONTACT VIA WHATSAPP":"CONTACTER VIA WHATSAPP","A considered collection of natural gemstones and distinctive jewellery, selected in Tunisia.":"Une collection soigneusement choisie de pierres naturelles et de bijoux singuliers, sélectionnés en Tunisie.","SHOP":"BOUTIQUE","INFORMATION":"INFORMATIONS","CONNECT":"NOUS SUIVRE","Delivery ":"Livraison ","Return to collections":"Retour aux collections","Collection":"Collection","Collection not found":"Collection introuvable","Please return to the collections page.":"Veuillez revenir à la page des collections.","Image unavailable":"Image indisponible","Product not found":"Produit introuvable","← All collections":"← Toutes les collections","← Return to collections":"← Retour aux collections","Product price":"Prix du produit","Delivery":"Livraison","Available quantity":"Quantité disponible","Total":"Total","Customer information":"Informations client","Full name":"Nom complet","Phone number":"Numéro de téléphone","Exact address":"Adresse complète","WhatsApp will open with a message containing the product and order details.":"WhatsApp s’ouvrira avec un message contenant les détails du produit et de la commande.","THE NATURAL COLLECTION":"LA COLLECTION NATURELLE","Beauty has its own character.":"La beauté a son propre caractère.","Natural gemstones differ in their colours, formations and textures. We let their beauty speak for itself, without exaggeration.":"Les pierres naturelles se distinguent par leurs couleurs, leurs formations et leurs textures. Nous laissons leur beauté parler d’elle-même, sans exagération.","A question about this piece?":"Une question sur cette pièce ?","We would be pleased to answer your questions and help with your order.":"Nous serons ravis de répondre à vos questions et de vous accompagner dans votre commande.","CONTACT BLUE WHALE GEMS":"CONTACTER BLUE WHALE GEMS","NATURAL GEMSTONES · TUNISIA":"PIERRES NATURELLES · TUNISIE","BLUE WHALE GEMS · THE COLLECTION":"BLUE WHALE GEMS · LA COLLECTION","BLUE WHALE GEMS · SELECTED PIECE":"BLUE WHALE GEMS · PIÈCE SÉLECTIONNÉE","ONE PIECE AVAILABLE":"UNE PIÈCE DISPONIBLE","CURRENTLY UNAVAILABLE":"ACTUELLEMENT INDISPONIBLE"};
+Object.assign(fr,{"Bracelets":"Bracelets","Necklaces":"Colliers","Rings":"Bagues","Raw Gems":"Pierres brutes","NATURAL BEAUTY":"BEAUTÉ NATURELLE","NATURAL GEMSTONES · SILVER · TUNISIAN CORAL · LOOSE PEARLS":"PIERRES NATURELLES · ARGENT · CORAIL TUNISIEN · PERLES LIBRES"});
+ const originalApply=window.applyLanguage;
+window.applyLanguage=function(lang){
+ if(!["en","ar","fr"].includes(lang))lang="en";
+ localStorage.setItem("bwg-language",lang);
+ document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.body.dir=lang==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-en][data-ar]").forEach(el=>{el.textContent=lang==="fr"?(fr[el.dataset.en]||el.dataset.en):el.dataset[lang];});
+ document.querySelectorAll("[data-en][data-ar]").forEach(el=>{if(el.dataset.en&&fr[el.dataset.en])el.dataset.fr=fr[el.dataset.en];});
+ document.querySelectorAll(".lang").forEach(el=>el.textContent=lang==="en"?"English ▾":lang==="fr"?"Français ▾":"العربية ▾");
+  document.querySelectorAll("#languageMenu button").forEach(el=>el.setAttribute("aria-current",({"English":"en","Français":"fr","العربية":"ar"}[el.textContent]===lang)?"true":"false"));
+ const staticMap=fr;
+ window.__bwgTextOriginals=window.__bwgTextOriginals||new WeakMap();
+ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+ const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+ nodes.forEach(n=>{
+  if(!window.__bwgTextOriginals.has(n))window.__bwgTextOriginals.set(n,n.nodeValue);
+  const original=window.__bwgTextOriginals.get(n),t=original.trim();
+  if(!n.parentElement.closest("[data-en][data-ar]"))n.nodeValue=lang==="fr"&&staticMap[t]?original.replace(t,staticMap[t]):original;
+ });
+ document.querySelectorAll(".gem-stories-head .kicker").forEach(el=>{if(lang==="fr")el.textContent="LES HISTOIRES DES PIERRES";else if(lang==="en")el.textContent="THE STORIES OF GEMSTONES";});
+ document.querySelectorAll(".gem-stories-head h2").forEach(el=>{if(lang==="fr")el.textContent="Histoires de pierres";else if(lang==="en")el.textContent="Gem Stories";});
+ document.querySelectorAll(".gem-stories-hint").forEach(el=>{if(lang==="fr")el.textContent="FAITES DÉFILER POUR DÉCOUVRIR";else if(lang==="en")el.textContent="SWIPE TO DISCOVER · اسحب لاكتشاف الحكايات";});
+ window.__bwgStoryOriginals=window.__bwgStoryOriginals||new WeakMap();
+ document.querySelectorAll(".gem-story-copy p").forEach((el,i)=>{if(!window.__bwgStoryOriginals.has(el))window.__bwgStoryOriginals.set(el,el.textContent);if(lang==="fr"){el.textContent=["Dans les trésors des rois de l’Égypte ancienne, le lapis-lazuli occupait une place réservée aux pierres précieuses. Extrait des montagnes lointaines, il était acheminé par les caravanes jusqu’aux rives du Nil, où les artisans en faisaient des bijoux royaux, des colliers et des ornements de couronnes. Sa valeur était telle qu’il ornait le masque du roi Toutânkhamon, mêlant son bleu à l’or des pharaons. Il demeure le témoin d’une civilisation qui fit de la beauté un héritage intemporel.","L’œil-de-tigre était apprécié pour son éclat évoquant le regard d’un fauve dans l’obscurité de la forêt. Des lignes dorées et brunes se succèdent à sa surface ; lorsque la pierre tourne, sa lumière semble changer comme si un œil veillait en son cœur. Dans l’Antiquité, voyageurs et guerriers le portaient comme symbole de courage, de vigilance et de protection. Son charme ne réside pas seulement dans sa couleur, mais aussi dans ce reflet mystérieux qui lui confère son prestige.","Les souverains choisissaient les plus belles nuances d’améthyste pour orner leurs couronnes et leurs bagues, voyant dans sa robe violette un symbole de sagesse et de dignité. Ils y trouvaient un ornement digne du trône, associé à la lucidité et à la justesse du jugement. Comme s’ils souhaitaient réunir dans leurs couronnes l’éclat du pouvoir et la sagesse des rois."][i];}else{el.textContent=window.__bwgStoryOriginals.get(el);}}); 
+ document.querySelectorAll(".gem-story-index").forEach((el,i)=>{if(!el.dataset.original)el.dataset.original=el.textContent;el.textContent=lang==="fr"?["01 · LAPIS-LAZULI","02 · ŒIL-DE-TIGRE","03 · AMÉTHYSTE"][i]:el.dataset.original;});
+}
+window.toggleLanguageMenu=function(){const menu=document.getElementById("languageMenu"),button=document.querySelector(".lang"),open=menu.classList.toggle("open");button.setAttribute("aria-expanded",open?"true":"false");};
+window.chooseLanguage=function(lang){window.applyLanguage(lang);document.getElementById("languageMenu").classList.remove("open");document.querySelector(".lang").setAttribute("aria-expanded","false");};
+window.toggleLanguage=function(){window.toggleLanguageMenu();};
+window.applyLanguage(localStorage.getItem("bwg-language")||"en");
+})();
+</script>
+<script id="bwg-sync-saved-language">
+(function(){
+ function syncSavedLanguage(){
+  const lang=localStorage.getItem("bwg-language")||"en";
+  if(typeof window.applyLanguage==="function")window.applyLanguage(lang);
+ }
+ window.addEventListener("pageshow",syncSavedLanguage);
+ window.addEventListener("storage",function(event){
+  if(event.key==="bwg-language")syncSavedLanguage();
+ });
+})();
+</script>
+<script src="order-list.js?v=20261105d" defer></script>
+
+<!-- BLUE WHALE GEMS background ambience -->
+<div id="bwgMusicControls" style="position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:6px;padding:7px;background:rgba(255,255,255,.96);border:1px solid #dce9ed;border-radius:50%;box-shadow:0 5px 20px rgba(30,65,78,.12);backdrop-filter:blur(10px)">
+ <button id="bwgMusicPlay" type="button" aria-label="Play background music" title="Play or pause background music" style="width:36px;height:36px;border:1px solid #dce9ed;border-radius:50%;background:#fff;color:#245344;font-size:15px;display:grid;place-items:center">▶</button>
+</div>
+<audio id="bwgBackgroundMusic" preload="auto" loop playsinline autoplay>
+ <source src="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/juliush-waves-from-piano-and-sea-ambient-chill-out-piano-music-and-waves-3551.mp3" type="audio/mpeg">
+</audio>
+<script id="bwg-background-music">
+(function(){
+ const audio=document.getElementById("bwgBackgroundMusic");
+ const playButton=document.getElementById("bwgMusicPlay");
+ if(!audio||!playButton)return;
+ const savedTime=Number(sessionStorage.getItem("bwg-music-time")||0);
+ audio.volume=0.05;
+ audio.muted=false;
+ function updateControl(){
+  playButton.textContent=audio.paused?"▶":"Ⅱ";
+  playButton.setAttribute("aria-label",audio.paused?"Play background music":"Pause background music");
+ }
+ function tryAutoplay(){
+  const attempt=audio.play();
+  if(attempt&&typeof attempt.catch==="function")attempt.catch(function(){});
+ }
+ audio.addEventListener("loadedmetadata",function(){
+  if(Number.isFinite(savedTime)&&savedTime>0&&savedTime<audio.duration)audio.currentTime=savedTime;
+  tryAutoplay();
+ },{once:true});
+ audio.addEventListener("canplay",tryAutoplay,{once:true});
+ function savePosition(){
+  if(Number.isFinite(audio.currentTime))sessionStorage.setItem("bwg-music-time",String(audio.currentTime));
+ }
+ audio.addEventListener("timeupdate",savePosition);
+ window.addEventListener("pagehide",savePosition);
+ audio.addEventListener("play",updateControl);
+ audio.addEventListener("pause",updateControl);
+ playButton.addEventListener("click",function(){
+  if(audio.paused)audio.play().catch(function(){});
+  else audio.pause();
+ });
+ document.addEventListener("pointerdown",function(event){
+  if(event.target.closest("#bwgMusicControls"))return;
+  if(audio.paused)audio.play().catch(function(){});
+ },{once:true,passive:true});
+ document.addEventListener("keydown",function(){
+  if(audio.paused)audio.play().catch(function(){});
+ },{once:true});
+ updateControl();
+ tryAutoplay();
+})();
+</script>
+
+</body>
+</html>
