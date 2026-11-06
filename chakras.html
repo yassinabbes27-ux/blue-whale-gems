@@ -150,7 +150,7 @@ render();
  if(!audio||!playButton)return;
  const preferenceKey="bwg-music-preference";
  const savedTime=Number(sessionStorage.getItem("bwg-music-time")||0);
- audio.volume=0.15;
+ audio.volume=0.33;
  audio.muted=false;
  function updateControl(){
   playButton.textContent=audio.paused?"▶":"Ⅱ";
