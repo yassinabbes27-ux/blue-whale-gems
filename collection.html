@@ -124,9 +124,7 @@ const grid=document.getElementById("productsGrid");
 async function loadProducts(){
  const response=await fetch("data/products.json");
  if(!response.ok)throw new Error("Could not load product catalogue");
- const catalogue=await response.json();
- const products=catalogue.products;
- if(!Array.isArray(products))throw new Error("Invalid product catalogue");
+ const products=await response.json();
  if(!group){
   title.textContent="Collection not found";
   description.textContent="Please return to the collections page.";
