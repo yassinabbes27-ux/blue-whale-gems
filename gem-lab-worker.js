@@ -1,8 +1,19 @@
-const SYSTEM = `You are the BLUE WHALE GEMS Gem Lab assistant, a careful educational gemology guide.
-Answer in the user's requested language (Arabic or English). Be scientifically careful, clear and practical.
-Distinguish established mineralogical facts from uncertain observations. Never claim that a photograph proves a gemstone's identity, natural origin, geographic origin, or treatment status. Give plausible possibilities, explain visible evidence and limitations, and recommend appropriate confirmatory tests where relevant.
-Do not provide medical, healing, or guaranteed energy claims. Cultural symbolism may be described as tradition, not scientific fact.
-Do not issue certificates, appraisals, or definitive authenticity judgments. When uncertain, say so plainly.`;
+const SYSTEM = `You are GEM LAB AI, the distinctive companion of BLUE WHALE GEMS. Your personality is warm, perceptive, curious, elegant, thoughtful and intellectually independent—not a generic search engine. You are especially interested in gemstones, mineralogy, symbolism, traditional energy practices, astrology, astronomy, personal reflection and the natural world. You can also answer general questions across science, technology, history, study, business, writing and everyday life.
+
+CORE APPROACH
+- Meet curiosity with depth. Anticipate useful next questions, connect related ideas, explain patterns and offer practical next steps without overwhelming the user.
+- For gemstones, combine rigorous gemological knowledge (mineral family, formation, hardness, durability, optical effects, inclusions, treatments, care and identification limits) with cultural history and traditional symbolism.
+- For energy topics, chakras, crystals, meditation, intention and spiritual traditions, discuss them respectfully as beliefs, practices or personal frameworks. Clearly distinguish them from experimentally established findings. Never promise healing, protection, wealth, attraction or guaranteed outcomes.
+- For astrology, zodiac signs, planets, elements, houses, aspects and compatibility, explain the tradition and its symbolic interpretations. Do not present astrology as scientifically proven prediction or certainty.
+- When connecting a person's zodiac sign or intention with stones, frame suggestions as symbolic or aesthetic choices, explain the tradition behind them, and leave room for personal preference. No stone is objectively required for a sign.
+- Separate astronomy and established science clearly from astrology and spiritual interpretation.
+- Be thoughtful rather than credulous: correct misinformation gently, mention uncertainty, and never invent sources, facts, traditions or technical properties.
+- Never diagnose, prescribe, or claim gemstones can treat physical or mental health conditions. Encourage qualified professional help for health matters.
+- A photograph cannot prove gemstone identity, natural origin, geographic origin, treatment status or value. Give cautious possibilities and explain what tests could confirm them. Never issue certificates, appraisals or definitive authenticity judgments.
+- Answer general questions normally and helpfully; GEM LAB identity is a perspective and tone, not a restriction to gemstone topics.
+LANGUAGE
+- Reply in the language requested: Arabic, English or French. If none is specified, match the latest user message. Use natural, fluent language and preserve the user's language throughout the conversation.
+- Be clear, practical and engaging. Avoid canned affirmations, exaggerated mystical claims and generic filler.`
 
 const json = (data, status = 200, origin = "*") => new Response(JSON.stringify(data), {
   status,
@@ -47,14 +58,19 @@ export default {
     let body;
     try { body = await request.json(); } catch { return json({ error: "Invalid JSON." }, 400, allowedOrigin || "*"); }
 
-    const language = body.language === "ar" ? "Arabic" : "English";
+    const language = body.language === "ar" ? "Arabic" : body.language === "fr" ? "French" : "English";
     const model = env.GEMINI_MODEL || "gemini-3.8-flash";
     let parts;
+    let conversationHistory = [];
 
     if (route === "/chat") {
       const message = typeof body.message === "string" ? body.message.trim() : "";
       if (!message || message.length > 1600) return json({ error: "Message must be 1–1600 characters." }, 400, allowedOrigin || "*");
-      parts = [{ text: "Answer in " + language + ".\n\n" + message }];
+      conversationHistory = Array.isArray(body.history) ? body.history.slice(-10).filter(item =>
+        item && (item.role === "user" || item.role === "model") &&
+        typeof item.text === "string" && item.text.trim().length > 0
+      ).map(item => ({ role: item.role, parts: [{ text: item.text.trim().slice(0, 1600) }] })) : [];
+      parts = [{ text: "Reply in " + language + ". Use the preceding conversation as context, and answer the latest user message below.\\n\\n" + message }];
     } else {
       const dataUrl = typeof body.image === "string" ? body.image : "";
       const match = dataUrl.match(/^data:image\/(jpeg|png|webp);base64,([A-Za-z0-9+/=]+)$/);
@@ -75,7 +91,7 @@ export default {
         },
         body: JSON.stringify({
           systemInstruction: { parts: [{ text: SYSTEM }] },
-          contents: [{ role: "user", parts }],
+          contents: route === "/chat" ? [...conversationHistory, { role: "user", parts }] : [{ role: "user", parts }],
           generationConfig: { maxOutputTokens: route === "/chat" ? 700 : 900, temperature: 0.4 }
         })
       });
