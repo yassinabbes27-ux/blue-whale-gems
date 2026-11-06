@@ -111,6 +111,38 @@ footer strong{color:#e5d3ff}
 @media(prefers-reduced-motion:reduce){.scene-stars,.scene-nebula,.scene-orbit,.scene-planet,.scene-core,.scene-copy{animation:none!important}}
 .cinema-scene{overflow-x:hidden;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(207,174,244,.35) transparent}.scene-copy{padding-bottom:38px}.scene-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px auto 20px;max-width:520px}.scene-meta>div{padding:12px 10px;border:1px solid rgba(220,190,255,.2);border-radius:12px;background:rgba(255,255,255,.055)}.scene-meta small{display:block;color:#b9a6d2;font-size:10px;margin-bottom:6px}.scene-meta strong{display:block;color:#f4e9ff;font-size:13px;font-weight:600}.related-section{margin:18px auto 0;max-width:620px}.related-products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:12px;text-align:right}.related-product{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;align-items:center;min-width:0;padding:9px;border:1px solid rgba(220,190,255,.2);border-radius:12px;background:rgba(255,255,255,.065);transition:background .2s,border-color .2s,transform .2s}.related-product:hover{background:rgba(255,255,255,.12);border-color:hsla(var(--hue),70%,80%,.55);transform:translateY(-2px)}.related-product img{width:76px;height:76px;object-fit:contain;border-radius:8px;background:rgba(255,255,255,.96)}.related-product strong{display:block;color:#f5eaff;font-size:11px;line-height:1.6;font-weight:600}.related-product small{display:block;color:#d4bce9;font-size:11px;margin-top:5px}.related-loading,.related-empty{grid-column:1/-1;color:#c6b5da;font-size:11px;text-align:center;padding:13px}.related-more{grid-column:1/-1;text-align:center;color:#d8c2f0;font-size:10px;padding:7px}.scene-copy .note{margin-top:22px!important}
 @media(max-width:560px){.scene-meta{gap:7px}.scene-meta>div{padding:10px 7px}.related-products{grid-template-columns:1fr}.related-product{grid-template-columns:70px minmax(0,1fr)}.related-product img{width:70px;height:70px}.scene-copy{padding-bottom:28px}}
+
+/* SCROLL PERFORMANCE FIX: keep the cinematic view, remove costly motion while reading */
+.modal{backdrop-filter:none;-webkit-backdrop-filter:none}
+.cinema-scene{
+  height:100%;
+  min-height:100svh;
+  overflow-x:hidden;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-y:contain;
+  touch-action:pan-y;
+  scroll-behavior:auto;
+  scrollbar-gutter:stable;
+}
+.scene-stars,.scene-nebula,.scene-orbit,.scene-planet,.scene-core,.scene-copy{
+  animation:none!important;
+}
+.scene-nebula{filter:none;opacity:.7}
+.scene-planet{filter:none;box-shadow:inset -14px -12px 24px rgba(0,0,0,.58),0 0 28px hsla(var(--hue),80%,70%,.28)}
+.scene-core{filter:none}
+.modal-glyph{filter:drop-shadow(0 0 8px hsla(var(--hue),100%,82%,.65))}
+@media(max-width:700px){
+  .cinema-scene{height:100dvh;min-height:100dvh;padding-top:54px}
+  .scene-nebula{width:82vw;height:82vw}
+  .scene-copy{margin-top:clamp(270px,43vh,340px);padding-bottom:34px}
+  .scene-copy p{line-height:1.85}
+  .related-product,.related-product:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .modal.open,.cinema-scene *{animation:none!important;transition:none!important}
+}
+
 </style>
 </head>
 <body>
