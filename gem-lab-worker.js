@@ -63,7 +63,7 @@ export default {
       const mimeType = "image/" + match[1];
       const imageData = match[2];
       const prompt = "In " + language + ", examine this gemstone/mineral photograph for visible observations only. Describe apparent colour, transparency, visible inclusions, cut or shape, and lighting limitations. Give up to three possible material families only if justified, with low/medium confidence and reasons. State explicitly that a photograph cannot establish identity, natural origin, geographic origin, treatment status, or value. Suggest non-destructive next steps and appropriate professional tests. Do not issue a certificate or definitive identification.";
-      parts = [{ text: prompt }, { inline_data: { mime_type: mimeType, data: imageData } }];
+      parts = [{ text: prompt }, { inlineData: { mimeType: mimeType, data: imageData } }];
     }
 
     try {
@@ -74,7 +74,7 @@ export default {
           "content-type": "application/json"
         },
         body: JSON.stringify({
-          system_instruction: { parts: [{ text: SYSTEM }] },
+          systemInstruction: { parts: [{ text: SYSTEM }] },
           contents: [{ role: "user", parts }],
           generationConfig: { maxOutputTokens: route === "/chat" ? 700 : 900, temperature: 0.4 }
         })
