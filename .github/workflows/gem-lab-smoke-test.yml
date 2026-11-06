@@ -1,0 +1,68 @@
+name: GEM LAB Worker smoke test
+
+on:
+  push:
+    branches:
+      - gem-lab-prototype-2026-11-06
+    paths:
+      - "gem-lab-worker.js"
+      - ".github/workflows/gem-lab-smoke-test.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  live-api-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Allow Worker deployment to propagate
+        run: sleep 60
+
+      - name: Check live Gemini connection in English
+        env:
+          WORKER_URL: https://yellow-heart-cbd0blue-whale-gem-lab.yassinabbes27.workers.dev
+          SITE_ORIGIN: https://yassinabbes27-ux.github.io
+        run: |
+          set -euo pipefail
+          response=$(curl --silent --show-error --fail-with-body \
+            -X POST "$WORKER_URL/chat" \
+            -H "Origin: $SITE_ORIGIN" \
+            -H "Content-Type: application/json" \
+            --data '{"message":"Reply with the exact text GEM_LAB_HEALTHY and nothing else.","language":"en"}')
+          echo "$response" | jq -e '.answer | type == "string" and length > 0'
+          echo "English Gemini response received."
+
+      - name: Check Arabic and French language handling
+        env:
+          WORKER_URL: https://yellow-heart-cbd0blue-whale-gem-lab.yassinabbes27.workers.dev
+          SITE_ORIGIN: https://yassinabbes27-ux.github.io
+        run: |
+          set -euo pipefail
+          ar=$(curl --silent --show-error --fail-with-body \
+            -X POST "$WORKER_URL/chat" \
+            -H "Origin: $SITE_ORIGIN" \
+            -H "Content-Type: application/json" \
+            --data '{"message":"اشرح باختصار رمزية حجر الجمشت في بعض التقاليد، مع التمييز بين الرمز والعلم.","language":"ar"}')
+          echo "$ar" | jq -e '.answer | type == "string" and length > 0'
+          fr=$(curl --silent --show-error --fail-with-body \
+            -X POST "$WORKER_URL/chat" \
+            -H "Origin: $SITE_ORIGIN" \
+            -H "Content-Type: application/json" \
+            --data '{"message":"Explique brièvement la symbolique traditionnelle de l’améthyste.","language":"fr"}')
+          echo "$fr" | jq -e '.answer | type == "string" and length > 0'
+          echo "Arabic and French Gemini responses received."
+
+      - name: Check conversation context
+        env:
+          WORKER_URL: https://yellow-heart-cbd0blue-whale-gem-lab.yassinabbes27.workers.dev
+          SITE_ORIGIN: https://yassinabbes27-ux.github.io
+        run: |
+          set -euo pipefail
+          response=$(curl --silent --show-error --fail-with-body \
+            -X POST "$WORKER_URL/chat" \
+            -H "Origin: $SITE_ORIGIN" \
+            -H "Content-Type: application/json" \
+            --data '{"language":"en","history":[{"role":"user","text":"My chosen stone is aquamarine."},{"role":"model","text":"I understand that aquamarine is your chosen stone."}],"message":"Which stone did I say I chose? Reply with its name."}')
+          echo "$response" | jq -e '.answer | type == "string" and test("aquamarine"; "i")'
+          echo "Conversation context is working."
