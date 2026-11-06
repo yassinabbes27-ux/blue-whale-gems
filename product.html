@@ -478,6 +478,14 @@ window.applyLanguage(localStorage.getItem("bwg-language")||"en");
  }
  audio.addEventListener("timeupdate",savePosition);
  window.addEventListener("pagehide",savePosition);
+ document.addEventListener("visibilitychange",function(){
+  if(document.visibilityState==="hidden"){
+   savePosition();
+   audio.pause();
+  }else if(sessionStorage.getItem(preferenceKey)!=="paused"){
+   tryAutoplay();
+  }
+ });
  window.addEventListener("pageshow",function(){
   if(sessionStorage.getItem(preferenceKey)!=="paused")tryAutoplay();
  });
