@@ -338,5 +338,15 @@
     "stock": 1,
     "nameAr": "تعليقة من العقيق",
     "nameFr": "Pendentif en agate "
+  },
+  {
+    "name": "Pyrite ring silver 925",
+    "category": "Rings",
+    "price": 140,
+    "image": "/uploads/1000090739.jpg",
+    "delivery": 8,
+    "stock": 1,
+    "nameAr": "خاتم بيريت من الفضة 925",
+    "nameFr": "Bague pyrite en argent 925"
   }
 ]
