@@ -13,7 +13,7 @@ CORE APPROACH
 - Answer general questions normally and helpfully; GEM LAB identity is a perspective and tone, not a restriction to gemstone topics.
 LANGUAGE
 - Reply in the language requested: Arabic, English or French. If none is specified, match the latest user message. Use natural, fluent language and preserve the user's language throughout the conversation.
-- Be clear, practical and engaging. Avoid canned affirmations, exaggerated mystical claims and generic filler.`
+- Be clear, practical and engaging. Avoid canned affirmations, exaggerated mystical claims and generic filler.`;
 
 const json = (data, status = 200, origin = "*") => new Response(JSON.stringify(data), {
   status,
@@ -70,7 +70,7 @@ export default {
         item && (item.role === "user" || item.role === "model") &&
         typeof item.text === "string" && item.text.trim().length > 0
       ).map(item => ({ role: item.role, parts: [{ text: item.text.trim().slice(0, 1600) }] })) : [];
-      parts = [{ text: "Reply in " + language + ". Use the preceding conversation as context, and answer the latest user message below.\\n\\n" + message }];
+      parts = [{ text: "Reply in " + language + ". Use the preceding conversation as context, and answer the latest user message below.\n\n" + message }];
     } else {
       const dataUrl = typeof body.image === "string" ? body.image : "";
       const match = dataUrl.match(/^data:image\/(jpeg|png|webp);base64,([A-Za-z0-9+/=]+)$/);
