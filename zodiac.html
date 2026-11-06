@@ -163,5 +163,73 @@ function openSign(s){dialog.style.setProperty("--hue",s.hue);document.getElement
 function close(){modal.classList.remove("open");document.body.style.overflow=""}
 document.getElementById("closeModal").addEventListener("click",close);modal.addEventListener("click",e=>{if(e.target===modal)close()});document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
 </script>
+<!-- BLUE WHALE GEMS background ambience -->
+<div id="bwgMusicControls" style="position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:6px;padding:7px;background:rgba(255,255,255,.96);border:1px solid #dce9ed;border-radius:50%;box-shadow:0 5px 20px rgba(30,65,78,.12);backdrop-filter:blur(10px)">
+ <button id="bwgMusicPlay" type="button" aria-label="Play background music" title="Play or pause background music" style="width:36px;height:36px;border:1px solid #dce9ed;border-radius:50%;background:#fff;color:#245344;font-size:15px;display:grid;place-items:center">▶</button>
+</div>
+<audio id="bwgBackgroundMusic" preload="auto" loop playsinline autoplay>
+ <source src="https://raw.githubusercontent.com/yassinabbes27-ux/blue-whale-gems/main/juliush-waves-from-piano-and-sea-ambient-chill-out-piano-music-and-waves-3551.mp3" type="audio/mpeg">
+</audio>
+<script id="bwg-background-music">
+(function(){
+ const audio=document.getElementById("bwgBackgroundMusic");
+ const playButton=document.getElementById("bwgMusicPlay");
+ if(!audio||!playButton)return;
+ const preferenceKey="bwg-music-preference";
+ const savedTime=Number(sessionStorage.getItem("bwg-music-time")||0);
+ audio.volume=0.33;
+ audio.muted=false;
+ function updateControl(){
+  playButton.textContent=audio.paused?"▶":"Ⅱ";
+  playButton.setAttribute("aria-label",audio.paused?"Play background music":"Pause background music");
+ }
+ function tryAutoplay(){
+  if(sessionStorage.getItem(preferenceKey)==="paused")return;
+  const attempt=audio.play();
+  if(attempt&&typeof attempt.catch==="function")attempt.catch(function(){});
+ }
+ audio.addEventListener("loadedmetadata",function(){
+  if(Number.isFinite(savedTime)&&savedTime>0&&savedTime<audio.duration)audio.currentTime=savedTime;
+  tryAutoplay();
+ },{once:true});
+ audio.addEventListener("canplay",tryAutoplay,{once:true});
+ function savePosition(){
+  if(Number.isFinite(audio.currentTime))sessionStorage.setItem("bwg-music-time",String(audio.currentTime));
+ }
+ audio.addEventListener("timeupdate",savePosition);
+ window.addEventListener("pagehide",savePosition);
+ document.addEventListener("visibilitychange",function(){
+  if(document.visibilityState==="hidden"){
+   savePosition();
+   audio.pause();
+  }else if(sessionStorage.getItem(preferenceKey)!=="paused"){
+   tryAutoplay();
+  }
+ });
+ window.addEventListener("pageshow",function(){
+  if(sessionStorage.getItem(preferenceKey)!=="paused")tryAutoplay();
+ });
+ audio.addEventListener("play",updateControl);
+ audio.addEventListener("pause",updateControl);
+ playButton.addEventListener("click",function(){
+  if(audio.paused){
+   sessionStorage.setItem(preferenceKey,"playing");
+   tryAutoplay();
+  }else{
+   sessionStorage.setItem(preferenceKey,"paused");
+   audio.pause();
+  }
+ });
+ document.addEventListener("pointerdown",function(event){
+  if(event.target.closest("#bwgMusicControls"))return;
+  if(sessionStorage.getItem(preferenceKey)!=="paused"&&audio.paused)tryAutoplay();
+ },{once:true,passive:true});
+ document.addEventListener("keydown",function(){
+  if(sessionStorage.getItem(preferenceKey)!=="paused"&&audio.paused)tryAutoplay();
+ },{once:true});
+ updateControl();
+ tryAutoplay();
+})();
+</script>
 </body>
 </html>
