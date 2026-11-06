@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11132f">
+<meta name="description" content="اكتشف الأبراج الاثني عشر والأحجار المرتبطة بها في BLUE WHALE GEMS.">
+<title>ZODIAC | BLUE WHALE GEMS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--night:#11132f;--ink:#fff8ff;--muted:#c7c1dc;--glass:rgba(255,255,255,.09);--line:rgba(255,255,255,.17);--aqua:#7be8ee;--pink:#ff8bc8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:"Tajawal",sans-serif;background:radial-gradient(ellipse at 15% 8%,rgba(102,77,210,.42),transparent 32%),radial-gradient(ellipse at 88% 25%,rgba(13,173,190,.25),transparent 30%),radial-gradient(ellipse at 50% 100%,rgba(199,61,157,.22),transparent 38%),#11132f;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.sky{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;box-shadow:0 0 10px 2px rgba(255,255,255,.75);animation:twinkle 3s ease-in-out infinite alternate}
+.star:nth-child(3n){animation-delay:1.2s}.star:nth-child(4n){animation-delay:2s}
+.nebula{position:absolute;width:420px;height:420px;border-radius:50%;filter:blur(65px);opacity:.2;animation:drift 22s ease-in-out infinite alternate}
+.nebula.one{background:#a14bff;top:8%;left:-170px}.nebula.two{background:#16c9d4;right:-190px;top:38%;animation-delay:-8s}.nebula.three{background:#ff55b5;bottom:-250px;left:34%;animation-delay:-12s}
+header{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:20px clamp(18px,5vw,70px);border-bottom:1px solid rgba(255,255,255,.12);background:rgba(14,15,39,.48);backdrop-filter:blur(16px)}
+.brand{font-family:"Cormorant Garamond",serif;font-size:18px;letter-spacing:2.4px;direction:ltr;text-align:left}.brand small{display:block;color:#a8dfe9;font-family:Arial,sans-serif;font-size:8px;letter-spacing:4px;margin-top:3px}
+.back{border:1px solid rgba(255,255,255,.28);padding:9px 15px;border-radius:30px;color:#e9e4ff;font-size:12px;transition:.25s}.back:hover{background:#fff;color:#262047;transform:translateY(-2px)}
+.hero{position:relative;text-align:center;padding:75px 20px 38px;min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.eyebrow{color:#9feaf0;font-size:11px;letter-spacing:4px;font-weight:700}
+h1{font-family:"Cormorant Garamond",serif;font-size:clamp(48px,9vw,92px);font-weight:400;line-height:.95;letter-spacing:3px;margin:18px 0 14px;background:linear-gradient(100deg,#fff 10%,#b4f5f1 42%,#ffc4e7 75%,#fff 95%);background-size:200% auto;color:transparent;background-clip:text;animation:shimmer 7s linear infinite}
+.hero p{max-width:650px;color:#d6d1e8;font-size:15px;line-height:2;margin:0 auto}
+.orbit{position:absolute;width:240px;height:240px;border:1px solid rgba(189,220,255,.13);border-radius:50%;top:45px;left:calc(50% - 120px);animation:spin 42s linear infinite;pointer-events:none}
+.orbit:before,.orbit:after{content:"✦";position:absolute;color:#9deef0;text-shadow:0 0 18px #7be8ee;font-size:18px}.orbit:before{top:18px;left:32px}.orbit:after{bottom:35px;right:18px;color:#ff9bd0}
+.orbit-inner{position:absolute;width:185px;height:185px;border:1px dashed rgba(255,255,255,.12);border-radius:50%;top:72px;left:calc(50% - 92px);animation:spin 32s linear infinite reverse}
+.zodiac-grid{width:min(1120px,calc(100% - 34px));margin:15px auto 90px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.sign{--hue:190;position:relative;isolation:isolate;min-height:225px;padding:22px 18px 18px;border:1px solid hsla(var(--hue),90%,80%,.28);border-radius:22px;overflow:hidden;text-align:center;background:linear-gradient(145deg,hsla(var(--hue),80%,55%,.19),rgba(255,255,255,.055) 55%,rgba(255,255,255,.025));box-shadow:0 12px 40px rgba(0,0,0,.13);backdrop-filter:blur(10px);transition:transform .35s,border-color .35s,box-shadow .35s;cursor:pointer;animation:rise .8s both;animation-delay:calc(var(--i)*65ms)}
+.sign:before{content:"";position:absolute;z-index:-1;width:160px;height:160px;border-radius:50%;background:hsla(var(--hue),100%,70%,.22);filter:blur(35px);top:-105px;right:calc(50% - 80px);transition:transform .5s}
+.sign:hover,.sign:focus-visible{transform:translateY(-9px) scale(1.02);border-color:hsla(var(--hue),100%,85%,.8);box-shadow:0 18px 48px hsla(var(--hue),90%,55%,.18);outline:none}
+.sign:hover:before{transform:translateY(90px) scale(1.5)}
+.glyph{display:grid;place-items:center;width:76px;height:76px;margin:0 auto 13px;border-radius:50%;font-family:serif;font-size:48px;color:hsl(var(--hue),100%,88%);background:radial-gradient(circle,hsla(var(--hue),100%,70%,.24),rgba(255,255,255,.035) 70%);border:1px solid hsla(var(--hue),90%,80%,.32);text-shadow:0 0 22px hsla(var(--hue),100%,70%,.8);animation:float 5s ease-in-out infinite}
+.sign:nth-child(even) .glyph{animation-delay:-2.5s}
+.sign h2{margin:0;font-size:20px;font-weight:700}.latin{font-family:"Cormorant Garamond",serif;direction:ltr;font-size:15px;letter-spacing:1px;color:#d7d2ed;margin-top:2px}
+.date{font-size:11px;color:#bdb8d5;margin-top:9px}.element{display:inline-block;margin-top:13px;padding:5px 12px;border:1px solid hsla(var(--hue),90%,80%,.28);border-radius:20px;color:hsl(var(--hue),100%,88%);font-size:10px}
+.hint{text-align:center;color:#bcb7d5;font-size:12px;margin:-55px auto 75px}
+footer{text-align:center;padding:25px 15px 35px;border-top:1px solid rgba(255,255,255,.12);color:#a7a1c1;font-size:11px}
+footer strong{display:block;font-family:"Cormorant Garamond",serif;direction:ltr;letter-spacing:2px;color:#e9faff;font-size:15px;margin-bottom:5px}
+.modal{position:fixed;inset:0;z-index:20;display:none;place-items:center;padding:18px;background:rgba(7,8,25,.78);backdrop-filter:blur(12px)}
+.modal.open{display:grid;animation:fade .25s ease}
+.dialog{--hue:190;position:relative;width:min(520px,100%);padding:34px 28px 28px;text-align:center;border-radius:26px;border:1px solid hsla(var(--hue),90%,80%,.42);background:radial-gradient(ellipse at 50% 0,hsla(var(--hue),90%,60%,.23),transparent 65%),#1b1b42;box-shadow:0 24px 90px rgba(0,0,0,.45);animation:pop .35s cubic-bezier(.2,.8,.2,1)}
+.close{position:absolute;left:17px;top:13px;width:34px;height:34px;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:transparent;color:#fff;font-size:20px;cursor:pointer}
+.modal-glyph{font-size:62px;color:hsl(var(--hue),100%,85%);text-shadow:0 0 28px hsla(var(--hue),100%,70%,.65)}
+.dialog h2{font-size:28px;margin:5px 0 0}.dialog .latin{font-size:19px}.dialog .range{color:#c6c0dd;font-size:12px;margin:8px 0 20px}
+.dialog p{font-size:14px;line-height:2;color:#e0dced;margin:0 0 18px}
+.gem-label{color:#a9edf0;font-size:11px;letter-spacing:1px}.gems{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:10px}
+.gems span{padding:8px 13px;border-radius:20px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);font-size:12px}
+.note{font-size:10px!important;color:#aaa4c5!important;margin-top:18px!important}
+@keyframes twinkle{from{opacity:.2;transform:scale(.6)}to{opacity:1;transform:scale(1.35)}}
+@keyframes drift{from{transform:translate3d(-20px,-10px,0) scale(.9)}to{transform:translate3d(55px,45px,0) scale(1.18)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shimmer{to{background-position:200% center}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(15px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:850px){.zodiac-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.sign{min-height:210px}}
+@media(max-width:560px){header{padding:15px 16px}.brand{font-size:15px}.hero{padding:65px 19px 30px;min-height:330px}.hero p{font-size:13px}.orbit{top:30px;width:190px;height:190px;left:calc(50% - 95px)}.orbit-inner{top:52px;width:150px;height:150px;left:calc(50% - 75px)}.zodiac-grid{width:calc(100% - 24px);grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-bottom:75px}.sign{min-height:190px;padding:17px 10px 14px;border-radius:17px}.glyph{width:66px;height:66px;font-size:42px}.sign h2{font-size:18px}.date{font-size:10px}.element{margin-top:10px}.dialog{padding:30px 19px 22px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true">
+<div class="nebula one"></div><div class="nebula two"></div><div class="nebula three"></div>
+<div class="star" style="top:8%;left:12%"></div><div class="star" style="top:17%;left:76%"></div><div class="star" style="top:29%;left:35%"></div><div class="star" style="top:41%;left:91%"></div><div class="star" style="top:54%;left:8%"></div><div class="star" style="top:67%;left:62%"></div><div class="star" style="top:78%;left:24%"></div><div class="star" style="top:88%;left:84%"></div><div class="star" style="top:13%;left:49%"></div><div class="star" style="top:36%;left:65%"></div><div class="star" style="top:73%;left:95%"></div><div class="star" style="top:92%;left:43%"></div><div class="star" style="top:48%;left:48%"></div><div class="star" style="top:4%;left:91%"></div><div class="star" style="top:60%;left:79%"></div>
+</div>
+<header><a class="brand" href="index.html">BLUE WHALE GEMS<small>THE WORLD OF NATURAL GEMS</small></a><a class="back" href="index.html">العودة إلى المتجر ←</a></header>
+<main>
+<section class="hero">
+<div class="orbit"></div><div class="orbit-inner"></div>
+<div class="eyebrow">✦ THE CELESTIAL COLLECTION ✦</div>
+<h1>ZODIAC</h1>
+<p>اثنا عشر برجاً، اثنا عشر عالماً من الرموز والحكايات. اكتشف برجك، وتعرّف على الأحجار التي ارتبطت به عبر تقاليد وثقافات مختلفة.</p>
+</section>
+<section class="zodiac-grid" id="zodiacGrid" aria-label="الأبراج الاثنا عشر"></section>
+<p class="hint">اضغط على برجك لاكتشاف رمزه وأحجاره المرتبطة به ✧</p>
+</main>
+<footer><strong>BLUE WHALE GEMS</strong>الأحجار تحمل جمالاً ورموزاً تتناقلها الثقافات — اختر ما يلامس ذوقك.</footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="dialog" id="dialog"><button class="close" id="closeModal" aria-label="إغلاق">×</button><div class="modal-glyph" id="modalGlyph"></div><h2 id="modalTitle"></h2><div class="latin" id="modalLatin"></div><div class="range" id="modalRange"></div><p id="modalDescription"></p><div class="gem-label">أحجار ترتبط بهذا البرج في بعض التقاليد</div><div class="gems" id="modalGems"></div><p class="note">هذه الروابط رمزية وتراثية وتختلف باختلاف المصادر؛ لا تمثل حقائق علمية أو وعوداً بتأثيرات محددة.</p></div>
+</div>
+<script>
+const signs=[
+{ar:"الحمل",en:"ARIES",glyph:"♈",date:"21 مارس – 19 أبريل",element:"النار",hue:8,gem:["العقيق الأحمر","الهيماتيت"],desc:"يرتبط الحمل في التقاليد الفلكية بالبدايات والاندفاع والشجاعة. وتُذكر معه أحجار حمراء وأحجار ذات حضور قوي."},
+{ar:"الثور",en:"TAURUS",glyph:"♉",date:"20 أبريل – 20 مايو",element:"الأرض",hue:128,gem:["الزمرد","الكوارتز الوردي"],desc:"يُصوَّر الثور رمزاً للثبات وحب الجمال والانسجام مع الطبيعة. وترتبط به في بعض القوائم أحجار خضراء ووردية."},
+{ar:"الجوزاء",en:"GEMINI",glyph:"♊",date:"21 مايو – 20 يونيو",element:"الهواء",hue:52,gem:["العقيق","السيترين"],desc:"يرمز الجوزاء إلى الفضول والتواصل وتعدد الاهتمامات. وتظهر معه أحجار متنوعة الألوان في تقاليد الأحجار المرتبطة بالأبراج."},
+{ar:"السرطان",en:"CANCER",glyph:"♋",date:"21 يونيو – 22 يوليو",element:"الماء",hue:195,gem:["حجر القمر","اللؤلؤ"],desc:"يرتبط السرطان في الرموز الفلكية بالبيت والذاكرة والحدس. وتنسجم معه رمزياً الأحجار ذات اللمعان اللؤلؤي والدرجات الهادئة."},
+{ar:"الأسد",en:"LEO",glyph:"♌",date:"23 يوليو – 22 أغسطس",element:"النار",hue:42,gem:["عين النمر","حجر الشمس"],desc:"يحمل الأسد رمزية الإشراق والحضور والإبداع. لذلك تُربط به أحياناً الأحجار الذهبية والدافئة مثل عين النمر وحجر الشمس."},
+{ar:"العذراء",en:"VIRGO",glyph:"♍",date:"23 أغسطس – 22 سبتمبر",element:"الأرض",hue:155,gem:["اليشب","الياقوت الأزرق"],desc:"ترتبط العذراء في التقاليد بالتأمل والدقة والنظام. وتُذكر معها أحجار طبيعية بألوان ترابية أو زرقاء هادئة."},
+{ar:"الميزان",en:"LIBRA",glyph:"♎",date:"23 سبتمبر – 22 أكتوبر",element:"الهواء",hue:315,gem:["اللازورد","الكوارتز الوردي"],desc:"يرمز الميزان إلى التوازن والذوق والجمال والعلاقات. وتظهر معه أحجار وردية وزرقاء في بعض قوائم الأبراج."},
+{ar:"العقرب",en:"SCORPIO",glyph:"♏",date:"23 أكتوبر – 21 نوفمبر",element:"الماء",hue:270,gem:["المالاكيت","العقيق الأحمر"],desc:"يحمل العقرب رمزية العمق والتحول والغموض. وترتبط به في بعض التقاليد أحجار ذات ألوان غنية وحضور بصري قوي."},
+{ar:"القوس",en:"SAGITTARIUS",glyph:"♐",date:"22 نوفمبر – 21 ديسمبر",element:"النار",hue:225,gem:["الفيروز","الأميثيست"],desc:"يرمز القوس إلى الاستكشاف والانفتاح وحب المعرفة. وتُذكر معه أحجار الفيروز والبنفسج في قوائم تقليدية متعددة."},
+{ar:"الجدي",en:"CAPRICORN",glyph:"♑",date:"22 ديسمبر – 19 يناير",element:"الأرض",hue:205,gem:["العقيق الأسود","الكوارتز الدخاني"],desc:"يرتبط الجدي رمزياً بالطموح والصبر والبناء المتدرج. وتناسب صورته التقليدية الأحجار الداكنة والترابية."},
+{ar:"الدلو",en:"AQUARIUS",glyph:"♒",date:"20 يناير – 18 فبراير",element:"الهواء",hue:185,gem:["الأماثيست","الأكوامارين"],desc:"يرمز الدلو إلى الاستقلال والأفكار الجديدة والخيال. وتظهر معه أحجار بنفسجية وزرقاء في بعض تقاليد الأبراج."},
+{ar:"الحوت",en:"PISCES",glyph:"♓",date:"19 فبراير – 20 مارس",element:"الماء",hue:245,gem:["الأكوامارين","الجمشت"],desc:"يرتبط الحوت في الرموز الفلكية بالخيال والحساسية والعالم الداخلي. وتنسجم معه رمزياً الأحجار البحرية والبنفسجية."}
+];
+const grid=document.getElementById("zodiacGrid");
+signs.forEach((s,i)=>{
+ const card=document.createElement("button");card.type="button";card.className="sign";card.style.setProperty("--hue",s.hue);card.style.setProperty("--i",i);card.setAttribute("aria-label","اكتشف برج "+s.ar);
+ card.innerHTML='<span class="glyph" aria-hidden="true">'+s.glyph+'</span><h2>'+s.ar+'</h2><div class="latin">'+s.en+'</div><div class="date">'+s.date+'</div><span class="element">'+s.element+'</span>';
+ card.addEventListener("click",()=>openSign(s));grid.appendChild(card);
+});
+const modal=document.getElementById("modal"),dialog=document.getElementById("dialog");
+function openSign(s){dialog.style.setProperty("--hue",s.hue);document.getElementById("modalGlyph").textContent=s.glyph;document.getElementById("modalTitle").textContent=s.ar;document.getElementById("modalLatin").textContent=s.en;document.getElementById("modalRange").textContent=s.date+" · عنصر "+s.element;document.getElementById("modalDescription").textContent=s.desc;const gems=document.getElementById("modalGems");gems.replaceChildren();s.gem.forEach(g=>{const el=document.createElement("span");el.textContent=g;gems.appendChild(el)});modal.classList.add("open");document.getElementById("closeModal").focus()}
+function close(){modal.classList.remove("open")}
+document.getElementById("closeModal").addEventListener("click",close);modal.addEventListener("click",e=>{if(e.target===modal)close()});document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+</script>
+</body>
+</html>
