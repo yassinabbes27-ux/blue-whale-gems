@@ -25,8 +25,8 @@ const chatLog=$("#chatLog"),chatInput=$("#chatInput");
 function addBubble(text,kind){const b=document.createElement("div");b.className="bubble"+(kind==="user"?" user":"");b.textContent=text;chatLog.append(b);chatLog.scrollTop=chatLog.scrollHeight}
 const conversation=[];
 function detectLanguage(message){
-if(/[\\u0600-\\u06FF]/.test(message))return "ar";
-if(/[àâçéèêëîïôûùüÿœ]/i.test(message)||/\\b(bonjour|pourquoi|comment|est-ce|avec|merci|quelle|quels|les|des|une|dans|énergie|pierre|signe|astrologie)\\b/i.test(message))return "fr";
+if(/[\u0600-\u06FF]/.test(message))return "ar";
+if(/[àâçéèêëîïôûùüÿœ]/i.test(message)||/\b(bonjour|pourquoi|comment|est-ce|avec|merci|quelle|quels|les|des|une|dans|énergie|pierre|signe|astrologie)\b/i.test(message))return "fr";
 return lang;
 }
 async function sendChat(){const q=chatInput.value.trim();if(!q)return;addBubble(q,"user");chatInput.value="";const sendBtn=$("#sendChat");sendBtn.disabled=true;sendBtn.textContent=lang==="ar"?"جارٍ…":"Thinking…";const waiting=lang==="ar"?"أفكر في إجابتك…":lang==="fr"?"Je réfléchis…":"Thinking through your question…";addBubble(waiting,"assistant");const bubble=chatLog.lastElementChild;try{if(!API_BASE)throw new Error("GEM LAB worker URL is not configured");const replyLanguage=detectLanguage(q);const res=await fetch(API_BASE+"/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q,language:replyLanguage,history:conversation.slice(-10)})});const data=await res.json();if(!res.ok)throw new Error(data.error||"AI endpoint unavailable");const answer=data.answer||(lang==="ar"?"لم تصل إجابة من المساعد. أعد المحاولة.":"No answer returned. Please try again.");bubble.textContent=answer;conversation.push({role:"user",text:q},{role:"model",text:answer});if(conversation.length>20)conversation.splice(0,conversation.length-20);}catch(e){bubble.textContent=(lang==="ar"?"لم أتمكن من الإجابة: ":lang==="fr"?"Je n’ai pas pu répondre : ":"I could not answer: ")+(e.message||"Unknown error")}finally{sendBtn.disabled=false;sendBtn.textContent=translations[lang].send;chatLog.scrollTop=chatLog.scrollHeight}}
