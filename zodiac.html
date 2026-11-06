@@ -34,7 +34,7 @@ h1{font-family:"Cormorant Garamond",serif;font-size:clamp(48px,9vw,92px);font-we
 .sign:before{content:"";position:absolute;z-index:-1;width:160px;height:160px;border-radius:50%;background:hsla(var(--hue),65%,78%,.32);filter:blur(35px);top:-105px;right:calc(50% - 80px);transition:transform .5s}
 .sign:hover,.sign:focus-visible{transform:translateY(-8px);border-color:hsla(var(--hue),48%,58%,.7);box-shadow:0 17px 38px hsla(var(--hue),45%,55%,.16);outline:none}
 .sign:hover:before{transform:translateY(90px) scale(1.5)}
-.glyph{position:relative;display:grid;place-items:center;width:86px;height:86px;margin:0 auto 13px;border-radius:50%;font-family:"Noto Sans Symbols 2","Segoe UI Symbol",serif;font-size:55px;font-weight:400;line-height:1;color:hsl(var(--hue),34%,43%);background:radial-gradient(circle,hsla(var(--hue),48%,92%,.34) 0%,rgba(255,255,255,.12) 58%,transparent 72%);border:0;box-shadow:none;text-shadow:0 2px 1px rgba(255,255,255,.82),0 0 16px hsla(var(--hue),48%,66%,.28);animation:float 5s ease-in-out infinite}
+.glyph{position:relative;display:grid;place-items:center;width:86px;height:86px;margin:0 auto 13px;border-radius:50%;color:hsl(var(--hue),34%,43%);background:radial-gradient(circle,hsla(var(--hue),48%,92%,.34) 0%,rgba(255,255,255,.12) 58%,transparent 72%);border:0;box-shadow:none;animation:float 5s ease-in-out infinite}.glyph svg{width:57px;height:57px;overflow:visible;filter:drop-shadow(0 2px 5px hsla(var(--hue),48%,66%,.3))}.glyph svg path,.glyph svg circle,.glyph svg line,.glyph svg ellipse{fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}.glyph svg .fine{stroke-width:1.5;opacity:.72}
 .glyph:after{content:"";position:absolute;inset:5px;border:1px solid hsla(var(--hue),40%,66%,.23);border-radius:50%;pointer-events:none}
 .sign:nth-child(even) .glyph{animation-delay:-2.5s}
 .sign h2{margin:0;font-size:20px;font-weight:700;color:#3c3454}.latin{font-family:"Cormorant Garamond",serif;direction:ltr;font-size:15px;letter-spacing:1.5px;color:#8c7ca7;margin-top:2px}
@@ -46,7 +46,7 @@ footer strong{display:block;font-family:"Cormorant Garamond",serif;direction:ltr
 .modal.open{display:grid;animation:fade .25s ease}
 .dialog{--hue:270;position:relative;width:min(520px,100%);padding:34px 28px 28px;text-align:center;border-radius:26px;border:1px solid hsla(var(--hue),38%,66%,.45);background:radial-gradient(ellipse at 50% 0,hsla(var(--hue),55%,91%,.9),transparent 65%),linear-gradient(145deg,#fff,#f5f1ff);box-shadow:0 24px 80px rgba(67,53,102,.2);animation:pop .35s cubic-bezier(.2,.8,.2,1)}
 .close{position:absolute;left:17px;top:13px;width:34px;height:34px;border:1px solid rgba(132,104,190,.24);border-radius:50%;background:rgba(255,255,255,.7);color:#655484;font-size:20px;cursor:pointer}
-.modal-glyph{font-family:"Noto Sans Symbols 2","DejaVu Sans",serif;font-size:62px;color:hsl(var(--hue),32%,48%);text-shadow:0 4px 16px hsla(var(--hue),45%,65%,.24)}
+.modal-glyph{display:grid;place-items:center;width:112px;height:112px;color:hsl(var(--hue),32%,48%);filter:drop-shadow(0 4px 16px hsla(var(--hue),45%,65%,.35))}.modal-glyph svg{width:100%;height:100%;overflow:visible}.modal-glyph svg path,.modal-glyph svg circle,.modal-glyph svg line,.modal-glyph svg ellipse{fill:none;stroke:currentColor;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round}.modal-glyph svg .fine{stroke-width:1.25;opacity:.72}
 .dialog h2{font-size:28px;margin:5px 0 0;color:#3d3458}.dialog .latin{font-size:19px}.dialog .range{color:#9388a7;font-size:12px;margin:8px 0 20px}
 .dialog p{font-size:14px;line-height:2;color:#665d7c;margin:0 0 18px}
 .gem-label{color:#8870ae;font-size:11px;letter-spacing:1px}.gems{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:10px}
@@ -92,7 +92,7 @@ footer strong{color:#e5d3ff}
 .scene-planet{position:absolute;top:clamp(145px,25vh,220px);left:50%;width:clamp(115px,22vw,180px);height:clamp(115px,22vw,180px);transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 32% 27%,#f4e8ff 0%,hsla(var(--hue),70%,76%,.95) 8%,hsla(var(--hue),65%,45%,.95) 34%,#20132f 72%,#090713 100%);box-shadow:inset -20px -18px 34px rgba(0,0,0,.7),0 0 45px hsla(var(--hue),80%,70%,.38),0 0 110px hsla(var(--hue),75%,55%,.2);animation:planetBreath 5s ease-in-out infinite}
 .scene-planet:after{content:"";position:absolute;inset:-13%;border:1px solid hsla(var(--hue),70%,82%,.36);border-radius:50%;transform:rotate(-22deg) scaleY(.32)}
 .scene-core{position:absolute;top:clamp(145px,25vh,220px);left:50%;width:clamp(108px,20vw,166px);height:clamp(108px,20vw,166px);transform:translate(-50%,-50%);display:grid;place-items:center;border-radius:50%;animation:signArrival 1.25s cubic-bezier(.16,.8,.2,1) both}
-.modal-glyph{font-family:"Noto Sans Symbols 2","DejaVu Sans",serif;font-size:clamp(65px,12vw,104px);color:#fff5ff;text-shadow:0 0 12px #fff,0 0 30px hsla(var(--hue),100%,82%,.95),0 0 70px hsla(var(--hue),90%,65%,.7)}
+.modal-glyph{width:clamp(82px,15vw,126px);height:clamp(82px,15vw,126px);color:#fff5ff;filter:drop-shadow(0 0 12px #fff) drop-shadow(0 0 30px hsla(var(--hue),100%,82%,.95)) drop-shadow(0 0 70px hsla(var(--hue),90%,65%,.7))}.modal-glyph svg{width:100%;height:100%}
 .scene-copy{position:relative;z-index:2;width:min(620px,100%);margin-top:clamp(285px,47vh,390px);text-align:center;animation:copyArrival 1s .25s both}
 .scene-kicker{font-size:9px;letter-spacing:3.5px;color:#c7a8ee}
 .scene-copy h2{font-size:clamp(32px,6vw,48px);font-weight:600;color:#fff0ff;margin:9px 0 0;text-shadow:0 0 24px hsla(var(--hue),80%,75%,.4)}
@@ -152,14 +152,29 @@ const signs=[
 {ar:"الدلو",en:"AQUARIUS",glyph:"♒",date:"20 يناير – 18 فبراير",element:"الهواء",hue:185,gem:["الأماثيست","الأكوامارين"],desc:"يرمز الدلو إلى الاستقلال والأفكار الجديدة والخيال. وتظهر معه أحجار بنفسجية وزرقاء في بعض تقاليد الأبراج."},
 {ar:"الحوت",en:"PISCES",glyph:"♓",date:"19 فبراير – 20 مارس",element:"الماء",hue:245,gem:["الأكوامارين","الجمشت"],desc:"يرتبط الحوت في الرموز الفلكية بالخيال والحساسية والعالم الداخلي. وتنسجم معه رمزياً الأحجار البحرية والبنفسجية."}
 ];
+const zodiacPaths={
+ARIES:'<path d="M50 76V39 M50 39C40 18 17 18 17 39 M50 39C60 18 83 18 83 39"/>',
+TAURUS:'<circle cx="50" cy="57" r="23"/><path d="M27 57C18 48 17 35 22 25 M73 57C82 48 83 35 78 25 M22 25c8 1 13 5 16 12 M78 25c-8 1-13 5-16 12"/>',
+GEMINI:'<path d="M27 20h46 M27 80h46 M34 20v60 M66 20v60"/>',
+CANCER:'<path d="M26 34c0-11 13-16 22-8 8 7 5 18-4 22-9 4-20 0-20-10 0-3 1-5 2-7 M74 66c0 11-13 16-22 8-8-7-5-18 4-22 9-4 20 0 20 10 0 3-1 5-2 7"/>',
+LEO:'<path d="M65 26c-10-10-27-5-30 8-3 12 7 21 18 18 10-3 13-17 5-23-7-5-17-1-18 8 M50 52c-15 2-22 14-17 24 5 10 20 9 25 0 4-8-1-17-9-18 M65 26c10 9 14 21 10 34-3 10-11 17-22 19"/>',
+VIRGO:'<path d="M24 25v50 M24 25c8 0 8 13 8 25v25 M32 25c8 0 8 13 8 25v25 M40 25c8 0 8 13 8 25v25c0 10 12 10 18 3l8-10"/>',
+LIBRA:'<path d="M50 18v58 M25 76h50 M20 39h60 M50 18l-5 7 M50 18l5 7 M20 39c0 12 10 18 18 18s18-6 18-18 M44 39c0 12 10 18 18 18s18-6 18-18"/>',
+SCORPIO:'<path d="M20 25v50 M20 25c9 0 9 13 9 25v25 M29 25c9 0 9 13 9 25v25 M38 25c9 0 9 13 9 25v25c0 9 10 10 17 3l9-10 M65 68l12-3-2 12"/>',
+SAGITTARIUS:'<path d="M25 75L76 24 M42 24h34v34 M30 40l30 30"/>',
+CAPRICORN:'<path d="M22 25c10-8 17 0 17 12v34c0 10 13 13 22 5 8-7 8-20-1-25-8-4-17 2-16 11 1 7 9 10 15 6 M39 37c8-9 18-8 24-2 5 5 5 12 1 17"/>',
+AQUARIUS:'<path d="M17 38l12-9 12 9 12-9 12 9 12-9 6 5 M17 63l12-9 12 9 12-9 12 9 12-9 6 5"/>',
+PISCES:'<path d="M27 20c28 10 28 50 0 60 M73 20c-28 10-28 50 0 60 M25 50h50"/>'
+};
+function zodiacMark(sign){return '<svg viewBox="0 0 100 100" role="img" aria-label="'+sign.en+' zodiac symbol" xmlns="http://www.w3.org/2000/svg"><circle class="fine" cx="50" cy="50" r="43"/>'+zodiacPaths[sign.en]+'</svg>';}
 const grid=document.getElementById("zodiacGrid");
 signs.forEach((s,i)=>{
  const card=document.createElement("button");card.type="button";card.className="sign";card.style.setProperty("--hue",s.hue);card.style.setProperty("--i",i);card.setAttribute("aria-label","اكتشف برج "+s.ar);
- card.innerHTML='<span class="glyph" aria-hidden="true">'+s.glyph+'</span><h2>'+s.ar+'</h2><div class="latin">'+s.en+'</div><div class="date">'+s.date+'</div><span class="element">'+s.element+'</span>';
+ card.innerHTML='<span class="glyph" aria-hidden="true">'+zodiacMark(s)+'</span><h2>'+s.ar+'</h2><div class="latin">'+s.en+'</div><div class="date">'+s.date+'</div><span class="element">'+s.element+'</span>';
  card.addEventListener("click",()=>openSign(s));grid.appendChild(card);
 });
 const modal=document.getElementById("modal"),dialog=document.getElementById("dialog");
-function openSign(s){dialog.style.setProperty("--hue",s.hue);document.getElementById("modalGlyph").textContent=s.glyph;document.getElementById("modalTitle").textContent=s.ar;document.getElementById("modalLatin").textContent=s.en;document.getElementById("modalRange").textContent=s.date+" · عنصر "+s.element;document.getElementById("modalDescription").textContent=s.desc;const gems=document.getElementById("modalGems");gems.replaceChildren();s.gem.forEach(g=>{const el=document.createElement("span");el.textContent=g;gems.appendChild(el)});modal.classList.add("open");document.body.style.overflow="hidden";document.getElementById("closeModal").focus()}
+function openSign(s){dialog.style.setProperty("--hue",s.hue);document.getElementById("modalGlyph").innerHTML=zodiacMark(s);document.getElementById("modalTitle").textContent=s.ar;document.getElementById("modalLatin").textContent=s.en;document.getElementById("modalRange").textContent=s.date+" · عنصر "+s.element;document.getElementById("modalDescription").textContent=s.desc;const gems=document.getElementById("modalGems");gems.replaceChildren();s.gem.forEach(g=>{const el=document.createElement("span");el.textContent=g;gems.appendChild(el)});modal.classList.add("open");document.body.style.overflow="hidden";document.getElementById("closeModal").focus()}
 function close(){modal.classList.remove("open");document.body.style.overflow=""}
 document.getElementById("closeModal").addEventListener("click",close);modal.addEventListener("click",e=>{if(e.target===modal)close()});document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
 </script>
