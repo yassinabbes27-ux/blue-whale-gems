@@ -24,7 +24,7 @@ file_config:
     _enabled_editors:
       - data
     _inputs:
-      $:
+      products:
         type: array
         label: Products
         options:
