@@ -427,7 +427,7 @@ window.applyLanguage(localStorage.getItem("bwg-language")||"en");
   const p=data.find(x=>String(x.image||"").replace(/^\//,"")===image);
   if(!p)return;
   const lang=localStorage.getItem("bwg-language")||"en";
-  const name=lang==="ar"?(p.nameAr||p.name):lang==="fr"?(p.nameFr||p.name):p.name;
+  const name=lang==="ar"?(p.nameAr||p.nameEn||p.name):lang==="fr"?(p.nameFr||p.nameEn||p.name):(p.nameEn||p.name);
   const heading=document.getElementById("productName");
   if(heading)heading.textContent=name;
   document.title=name+" | BLUE WHALE GEMS";
