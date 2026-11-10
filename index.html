@@ -1123,7 +1123,7 @@ async function loadFeaturedProducts(){
     img.src=optimizedImageUrl;
    imageLink.appendChild(img);
    const name=document.createElement("a");
-   name.className="product-name";name.href=imageLink.href;name.textContent=p.name;
+   name.className="product-name";name.href=imageLink.href;name.dataset.productName="true";name.dataset.nameEn=p.nameEn||p.name;name.dataset.nameAr=p.nameAr||name.dataset.nameEn;name.dataset.nameFr=p.nameFr||name.dataset.nameEn;const activeLang=localStorage.getItem("bwg-language")||"en";name.textContent=activeLang==="ar"?name.dataset.nameAr:activeLang==="fr"?name.dataset.nameFr:name.dataset.nameEn;
    const meta=document.createElement("div");meta.className="product-meta";
    const price=document.createElement("span");price.className="price";price.textContent=p.price+" TND";
    const delivery=document.createElement("span");delivery.className="delivery";
@@ -1168,6 +1168,7 @@ window.applyLanguage=function(lang){
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>{if(el.dataset.en&&fr[el.dataset.en])el.dataset.fr=fr[el.dataset.en];});
  document.querySelectorAll(".lang").forEach(el=>el.textContent=lang==="en"?"English ▾":lang==="fr"?"Français ▾":"العربية ▾");
   document.querySelectorAll("#languageMenu button").forEach(el=>el.setAttribute("aria-current",({"English":"en","Français":"fr","العربية":"ar"}[el.textContent]===lang)?"true":"false"));
+ document.querySelectorAll("[data-product-name]").forEach(el=>{el.textContent=lang==="ar"?el.dataset.nameAr:lang==="fr"?el.dataset.nameFr:el.dataset.nameEn;});
  const staticMap=fr;
  window.__bwgTextOriginals=window.__bwgTextOriginals||new WeakMap();
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
