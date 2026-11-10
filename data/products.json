@@ -5,7 +5,9 @@
     "price": 70,
     "image": "/images/bracelets/20261018_184933.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار الأكوامارين والأماثيست واللابرادوريت",
+    "nameFr": "Bracelet Aigue-marine, Améthyste et Labradorite"
   },
   {
     "name": "Labradorite, Amethyst, Rose Quartz & Chips Bracelet",
@@ -13,7 +15,9 @@
     "price": 68,
     "image": "/images/bracelets/1000088300.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار اللابرادوريت والأماثيست والكوارتز الوردي ورقائق الأحجار",
+    "nameFr": "Bracelet Labradorite, Améthyste, Quartz rose et éclats de pierres"
   },
   {
     "name": "Coral & Agate Bracelet",
@@ -21,7 +25,9 @@
     "price": 45,
     "image": "/images/bracelets/1000088312.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار المرجان والعقيق",
+    "nameFr": "Bracelet Corail et Agate"
   },
   {
     "name": "Obsidian + Clear Quartz Bracelet",
@@ -29,7 +35,9 @@
     "price": 70,
     "image": "/images/bracelets/1000088313.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار السبج والكوارتز الشفاف",
+    "nameFr": "Bracelet Obsidienne et Quartz clair"
   },
   {
     "name": "Moss Quartz Bracelet",
@@ -37,7 +45,9 @@
     "price": 60,
     "image": "/images/bracelets/1000088296.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار الكوارتز الطحلبي",
+    "nameFr": "Bracelet Quartz mousse"
   },
   {
     "name": "Pink Tourmaline & Natural Pearl Bracelet",
@@ -45,7 +55,9 @@
     "price": 79,
     "image": "/images/bracelets/1000088281.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار التورمالين الوردي واللؤلؤ الطبيعي",
+    "nameFr": "Bracelet Tourmaline rose et Perle naturelle"
   },
   {
     "name": "Red Carnelian Chip Bracelet",
@@ -53,7 +65,9 @@
     "price": 50,
     "image": "/images/bracelets/1000088295.jpg",
     "delivery": 8,
-    "stock": 6
+    "stock": 6,
+    "nameAr": "سوار رقائق العقيق الأحمر",
+    "nameFr": "Bracelet en éclats de Cornaline rouge"
   },
   {
     "name": "Citrine Chip Bracelet",
@@ -61,7 +75,9 @@
     "price": 50,
     "image": "/images/bracelets/1000088297.jpg",
     "delivery": 8,
-    "stock": 3
+    "stock": 3,
+    "nameAr": "سوار رقائق السيترين",
+    "nameFr": "Bracelet en éclats de Citrine"
   },
   {
     "name": "Rutilated Quartz & Tiger's Eye Chip Bracelet",
@@ -69,7 +85,9 @@
     "price": 55,
     "image": "/images/bracelets/1000088299.jpg",
     "delivery": 8,
-    "stock": 2
+    "stock": 2,
+    "nameAr": "سوار الكوارتز الروتيلاتي وعين النمر",
+    "nameFr": "Bracelet Quartz rutile et Œil-de-tigre"
   },
   {
     "name": "Falcon's Eye & Flower Agate Bracelet",
@@ -77,7 +95,9 @@
     "price": 69,
     "image": "/images/bracelets/1000088279.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار عين الصقر والعقيق الزهري",
+    "nameFr": "Bracelet Œil de faucon et Agate fleur"
   },
   {
     "name": "Aquamarine, Labradorite & Coral Bracelet",
@@ -85,7 +105,9 @@
     "price": 80,
     "image": "/images/bracelets/1000088265.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار الأكوامارين واللابرادوريت والمرجان",
+    "nameFr": "Bracelet Aigue-marine, Labradorite et Corail"
   },
   {
     "name": "Seven Chakras Bracelet",
@@ -93,7 +115,9 @@
     "price": 77,
     "image": "/images/bracelets/1000088268.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار الشاكرات السبع",
+    "nameFr": "Bracelet des sept chakras"
   },
   {
     "name": "Red Jasper Bracelet",
@@ -101,7 +125,9 @@
     "price": 60,
     "image": "/images/bracelets/1000088278.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار اليشب الأحمر",
+    "nameFr": "Bracelet Jaspe rouge"
   },
   {
     "name": "Amethyst & Rose Quartz Bracelet",
@@ -109,7 +135,9 @@
     "price": 66,
     "image": "/images/bracelets/1000088290.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار الأماثيست والكوارتز الوردي",
+    "nameFr": "Bracelet Améthyste et Quartz rose"
   },
   {
     "name": "Amethyst Bracelet",
@@ -117,7 +145,9 @@
     "price": 70,
     "image": "/images/bracelets/1000057411.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار الأماثيست",
+    "nameFr": "Bracelet Améthyste"
   },
   {
     "name": "Tiger's Eye Bracelet",
@@ -125,7 +155,9 @@
     "price": 60,
     "image": "/images/bracelets/1000063564.jpg",
     "delivery": 8,
-    "stock": 2
+    "stock": 2,
+    "nameAr": "سوار عين النمر",
+    "nameFr": "Bracelet Œil-de-tigre"
   },
   {
     "name": "Multi-Color Tourmaline Bracelet",
@@ -133,7 +165,9 @@
     "price": 65,
     "image": "/images/bracelets/1000063590.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار التورمالين متعدد الألوان",
+    "nameFr": "Bracelet Tourmaline multicolore"
   },
   {
     "name": "Lapis Lazuli Bracelet",
@@ -141,7 +175,9 @@
     "price": 80,
     "image": "/images/bracelets/1000078469.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار اللازورد",
+    "nameFr": "Bracelet Lapis-lazuli"
   },
   {
     "name": "Baltic Amber Bracelet",
@@ -149,7 +185,9 @@
     "price": 190,
     "image": "/images/bracelets/1000079541.jpg",
     "delivery": 8,
-    "stock": 2
+    "stock": 2,
+    "nameAr": "سوار الكهرمان البلطيقي",
+    "nameFr": "Bracelet Ambre de la Baltique"
   },
   {
     "name": "Natural Coral Bracelet",
@@ -157,7 +195,9 @@
     "price": 39,
     "image": "/images/bracelets/1000084081.jpg",
     "delivery": 8,
-    "stock": 7
+    "stock": 7,
+    "nameAr": "سوار المرجان الطبيعي",
+    "nameFr": "Bracelet Corail naturel"
   },
   {
     "name": "Natural Coral & Pearl Bracelet",
@@ -165,7 +205,9 @@
     "price": 89,
     "image": "/images/bracelets/1000085232.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "سوار المرجان الطبيعي واللؤلؤ",
+    "nameFr": "Bracelet Corail naturel et Perles"
   },
   {
     "name": "Coral & Pearl Pendant Necklace",
@@ -173,7 +215,9 @@
     "price": 45,
     "image": "/images/necklaces/1000032282.jpg",
     "delivery": 8,
-    "stock": 6
+    "stock": 6,
+    "nameAr": "قلادة من المرجان واللؤلؤ",
+    "nameFr": "Collier pendentif Corail et Perle"
   },
   {
     "name": "Amber Pendant Necklace",
@@ -181,7 +225,9 @@
     "price": 50,
     "image": "/images/necklaces/1000052346.jpg",
     "delivery": 8,
-    "stock": 10
+    "stock": 10,
+    "nameAr": "قلادة من الكهرمان",
+    "nameFr": "Collier pendentif Ambre"
   },
   {
     "name": "Yemeni Scenic Agate Pendant Necklace — 925 Sterling Silver",
@@ -189,7 +235,9 @@
     "price": 220,
     "image": "/images/necklaces/1000074156.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "قلادة عقيق يمني مشجر - فضة إسترلينية 925",
+    "nameFr": "Collier pendentif en Agate dendritique yéménite — Argent sterling 925"
   },
   {
     "name": "Natural Coral Necklace",
@@ -197,7 +245,9 @@
     "price": 200,
     "image": "/images/necklaces/1000081614.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "قلادة من المرجان الطبيعي",
+    "nameFr": "Collier en Corail naturel"
   },
   {
     "name": "Suleimani Agate Pendant Necklace",
@@ -205,7 +255,9 @@
     "price": 150,
     "image": "/images/necklaces/1000082002.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "قلادة عقيق سليماني",
+    "nameFr": "Collier pendentif en Agate Suleimani"
   },
   {
     "name": "Egyptian Ankh & Coral Pendant Necklace",
@@ -213,7 +265,9 @@
     "price": 79,
     "image": "/images/necklaces/1000085314.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "قلادة أنخ مصرية ومرجان",
+    "nameFr": "Collier pendentif Ankh égyptien et Corail"
   },
   {
     "name": "Red Agate Ring — 925 Sterling Silver",
@@ -221,7 +275,9 @@
     "price": 100,
     "image": "/images/rings/1000085897.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "خاتم عقيق أحمر - فضة إسترلينية 925",
+    "nameFr": "Bague en Agate rouge — Argent sterling 925"
   },
   {
     "name": "Pyrite Ring — 925 Sterling Silver",
@@ -229,7 +285,9 @@
     "price": 120,
     "image": "/images/rings/1000074444.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "خاتم بيريت - فضة إسترلينية 925",
+    "nameFr": "Bague en Pyrite — Argent sterling 925"
   },
   {
     "name": "Raw Apatite",
@@ -237,7 +295,9 @@
     "price": 37,
     "image": "/images/raw-gems/1000082268.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "أباتيت خام",
+    "nameFr": "Apatite brute"
   },
   {
     "name": "Raw Carnelian",
@@ -245,7 +305,9 @@
     "price": 29,
     "image": "/images/raw-gems/1000082265.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "عقيق أحمر خام",
+    "nameFr": "Cornaline brute"
   },
   {
     "name": "Raw Green Aventurine",
@@ -253,7 +315,9 @@
     "price": 34,
     "image": "/images/raw-gems/1000082266.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "أفنتورين أخضر خام",
+    "nameFr": "Aventurine verte brute"
   },
   {
     "name": "Coral Pendant with Chain",
@@ -261,7 +325,9 @@
     "price": 50,
     "image": "/images/necklaces/1000090740.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "قلادة مرجان مع سلسلة",
+    "nameFr": "Pendentif en Corail avec chaîne"
   },
   {
     "name": "Agate pendent",
@@ -269,7 +335,9 @@
     "price": 40,
     "image": "/images/necklaces/1000090741.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "قلادة عقيق",
+    "nameFr": "Pendentif en Agate"
   },
   {
     "name": "Pyrite ring silver 925",
@@ -277,7 +345,9 @@
     "price": 140,
     "image": "/images/rings/1000090739.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "خاتم بيريت من فضة 925",
+    "nameFr": "Bague en Pyrite — Argent 925"
   },
   {
     "name": "خاتم عقيق سليماني يمني - فضة 925",
@@ -285,7 +355,10 @@
     "price": 250,
     "image": "/images/rings/1000090737.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "خاتم عقيق سليماني يمني - فضة 925",
+    "nameFr": "Bague en Agate Suleimani yéménite — Argent 925",
+    "nameEn": "Yemeni Suleimani Agate Ring — 925 Sterling Silver"
   },
   {
     "name": "خاتم عقيق يمني مشجر - فضة 925",
@@ -293,6 +366,9 @@
     "price": 160,
     "image": "/images/rings/1000090736.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameAr": "خاتم عقيق يمني مشجر - فضة 925",
+    "nameFr": "Bague en Agate dendritique yéménite — Argent 925",
+    "nameEn": "Yemeni Scenic Agate Ring — 925 Sterling Silver"
   }
 ]
