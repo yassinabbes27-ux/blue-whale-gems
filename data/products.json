@@ -221,7 +221,10 @@
     "price": 100,
     "image": "/images/rings/1000085897.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameEn": "Red Agate Ring — 925 Sterling Silver",
+    "nameAr": "خاتم عقيق أحمر — فضة 925",
+    "nameFr": "Bague en agate rouge — argent 925"
   },
   {
     "name": "Pyrite Ring — 925 Sterling Silver",
@@ -229,7 +232,10 @@
     "price": 120,
     "image": "/images/rings/1000074444.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameEn": "Pyrite Ring — 925 Sterling Silver",
+    "nameAr": "خاتم بيريت — فضة 925",
+    "nameFr": "Bague en pyrite — argent 925"
   },
   {
     "name": "Raw Apatite",
@@ -277,7 +283,10 @@
     "price": 140,
     "image": "/images/rings/1000090739.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameEn": "Pyrite Ring — 925 Sterling Silver",
+    "nameAr": "خاتم بيريت — فضة 925",
+    "nameFr": "Bague en pyrite — argent 925"
   },
   {
     "name": "خاتم عقيق سليماني يمني - فضة 925",
@@ -285,7 +294,10 @@
     "price": 250,
     "image": "/images/rings/1000090737.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameEn": "Yemeni Suleimani Agate Ring — 925 Silver",
+    "nameAr": "خاتم عقيق سليماني يمني — فضة 925",
+    "nameFr": "Bague en agate Suleimani du Yémen — argent 925"
   },
   {
     "name": "خاتم عقيق يمني مشجر - فضة 925",
@@ -293,7 +305,10 @@
     "price": 160,
     "image": "/images/rings/1000090736.jpg",
     "delivery": 8,
-    "stock": 1
+    "stock": 1,
+    "nameEn": "Yemeni Dendritic Agate Ring — 925 Silver",
+    "nameAr": "خاتم عقيق يمني مشجّر — فضة 925",
+    "nameFr": "Bague en agate dendritique du Yémen — argent 925"
   },
   {
     "name": "7 chakras bracelet ",
