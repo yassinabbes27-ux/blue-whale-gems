@@ -1178,12 +1178,50 @@ window.applyLanguage=function(lang){
   const original=window.__bwgTextOriginals.get(n),t=original.trim();
   if(!n.parentElement.closest("[data-en][data-ar]"))n.nodeValue=lang==="fr"&&staticMap[t]?original.replace(t,staticMap[t]):original;
  });
- document.querySelectorAll(".gem-stories-head .kicker").forEach(el=>{if(lang==="fr")el.textContent="LES HISTOIRES DES PIERRES";else if(lang==="en")el.textContent="THE STORIES OF GEMSTONES";});
- document.querySelectorAll(".gem-stories-head h2").forEach(el=>{if(lang==="fr")el.textContent="Histoires de pierres";else if(lang==="en")el.textContent="Gem Stories";});
- document.querySelectorAll(".gem-stories-hint").forEach(el=>{if(lang==="fr")el.textContent="FAITES DÉFILER POUR DÉCOUVRIR";else if(lang==="en")el.textContent="SWIPE TO DISCOVER · اسحب لاكتشاف الحكايات";});
- window.__bwgStoryOriginals=window.__bwgStoryOriginals||new WeakMap();
- document.querySelectorAll(".gem-story-copy p").forEach((el,i)=>{if(!window.__bwgStoryOriginals.has(el))window.__bwgStoryOriginals.set(el,el.textContent);if(lang==="fr"){el.textContent=["Dans les trésors des rois de l’Égypte ancienne, le lapis-lazuli occupait une place réservée aux pierres précieuses. Extrait des montagnes lointaines, il était acheminé par les caravanes jusqu’aux rives du Nil, où les artisans en faisaient des bijoux royaux, des colliers et des ornements de couronnes. Sa valeur était telle qu’il ornait le masque du roi Toutânkhamon, mêlant son bleu à l’or des pharaons. Il demeure le témoin d’une civilisation qui fit de la beauté un héritage intemporel.","L’œil-de-tigre était apprécié pour son éclat évoquant le regard d’un fauve dans l’obscurité de la forêt. Des lignes dorées et brunes se succèdent à sa surface ; lorsque la pierre tourne, sa lumière semble changer comme si un œil veillait en son cœur. Dans l’Antiquité, voyageurs et guerriers le portaient comme symbole de courage, de vigilance et de protection. Son charme ne réside pas seulement dans sa couleur, mais aussi dans ce reflet mystérieux qui lui confère son prestige.","Les souverains choisissaient les plus belles nuances d’améthyste pour orner leurs couronnes et leurs bagues, voyant dans sa robe violette un symbole de sagesse et de dignité. Ils y trouvaient un ornement digne du trône, associé à la lucidité et à la justesse du jugement. Comme s’ils souhaitaient réunir dans leurs couronnes l’éclat du pouvoir et la sagesse des rois."][i];}else{el.textContent=window.__bwgStoryOriginals.get(el);}}); 
- document.querySelectorAll(".gem-story-index").forEach((el,i)=>{if(!el.dataset.original)el.dataset.original=el.textContent;el.textContent=lang==="fr"?["01 · LAPIS-LAZULI","02 · ŒIL-DE-TIGRE","03 · AMÉTHYSTE"][i]:el.dataset.original;});
+ const storyTranslations={
+  en:{
+   kicker:"THE STORIES OF GEMSTONES",title:"Gem Stories",hint:"SWIPE TO DISCOVER",
+   names:["Lapis Lazuli","Tiger's Eye","Amethyst"],
+   indexes:["01 · LAPIS LAZULI","02 · TIGER'S EYE","03 · AMETHYST"],
+   paragraphs:[
+    "In the treasuries of ancient Egypt's kings, lapis lazuli held a place reserved for precious stones. Mined in distant mountains, it travelled by caravan to the banks of the Nile, where skilled artisans shaped it into royal jewellery, necklaces and crown ornaments. Its value was such that it adorned the mask of King Tutankhamun, its deep blue meeting the gold of the pharaohs. It remains a witness to a civilisation that made beauty an enduring legacy.",
+    "Tiger's eye was admired for a shimmer reminiscent of a wild animal's gaze in the forest twilight. Golden and brown bands flow across its surface; as the stone turns, its light shifts as though an ever-watchful eye lived within. In ancient times, travellers and warriors carried it as a symbol of courage, vigilance and protection. Its appeal lies not only in its colour, but in the mysterious gleam that gives it a lasting presence.",
+    "Rulers chose the finest shades of amethyst to adorn their crowns and rings, seeing in its violet colour a symbol of wisdom and dignity. They regarded it as an ornament worthy of the throne, associated with clear judgement and sound counsel. It was as though they wished to unite the splendour of power with the wisdom of kings."
+   ]
+  },
+  fr:{
+   kicker:"LES HISTOIRES DES PIERRES",title:"Histoires de pierres",hint:"FAITES DÉFILER POUR DÉCOUVRIR",
+   names:["Lapis-lazuli","Œil-de-tigre","Améthyste"],
+   indexes:["01 · LAPIS-LAZULI","02 · ŒIL-DE-TIGRE","03 · AMÉTHYSTE"],
+   paragraphs:[
+    "Dans les trésors des rois de l’Égypte ancienne, le lapis-lazuli occupait une place réservée aux pierres précieuses. Extrait des montagnes lointaines, il était acheminé par les caravanes jusqu’aux rives du Nil, où les artisans en faisaient des bijoux royaux, des colliers et des ornements de couronnes. Sa valeur était telle qu’il ornait le masque du roi Toutânkhamon, mêlant son bleu à l’or des pharaons. Il demeure le témoin d’une civilisation qui fit de la beauté un héritage intemporel.",
+    "L’œil-de-tigre était apprécié pour son éclat évoquant le regard d’un fauve dans l’obscurité de la forêt. Des lignes dorées et brunes se succèdent à sa surface ; lorsque la pierre tourne, sa lumière semble changer comme si un œil veillait en son cœur. Dans l’Antiquité, voyageurs et guerriers le portaient comme symbole de courage, de vigilance et de protection. Son charme ne réside pas seulement dans sa couleur, mais aussi dans ce reflet mystérieux qui lui confère son prestige.",
+    "Les souverains choisissaient les plus belles nuances d’améthyste pour orner leurs couronnes et leurs bagues, voyant dans sa robe violette un symbole de sagesse et de dignité. Ils y trouvaient un ornement digne du trône, associé à la lucidité et à la justesse du jugement. Comme s’ils souhaitaient réunir dans leurs couronnes l’éclat du pouvoir et la sagesse des rois."
+   ]
+  },
+  ar:{
+   kicker:"حكايات الأحجار الكريمة",title:"حكايات الأحجار",hint:"اسحب لاكتشاف الحكايات",
+   names:["اللازورد","عين النمر","الجمشت"],
+   indexes:["01 · اللازورد","02 · عين النمر","03 · الجمشت"],
+   paragraphs:[
+    "في خزائن ملوك مصر القديمة، كان للازورد مقامٌ لا يُمنح إلا للأحجار النفيسة. استخرجوه من أعماق الجبال البعيدة، وجلبوه عبر القوافل إلى ضفاف النيل، ثم صاغت منه أيدي الصاغة حُليّ الملوك وقلائدهم وخرز التيجان. وقد بلغ من قيمة هذا الحجر أن زيّن قناع الملك توت عنخ آمون، فامتزجت زرقتُه بذهب الفراعنة، وبقي شاهداً على ذوق حضارةٍ جعلت من الجمال إرثاً لا يفنى.",
+    "كان حجرُ عين النمر يُعرف ببريقه الذي يشبه نظرةَ الوحش في عتمة الغابة؛ تتعاقب على سطحه خيوطٌ من الذهب والبنيّ، كلما دار الحجر تبدّل ضوؤه كأنّ في داخله عيناً لا تنام. وقد حمله المحاربون والمسافرون في العصور القديمة، وجعلوه رمزاً للشجاعة واليقظة والحماية، لما يوحي به من قوّةٍ وثبات. ولم يكن سحره في لونه وحده، بل في ذلك الوميض الغامض الذي جعل اسمه باقياً بين الأحجار ذات الهيبة.",
+    "كان الملوكُ ينتقون من حجر الأماتيست أصفى ألوانه، فيرصّعون به تيجانهم وخواتمهم، اعتقاداً منهم أنّ في بُنيانه البنفسجي سرّاً من أسرار الحكمة والوقار. وكانوا يرون فيه زينةً تليق بمن يجلس على العرش، ورمزاً لرجاحة العقل وصفاء الرأي؛ فكأنّما أرادوا أن يجمعوا في تيجانهم بين بهاء السلطان وحكمة الملوك."
+   ]
+  }
+ };
+ const stories=storyTranslations[lang]||storyTranslations.en;
+ document.querySelectorAll(".gem-stories-head .kicker").forEach(el=>el.textContent=stories.kicker);
+ document.querySelectorAll(".gem-stories-head h2").forEach(el=>el.textContent=stories.title);
+ document.querySelectorAll(".gem-stories-hint").forEach(el=>el.textContent=stories.hint);
+ document.querySelectorAll(".gem-story-card").forEach((card,i)=>{
+  const name=card.querySelector(".gem-story-copy h3");
+  const paragraph=card.querySelector(".gem-story-copy p");
+  const storyIndex=card.querySelector(".gem-story-index");
+  if(name)name.textContent=stories.names[i]||"";
+  if(paragraph)paragraph.textContent=stories.paragraphs[i]||"";
+  if(storyIndex)storyIndex.textContent=stories.indexes[i]||"";
+ });
 }
 window.toggleLanguageMenu=function(){const menu=document.getElementById("languageMenu"),button=document.querySelector(".lang"),open=menu.classList.toggle("open");button.setAttribute("aria-expanded",open?"true":"false");};
 window.chooseLanguage=function(lang){window.applyLanguage(lang);document.getElementById("languageMenu").classList.remove("open");document.querySelector(".lang").setAttribute("aria-expanded","false");};
